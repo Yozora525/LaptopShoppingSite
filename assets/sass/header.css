@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.guide-container {
+  width: 100%;
+  background-color: #0096C7;
+}
+.guide-container .nav-header {
+  width: 100%;
+}
+@media (min-width: 0px) {
+  .guide-container .nav-header {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+  }
+  .guide-container .nav-header .home {
+    width: 20%;
+    padding-top: 0.5em;
+  }
+  .guide-container .nav-header .home a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+    padding-left: 1em;
+  }
+  .guide-container .nav-header .key-word-search {
+    padding-top: 1em;
+    width: 50%;
+  }
+  .guide-container .nav-header .key-word-search input {
+    width: 80%;
+    height: 30px;
+    font-size: 16px;
+  }
+  .guide-container .nav-header .link-icon {
+    border: 1px solid #ccc;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .guide-container .nav-header .link-icon .icon-login {
+    border: 1px solid #ccc;
+    width: 33%;
+  }
+  .guide-container .nav-header .link-icon .icon-contact {
+    border: 1px solid #ccc;
+    width: 34%;
+  }
+  .guide-container .nav-header .link-icon .icon-car {
+    border: 1px solid #ccc;
+    width: 33%;
+  }
+}
+@media (min-width: 1000px) {
+  .guide-container .nav-header {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+  }
+  .guide-container .nav-header .home {
+    width: 20%;
+    padding-top: 1em;
+  }
+  .guide-container .nav-header .home a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+    padding-left: 2em;
+  }
+  .guide-container .nav-header .key-word-search {
+    padding-top: 1em;
+    width: 60%;
+  }
+  .guide-container .nav-header .key-word-search input {
+    width: 90%;
+    height: 30px;
+    font-size: 18px;
+  }
+  .guide-container .nav-header .link-icon {
+    border: 1px solid #ccc;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .guide-container .nav-header .link-icon .icon-login {
+    border: 1px solid #ccc;
+    width: 33%;
+  }
+  .guide-container .nav-header .link-icon .icon-contact {
+    border: 1px solid #ccc;
+    width: 34%;
+  }
+  .guide-container .nav-header .link-icon .icon-car {
+    border: 1px solid #ccc;
+    width: 33%;
+  }
+}/*# sourceMappingURL=header.css.map */

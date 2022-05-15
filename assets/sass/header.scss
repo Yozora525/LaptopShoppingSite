@@ -1,0 +1,132 @@
+@mixin small {
+    @media (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1000px){
+        @content;
+    }
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+.guide-container{
+    width: 100%;
+    background-color: #0096C7;
+    .nav-header{
+        width: 100%;
+
+        @include small{
+            display: flex;
+            flex-direction: row;
+            height: 60px;
+            
+            .home{
+                width: 20%;
+                padding-top: 0.5em;
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 24px;
+                    font-weight: bolder;
+                    padding-left: 1em;
+                }
+            }
+
+            .key-word-search{
+                padding-top: 1em;
+                width: 50%;
+                input{
+                    width: 80%;
+                    height: 30px;
+                    // margin: 0.5em;
+                    font-size: 16px;
+                }
+            }
+
+            .link-icon{
+                border: 1px solid #ccc;
+                width: 30%;
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+
+                .icon-login{
+                    border: 1px solid #ccc;
+                    width: 33%;
+                }
+
+                .icon-contact{
+                    border: 1px solid #ccc;
+                    width: 34%;
+                }
+
+                .icon-car{
+                    border: 1px solid #ccc;
+                    width: 33%;
+                }
+
+            }
+        }
+
+        @include large{
+            display: flex;
+            flex-direction: row;
+            height: 70px;
+            
+            .home{
+                width: 20%;
+                padding-top: 1em;
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 24px;
+                    font-weight: bolder;
+                    padding-left: 2em;
+                }
+            }
+
+            .key-word-search{
+                padding-top: 1em;
+                width: 60%;
+                input{
+                    width: 90%;
+                    height: 30px;
+                    // margin: 0.5em;
+                    font-size: 18px;
+                }
+            }
+
+            .link-icon{
+                border: 1px solid #ccc;
+                width: 20%;
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+
+                .icon-login{
+                    border: 1px solid #ccc;
+                    width: 33%;
+                }
+
+                .icon-contact{
+                    border: 1px solid #ccc;
+                    width: 34%;
+                }
+
+                .icon-car{
+                    border: 1px solid #ccc;
+                    width: 33%;
+                }
+
+            }
+
+        }
+    }
+    
+}
