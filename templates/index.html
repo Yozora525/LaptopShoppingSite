@@ -5,8 +5,259 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 引入jQuery -->
+    <script src="../assets/js/lib/jquery/jquery.min.js"></script>
+    <!-- 引入Echarts -->
+    <script src="../assets/js/lib/echarts/echarts.min.js"></script>
+    <!-- 引入jQuery-Confirm -->
+    <script src="../assets/js/lib/jquery-confirm/jquery-confirm.min.js"></script>
+    <link rel="stylesheet" href="../assets/js/lib/jquery-confirm/jquery-confirm.min.css" />
+    <!-- 引入slick -->
+    <script src="../assets/js/lib/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="../assets/js/lib/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../assets/js/lib/slick/slick.css" />
+    <!-- 引入blockUI -->
+    <script src="../assets/js/lib/blockUI/jquery.blockUI.js"></script>
+    <script src="../assets/js/loading.js"></script>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="../assets/sass/header.css" />
+    <link rel="stylesheet" href="../assets/sass/main.css" />
+    <link rel="stylesheet" href="../assets/sass/footer.css" />
+    <style>
+        @import url("../assets/sass/product.css");
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="guide-container">
+            <nav class="nav-header">
+                <div class="home" style="border:3px solid #ccc;">
+                    <a href="">首頁</a>
+                </div>
+                <div class="key-word-search">
+                    <form method="GET" action="">
+                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <button><img src="">查詢</button>
+                    </form>
+                </div>
+                <div class="link-icon">
+                    <div class="icon-login">
+                        <a  href=""><img src=""></a>
+                        登入
+                    </div>
+                    <div class="icon-contact">
+                        <a  href=""><img src=""></a>
+                        聯絡我們
+                    </div>
+                    <div class="icon-car">
+                        <a  href=""><img src=""></a>
+                        購物車
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="content">
+            <div id="loading" style="display: none;">
+                <img src="../assets/img/loading.gif">
+            </div>
+            <div class="product">
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ASUS/ASUS X515_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ASUS X515</li>
+                            <li>價格:NT$17900</li> 
+                        </ul>
+                    </div> 
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ASUS Zenbook 14 Flip OLED</li>
+                            <li>價格:NT$40900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ASUS TUF Gaming F15</li>
+                            <li>價格:NT$33500</li>
+                            
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ASUS ZenBook 13 OLED</li>
+                            <li>價格:NT$34900</li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+            <div class="product">
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ASUS/ASUS E410_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ASUS E410</li>
+                            <li>價格:NT$9488</li> 
+                        </ul>
+                    </div> 
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/APPLE/APPLE MacBook Air_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:APPLE MacBook Air</li>
+                            <li>價格:NT$38900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/APPLE/APPLE MacBook Pro_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:APPLE MacBook Pro_15</li>
+                            <li>價格:NT$104900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ACER/ACER Nitro5 AN515-58-77 MX_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ACER Nitro5 AN515-58-77 MX</li>
+                            <li>價格:NT$39500</li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+            <div class="product">
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ACER/ACER Swift5 SF514-55TA-5884_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ACER Swift5 SF514-55TA-5884</li>
+                            <li>價格:NT$29900</li> 
+                        </ul>
+                    </div> 
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ACER Aspire5 A514-54G-58HW</li>
+                            <li>價格:NT$21900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/ACER/ACER TravelMate P214-53-78QY_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:ACER TravelMate P214-53-78QY</li>
+                            <li>價格:NT$31900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/MSI/MSI Stealth 15M_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:MSI Stealth 15M_1</li>
+                            <li>價格:NT$47900</li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+            <div class="product">
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/MSI/MSI Modern14-B5M_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:MSI Modern14-B5M_1</li>
+                            <li>價格:NT$23900</li> 
+                        </ul>
+                    </div> 
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/MSI/MSI Alpha 15_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:MSI Alpha 15_1</li>
+                            <li>價格:NT$34900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/MSI/MSI  Prestige 14 i7-10710u_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:MSI  Prestige 14 i7-10710u_1</li>
+                            <li>價格:NT$30900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/MSI/MSI Summit E16 Flip_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:MSI Summit E16 Flip_1</li>
+                            <li>價格:NT$55900</li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+            <div class="product">
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/HP/HP Elite Dragonfly G2_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:HP Elite Dragonfly G2_1</li>
+                            <li>價格:NT$59900</li> 
+                        </ul>
+                    </div> 
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/HP/HP 470 G8_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:HP 470 G8_1</li>
+                            <li>價格:NT$29999</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/HP/HP 14s-dq4001TU_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:HP 14s-dq4001TU_1</li>
+                            <li>價格:NT$31900</li>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="list">
+                    <img width="300px" src="../assets/img/pro/HP/HP OMEN 16-C0668AX_1.png"/>
+                    <div class="protext">
+                        <ul>
+                            <li>商品名稱:HP OMEN 16-C0668AX_1</li>
+                            <li>價格:NT$48900</li>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+            <span class="copyright">&copy;</span>
+
+    </footer>
 </body>
 </html>

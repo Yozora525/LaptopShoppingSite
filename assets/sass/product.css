@@ -1,0 +1,51 @@
+.product{
+    display: flex;
+    margin-left:20px;
+    margin-right: 20px;
+}  
+.list{
+    display:block;
+    margin-top:100px;
+    margin-left:50px;
+    background-color:white;
+    border-radius: 10px;
+}
+
+.protext{
+    font-family:"標楷體";
+    padding: 10px 20px 10px 30px;
+    
+   
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .main {
+    background-color: #d0e3f4;
+    min-height: 100%;
+  }
+  @media (min-width: 0px) {
+    .main {
+      padding-bottom: 70px;
+    }
+  }
+  @media (min-width: 1000px) {
+    .main {
+      padding-bottom: 100px;
+    }
+  }
+  
+  @media (min-width: 0px) {
+    .content {
+      padding-bottom: 70px;
+    }
+  }
+  @media (min-width: 1000px) {
+    .content {
+      padding-bottom: 100px;
+    }
+  }/*# sourceMappingURL=main.css.map */
