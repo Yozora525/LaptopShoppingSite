@@ -5,15 +5,24 @@
 }  
 .list{
     display:block;
-    margin-top:100px;
+    margin-top:50px;
     margin-left:50px;
     background-color:white;
     border-radius: 10px;
+    width: 400px;
+    height: 300px;
+}
+
+.listimg{
+  max-width: 300px;
+  max-height: 200px;
+  width: 100%;
+  padding-top: 10px ;
 }
 
 .protext{
     font-family:"標楷體";
-    padding: 10px 20px 10px 30px;
+    padding: 0px 20px 10px 30px;
     
    
 
