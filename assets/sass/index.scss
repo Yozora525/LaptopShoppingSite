@@ -10,15 +10,66 @@
     }
 }
 
+.product-group{
+    @include small{
+
+    }
+
+    @include large{
+        display:flex;
+        margin: 5% 2.5% 5% 2.5%;
+        border: 1px solid #ccc;
+    }
+}
+
+
+
+
+// 篩絢
+.product-filter{
+    @include small{
+        .filter{
+            .filter-container{
+
+            }
+            
+        }
+    }
+
+    @include large{
+        width: 15%;
+        .filter{
+            .filter-container{
+                margin-top: 2%;
+                margin-bottom: 10%;
+            }
+        }
+    }
+}
+
+
+// 產品列表
+.product-list{
+    @include small{
+
+    }
+
+    @include large{
+        width: 85%;
+        border: 1px solid #ccc;
+    }
+}
+
 .product{
     @include small{
-        margin: 2% 5% 2% 5%;
+        // margin: 2% 5% 2% 5%;
         border: 1px solid #ccc;
+        margin-bottom: 2%;
     }
 
     @include large{
         display: flex;
-        margin: 2% 5% 2% 5%;
+        // margin: 2% 5% 2% 5%;
     }
     
 }

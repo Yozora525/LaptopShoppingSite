@@ -1,13 +1,37 @@
+@media (min-width: 1000px) {
+  .product-group {
+    display: flex;
+    margin: 5% 2.5% 5% 2.5%;
+    border: 1px solid #ccc;
+  }
+}
+
+@media (min-width: 1000px) {
+  .product-filter {
+    width: 15%;
+  }
+  .product-filter .filter .filter-container {
+    margin-top: 2%;
+    margin-bottom: 10%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .product-list {
+    width: 85%;
+    border: 1px solid #ccc;
+  }
+}
+
 @media (min-width: 0px) {
   .product {
-    margin: 2% 5% 2% 5%;
     border: 1px solid #ccc;
+    margin-bottom: 2%;
   }
 }
 @media (min-width: 1000px) {
   .product {
     display: flex;
-    margin: 2% 5% 2% 5%;
   }
 }
 
