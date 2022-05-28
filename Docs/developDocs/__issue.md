@@ -15,5 +15,4 @@
         * res 回傳 success or fail
         * data 回傳資料，格式請用list(Array)回傳 e.g. 'data':[[1,2,3],[4,5,6]]
         * msg 回傳錯誤訊息，當 res == fail 才會有
-        * 第二次試試看
-    
+     
