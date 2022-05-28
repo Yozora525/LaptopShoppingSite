@@ -10,9 +10,16 @@
     }
 }
 
+// header
 *{
     margin:0;
     padding: 0;
+    font-family:"微軟正黑體";
+}
+
+.manage{
+    color:#FFF;
+    text-decoration:none;
 }
 
 .guide-container{
@@ -55,10 +62,15 @@
                 display: flex;
                 flex-direction: row;
                 text-align: center;
+                img{
+                        height: 30px;
+                        width:30px;
+                    }
 
                 .icon-login{
                     border: 1px solid #ccc;
                     width: 33%;
+                    
                 }
 
                 .icon-contact{
@@ -108,10 +120,16 @@
                 display: flex;
                 flex-direction: row;
                 text-align: center;
+                img{
+                    height: 50px;
+                    width:50px;
+                }
 
                 .icon-login{
+                    flex-direction:column;
                     border: 1px solid #ccc;
                     width: 33%;
+                    
                 }
 
                 .icon-contact{
@@ -129,4 +147,63 @@
         }
     }
     
+}
+
+
+// main
+
+html, body{
+    height: 100%;
+    margin: 0;
+    // background-color: #d0e3f4;
+    background-color: #eee;
+}
+
+.main{
+    min-height: 100%;
+    @include small{
+        padding-bottom: 70px;
+    }
+    
+    @include large{
+        padding-bottom: 100px;
+    }
+}
+
+.content{
+    @include small{
+        padding-bottom: 70px;
+    }
+
+    @include large{
+        padding-bottom: 100px;
+    }
+}
+
+// footer
+.footer{
+    width: 100%;
+    background-color: #0077B6;
+    @include small{
+        height: 70px;
+    }
+    
+    @include large{
+        height: 100px;
+    }
+}
+
+//常用
+.content_format {
+    @include small{
+        margin-top: 1%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    @include large{
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }

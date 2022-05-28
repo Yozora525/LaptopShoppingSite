@@ -1,0 +1,97 @@
+.LAP{
+    display: block;
+    margin-top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+}
+
+.L-I-IMG{
+    max-width: 500px;
+    max-height: 400px;
+    width: 50%;
+    padding-top:-60px;
+    
+}
+
+.L-INFO{
+    display: flex;
+    padding-bottom: 30px;
+    padding-top: -50px;
+}
+
+.L-I-CONTENT{
+    display: block;
+    padding-top: 70px;
+    padding-left: 50px;
+    font-family: "微軟正黑體";
+    font-size: large;
+    
+}
+
+.buy{
+    display: flex;
+    font-family: "微軟正黑體";
+    font-size: 30px ;
+    
+}
+.input{
+    width:40px;
+    height:50px;
+    font-size: 30px;
+    
+}
+
+.car{
+    font-family: "微軟正黑體";
+    font-size: 30px;
+    margin-left: 30px;
+    background-color:#84C1FF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.COMMENTLIST{
+    display: block;  
+}
+.COMMENT{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:white	;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    padding:10px 10px 10px 20px;
+    font-size: 20px;
+    font-family:"微軟正黑體";
+}
+textarea{
+    margin-left: 532px;
+    
+   
+}
+.submit{
+    text-align: center;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    color: #000;
+    background-color: #84C1FF;
+    border: 1px solid #000;
+    margin-left: 680px;
+    margin-top: 10px;
+    font-size: 30px;
+    padding-top: 10px;
+    font-family: "微軟正黑體";
+    padding-bottom: 10px;
+
+}
+.WORD{
+    display: block;
+    font-family: "微軟正黑體";
+    padding-top: 30px;
+}
