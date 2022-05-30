@@ -1,0 +1,106 @@
+@mixin small {
+    @media (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1000px){
+        @content;
+    }
+}
+
+
+.pay-container{
+    @include small{
+
+        .pay-title-container{
+            display: none;
+
+        }
+
+    }
+
+    @include large{
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+        .pay-title-container{
+            display: flex;
+            font-size: 18px;
+            height: 40px;
+            padding-top: 1%;
+            background-color: #fff;
+            color: #aaa;
+
+            .pay-title-order{
+                width: 67%;
+                padding-left: 5%;
+            }
+
+            .pay-title{
+                width: 11%;
+                text-align: left;
+            }
+        }
+
+        .pay-item{
+            display: flex;
+            margin-bottom: 1.5%;
+            height: 40px;
+            padding-top: 1%;
+            background-color: #FFF;
+
+            .item-info-name{
+                width: 67%;
+                padding-left: 5%;
+            }
+
+            .item-info{
+                width: 11%;
+                text-align: center;
+            }
+
+            input{
+                font-size:16px;
+                border: 0;
+                width: 100%;
+            }
+        }
+
+        .pay-checkout{
+            display: flex;
+            background-color: #FFF;
+            font-size: 18px;
+            height: 30px;
+            
+            .send-addr{
+                width:75%;
+                padding-left: 5%;
+                input{
+                    font-size:16px;
+                    width: 30%;
+                }
+            }
+
+            .pay-revenue{
+                width:15%;
+            }
+
+            .pay-btn-container{
+                width:10%;
+                button{
+                    border: 0;
+                    font-size: 18px;
+                    width: 60%;
+                    color: #fff;
+                    background-color: #0096C7;
+                }
+            }
+        }
+
+
+    }
+
+}

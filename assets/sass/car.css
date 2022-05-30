@@ -1,0 +1,111 @@
+@media (min-width: 0px) {
+  .car-container .car-title-container {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .car-container {
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .car-container .car-title-container {
+    display: flex;
+    font-size: 18px;
+    height: 40px;
+    padding-top: 1%;
+    background-color: #fff;
+    color: #aaa;
+    margin-bottom: 2%;
+  }
+  .car-container .car-title-container .car-title-checkbox {
+    width: 10%;
+    padding-left: 3%;
+    padding-top: 0.25%;
+  }
+  .car-container .car-title-container .car-title-checkbox input {
+    height: 50%;
+    width: 50%;
+  }
+  .car-container .car-title-container .car-title-item {
+    width: 50%;
+  }
+  .car-container .car-title-container .car-title {
+    width: 10%;
+  }
+  .car-container .car-item {
+    display: flex;
+    margin-bottom: 1.5%;
+    height: 40px;
+    padding-top: 1%;
+    background-color: #FFF;
+  }
+  .car-container .car-item .car-item-checkbox {
+    display: flex;
+    width: 61%;
+  }
+  .car-container .car-item .car-item-checkbox .item-checkbox {
+    width: 15%;
+    padding-left: 5.25%;
+  }
+  .car-container .car-item .car-item-checkbox .item-checkbox input {
+    height: 50%;
+    width: 50%;
+  }
+  .car-container .car-item .car-item-checkbox .item-name {
+    width: 85%;
+  }
+  .car-container .car-item .car-item-checkbox .item-name input {
+    font-size: 14px;
+    border: 0;
+  }
+  .car-container .car-item .car-item-other {
+    width: 39%;
+    display: flex;
+  }
+  .car-container .car-item .car-item-other .car-item-price {
+    width: 25%;
+  }
+  .car-container .car-item .car-item-other .car-item-price input {
+    border: 0px;
+  }
+  .car-container .car-item .car-item-other .car-item-quan {
+    width: 25%;
+  }
+  .car-container .car-item .car-item-other .car-item-quan input {
+    width: 50px;
+    text-align: center;
+    border-color: #eee;
+  }
+  .car-container .car-item .car-item-other .car-item-sum {
+    width: 25%;
+  }
+  .car-container .car-item .car-item-other .car-item-sum .item-sum {
+    color: #0096C7;
+    font-weight: bold;
+  }
+  .car-container .car-item .car-item-other .car-item-delete {
+    width: 25%;
+  }
+  .car-container .car-pay {
+    background-color: #fff;
+    display: flex;
+  }
+  .car-container .car-pay .total-container {
+    width: 80%;
+    font-size: 24px;
+    text-align: right;
+  }
+  .car-container .car-pay .car-par-btn {
+    text-align: center;
+    width: 20%;
+    padding-top: 0.25%;
+  }
+  .car-container .car-pay .car-par-btn button {
+    border: 0;
+    font-size: 18px;
+    width: 60%;
+    color: #fff;
+    background-color: #0096C7;
+  }
+}/*# sourceMappingURL=car.css.map */
