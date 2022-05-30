@@ -154,13 +154,14 @@ CREATE TABLE comment(
 );
 
 #8.反饋單
-CREATE TABLE contact(
-	contact_id	VARCHAR	(5) UNIQUE NOT NULL,
-	email	VARCHAR	(64) NOT NULL,
-	content	TEXT,
-
-    PRIMARY KEY (contact_id)
-);
+#CREATE TABLE contact(
+#	contact_id	VARCHAR	(5) UNIQUE NOT NULL,
+#	email	VARCHAR	(64) NOT NULL,
+#	content	TEXT,
+#	uploaddate DATE,
+    
+ #   PRIMARY KEY (contact_id)
+#);
 
 #9.購物車
 CREATE TABLE cart(
