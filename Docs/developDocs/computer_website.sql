@@ -6,7 +6,7 @@ USE computer_shop;
 #11. 管理員帳密表
 CREATE TABLE manager(
 	man_id  VARCHAR (64) UNIQUE NOT NULL,
-    man_account VARCHAR (512) UNIQUE NOT NULL,
+    man_account VARCHAR (512)  NOT NULL,
 	man_password VARCHAR(32)  NOT NULL,
 	PRIMARY KEY (man_id)
 );
@@ -103,8 +103,8 @@ CREATE TABLE mem_infor(
 
 #1.登入
 CREATE TABLE login (
-	mem_id	VARCHAR(64) UNIQUE NOT NULL,
-	mem_account	VARCHAR	(512) UNIQUE NOT NULL,
+	mem_id	VARCHAR(64)  NOT NULL,
+	mem_account	VARCHAR	(512)  NOT NULL,
 	mem_password VARCHAR (32) NOT NULL,
     
     PRIMARY KEY (mem_id),
@@ -116,8 +116,8 @@ CREATE TABLE login (
 
 #4.訂單明細
 CREATE TABLE order_details(
-	order_id	VARCHAR	(22) UNIQUE NOT NULL,
-	product_id	VARCHAR	(4) UNIQUE NOT NULL,
+	order_id	VARCHAR	(22)  NOT NULL,
+	product_id	VARCHAR	(4)  NOT NULL,
 	order_time	DATETIME,	
 	order_addr	VARCHAR	(64),
 	howmuch	INTEGER	, #商品數量
@@ -128,8 +128,8 @@ CREATE TABLE order_details(
 
 #3.訂單清單
 CREATE TABLE orders(
-	order_id VARCHAR (22) UNIQUE NOT NULL,
-	mem_id	VARCHAR	(64) UNIQUE NOT NULL,
+	order_id VARCHAR (22)  NOT NULL,
+	mem_id	VARCHAR	(64)  NOT NULL,
     
     PRIMARY KEY (order_id),
 	FOREIGN KEY (order_id) REFERENCES order_details(order_id),
@@ -165,7 +165,7 @@ CREATE TABLE comment(
 
 #9.購物車
 CREATE TABLE cart(
-	mem_id	VARCHAR	(64) UNIQUE NOT NULL,
+	mem_id	VARCHAR	(64)  NOT NULL,
 	product_id	VARCHAR	(4) UNIQUE NOT NULL,
 	order_amount INTEGER,
 
@@ -177,9 +177,89 @@ CREATE TABLE cart(
 
 #10.商品圖片
 CREATE TABLE product_img(
-	product_id	VARCHAR	(4) UNIQUE NOT NULL,
+	product_id	VARCHAR	(4)  NOT NULL,
 	img_link VARCHAR(6),	#P001-1
 
     PRIMARY KEY (product_id,img_link),
     FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 );
+
+INSERT INTO product_img VALUES ('P001', 'P001-1');
+INSERT INTO product_img VALUES ('P001', 'P001-2');
+INSERT INTO product_img VALUES ('P001', 'P001-3');
+
+INSERT INTO product_img VALUES ('P002', 'P002-1');
+INSERT INTO product_img VALUES ('P002', 'P002-2');
+INSERT INTO product_img VALUES ('P002', 'P002-3');
+
+INSERT INTO product_img VALUES ('P003', 'P003-1');
+INSERT INTO product_img VALUES ('P003', 'P003-2');
+INSERT INTO product_img VALUES ('P003', 'P003-3');
+
+INSERT INTO product_img VALUES ('P004', 'P004-1');
+INSERT INTO product_img VALUES ('P004', 'P004-2');
+INSERT INTO product_img VALUES ('P004', 'P004-3');
+
+INSERT INTO product_img VALUES ('P005', 'P005-1');
+INSERT INTO product_img VALUES ('P005', 'P005-2');
+INSERT INTO product_img VALUES ('P005', 'P005-3');
+
+INSERT INTO product_img VALUES ('P006', 'P006-1');
+INSERT INTO product_img VALUES ('P006', 'P006-2');
+INSERT INTO product_img VALUES ('P006', 'P006-3');
+
+INSERT INTO product_img VALUES ('P007', 'P007-1');
+INSERT INTO product_img VALUES ('P007', 'P007-2');
+INSERT INTO product_img VALUES ('P007', 'P007-3');
+
+INSERT INTO product_img VALUES ('P008', 'P008-1');
+INSERT INTO product_img VALUES ('P008', 'P008-2');
+INSERT INTO product_img VALUES ('P008', 'P008-3');
+
+INSERT INTO product_img VALUES ('P009', 'P009-1');
+INSERT INTO product_img VALUES ('P009', 'P009-2');
+INSERT INTO product_img VALUES ('P009', 'P009-3');
+
+INSERT INTO product_img VALUES ('P010', 'P010-1');
+INSERT INTO product_img VALUES ('P010', 'P010-2');
+INSERT INTO product_img VALUES ('P010', 'P010-3');
+
+INSERT INTO product_img VALUES ('P011', 'P011-1');
+INSERT INTO product_img VALUES ('P011', 'P011-2');
+INSERT INTO product_img VALUES ('P011', 'P011-3');
+
+INSERT INTO product_img VALUES ('P012', 'P012-1');
+INSERT INTO product_img VALUES ('P012', 'P012-2');
+INSERT INTO product_img VALUES ('P012', 'P012-3');
+
+INSERT INTO product_img VALUES ('P013', 'P013-1');
+INSERT INTO product_img VALUES ('P013', 'P013-2');
+INSERT INTO product_img VALUES ('P013', 'P013-3');
+
+INSERT INTO product_img VALUES ('P014', 'P014-1');
+INSERT INTO product_img VALUES ('P014', 'P014-2');
+INSERT INTO product_img VALUES ('P014', 'P014-3');
+
+INSERT INTO product_img VALUES ('P015', 'P015-1');
+INSERT INTO product_img VALUES ('P015', 'P015-2');
+INSERT INTO product_img VALUES ('P015', 'P015-3');
+
+INSERT INTO product_img VALUES ('P016', 'P016-1');
+INSERT INTO product_img VALUES ('P016', 'P016-2');
+INSERT INTO product_img VALUES ('P016', 'P016-3');
+
+INSERT INTO product_img VALUES ('P017', 'P017-1');
+INSERT INTO product_img VALUES ('P017', 'P017-2');
+INSERT INTO product_img VALUES ('P017', 'P017-3');
+
+INSERT INTO product_img VALUES ('P018', 'P018-1');
+INSERT INTO product_img VALUES ('P018', 'P018-2');
+INSERT INTO product_img VALUES ('P018', 'P018-3');
+
+INSERT INTO product_img VALUES ('P019', 'P019-1');
+INSERT INTO product_img VALUES ('P019', 'P019-2');
+INSERT INTO product_img VALUES ('P019', 'P019-3');
+
+INSERT INTO product_img VALUES ('P020', 'P020-1');
+INSERT INTO product_img VALUES ('P020', 'P020-2');
+INSERT INTO product_img VALUES ('P020', 'P020-3');
