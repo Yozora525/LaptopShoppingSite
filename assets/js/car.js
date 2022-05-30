@@ -12,8 +12,31 @@ $(function() {
     $('input[name="item-quan"').on('change', function(event){
         let index = $('input[name="item-quan"').index(this);
         let sum = parseInt($($('input[name="item-price"]')[index]).val()) * parseInt($(this).val());
-        $($('span[name="item-sum"]')[index]).html(sum);
-        $('span[name="item-sum"]').change();
+        let item = $($('input[name="item-name"]')[index]).val();
+        // $($('span[name="item-sum"]')[index]).html(sum);
+        // $('span[name="item-sum"]').change();
+
+        $.ajax({
+            url: "/",
+            type: "POST",
+            // dataType: 'json',
+            data: {'product':item,'quan':$(this).val(),'sum':sum},
+            success: function(data) {
+                if(data['res']=='success'){
+                    $($('span[name="item-sum"]')[index]).html(sum);
+                    $('span[name="item-sum"]').change();
+                }
+                else{
+                    alert(data['msg']);
+                    // alert('發生錯誤，請稍後再試');
+                    location.reload();
+                }
+            },
+            error: function(jqXHR) {
+                alert(jqXHR.statusText);
+                alert(jqXHR.responseText);
+            }
+        });
     });
 
     $('input[name="item-check"]').on('change', function(event){
