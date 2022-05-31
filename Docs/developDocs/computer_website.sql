@@ -95,11 +95,18 @@ CREATE TABLE mem_infor(
 	mem_name VARCHAR	(16) NOT NULL,
 	mem_sex	VARCHAR	(2),
 	mem_phone	VARCHAR	(12),
-	mem_birth	VARCHAR	(8),
+	mem_birth	VARCHAR	(10),
+	mem_create	VARCHAR	(10),
 	mem_email VARCHAR (512) UNIQUE NOT NULL,
     
     PRIMARY KEY (mem_id, mem_email)
 );
+
+#INSERT INTO mem_infor VALUES ('','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01', 'adsasddsa@gmail.com');
+#INSERT INTO mem_infor VALUES ('','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31', 'abbcccddde@yahoo.com');
+#INSERT INTO mem_infor VALUES ('','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09', 'ag128442da@gmail.com');
+#INSERT INTO mem_infor VALUES ('','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30', 'xyyz17rip976da@yahoo.com');
+#INSERT INTO mem_infor VALUES ('','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02', 'aqwert2yy@gmail.com');
 
 #1.登入
 CREATE TABLE login (
@@ -112,11 +119,16 @@ CREATE TABLE login (
    	#FOREIGN KEY (account) REFERENCES mem_infor(mem_email)
 );
 
+#INSERT INTO login VALUES ('', 'adsasddsa@gmail.com', 'unhappypi000');
+#INSERT INTO login VALUES ('', 'abbcccddde@yahoo.com', 'happeko988');
+#INSERT INTO login VALUES ('', 'ag128442da@gmail.com', 'pi4happy');
+#INSERT INTO login VALUES ('', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
+#INSERT INTO login VALUES ('', 'aqwert2yy@gmail.com', 'happi111');
 
 
 #4.訂單明細
 CREATE TABLE order_details(
-	order_id	VARCHAR	(22)  NOT NULL,
+	order_id	VARCHAR	(22)  NOT NULL, --Order+售出日期10碼+購買時間
 	product_id	VARCHAR	(4)  NOT NULL,
 	order_time	DATETIME,	
 	order_addr	VARCHAR	(64),
@@ -125,6 +137,17 @@ CREATE TABLE order_details(
     PRIMARY KEY (order_id,product_id),
     FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 );
+
+#INSERT INTO order_details VALUES ('', 'P001', '','320桃園市中壢區中北路200號','2');
+#INSERT INTO order_details VALUES ('', 'P015', '','320桃園市中壢區大仁街6號','1');
+#INSERT INTO order_details VALUES ('', 'P002', '','100台北市中正區重慶南路一段122號','64');
+#INSERT INTO order_details VALUES ('', 'P012', '','100台北市中正區重慶南路一段122號','3');
+#INSERT INTO order_details VALUES ('', 'P007', '','100台北市中正區重慶南路一段122號','10');
+#INSERT INTO order_details VALUES ('', 'P004', '','320桃園市中壢區中北路131號','5');
+#INSERT INTO order_details VALUES ('', 'P018', '','320桃園市中壢區中北路131號','15');
+#INSERT INTO order_details VALUES ('', 'P001', '','106台北市大安區基隆路二段207號','90');
+#INSERT INTO order_details VALUES ('', 'P014', '','106台北市大安區基隆路二段207號','13');
+#INSERT INTO order_details VALUES ('', 'P003', '','106台北市大安區基隆路二段207號','6');
 
 #3.訂單清單
 CREATE TABLE orders(
@@ -135,6 +158,12 @@ CREATE TABLE orders(
 	FOREIGN KEY (order_id) REFERENCES order_details(order_id),
     FOREIGN KEY (mem_id) REFERENCES mem_infor(mem_id)
 );
+
+#INSERT INTO orders VALUES ('', '');
+#INSERT INTO orders VALUES ('', '');
+#INSERT INTO orders VALUES ('', '');
+#INSERT INTO orders VALUES ('', '');
+#INSERT INTO orders VALUES ('', '');
 
 SELECT * FROM orders;
 
@@ -152,6 +181,16 @@ CREATE TABLE comment(
 	FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 
 );
+
+#INSERT INTO comment VALUES ('', 'P001', '超級好用，人生用過最好的筆電。', '5', '');
+#INSERT INTO comment VALUES ('', 'P012', '會分享給親朋好友，效能極佳。', '5', '');
+#INSERT INTO comment VALUES ('', 'P001', '推薦，但並沒有很符合我的需求。', '4', '');
+#INSERT INTO comment VALUES ('', 'P006', '期待越高，失望越大。', '2', '');
+#INSERT INTO comment VALUES ('', 'P018', '介面清操作容易且非常清楚易懂。', '5', '');
+#INSERT INTO comment VALUES ('', 'P003', '中規中矩，CP值普普。', '3', '');
+#INSERT INTO comment VALUES ('', 'P016', '還不錯，但仍有可進步空間。', '4', '');
+#INSERT INTO comment VALUES ('', 'P015', '與想像中效果有些落差。', '2', '');
+#INSERT INTO comment VALUES ('', 'P006', '功能極強，非常喜歡。', '5', '');
 
 #8.反饋單
 #CREATE TABLE contact(
@@ -174,6 +213,16 @@ CREATE TABLE cart(
 	FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 
 );
+
+#INSERT INTO cart VALUES ('', 'P011', '5');
+#INSERT INTO cart VALUES ('', 'P007', '3');
+#INSERT INTO cart VALUES ('', 'P001', '10');
+#INSERT INTO cart VALUES ('', 'P016', '4');
+#INSERT INTO cart VALUES ('', 'P005', '2');
+#INSERT INTO cart VALUES ('', 'P019', '1');
+#INSERT INTO cart VALUES ('', 'P012', '13');
+#INSERT INTO cart VALUES ('', 'P015', '6');
+#INSERT INTO cart VALUES ('', 'P020', '9');
 
 #10.商品圖片
 CREATE TABLE product_img(
