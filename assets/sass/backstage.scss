@@ -1,0 +1,104 @@
+@mixin small {
+    @media (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1000px){
+        @content;
+    }
+}
+
+
+// 新增商品
+
+
+
+// 產品列表
+.pro-container{
+    @include small{
+
+    }
+
+    @include large{
+        margin: 5% 5% 3% 5%;
+
+        .pro-table-title{
+            width: 100%;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }
+
+        .pro-table{
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid black; 
+            border-collapse: collapse;
+
+            th,td{
+                
+                text-align: center;
+                font-size: 16px;
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+
+            button{
+                width: 50%;
+                background-color: #0096C7;
+                color: #fff;
+                border: 0px;
+            }
+        }
+
+
+    }
+}
+
+// 交易資料
+.trans-data-container{
+    @include small{
+
+    }
+
+    @include large{
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 16px;
+
+        .trans-filter{
+            margin-top: 0.5%;
+        }
+
+        .trans-table-title{
+            width: 100%;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }
+
+        .trans-table{
+            margin-top:1%;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid black; 
+            border-collapse: collapse;
+
+            th,td{
+                text-align: center;
+                font-size: 16px;
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+        }
+
+
+    }
+}
+

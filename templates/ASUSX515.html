@@ -63,27 +63,38 @@
             <div class="L-INFO">
                 <img  class="L-I-IMG" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                 <div class="L-I-CONTENT">
-                    <h1>商品名稱:ASUS X515</h1><hr><br>
-                    <h3>搭載Intel® Core™ i5 處理器</h3><br>
-                    <h3>NVIDIA® GeForce® MX330 獨立顯示卡</h3><br>
-                    <h3>最高512GB SSD硬碟</h3><br>
-                    <h3>83% 螢幕占比 15.6吋FHD螢幕</h3><br>
+                    <h1>ASUS X515</h1><hr style="width: 80%;"><br>
+                    <h3>NT$17900</h3><br>
                     <h3>存貨數量:10</h3><br>
                     <div class="buy">
-                        購買數量: 
-                        <input type="number" min="1" max="10" class="input"/>
-                        <div class="car">加入購物車</div>
+                        <h3>購買數量:</h3> 
+                        <input onkeyup="value=value.replace(/[^\d]/g,'') " type="number" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  min="1" max="10" class="input">
+                        <div class="car">
+                            <img src="../assets/img/google-icon/car+.png" class="car+">
+                            加入購物車
+                        </div>
                         <div class="car">立即購買</div>
                     </div>                                    
                 </div>
             </div>  
         </div>
-        <h1 style="text-align: center ;padding-top:30px;">商品評論</h1>
+        <h1 style="text-align: center;padding-top:3%;">商品細節</h1>
+        <div class="LAPDETAIL">
+            <div class="L-INFO" style="text-align: center;">
+                <div class="L-I-DETAIL">     
+                    <h3>搭載Intel® Core™ i5 處理器</h3><br>
+                    <h3>NVIDIA® GeForce® MX330 獨立顯示卡</h3><br>
+                    <h3>最高512GB SSD硬碟</h3><br>
+                    <h3>83% 螢幕占比 15.6吋FHD螢幕</h3><br>
+                </div>
+            </div>  
+        </div>
+        <h1 style="text-align: center ;padding-top:3%;">商品評論</h1>
         <div class="COMMENTLIST">
             <div class="COMMENT">
                 王曉明:<br>
                 這個筆電便宜又好用
-            </div><br>
+            </div>
             <div class="COMMENT">
                 陳大華:<br>
                 買到他根本賺到阿 雖然是文書機 但是整體性能超棒的
@@ -93,9 +104,9 @@
                 身為小資的我 這一款筆電相當適合需求不高的族群
             </div>
         </div>
-        <h1 style="text-align: center ;padding-top:30px;">輸入評論</h1>
+        <h1 style="text-align: center ;padding-top:2%;">輸入評論</h1>
         <div class="WORD">
-            <textarea name="COMMENT" cols="60" rows="10" wrap="hard"></textarea>
+            <textarea name="COMMENT" cols="185" rows="10" wrap="hard"></textarea>
             <div class="submit">
                送出
             </div>
