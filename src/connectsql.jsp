@@ -24,7 +24,10 @@
                 sql = "USE `computer_shop`";
                 con.createStatement().execute(sql);
 
-
+                String logacc = request.Parameter("account_log");
+                String logpas = request.Parameter("password_log");
+                String regacc = request.Parameter("account_reg");
+                String regpas = request.Parameter("password_reg");
 
             }
             con.close();

@@ -95,8 +95,8 @@ CREATE TABLE mem_infor(
 	mem_name VARCHAR	(16) NOT NULL,
 	mem_sex	VARCHAR	(2),
 	mem_phone	VARCHAR	(12),
-	mem_birth	VARCHAR	(10),
-	mem_create	VARCHAR	(14),
+	mem_birth	DATE,
+	mem_create	DATETIME,
 	mem_email VARCHAR (512) UNIQUE NOT NULL,
     
     PRIMARY KEY (mem_id, mem_email)
