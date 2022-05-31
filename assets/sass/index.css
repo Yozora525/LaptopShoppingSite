@@ -1,8 +1,32 @@
 @media (min-width: 1000px) {
   .product-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 5% 2.5% 5% 2.5%;
     border: 1px solid #ccc;
+  }
+}
+
+@media (min-width: 1000px) {
+  .prohot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 10%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .prohotlist {
+    padding-left: 5%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .prohottext {
+    padding-top: 1%;
+    text-align: center;
   }
 }
 
@@ -29,14 +53,19 @@
     margin-bottom: 2%;
   }
 }
+
 @media (min-width: 1000px) {
   .product {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
 
 @media (min-width: 0px) {
   .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: white;
     border-radius: 10px;
@@ -44,6 +73,7 @@
     margin-bottom: 2%;
   }
 }
+
 @media (min-width: 1000px) {
   .list {
     display: block;
@@ -52,7 +82,7 @@
     width: 25%;
     margin-left: 1%;
     margin-right: 1%;
-    height: 260px;
+    height: 300px;
     margin-bottom: 0%;
   }
 }
@@ -63,69 +93,39 @@
     width: 100%;
   }
 }
+
 @media (min-width: 1000px) {
   .listimg {
     max-height: 200px;
     width: 100%;
     padding-top: 10px;
   }
-}/*# sourceMappingURL=index.css.map */
+}
 
 @media (min-width: 0px) {
   .protext {
-  
+    max-height: 150px;
+    width: 100%;
   }
 }
+
 @media (min-width: 1000px) {
   .protext {
-    font-family:"微軟正黑體";
     text-align: center;
   }
 }
 
-@media (min-width: 0px) {
-  .prohot {
-    
-  }
-}
 @media (min-width: 1000px) {
-  .prohot {
-    background-color: #eee;
-    display: flex;
+  .btn-filter {
+    background-color: #84C1FF;
+    width: 50%;
+    border-radius: 10px;
   }
 }
 
-@media (min-width: 0px) {
-  .prohot-img {
-    
-  }
-}
 @media (min-width: 1000px) {
-  .prohot-img {
-    max-width: 300px;
-    max-height: 200px;
+  .input {
+    width: 50%;
   }
 }
-
-@media (min-width: 0px) {
-  .prohotlist {
-    
-  }
-}
-@media (min-width: 1000px) {
-  .prohotlist{
-     display: block;
-     padding-left: 15%;
-  }
-}
-
-@media (min-width: 0px) {
-  .prohottext {
-    
-  }
-}
-@media (min-width: 1000px) {
-  .prohottext{
-     padding-bottom: 20px;
-  }
-}
+/*# sourceMappingURL=index.css.map */

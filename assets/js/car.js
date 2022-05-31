@@ -15,6 +15,16 @@ $(function() {
         let item = $($('input[name="item-name"]')[index]).val();
         // $($('span[name="item-sum"]')[index]).html(sum);
         // $('span[name="item-sum"]').change();
+        $.blockUI({
+            message: $("#loading"),
+            css: {
+                "border": "none",
+                "backgroundColor": "rgba(0,0,0,0)",
+                "backgroundImage": "url('LaptopShoppingSiteFront/assets/img/loading.gif')",
+                "backgroundSize": "100%",
+                
+            }
+        });
 
         $.ajax({
             url: "/",
@@ -25,9 +35,11 @@ $(function() {
                 if(data['res']=='success'){
                     $($('span[name="item-sum"]')[index]).html(sum);
                     $('span[name="item-sum"]').change();
+                    $.unblockUI();
                 }
                 else{
                     alert(data['msg']);
+                    $.unblockUI();
                     // alert('發生錯誤，請稍後再試');
                     location.reload();
                 }

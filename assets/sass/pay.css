@@ -3,6 +3,7 @@
     display: none;
   }
 }
+
 @media (min-width: 1000px) {
   .pay-container {
     margin-top: 5%;
@@ -10,6 +11,8 @@
     margin-right: 5%;
   }
   .pay-container .pay-title-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-size: 18px;
     height: 40px;
@@ -26,6 +29,8 @@
     text-align: left;
   }
   .pay-container .pay-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1.5%;
     height: 40px;
@@ -46,6 +51,8 @@
     width: 100%;
   }
   .pay-container .pay-checkout {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #FFF;
     font-size: 18px;
@@ -72,4 +79,5 @@
     color: #fff;
     background-color: #0096C7;
   }
-}/*# sourceMappingURL=pay.css.map */
+}
+/*# sourceMappingURL=pay.css.map */

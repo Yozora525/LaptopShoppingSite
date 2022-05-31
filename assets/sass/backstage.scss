@@ -12,7 +12,25 @@
 
 
 // 新增商品
+.add-pro-container{
+    @include small{
 
+    }
+
+    @include large{
+        margin: 2% 5% 3% 5%;
+        text-align: right;
+
+        button{
+            width: 30%;
+            height: 30px;
+            font-size: 1em;
+            background-color: #0096C7;
+            color: #fff;
+            border: 0;
+        }
+    }
+}
 
 
 // 產品列表
@@ -22,7 +40,7 @@
     }
 
     @include large{
-        margin: 5% 5% 3% 5%;
+        margin: 2% 5% 3% 5%;
 
         .pro-table-title{
             width: 100%;

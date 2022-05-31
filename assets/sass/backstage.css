@@ -1,6 +1,21 @@
 @media (min-width: 1000px) {
+  .add-pro-container {
+    margin: 2% 5% 3% 5%;
+    text-align: right;
+  }
+  .add-pro-container button {
+    width: 30%;
+    height: 30px;
+    font-size: 1em;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0;
+  }
+}
+
+@media (min-width: 1000px) {
   .pro-container {
-    margin: 5% 5% 3% 5%;
+    margin: 2% 5% 3% 5%;
   }
   .pro-container .pro-table-title {
     width: 100%;
@@ -60,4 +75,5 @@
     border: 1px solid black;
     border-collapse: collapse;
   }
-}/*# sourceMappingURL=backstage.css.map */
+}
+/*# sourceMappingURL=backstage.css.map */

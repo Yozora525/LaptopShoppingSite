@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../assets/sass/common.css" />
     <style>
         @import url("../assets/sass/product.css");
-        @import url("../assets/sass/ASUS.css");
+        @import url("../assets/sass/ASUSX515.css");
     </style>
 </head>
 <body>
@@ -61,14 +61,22 @@
         </div>
         <div class="LAP">
             <div class="L-INFO">
-                <img  class="L-I-IMG" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                <div class="L-I-IMG">
+                    <div class="L-I-IMG-1">
+                        <img width="200px" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                    </div>
+                    <div class="L-I-IMG-IN">
+                        <img width="100px"  src="../assets/img/pro/ASUS/ASUS X515_1.png" /> 
+                        <img width="100px"  src="../assets/img/pro/ASUS/ASUS X515_2.png" />
+                    </div>
+                </div>
                 <div class="L-I-CONTENT">
                     <h1>ASUS X515</h1><hr style="width: 80%;"><br>
                     <h3>NT$17900</h3><br>
                     <h3>存貨數量:10</h3><br>
                     <div class="buy">
                         <h3>購買數量:</h3> 
-                        <input onkeyup="value=value.replace(/[^\d]/g,'') " type="number" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  min="1" max="10" class="input">
+                        <input onkeyup="value=value.replace(/[^\d]/g,'') " type="number" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  min="1" max="10" value="1" class="input">
                         <div class="car">
                             <img src="../assets/img/google-icon/car+.png" class="car+">
                             加入購物車
@@ -106,7 +114,9 @@
         </div>
         <h1 style="text-align: center ;padding-top:2%;">輸入評論</h1>
         <div class="WORD">
-            <textarea name="COMMENT" cols="185" rows="10" wrap="hard"></textarea>
+            <div class="textarea">
+                <textarea name="COMMENT" cols="185" rows="10" wrap="hard"></textarea>
+            </div>
             <div class="submit">
                送出
             </div>

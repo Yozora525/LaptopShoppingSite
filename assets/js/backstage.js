@@ -47,5 +47,7 @@ $(function(){
     $('#trans-table-title').on('click', function(event){
         $('#trans-filter').slideToggle();
         $('#trans-table').slideToggle();
-    })
+    });
+
+    
 });

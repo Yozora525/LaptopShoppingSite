@@ -23,6 +23,37 @@
 }
 
 
+.prohot{
+    @include small{
+
+    }
+    @include large{
+        display: flex;
+        margin-left: 10%;
+
+    }
+}
+.prohotlist{
+    @include small{
+
+    }
+    @include large{
+        padding-left: 5%;
+
+    }
+}
+
+.prohottext{
+    @include small{
+
+    }
+    @include large{
+        padding-top: 1%;
+        text-align: center;
+
+    }
+}
+
 
 
 // 篩絢
@@ -114,5 +145,35 @@
 }
 
 .protext{
-    // font-family:"微軟正黑體";
+    @include small{
+        max-height: 150px;
+        width: 100%;
+        // padding-top: 10px ;
+    }
+
+    @include large{
+       text-align: center;
+       
+    }
+}
+.btn-filter{
+    @include small{
+       
+    }
+
+    @include large{
+        background-color: #84C1FF;
+        width: 50%;
+        border-radius: 10px;
+    }
+}
+
+.input{
+    @include small{
+       
+    }
+
+    @include large{
+        width: 50%;
+    }
 }
