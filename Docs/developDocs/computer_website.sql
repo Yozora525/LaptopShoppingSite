@@ -102,11 +102,11 @@ CREATE TABLE mem_infor(
     PRIMARY KEY (mem_id, mem_email)
 );
 
-INSERT INTO mem_infor VALUES ('MEM001','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01', 'adsasddsa@gmail.com');
-INSERT INTO mem_infor VALUES ('MEM002','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31', 'abbcccddde@yahoo.com');
-INSERT INTO mem_infor VALUES ('MEM003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09', 'ag128442da@gmail.com');
-INSERT INTO mem_infor VALUES ('MEM004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30', 'xyyz17rip976da@yahoo.com');
-INSERT INTO mem_infor VALUES ('MEM005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02', 'aqwert2yy@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM20220601112045001','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01', 'adsasddsa@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM20220531100430002','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31', 'abbcccddde@yahoo.com');
+INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09', 'ag128442da@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30', 'xyyz17rip976da@yahoo.com');
+INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02', 'aqwert2yy@gmail.com');
 
 #1.登入
 CREATE TABLE login (
@@ -119,16 +119,16 @@ CREATE TABLE login (
    	#FOREIGN KEY (account) REFERENCES mem_infor(mem_email)
 );
 
-INSERT INTO login VALUES ('MEM001', 'adsasddsa@gmail.com', 'unhappypi000');
-INSERT INTO login VALUES ('MEM002', 'abbcccddde@yahoo.com', 'happeko988');
-INSERT INTO login VALUES ('MEM003', 'ag128442da@gmail.com', 'pi4happy');
-INSERT INTO login VALUES ('MEM004', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
-INSERT INTO login VALUES ('MEM005', 'aqwert2yy@gmail.com', 'happi111');
+INSERT INTO login VALUES ('MEM20220601112045001', 'adsasddsa@gmail.com', 'unhappypi000');
+INSERT INTO login VALUES ('MEM20220531100430002', 'abbcccddde@yahoo.com', 'happeko988');
+INSERT INTO login VALUES ('MEM20220609222218003', 'ag128442da@gmail.com', 'pi4happy');
+INSERT INTO login VALUES ('MEM20220530130455004', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
+INSERT INTO login VALUES ('MEM20220602194439005', 'aqwert2yy@gmail.com', 'happi111');
 
 
 #4.訂單明細
 CREATE TABLE order_details(
-	order_id	VARCHAR	(22)  NOT NULL, #--Order+售出日期10碼+購買時間
+	order_id	VARCHAR	(22)  NOT NULL, 
 	product_id	VARCHAR	(4)  NOT NULL,
 	order_time	DATETIME,	
 	order_addr	VARCHAR	(64),
@@ -138,16 +138,16 @@ CREATE TABLE order_details(
     FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 );
 
-#INSERT INTO order_details VALUES ('', 'P001', '','320桃園市中壢區中北路200號','2');
-#INSERT INTO order_details VALUES ('', 'P015', '','320桃園市中壢區大仁街6號','1');
-#INSERT INTO order_details VALUES ('', 'P002', '','100台北市中正區重慶南路一段122號','64');
-#INSERT INTO order_details VALUES ('', 'P012', '','100台北市中正區重慶南路一段122號','3');
-#INSERT INTO order_details VALUES ('', 'P007', '','100台北市中正區重慶南路一段122號','10');
-#INSERT INTO order_details VALUES ('', 'P004', '','320桃園市中壢區中北路131號','5');
-#INSERT INTO order_details VALUES ('', 'P018', '','320桃園市中壢區中北路131號','15');
-#INSERT INTO order_details VALUES ('', 'P001', '','106台北市大安區基隆路二段207號','90');
-#INSERT INTO order_details VALUES ('', 'P014', '','106台北市大安區基隆路二段207號','13');
-#INSERT INTO order_details VALUES ('', 'P003', '','106台北市大安區基隆路二段207號','6');
+#INSERT INTO order_details VALUES ('order20220610223210001', 'P001', '2022-06-10 22:32:10','320桃園市中壢區中北路200號','2');
+#INSERT INTO order_details VALUES ('order20220613121215015', 'P015', '2022-06-13 12:12:15','320桃園市中壢區大仁街6號','1');
+#INSERT INTO order_details VALUES ('order20220611161715101', 'P002', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','64');
+#INSERT INTO order_details VALUES ('order20220611161715101', 'P012', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','3');
+#INSERT INTO order_details VALUES ('order20220611161715101', 'P007', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','10');
+#INSERT INTO order_details VALUES ('order20220610111139987', 'P004', '2022-06-10 14:11:39','320桃園市中壢區中北路131號','5');
+#INSERT INTO order_details VALUES ('order20220610111139987', 'P018', '2022-06-10 14:11:39','320桃園市中壢區中北路131號','15');
+#INSERT INTO order_details VALUES ('order20220615205144324', 'P001', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','90');
+#INSERT INTO order_details VALUES ('order20220615205144324', 'P014', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','13');
+#INSERT INTO order_details VALUES ('order20220615205144324', 'P003', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','6');
 
 #3.訂單清單
 CREATE TABLE orders(
@@ -159,11 +159,11 @@ CREATE TABLE orders(
     FOREIGN KEY (mem_id) REFERENCES mem_infor(mem_id)
 );
 
-#INSERT INTO orders VALUES ('', '');
-#INSERT INTO orders VALUES ('', '');
-#INSERT INTO orders VALUES ('', '');
-#INSERT INTO orders VALUES ('', '');
-#INSERT INTO orders VALUES ('', '');
+#INSERT INTO orders VALUES ('order20220613121215015', 'MEM20220601112045001');
+#INSERT INTO orders VALUES ('order20220610223210001', 'MEM20220531100430002');
+#INSERT INTO orders VALUES ('order20220610111139987', 'MEM20220609222218003');
+#INSERT INTO orders VALUES ('order20220611161715101', 'MEM20220530130455004');
+#INSERT INTO orders VALUES ('order20220615205144324', 'MEM20220602194439005');
 
 SELECT * FROM orders;
 
@@ -182,15 +182,15 @@ CREATE TABLE comment(
 
 );
 
-#INSERT INTO comment VALUES ('', 'P001', '超級好用，人生用過最好的筆電。', '5', '');
-#INSERT INTO comment VALUES ('', 'P012', '會分享給親朋好友，效能極佳。', '5', '');
-#INSERT INTO comment VALUES ('', 'P001', '推薦，但並沒有很符合我的需求。', '4', '');
-#INSERT INTO comment VALUES ('', 'P006', '期待越高，失望越大。', '2', '');
-#INSERT INTO comment VALUES ('', 'P018', '介面清操作容易且非常清楚易懂。', '5', '');
-#INSERT INTO comment VALUES ('', 'P003', '中規中矩，CP值普普。', '3', '');
-#INSERT INTO comment VALUES ('', 'P016', '還不錯，但仍有可進步空間。', '4', '');
-#INSERT INTO comment VALUES ('', 'P015', '與想像中效果有些落差。', '2', '');
-#INSERT INTO comment VALUES ('', 'P006', '功能極強，非常喜歡。', '5', '');
+#INSERT INTO comment VALUES ('MEM20220601112045001', 'P001', '超級好用，人生用過最好的筆電。', '5', '2022-06-10 10:45:36');
+#INSERT INTO comment VALUES ('MEM20220531100430002', 'P012', '會分享給親朋好友，效能極佳。', '5', '2022-05-31 09:08:23');
+#INSERT INTO comment VALUES ('MEM20220530130455004', 'P001', '推薦，但並沒有很符合我的需求。', '4', '2022-05-30 23:15:04');
+#INSERT INTO comment VALUES ('MEM20220609222218003', 'P006', '期待越高，失望越大。', '2', '2022-06-09 07:12:55');
+#INSERT INTO comment VALUES ('MEM20220601112045001', 'P018', '介面清操作容易且非常清楚易懂。', '5', '2022-06-16 11:23:48');
+#INSERT INTO comment VALUES ('MEM20220530130455004', 'P003', '中規中矩，CP值普普。', '3', '2022-06-13 03:00:01');
+#INSERT INTO comment VALUES ('MEM20220602194439005', 'P016', '還不錯，但仍有可進步空間。', '4', '2022-06-11 01:30:23');
+#INSERT INTO comment VALUES ('MEM20220601112045001', 'P015', '與想像中效果有些落差。', '2', '2022-05-31 17:59:59');
+#INSERT INTO comment VALUES ('MEM20220531100430002', 'P006', '功能極強，非常喜歡。', '5', '2022-06-12 20:55:45');
 
 #8.反饋單
 #CREATE TABLE contact(
@@ -214,15 +214,15 @@ CREATE TABLE cart(
 
 );
 
-#INSERT INTO cart VALUES ('', 'P011', '5');
-#INSERT INTO cart VALUES ('', 'P007', '3');
-#INSERT INTO cart VALUES ('', 'P001', '10');
-#INSERT INTO cart VALUES ('', 'P016', '4');
-#INSERT INTO cart VALUES ('', 'P005', '2');
-#INSERT INTO cart VALUES ('', 'P019', '1');
-#INSERT INTO cart VALUES ('', 'P012', '13');
-#INSERT INTO cart VALUES ('', 'P015', '6');
-#INSERT INTO cart VALUES ('', 'P020', '9');
+#INSERT INTO cart VALUES ('MEM20220601112045001', 'P011', '5');
+#INSERT INTO cart VALUES ('MEM20220531100430002', 'P007', '3');
+#INSERT INTO cart VALUES ('MEM20220531100430002', 'P001', '10');
+#INSERT INTO cart VALUES ('MEM20220609222218003', 'P016', '4');
+#INSERT INTO cart VALUES ('MEM20220609222218003', 'P005', '2');
+#INSERT INTO cart VALUES ('MEM20220609222218003', 'P019', '1');
+#INSERT INTO cart VALUES ('MEM20220530130455004', 'P012', '13');
+#INSERT INTO cart VALUES ('MEM20220602194439005', 'P015', '6');
+#INSERT INTO cart VALUES ('MEM20220602194439005', 'P020', '9');
 
 #10.商品圖片
 CREATE TABLE product_img(
