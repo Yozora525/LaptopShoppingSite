@@ -1,3 +1,6 @@
+<%@ page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<jsp:include page="connectsql.jsp">
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,7 +43,7 @@
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
-                        <a  href=""><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
@@ -60,11 +63,11 @@
                 <!-- 登入介面 -->
                 <div id="login-container" class="login-container">
                     <div class="login">
-                        <input type="text" id="acc" placeholder="帳號"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" /><br/>
+                        <input type="text" id="acc" placeholder="帳號" name="account_log" onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" /><br/>
                         <label id="login-acc-tip" class="tip"></label>
                     </div>
                     <div  class="login">
-                        <input type="password" id="pwd" placeholder="密碼" /><br/>
+                        <input type="password" id="pwd" placeholder="密碼" name="password_log"/><br/>
                         <label id="login-pwd-tip" class="tip"></label>
                     </div>
                     <div class="btn-login">
@@ -74,11 +77,11 @@
                 <!-- 註冊介面 -->
                 <div id="register-container" class="login-container" style="display:none;">
                     <div class="login">
-                        <input type="text" id="reg-acc" placeholder="帳號(電子信箱)"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" required/><br/>
+                        <input type="text" id="reg-acc" placeholder="帳號(電子信箱)" name="account_reg" onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" required/><br/>
                         <label id="acc-tip" class="tip"></label>
                     </div>
                     <div class="login">
-                        <input type="password" id="reg-pwd" placeholder="密碼" required/><br/>
+                        <input type="password" id="reg-pwd" placeholder="密碼" name="password_reg" required/><br/>
                         <label id="pwd-tip" class="tip"></label>
                     </div>
                     <div class="login">

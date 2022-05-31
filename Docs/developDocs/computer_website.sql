@@ -96,22 +96,22 @@ CREATE TABLE mem_infor(
 	mem_sex	VARCHAR	(2),
 	mem_phone	VARCHAR	(12),
 	mem_birth	VARCHAR	(10),
-	mem_create	VARCHAR	(10),
+	mem_create	VARCHAR	(14),
 	mem_email VARCHAR (512) UNIQUE NOT NULL,
     
     PRIMARY KEY (mem_id, mem_email)
 );
 
-#INSERT INTO mem_infor VALUES ('','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01', 'adsasddsa@gmail.com');
-#INSERT INTO mem_infor VALUES ('','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31', 'abbcccddde@yahoo.com');
-#INSERT INTO mem_infor VALUES ('','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09', 'ag128442da@gmail.com');
-#INSERT INTO mem_infor VALUES ('','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30', 'xyyz17rip976da@yahoo.com');
-#INSERT INTO mem_infor VALUES ('','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02', 'aqwert2yy@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM001','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01', 'adsasddsa@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM002','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31', 'abbcccddde@yahoo.com');
+INSERT INTO mem_infor VALUES ('MEM003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09', 'ag128442da@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30', 'xyyz17rip976da@yahoo.com');
+INSERT INTO mem_infor VALUES ('MEM005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02', 'aqwert2yy@gmail.com');
 
 #1.登入
 CREATE TABLE login (
-	mem_id	VARCHAR(64)  NOT NULL,
-	mem_account	VARCHAR	(512)  NOT NULL,
+	mem_id	VARCHAR(64) NOT NULL,
+	mem_account	VARCHAR	(512) unique NOT NULL,
 	mem_password VARCHAR (32) NOT NULL,
     
     PRIMARY KEY (mem_id),
@@ -119,16 +119,16 @@ CREATE TABLE login (
    	#FOREIGN KEY (account) REFERENCES mem_infor(mem_email)
 );
 
-#INSERT INTO login VALUES ('', 'adsasddsa@gmail.com', 'unhappypi000');
-#INSERT INTO login VALUES ('', 'abbcccddde@yahoo.com', 'happeko988');
-#INSERT INTO login VALUES ('', 'ag128442da@gmail.com', 'pi4happy');
-#INSERT INTO login VALUES ('', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
-#INSERT INTO login VALUES ('', 'aqwert2yy@gmail.com', 'happi111');
+INSERT INTO login VALUES ('MEM001', 'adsasddsa@gmail.com', 'unhappypi000');
+INSERT INTO login VALUES ('MEM002', 'abbcccddde@yahoo.com', 'happeko988');
+INSERT INTO login VALUES ('MEM003', 'ag128442da@gmail.com', 'pi4happy');
+INSERT INTO login VALUES ('MEM004', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
+INSERT INTO login VALUES ('MEM005', 'aqwert2yy@gmail.com', 'happi111');
 
 
 #4.訂單明細
 CREATE TABLE order_details(
-	order_id	VARCHAR	(22)  NOT NULL, --Order+售出日期10碼+購買時間
+	order_id	VARCHAR	(22)  NOT NULL, #--Order+售出日期10碼+購買時間
 	product_id	VARCHAR	(4)  NOT NULL,
 	order_time	DATETIME,	
 	order_addr	VARCHAR	(64),
