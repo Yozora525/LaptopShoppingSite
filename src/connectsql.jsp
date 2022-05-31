@@ -1,11 +1,8 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ page import ="java.sql.*"%>
-<html>
-    <head>
-        <title>connectsql</title>
-    </head>
-    <body>
+<%@include file = "catchDate.jsp" %> 
+
 <%
     request.setCharacterEncoding("UTF-8");
     try{
@@ -21,13 +18,22 @@
                 out.println("connection success ");
 
 
-                sql = "USE `computer_shop`";
+                String sql = "USE `computer_shop`";
                 con.createStatement().execute(sql);
 
+                //抓前端輸入帳號密碼
                 String logacc = request.Parameter("account_log");
                 String logpas = request.Parameter("password_log");
-                String regacc = request.Parameter("account_reg");
+
+                if( logacc.equals != "" && logpas.equals != "" ){
+                    
+                }
+
+                //抓前端輸入帳號密碼
+                String regacc = request.Parameter("account_reg"); 
                 String regpas = request.Parameter("password_reg");
+
+                sql = ""
 
             }
             con.close();
@@ -41,5 +47,3 @@
     }
 
 %>
-</body>
-</html>
