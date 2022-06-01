@@ -226,21 +226,39 @@
                             String sql = "USE `computer_shop`";
                             con.createStatement().execute(sql);
                             
-                            sql = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor`";
+                            sql = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor` WHERE `product_status`=1";
                             ResultSet rs = con.createStatement().executeQuery(sql);
                             
-                            while(rs.next()){
-                                    out.println("<div class='product'>");
-                                        out.println("<div class='list'>");    
+                            
+                                out.println("<div class='product'>");
+                                int k=1;
+                                
+                                    while(rs.next()){
+                                       
+                                       if (k%5!=0){
+                                           k++;
+                                        out.println("<div class='list'>");   
                                         out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
                                         out.println("<div class='protext'>");
                                         out.println(rs.getString("product_name")+"<br>");
                                         out.println("NT$"+rs.getInt("product_price"));                
                                         out.println("</div>");  
                                         out.println("</div>");
-                                    out.println("</div");
-                                }
-                            
+                                         }else {
+                                        out.println("</div>");
+                                        out.println("<div class='product'>");
+                                        out.println("<div class='list'>");   
+                                        out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                                        out.println("<div class='protext'>");
+                                        out.println(rs.getString("product_name")+"<br>");
+                                        out.println("NT$"+rs.getInt("product_price"));                
+                                        out.println("</div>");  
+                                        out.println("</div>");
+                                        k=2;
+                                         }  
+                                    }
+                                 out.println("</div>");
+                                
 
                         }
                         con.close();
