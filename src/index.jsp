@@ -222,7 +222,6 @@
                             out.println("connection fail ");
                         }
                         else{
-                            out.println("connection success ");
 
                             String sql = "USE `computer_shop`";
                             con.createStatement().execute(sql);
@@ -231,19 +230,15 @@
                             ResultSet rs = con.createStatement().executeQuery(sql);
                             
                             while(rs.next()){
-                               for (int i=0; i<5; i++) {
                                     out.println("<div class='product'>");
-                                    for (int x=0; x<4; x++) {
-                                        out.println("<div class='list'>");
-                                        out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"_1.png' />");             
+                                        out.println("<div class='list'>");    
+                                        out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
                                         out.println("<div class='protext'>");
-                                        out.println(rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"<br>");
+                                        out.println(rs.getString("product_name")+"<br>");
                                         out.println("NT$"+rs.getInt("product_price"));                
                                         out.println("</div>");  
                                         out.println("</div>");
-                                        }
                                     out.println("</div");
-                                    }
                                 }
                             
 
