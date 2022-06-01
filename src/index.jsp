@@ -1,7 +1,6 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %> 
-<jsp:include page="connectsql.jsp"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -209,29 +208,59 @@
 
                 <!-- 產品列表 -->
                 <div class="product-list">
+             
              <%
                 request.setCharacterEncoding("UTF-8");
-                response.setCharacterEncoding("UTF-8");           
+                response.setCharacterEncoding("UTF-8");    
+                try{
+                    Class.forName("com.mysql.jdbc.Driver");	  
+                    try{
+                        String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
+                        Connection con = DriverManager.getConnection(url,"root","1234");
 
-                String sql = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor`";
-                ResultSet rs = con.createStatement().executeQuery(sql);
-            
-                while(rs.next()){
-                    for (int i=0; i<5; i++) {
-                        out.println("<div class='product'>");
-                        for (int x=0; x<4; x++) {
-                            out.println("<div class='list'>");
-                            out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"_1.png' />");             
-                            out.println("<div class='protext'>");
-                            out.println(rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"<br>");
-                            out.println("NT$"+rs.getInt("product_price"));                
-                            out.println("</div>");  
-                            out.println("</div>");
+                        if(con.isClosed()){
+                            out.println("connection fail ");
                         }
-                      out.println("</div");
+                        else{
+                            out.println("connection success ");
+
+                            String sql = "USE `computer_shop`";
+                            con.createStatement().execute(sql);
+                            
+                            sql = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor`";
+                            ResultSet rs = con.createStatement().executeQuery(sql);
+                            
+                            while(rs.next()){
+                               for (int i=0; i<5; i++) {
+                                    out.println("<div class='product'>");
+                                    for (int x=0; x<4; x++) {
+                                        out.println("<div class='list'>");
+                                        out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"_1.png' />");             
+                                        out.println("<div class='protext'>");
+                                        out.println(rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"<br>");
+                                        out.println("NT$"+rs.getInt("product_price"));                
+                                        out.println("</div>");  
+                                        out.println("</div>");
+                                        }
+                                    out.println("</div");
+                                    }
+                                }
+                            
+
+                        }
+                        con.close();
+                    }
+                    catch(SQLException sExec){
+                        out.println("sql error "+ sExec.toString());
                     }
                 }
+                catch(ClassNotFoundException err){
+                    out.println("class error "+ err.toString());
+                }
+
             %>
+             
+            
                 </div>
                     
         </div>
@@ -242,3 +271,4 @@
     </footer>
 </body>
 </html>
+
