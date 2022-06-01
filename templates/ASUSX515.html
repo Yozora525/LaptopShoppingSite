@@ -100,16 +100,43 @@
         <h1 style="text-align: center ;padding-top:3%;">商品評論</h1>
         <div class="COMMENTLIST">
             <div class="COMMENT">
-                王曉明:<br>
-                這個筆電便宜又好用
+                <div class="COMMENT-WORD">
+                    <div>王曉明:</div>
+                    <div>這個筆電便宜又好用</div>
+                </div>
+                <div class="star"> 
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                </div>
+
             </div>
             <div class="COMMENT">
-                陳大華:<br>
-                買到他根本賺到阿 雖然是文書機 但是整體性能超棒的
+                <div class="COMMENT-WORD">
+                    <div>陳大華:</div>
+                    <div>買到根本賺到阿 雖然是文書機 但整體性能超棒的</div>
+                </div>
+                <div class="star"> 
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                </div>
             </div>
+
             <div class="COMMENT">
-                王曉明:<br>
-                身為小資的我 這一款筆電相當適合需求不高的族群
+                <div class="COMMENT-WORD">
+                    <div>王曉明:</div>
+                    <div>小資的我 這一款相當適合需求不高的族群</div>
+                </div>
+                <div class="star"> 
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                    <div>★</div>
+                </div>
             </div>
         </div>
         <h1 style="text-align: center ;padding-top:2%;">輸入評論</h1>
@@ -117,8 +144,18 @@
             <div class="textarea">
                 <textarea name="COMMENT" cols="185" rows="10" wrap="hard"></textarea>
             </div>
-            <div class="submit">
-               送出
+            <div class="starandsubmit">
+                <div class="givestar">
+                    <div class="pullstar" id="star5" value="5">★</div>
+                    <div class="pullstar" id="star4" value="4">★</div>
+                    <div class="pullstar" id="star3" value="3">★</div>
+                    <div class="pullstar" id="star2" value="2">★</div>
+                    <div class="pullstar" id="star1" value="1">★</div>
+                </div>
+                <div class="submit">
+                    送出
+                </div>
+                <script src="../assets/js/star.js"></script>
             </div>
         </div>
     </main>
