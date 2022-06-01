@@ -34,25 +34,25 @@ CREATE TABLE product_infor(
 );
 
 INSERT INTO product_infor VALUES ("P001", "ASUS X515", 17900, 200, 1, '', 20000, 15.6, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P002", "ASUS Zenbook14FlipOLED", 40900, 200, 1, '', 20200, 14, 'ASUS', 1, '商務');
-INSERT INTO product_infor VALUES ("P003", "ASUS TUFGamingF15", 33500, 200, 1, '', 20800, 15.6, 'ASUS', 0, '電競');
-INSERT INTO product_infor VALUES ("P004", "ASUS ZenBook13OLED", 34900, 200, 1, '', 20010, 13, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P005", "APPLE MacBookAir", 38900, 200, 1, '', 20300, 13.3, 'APPLE', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P006", "APPLE MacBookPro", 104900, 200, 1, '', 20000, 16, 'APPLE', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P002", "ASUS Zenbook 14 Flip OLED", 40900, 200, 1, '', 20200, 14, 'ASUS', 1, '商務');
+INSERT INTO product_infor VALUES ("P003", "ASUS TUF Gaming F15", 33500, 200, 1, '', 20800, 15.6, 'ASUS', 0, '電競');
+INSERT INTO product_infor VALUES ("P004", "ASUS ZenBook 13 OLED", 34900, 200, 1, '', 20010, 13, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P005", "APPLE MacBook Air", 38900, 200, 1, '', 20300, 13.3, 'APPLE', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P006", "APPLE MacBook Pro", 104900, 200, 1, '', 20000, 16, 'APPLE', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P007", "ACER Nitro5", 39500, 200, 1, '', 20070, 15.6, 'ACER', 0, '電競');
 INSERT INTO product_infor VALUES ("P008", "ACER Swift5", 29900, 200, 1, '', 20800, 14, 'ACER', 1, '輕薄便攜');
 INSERT INTO product_infor VALUES ("P009", "ACER Spin5", 11900, 200, 1, '', 28300, 11.6, 'ACER', 1, '商務');
-INSERT INTO product_infor VALUES ("P010", "MSI Stealth15M", 47900, 200, 1, '', 20100, 15.6, 'MSI', 0, '電競');
+INSERT INTO product_infor VALUES ("P010", "MSI Stealth 15M", 47900, 200, 1, '', 20100, 15.6, 'MSI', 0, '電競');
 INSERT INTO product_infor VALUES ("P011", "MSI Modern14", 23900, 200, 1, '', 20200, 14, 'MSI', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P012", "MSI Alpha15", 34900, 200, 1, '', 20000, 15.6, 'MSI', 0, '電競');
-INSERT INTO product_infor VALUES ("P013", "MSI Prestige14", 30900, 200, 1, '', 20040, 14, 'MSI', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P014", "HP EliteDragonflyG2", 59900, 200, 1, '', 20700, 13, 'HP', 1, '商務');
-INSERT INTO product_infor VALUES ("P015", "HP 470G8", 29999, 200, 1, '', 20600, 17.3, 'HP', 0, '商務');
+INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, '', 20000, 15.6, 'MSI', 0, '電競');
+INSERT INTO product_infor VALUES ("P013", "MSI Prestige 14", 30900, 200, 1, '', 20040, 14, 'MSI', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P014", "HP Elite Dragonfly G2", 59900, 200, 1, '', 20700, 13, 'HP', 1, '商務');
+INSERT INTO product_infor VALUES ("P015", "HP 470 G8", 29999, 200, 1, '', 20600, 17.3, 'HP', 0, '商務');
 INSERT INTO product_infor VALUES ("P016", "HP 14s-dq4001TU", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P017", "HP OMEN16-C0668AX", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競');
-INSERT INTO product_infor VALUES ("P018", "ACER TravelMateP214-53-78QY", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務');
+INSERT INTO product_infor VALUES ("P017", "HP OMEN 16-C0668AX", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競');
+INSERT INTO product_infor VALUES ("P018", "ACER TravelMate P214-53-78QY", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務');
 INSERT INTO product_infor VALUES ("P019", "ASUS E410", 9488, 200, 1, '', 20900, 14, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P020", "MSI SummitE16Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');
+INSERT INTO product_infor VALUES ("P020", "MSI Summit E16 Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');
 
 SELECT * FROM product_infor;
 
