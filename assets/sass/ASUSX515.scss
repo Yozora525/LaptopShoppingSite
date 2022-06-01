@@ -171,6 +171,7 @@
         padding:10px 10px 10px 20px;
         font-size: 20px;
         font-family:"微軟正黑體";
+        display: flex;
     }
 }
 .submit{
@@ -185,8 +186,8 @@
         color: #000;
         background-color: #84C1FF;
         border: 1px solid #000;
-        margin-left:45%;
-        margin-top: 2%;
+        margin-left:30%;
+        margin-top: 1%;
         font-size: 30px;
         padding-top:0%;
         font-family: "微軟正黑體";
@@ -219,3 +220,56 @@ textarea{
     }
 }
 
+.star{
+    @include small{
+
+    }
+    @include large{
+        display: flex;
+        padding-left: 10%;
+        font-size: 35px;
+        width: 20%;
+    }
+}
+
+.COMMENT-WORD{
+    @include small{
+
+    }
+    @include large{
+        display: block;
+        padding-left: 0%;
+        width: 50%;
+    }
+}
+
+.starandsubmit{
+    @include small{
+
+    }
+    @include large{
+        display: flex;
+    }
+}
+
+.givestar{
+    @include small{
+
+    }
+    @include large{
+        display: flex;
+        padding-left: 20%;
+    }
+}
+
+.pullstar{
+    @include small{
+
+    }   
+    @include large{
+       
+        padding-left: 10%;
+        font-size: 35px;
+        width: 20%;
+    }
+}

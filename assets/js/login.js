@@ -34,10 +34,10 @@ $(function(){
 
         $.ajax({
             // ex:/專案名/資料夾名/檔案名
-            url: "/LaptopShoppingSite/src/test.jsp",
+            url: "/",
             type: "POST",
             // dataType: 'json',
-            data: {'pwd':pwd},
+            data: formData,
             success: function(data) {
                 if(data['res']=='success'){
                     alert('登入成功');
@@ -175,7 +175,7 @@ $(function(){
 
         $.ajax({
             // ex:/專案名/資料夾名/檔案名
-            url: "/LaptopShoppingSite/src/test.jsp",
+            url: "/",
             type: "POST",
             // dataType: 'json',
             data: formData,

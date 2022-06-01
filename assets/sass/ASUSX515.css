@@ -133,6 +133,9 @@
     padding: 10px 10px 10px 20px;
     font-size: 20px;
     font-family: "微軟正黑體";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -145,8 +148,8 @@
     color: #000;
     background-color: #84C1FF;
     border: 1px solid #000;
-    margin-left: 45%;
-    margin-top: 2%;
+    margin-left: 30%;
+    margin-top: 1%;
     font-size: 30px;
     padding-top: 0%;
     font-family: "微軟正黑體";
@@ -170,6 +173,50 @@
     resize: none;
     width: 100%;
     height: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .star {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 10%;
+    font-size: 35px;
+    width: 20%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .COMMENT-WORD {
+    display: block;
+    padding-left: 0%;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .starandsubmit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 1000px) {
+  .givestar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 20%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .pullstar {
+    padding-left: 10%;
+    font-size: 35px;
+    width: 20%;
   }
 }
 /*# sourceMappingURL=ASUSX515.css.map */
