@@ -10,14 +10,7 @@
     }
 }
 
-.main{
-    @include small{
 
-    }
-    @include large{
-        background-color: #eee;
-    }
-}
 .LAP{
     @include small{
 
