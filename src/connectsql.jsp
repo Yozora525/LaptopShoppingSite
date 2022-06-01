@@ -1,7 +1,7 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ page import ="java.sql.*"%>
-<%@include file = "catchDate.jsp" %> 
+<%@include file = "catchDateRan.jsp" %> 
 
 <%
     request.setCharacterEncoding("UTF-8");
@@ -28,12 +28,17 @@
                 if( logacc.equals != "" && logpas.equals != "" ){
                     
                 }
-
+                //http://localhost:8080/LaptopShoppingSite/src/connectsql.jsp
                 //抓前端輸入帳號密碼
                 String regacc = request.Parameter("account_reg"); 
                 String regpas = request.Parameter("password_reg");
 
-                sql = ""
+                String memid = "MEM" + CDATE ; // 處理memid CDate來自catchDataRan.jsp
+
+                sql = "INSERT INTO `login` VALUES (memid, regacc, regpas)";
+                int y = con.createStatement().execute(sql); #執行成功傳回false
+                sql = "INSERT INTO mem_infor VALUES (memid,'', '', '', '', '', regacc)";
+                int y1 = con.createStatement().execute(sql); #執行成功傳回false
 
             }
             con.close();
