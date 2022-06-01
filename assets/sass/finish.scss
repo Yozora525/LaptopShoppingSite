@@ -1,0 +1,63 @@
+@mixin small {
+    @media (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1000px){
+        @content;
+    }
+}
+
+.finish{
+    @include small{
+
+    }
+    @include large{
+        display: block;
+        margin-top: 0%;
+        
+        
+    }
+}
+
+.f-pic{
+    @include small{
+
+    }
+    @include large{
+        padding-left: 35%;  
+        margin-top: -10%;   
+    }
+}
+
+.f-word{
+    @include small{
+
+    }
+    @include large{
+        padding-top: -20%;
+        margin-top: -10%;
+        text-align: center;
+        padding-bottom: 5%;
+    }
+}
+
+.f-back{
+    @include small{
+
+    }
+    @include large{
+        font-size: 30px;
+        margin-left:40%;
+        background-color:#84C1FF;
+        border-radius: 10px;
+        padding:1%;
+        margin-right: 45%;
+        text-align: center;
+        
+
+    }
+}
+

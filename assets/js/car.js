@@ -82,29 +82,40 @@ $(function() {
         let item = $($('input[name="item-name"]')[index]).val();
         // $($('div[name="car-item"]')[index]).remove();
 
-        $.ajax({
-            url: "/",
-            type: "POST",
-            // dataType: 'json',
-            data: {'product':item},
-            success: function(data) {
-                if(data['res']=='success'){
-                    alert('刪除成功');
-                    $($('div[name="car-item"]')[index]).remove();
-                    location.reload();
-                }
-                else{
-                    alert(data['msg']);
-                    // alert('發生錯誤，請稍後再試');
-                    location.reload();
-                }
-            },
-            error: function(jqXHR) {
-                alert(jqXHR.statusText);
-                alert(jqXHR.responseText);
+        $.confirm({
+            title: '移除商品',
+            animation: 'zoom',
+            closeAnimation: 'scale',
+            content: '確定要將'+ item + '從購物車內移除嗎？',
+            buttons: {
+              確認: function() {
+                $.ajax({
+                    url: "/",
+                    type: "POST",
+                    // dataType: 'json',
+                    data: {'product':item},
+                    success: function(data) {
+                        if(data['res']=='success'){
+                            alert('刪除成功');
+                            $($('div[name="car-item"]')[index]).remove();
+                            location.reload();
+                        }
+                        else{
+                            alert(data['msg']);
+                            // alert('發生錯誤，請稍後再試');
+                            location.reload();
+                        }
+                    },
+                    error: function(jqXHR) {
+                        alert(jqXHR.statusText);
+                        alert(jqXHR.responseText);
+                    }
+                });
+              },
+              取消: function() {
+              }
             }
-        });
-
+          });
     })
 
 });

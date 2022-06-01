@@ -1,9 +1,37 @@
 @media (min-width: 1000px) {
-  .add-pro-container {
+  .btn-add-pro-container {
     margin: 2% 5% 3% 5%;
     text-align: right;
   }
-  .add-pro-container button {
+  .btn-add-pro-container button {
+    width: 10%;
+    height: 30px;
+    font-size: 1em;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .add-pro-container {
+    border: 1px solid #000;
+    margin: 10% 20% 3% 20%;
+    text-align: left;
+    padding-left: 20%;
+  }
+  .add-pro-container .add-pro-table {
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .add-pro-container .add-pro-table th, .add-pro-container .add-pro-table td {
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .add-pro-container .add-pro-table button {
     width: 30%;
     height: 30px;
     font-size: 1em;
@@ -75,5 +103,4 @@
     border: 1px solid black;
     border-collapse: collapse;
   }
-}
-/*# sourceMappingURL=backstage.css.map */
+}/*# sourceMappingURL=backstage.css.map */

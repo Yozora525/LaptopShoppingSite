@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入jQuery -->
+    <script src="../assets/js/lib/jquery/jquery.min.js"></script>
+    <!-- 引入Echarts -->
+    <script src="../assets/js/lib/echarts/echarts.min.js"></script>
+    <!-- 引入jQuery-Confirm -->
+    <script src="../assets/js/lib/jquery-confirm/jquery-confirm.min.js"></script>
+    <link rel="stylesheet" href="../assets/js/lib/jquery-confirm/jquery-confirm.min.css" />
+    <!-- 引入slick -->
+    <script src="../assets/js/lib/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="../assets/js/lib/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../assets/js/lib/slick/slick.css" />
+    <!-- 引入blockUI -->
+    <script src="../assets/js/lib/blockUI/jquery.blockUI.js"></script>
+    <script src="../assets/js/loading.js"></script>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="../assets/sass/common.css" />
+    <style>
+        @import url("../assets/sass/finish.css");
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="guide-container">
+            <nav class="nav-header">
+                <div class="home" style="border:3px solid #ccc;">
+                    <a href="">首頁</a>
+                </div>
+                <div class="key-word-search">
+                    <form method="GET" action="">
+                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
+                    </form>
+                </div>
+                <div class="link-icon">
+                    <div class="icon-login">
+                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                    </div>
+                    <div class="icon-contact">
+                        <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
+                    </div>
+                    <div class="icon-car">
+                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="content">
+            <div id="loading" style="display: none;">
+                <img src="../assets/img/loading.gif">
+            </div>
+        <div class="finish">
+            <div class="f-pic">
+                <img width="400px"  src="../assets/img/google-icon/ok.png">
+            </div>
+            <div class="f-word">
+                <h1>訂單已成立，感謝您的購買，我們會盡快為您出貨!!!</h1>
+            </div>
+            <div class="f-back">
+                <a href="../templates/index.html" style="color: black;">回首頁</a>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <span class="copyright">&copy;</span>
+    </footer>
+</body>
+</html>
