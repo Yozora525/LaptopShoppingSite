@@ -25,68 +25,36 @@ CREATE TABLE product_infor(
 	product_status	INTEGER	, #上/下架 1/0
 	product_discript	TEXT,
 	product_sold	INTEGER	, #銷售量(熱門)
-
-    PRIMARY KEY (product_id)
-);
-
-INSERT INTO product_infor VALUES ("P001", "X515", 17900, 200, 1, '', 20000);
-INSERT INTO product_infor VALUES ("P002", "Zenbook14FlipOLED", 40900, 200, 1, '', 20200);
-INSERT INTO product_infor VALUES ("P003", "TUFGamingF15", 33500, 200, 1, '', 20800);
-INSERT INTO product_infor VALUES ("P004", "ZenBook13OLED", 34900, 200, 1, '', 20010);
-INSERT INTO product_infor VALUES ("P005", "MacBookAir", 38900, 200, 1, '', 20300);
-INSERT INTO product_infor VALUES ("P006", "MacBookPro", 104900, 200, 1, '', 20000);
-INSERT INTO product_infor VALUES ("P007", "Nitro5", 39500, 200, 1, '', 20070);
-INSERT INTO product_infor VALUES ("P008", "Swift5", 29900, 200, 1, '', 20800);
-INSERT INTO product_infor VALUES ("P009", "Spin5", 11900, 200, 1, '', 28300);
-INSERT INTO product_infor VALUES ("P010", "Stealth15M", 47900, 200, 1, '', 20100);
-INSERT INTO product_infor VALUES ("P011", "Modern14", 23900, 200, 1, '', 20200);
-INSERT INTO product_infor VALUES ("P012", "Alpha15", 34900, 200, 1, '', 20000);
-INSERT INTO product_infor VALUES ("P013", "Prestige14", 30900, 200, 1, '', 20040);
-INSERT INTO product_infor VALUES ("P014", "EliteDragonflyG2", 59900, 200, 1, '', 20700);
-INSERT INTO product_infor VALUES ("P015", "470G8", 29999, 200, 1, '', 20600);
-INSERT INTO product_infor VALUES ("P016", "14s-dq4001TU", 31900, 200, 1, '', 28000);
-INSERT INTO product_infor VALUES ("P017", "OMEN16-C0668AX", 48900, 200, 1, '', 20600);
-INSERT INTO product_infor VALUES ("P018", "TravelMateP214-53-78QY", 31900, 200, 1, '', 20090);
-INSERT INTO product_infor VALUES ("P019", "E410", 9488, 200, 1, '', 20900);
-INSERT INTO product_infor VALUES ("P020", "SummitE16Flip", 55900, 200, 1, '', 29000);
-
-SELECT * FROM product_infor;
-
-#6.產品規格表
-CREATE TABLE product_form(
-	product_id	VARCHAR	(4) UNIQUE NOT NULL,
 	product_size	FLOAT,	
 	product_brand	VARCHAR	(64),
 	product_touch	INTEGER	,
 	product_type	VARCHAR	(32),
 
-    PRIMARY KEY (product_id),
-	FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
-
+    PRIMARY KEY (product_id)
 );
 
-INSERT INTO product_form VALUES ('P001', 15.6, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_form VALUES ('P002', 14, 'ASUS', 1, '商務');
-INSERT INTO product_form VALUES ('P003', 15.6, 'ASUS', 0, '電競');
-INSERT INTO product_form VALUES ('P004', 13, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_form VALUES ('P005', 13.3, 'APPLE', 0, '創作設計');
-INSERT INTO product_form VALUES ('P006', 16, 'APPLE', 0, '創作設計');
-INSERT INTO product_form VALUES ('P007', 15.6, 'ACER', 0, '電競');
-INSERT INTO product_form VALUES ('P008', 14, 'ACER', 1, '輕薄便攜');
-INSERT INTO product_form VALUES ('P009', 11.6, 'ACER', 1, '商務');
-INSERT INTO product_form VALUES ('P010', 15.6, 'MSI', 0, '電競');
-INSERT INTO product_form VALUES ('P011', 14, 'MSI', 0, '創作設計');
-INSERT INTO product_form VALUES ('P012', 15.6, 'MSI', 0, '電競');
-INSERT INTO product_form VALUES ('P013', 14, 'MSI', 0, '創作設計');
-INSERT INTO product_form VALUES ('P014', 13, 'HP', 1, '商務');
-INSERT INTO product_form VALUES ('P015', 17.3, 'HP', 0, '商務');
-INSERT INTO product_form VALUES ('P016', 14, 'HP', 0, '輕薄便攜');
-INSERT INTO product_form VALUES ('P017', 16.1, 'HP', 0, '電競');
-INSERT INTO product_form VALUES ('P018', 14, 'ACER', 0, '商務');
-INSERT INTO product_form VALUES ('P019', 14, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_form VALUES ('P020', 16, 'MSI', 1, '創作設計');
+INSERT INTO product_infor VALUES ("P001", "X515", 17900, 200, 1, '', 20000, 15.6, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P002", "Zenbook14FlipOLED", 40900, 200, 1, '', 20200, 14, 'ASUS', 1, '商務');
+INSERT INTO product_infor VALUES ("P003", "TUFGamingF15", 33500, 200, 1, '', 20800, 15.6, 'ASUS', 0, '電競');
+INSERT INTO product_infor VALUES ("P004", "ZenBook13OLED", 34900, 200, 1, '', 20010, 13, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P005", "MacBookAir", 38900, 200, 1, '', 20300, 13.3, 'APPLE', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P006", "MacBookPro", 104900, 200, 1, '', 20000, 16, 'APPLE', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P007", "Nitro5", 39500, 200, 1, '', 20070, 15.6, 'ACER', 0, '電競');
+INSERT INTO product_infor VALUES ("P008", "Swift5", 29900, 200, 1, '', 20800, 14, 'ACER', 1, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P009", "Spin5", 11900, 200, 1, '', 28300, 11.6, 'ACER', 1, '商務');
+INSERT INTO product_infor VALUES ("P010", "Stealth15M", 47900, 200, 1, '', 20100, 15.6, 'MSI', 0, '電競');
+INSERT INTO product_infor VALUES ("P011", "Modern14", 23900, 200, 1, '', 20200, 14, 'MSI', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P012", "Alpha15", 34900, 200, 1, '', 20000, 15.6, 'MSI', 0, '電競');
+INSERT INTO product_infor VALUES ("P013", "Prestige14", 30900, 200, 1, '', 20040, 14, 'MSI', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P014", "EliteDragonflyG2", 59900, 200, 1, '', 20700, 13, 'HP', 1, '商務');
+INSERT INTO product_infor VALUES ("P015", "470G8", 29999, 200, 1, '', 20600, 17.3, 'HP', 0, '商務');
+INSERT INTO product_infor VALUES ("P016", "14s-dq4001TU", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P017", "OMEN16-C0668AX", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競');
+INSERT INTO product_infor VALUES ("P018", "TravelMateP214-53-78QY", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務');
+INSERT INTO product_infor VALUES ("P019", "E410", 9488, 200, 1, '', 20900, 14, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P020", "SummitE16Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');
 
-SELECT * FROM product_form;
+SELECT * FROM product_infor;
 
 
 #2.會員基本資料表
@@ -96,17 +64,17 @@ CREATE TABLE mem_infor(
 	mem_sex	VARCHAR	(2),
 	mem_phone	VARCHAR	(12),
 	mem_birth	DATE,
-	mem_create	DATETIME,
+	mem_create	DATETIME DEFAULT NOW(),
 	mem_email VARCHAR (512) UNIQUE NOT NULL,
     
     PRIMARY KEY (mem_id, mem_email)
 );
 
-INSERT INTO mem_infor VALUES ('MEM20220601112045001','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01', 'adsasddsa@gmail.com');
-INSERT INTO mem_infor VALUES ('MEM20220531100430002','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31', 'abbcccddde@yahoo.com');
-INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09', 'ag128442da@gmail.com');
-INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30', 'xyyz17rip976da@yahoo.com');
-INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02', 'aqwert2yy@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM20220601112045001','陳鈞真', 'M', '0911235813', '2000-09-28', '2022-06-01 11:20:45', 'adsasddsa@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM20220531100430002','徐岱揚', 'F', '0924681012', '2000-10-31', '2022-05-31 10:04:30', 'abbcccddde@yahoo.com');
+INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09 22:22:18', 'ag128442da@gmail.com');
+INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30 13:04:55', 'xyyz17rip976da@yahoo.com');
+INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02 19:44:39', 'aqwert2yy@gmail.com');
 
 #1.登入
 CREATE TABLE login (

@@ -18,34 +18,27 @@
         <script src="../assets/js/login.js"></script>
         <!-- 引入css -->
         <link rel="stylesheet" href="../assets/sass/common.css" />
+        <link rel="stylesheet" href="../assets/sass/backstage.css" />
         <!-- 引入自寫js -->
         <script src="../assets/js/loading.js"></script>
+        <script src="../assets/js/backstage.js"></script>
     </head>
 <body>
     <header>
-        <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.html" class="manage">網站管理</a>
-        </div>
-        <div class="guide-container">
-            <nav class="nav-header">
-                <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.html">首頁</a>
-                </div>
-                <div class="key-word-search">
-                    <form method="GET" action="">
-                        <input type="search" name="" placeholder="請輸入關鍵字">
-                        <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
-                    </form>
+        <div class="backstage-guide-container">
+            <nav class="backstage-nav-header">
+                <div class="backstage-home">
+                    <a href="backstage.html">後台管理</a>
                 </div>
                 <div class="link-icon">
-                    <div class="icon-login">
-                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                    <div class="icon-backstage">
+                        <a  href="backstage.html"><img src="../assets/img/google-icon/ic_home_white_36dp.png"></a>
                     </div>
-                    <div class="icon-contact">
-                        <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
+                    <div class="icon-homepage">
+                        <a  href="index.html" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
                     </div>
-                    <div class="icon-car">
-                        <a  href=""><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                    <div class="icon-logout">
+                        <a  href=""><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
@@ -56,7 +49,159 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
+
+            <div class="btn-add-pro-container">
+                <a href="addPro.html"><button>新增商品</button></a>
+            </div>
+
+            <div class="pro-container">
+                <div class="pro-table-title" id="pro-table-title">
+                    <span>產品列表</span>
+                </div>
+                <div id="pro-table">
+                    <table class="pro-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>#</span>
+                                </th>
+                                <th>
+                                    <span>品牌</span>
+                                </th>
+                                <th>
+                                    <span>產品名稱</span>
+                                </th>
+                                <th>
+                                    <span>存貨數量</span>
+                                </th>
+                                <th>
+                                    <span>狀態</span>
+                                </th>
+                                <th>
+                                    <span>動作</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 商品 -->
+                            <tr>
+                                <td>
+                                    <span>1</span>
+                                </td>
+                                <td>
+                                    <span name="pro-brand">APPLE</span>
+                                </td>
+                                <td>
+                                    <span name="pro-name">MacBook Air</span>
+                                </td>
+                                <td>
+                                    <span name="pro-inventory">999</span>
+                                </td>
+                                <td>
+                                    <span name="pro-status">上架</span>
+                                </td>
+                                <td>
+                                    <button name="switch">下架</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <span>2</span>
+                                </td>
+                                <td>
+                                    <span name="pro-brand">APPLE</span>
+                                </td>
+                                <td>
+                                    <span name="pro-name">MacBook Air</span>
+                                </td>
+                                <td>
+                                    <span name="pro-inventory">999</span>
+                                </td>
+                                <td>
+                                    <span name="pro-status">上架</span>
+                                </td>
+                                <td>
+                                    <button name="switch">下架</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             
+            <div class="trans-data-container">
+                <div class="trans-table-title" id="trans-table-title">
+                    <span>交易紀錄列表</span>
+                </div>
+                <div class="trans-filter" id="trans-filter">
+                    <form action="" method="GET">
+                        產品名稱:
+                        <select name="filter-pro">
+                            <option value="">--請選擇--</option>
+                            <option value="">MacBook Air</option>
+                        </select>
+                        起:<input type="date" name="start" required/>
+                        迄:<input type="date" name="end" required/>
+                        <input type="submit" value="查詢" />
+                    </form>
+                </div>
+                <div id="trans-table">
+                    <table class="trans-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>#</span>
+                                </th>
+                                <th>
+                                    <span>訂單編號</span>
+                                </th>
+                                <th>
+                                    <span>交易日期</span>
+                                </th>
+                                <th>
+                                    <span>商品名稱</span>
+                                </th>
+                                <th>
+                                    <span>單價</span>
+                                </th>
+                                <th>
+                                    <span>數量</span>
+                                </th>
+                                <th>
+                                    <span>金額</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>1</span>
+                                </td>
+                                <td>
+                                    <span name=""></span>
+                                </td>
+                                <td>
+                                    <span name=""></span>
+                                </td>
+                                <td>
+                                    <span name=""></span>
+                                </td>
+                                <td>
+                                    <span name=""></span>
+                                </td>
+                                <td>
+                                    <span name=""></span>
+                                </td>
+                                <td>
+                                    <span name=""></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="footer">
