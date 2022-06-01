@@ -34,10 +34,10 @@ $(function(){
 
         $.ajax({
             // ex:/專案名/資料夾名/檔案名
-            url: "/",
+            url: "/LaptopShoppingSite/src/test.jsp",
             type: "POST",
             // dataType: 'json',
-            data: formData,
+            data: {'pwd':pwd},
             success: function(data) {
                 if(data['res']=='success'){
                     alert('登入成功');
@@ -94,7 +94,7 @@ $(function(){
         
         $.ajax({
             // ex:/專案名/資料夾名/檔案名
-            url: "/LaptopShoppingSite/src/connectsql.jsp",
+            url: "/LaptopShoppingSite/src/test.jsp",
             type: "POST",
             // dataType: 'json',
             data: formData,
@@ -175,7 +175,7 @@ $(function(){
 
         $.ajax({
             // ex:/專案名/資料夾名/檔案名
-            url: "/",
+            url: "/LaptopShoppingSite/src/test.jsp",
             type: "POST",
             // dataType: 'json',
             data: formData,

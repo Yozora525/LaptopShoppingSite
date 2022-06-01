@@ -22,16 +22,16 @@
                 con.createStatement().execute(sql);
 
                 //抓前端輸入帳號密碼
-                String logacc = request.Parameter("account_log");
-                String logpas = request.Parameter("password_log");
+                String logacc = request.getParameter("");
+                String logpas = request.getParameter("");
 
                 if( logacc.equals != "" && logpas.equals != "" ){
                     
                 }
                 //http://localhost:8080/LaptopShoppingSite/src/connectsql.jsp
                 //抓前端輸入帳號密碼
-                String regacc = request.Parameter("account_reg"); 
-                String regpas = request.Parameter("password_reg");
+                String regacc = request.getParameter(""); 
+                String regpas = request.getParameter("");
 
                 String memid = "MEM" + CDATE ; // 處理memid CDate來自catchDataRan.jsp
 
