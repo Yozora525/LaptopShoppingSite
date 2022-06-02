@@ -41,7 +41,7 @@ INSERT INTO product_infor VALUES ("P005", "APPLE MacBook Air", 38900, 200, 1, ''
 INSERT INTO product_infor VALUES ("P006", "APPLE MacBook Pro", 104900, 200, 1, '', 20000, 16, 'APPLE', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P007", "ACER Nitro5", 39500, 200, 1, '', 20070, 15.6, 'ACER', 0, '電競');
 INSERT INTO product_infor VALUES ("P008", "ACER Swift5", 29900, 200, 1, '', 20800, 14, 'ACER', 1, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P009", "ACER Spin5", 11900, 200, 1, '', 28300, 11.6, 'ACER', 1, '商務');
+INSERT INTO product_infor VALUES ("P009", "ACER Aspire5", 11900, 200, 1, '', 28300, 14, 'ACER', 1, '商務');
 INSERT INTO product_infor VALUES ("P010", "MSI Stealth 15M", 47900, 200, 1, '', 20100, 15.6, 'MSI', 0, '電競');
 INSERT INTO product_infor VALUES ("P011", "MSI Modern14", 23900, 200, 1, '', 20200, 14, 'MSI', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, '', 20000, 15.6, 'MSI', 0, '電競');
