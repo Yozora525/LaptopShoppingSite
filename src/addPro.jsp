@@ -1,3 +1,5 @@
+<%@ page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -57,7 +59,7 @@
                             產品名稱：
                         </td>
                         <td>
-                            <input type="text" id="add-pro-name" placeholder="請輸入產品名稱" />
+                            <input type="text" id="add-pro-name" name="name"  placeholder="請輸入產品名稱" />
                         </td>
                     </tr>
                     <tr>
@@ -65,15 +67,7 @@
                             品牌：
                         </td>
                         <td>
-                            <input type="text" id="add-pro-brand" placeholder="請輸入品牌" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            型號：
-                        </td>
-                        <td>
-                            <input type="text" id="add-pro-model" placeholder="請輸入型號" />
+                            <input type="text" id="add-pro-brand" name="brand" placeholder="請輸入品牌" />
                         </td>
                     </tr>
                     <tr>
@@ -81,7 +75,7 @@
                             螢幕尺寸：
                         </td>
                         <td>
-                            <input type="text" id="add-pro-size" placeholder="請輸入螢幕尺寸"  oninput = "value=value.replace(/[^\d\.]/g,'')"  />
+                            <input type="text" id="add-pro-size" name="size" placeholder="請輸入螢幕尺寸"  oninput = "value=value.replace(/[^\d\.]/g,'')"  />
                         </td>
                     </tr>
                     <tr>
@@ -110,7 +104,7 @@
                             庫存數量：
                         </td>
                         <td>
-                            <input type="text" id="add-pro-inventory" placeholder="請輸入存貨數量"  oninput = "value=value.replace(/[^\d\.]/g,'')"  />
+                            <input type="text" id="add-pro-inventory" placeholder="請輸入存貨數量" name="store"  oninput = "value=value.replace(/[^\d\.]/g,'')"  />
                         </td>
                     </tr>
                     <tr>
@@ -118,7 +112,7 @@
                             單價：
                         </td>
                         <td>
-                            <input type="text" id="add-pro-price" placeholder="請輸入產品單價"  oninput = "value=value.replace(/[^\d\.]/g,'')"  />
+                            <input type="text" id="add-pro-price" placeholder="請輸入產品單價" name="price" oninput = "value=value.replace(/[^\d\.]/g,'')"  />
                         </td>
                     </tr>
                     <tr>

@@ -53,6 +53,47 @@
             </nav>
         </div>
     </header>
+
+    <%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");    
+    try{
+        Class.forName("com.mysql.jdbc.Driver");	  
+        try{
+            String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
+            Connection con = DriverManager.getConnection(url,"root","1234");
+
+            if(con.isClosed()){
+                //out.println("connection fail ");
+            }
+            else{
+                //out.println("connection success ");
+    
+                String sql = "USE `computer_shop`";
+                con.createStatement().execute(sql);
+     %>        
+     <%   
+                sql = "SELECT `product_name`, `product_price` FROM `product_infor`";
+                ResultSet rs = con.createStatement().executeQuery(sql);
+                
+                while(rs.next()){
+                   for (int i=0; i<5; i++) {
+                        out.println("<div class='product'>");
+                        for (int x=0; x<4; x++) {
+                            out.println("<div class='list'>");
+                            out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"_1.png' />");             
+                            out.println("<div class='protext'>");
+                            out.println(rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"<br>");
+                            out.println("NT$"+rs.getInt("product_price"));                
+                            out.println("</div>");  
+                            out.println("</div>");
+                            }
+                        out.println("</div");
+                        }
+                    }
+                
+    %>
+
     <main class="main">
         <div class="content">
             <div id="loading" style="display: none;">
@@ -73,7 +114,7 @@
                 <div class="L-I-CONTENT">
                     <h1>ASUS X515</h1><hr style="width: 80%;"><br>
                     <h3>NT$17900</h3><br>
-                    <h3>存貨數量:10</h3><br>
+                    <h3>存貨數量:<%=%></h3><br>
                     <div class="buy">
                         <h3>購買數量:</h3> 
                         <input onkeyup="value=value.replace(/[^\d]/g,'') " type="number" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  min="1" max="10" value="1" class="input">
@@ -127,3 +168,16 @@
     </footer>
 </body>
 </html>
+<%
+}
+con.close();
+}
+catch(SQLException sExec){
+out.println("sql error "+ sExec.toString());
+}
+}
+catch(ClassNotFoundException err){
+out.println("class error "+ err.toString());
+}
+
+%>
