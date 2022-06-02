@@ -1,7 +1,6 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ page import ="java.sql.*"%>
-<%@include file = "catchDateRan.jsp" %> 
 <%
     Class.forName("com.mysql.jdbc.Driver");	  
     String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
