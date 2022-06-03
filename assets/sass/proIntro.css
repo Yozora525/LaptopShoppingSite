@@ -98,6 +98,9 @@
     font-size: 1em;
     padding-left: 2%;
   }
+  .pro-intro-container .pro-intro-content span {
+    line-height: 2em;
+  }
 }
 
 @media (min-width: 1000px) {

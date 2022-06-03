@@ -130,12 +130,13 @@
         margin: 3% 10% 3% 10%;
         background-color: #fff;
 
-        
-
         .pro-intro-content{
             margin-top: 1.5%;
             font-size: 1em;
             padding-left: 2%;
+            span{
+                line-height: 2em;
+            }
         }
     }
 }
