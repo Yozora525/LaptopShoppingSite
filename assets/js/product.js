@@ -32,5 +32,11 @@ $(function() {
 
     $('img[name="img-list"]').on('mouseenter', function(){
         $('#img-show').attr('src', $(this).attr('src'));
+        $(this).css('border', '1px solid #0096C7');
+    });
+
+    $('img[name="img-list"]').on('mouseleave', function(){
+        $('#img-show').attr('src', $(this).attr('src'));
+        $(this).css('border', '0');
     });
 });
