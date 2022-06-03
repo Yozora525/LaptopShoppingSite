@@ -106,16 +106,18 @@ CREATE TABLE order_details(
     FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 );
 
-#INSERT INTO order_details VALUES ('order20220610223210001', 'P001', '2022-06-10 22:32:10','320桃園市中壢區中北路200號','2');
-#INSERT INTO order_details VALUES ('order20220613121215015', 'P015', '2022-06-13 12:12:15','320桃園市中壢區大仁街6號','1');
-#INSERT INTO order_details VALUES ('order20220611161715101', 'P002', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','64');
-#INSERT INTO order_details VALUES ('order20220611161715101', 'P012', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','3');
-#INSERT INTO order_details VALUES ('order20220611161715101', 'P007', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','10');
-#INSERT INTO order_details VALUES ('order20220610111139987', 'P004', '2022-06-10 14:11:39','320桃園市中壢區中北路131號','5');
-#INSERT INTO order_details VALUES ('order20220610111139987', 'P018', '2022-06-10 14:11:39','320桃園市中壢區中北路131號','15');
-#INSERT INTO order_details VALUES ('order20220615205144324', 'P001', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','90');
-#INSERT INTO order_details VALUES ('order20220615205144324', 'P014', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','13');
-#INSERT INTO order_details VALUES ('order20220615205144324', 'P003', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','6');
+INSERT INTO order_details VALUES ('order20220610223210001', 'P001', '2022-06-10 22:32:10','320桃園市中壢區中北路200號','2');
+INSERT INTO order_details VALUES ('order20220613121215015', 'P015', '2022-06-13 12:12:15','320桃園市中壢區大仁街6號','1');
+INSERT INTO order_details VALUES ('order20220611161715101', 'P002', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','64');
+INSERT INTO order_details VALUES ('order20220611161715101', 'P012', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','3');
+INSERT INTO order_details VALUES ('order20220611161715101', 'P007', '2022-06-11 16:17:25','100台北市中正區重慶南路一段122號','10');
+INSERT INTO order_details VALUES ('order20220610111139987', 'P004', '2022-06-10 14:11:39','320桃園市中壢區中北路131號','5');
+INSERT INTO order_details VALUES ('order20220610111139987', 'P018', '2022-06-10 14:11:39','320桃園市中壢區中北路131號','15');
+INSERT INTO order_details VALUES ('order20220615205144324', 'P001', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','90');
+INSERT INTO order_details VALUES ('order20220615205144324', 'P014', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','13');
+INSERT INTO order_details VALUES ('order20220615205144324', 'P003', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','6');
+
+INSERT INTO order_details VALUES ('order20220615205144324', 'P015', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','1');
 
 #3.訂單清單
 CREATE TABLE orders(
@@ -280,3 +282,12 @@ INSERT INTO product_img VALUES ('P019', 'P019-3');
 INSERT INTO product_img VALUES ('P020', 'P020-1');
 INSERT INTO product_img VALUES ('P020', 'P020-2');
 INSERT INTO product_img VALUES ('P020', 'P020-3');
+
+#SELECT order_details.order_id, order_details.product_id,order_details.order_time,
+#product_infor.product_price, order_details.howmuch, order_details.howmuch*product_infor.product_price
+#FROM product_infor,order_details
+#WHERE (order_details.product_id=product_infor.product_id) ORDER BY order_details.order_time ;
+
+#AND 
+#(order_details.order_time BETWEEN '2022-06-10' AND '2022-06-11')
+#AND product_infor.product_name = 'ASUS ZenBook 13 OLED';

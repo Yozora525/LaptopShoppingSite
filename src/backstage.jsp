@@ -1,5 +1,7 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
+<%@include file = "connectsql.jsp" %> 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -68,7 +70,7 @@
                                     <span>#</span>
                                 </th>
                                 <th>
-                                    <span>品牌</span>
+                                    <span>產品id</span>
                                 </th>
                                 <th>
                                     <span>產品名稱</span>
@@ -86,6 +88,29 @@
                         </thead>
                         <tbody>
                             <!-- 商品 -->
+                            <%
+                            int order1=0;
+                            String sql2 = "SELECT `product_id`, `product_name`, `product_amount`,`product_status` FROM `product_infor`";                            
+                            ResultSet rs2 = con.createStatement().executeQuery(sql2);
+                        
+                            while(rs2.next()){
+                                ++order1;
+                                out.println("<tr>");
+                                out.println("<td><span>"+ order1 +"</span></td>"); 
+                                out.println("<td><span name='pro-brand'>"+rs2.getString("product_id") +"</span></td>"); 
+                                out.println("<td><span name='pro-name'>"+rs2.getString("product_name") +"</span></td>");
+                                out.println("<td><span name='pro-inventory'>"+rs2.getString("product_amount")+"</span></td>");
+                                if( rs2.getString("product_status").equals("1") ){
+                                    out.println("<td><span  name='pro-status'>上架</span></td>");
+                                }
+                                else{
+                                    out.println("<td><span  name='pro-status'>下架</span></td>");
+                                }
+                                out.println("<td><button name='switch'>下架</button></td>");
+                                out.println("</tr>");
+                                
+                            } 
+                            %>  
                             <tr>
                                 <td>
                                     <span>1</span>
@@ -138,15 +163,24 @@
                     <span>交易紀錄列表</span>
                 </div>
                 <div class="trans-filter" id="trans-filter">
-                    <form action="" method="GET">
+                    
+                    <form action="searchresult.jsp" method="GET">
                         產品名稱:
                         <select name="filter-pro">
-                            <option value="">--請選擇--</option>
-                            <option value="">MacBook Air</option>
+                            <option value=''>--請選擇--</option>
+                        <%  
+                            
+                            sql = "SELECT `product_id` FROM `product_infor`";
+                            ResultSet rs=con.createStatement().executeQuery(sql);
+                            while(rs.next()){
+                                out.println("<option value='"+rs.getString(1)+"'> "+ rs.getString(1)+"</option>");
+                            }
+                               
+                        %>
                         </select>
                         起:<input type="date" name="start" required/>
                         迄:<input type="date" name="end" required/>
-                        <input type="submit" value="查詢" />
+                        <input type="submit" name="k" value="查詢" />
                     </form>
                 </div>
                 <div id="trans-table">
@@ -163,7 +197,7 @@
                                     <span>交易日期</span>
                                 </th>
                                 <th>
-                                    <span>商品名稱</span>
+                                    <span>商品ID</span>
                                 </th>
                                 <th>
                                     <span>單價</span>
@@ -177,29 +211,45 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <span>1</span>
-                                </td>
-                                <td>
-                                    <span name=""></span>
-                                </td>
-                                <td>
-                                    <span name=""></span>
-                                </td>
-                                <td>
-                                    <span name=""></span>
-                                </td>
-                                <td>
-                                    <span name=""></span>
-                                </td>
-                                <td>
-                                    <span name=""></span>
-                                </td>
-                                <td>
-                                    <span name=""></span>
-                                </td>
-                            </tr>
+                            <!-- <iframe src="searchresult.jsp" frameborder="0" style="width:100%"></iframe> -->
+
+                        <% 
+                            String name = request.getParameter("filter-pro");
+                            String start = request.getParameter("start");
+                            String end = request.getParameter("end");
+                            int order2 = 1;
+                            String sql1="";
+                            ResultSet rs1;
+
+                                  
+
+                            
+                                sql1 = "SELECT order_details.order_id, order_details.product_id, order_details.order_time, ";
+                                sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
+                                sql1 += "FROM `product_infor`, `order_details` ";
+                                sql1 += "WHERE (order_details.product_id=product_infor.product_id) ORDER BY order_details.order_time";
+                                //sql1 += "AND (order_details.product_id= '"+ name + "' ) AND ";
+                                //sql1 += "(order_details.order_time BETWEEN '" + start + "' AND '" + end +"')  ORDER BY order_details.order_time" ;
+                                
+                                rs1 = con.createStatement().executeQuery(sql1);
+                            
+                                while(rs1.next()){
+                                    out.println("<tr>");
+                                    out.println("<td><span>"+ order2 +"</span></td>"); 
+                                    out.println("<td><span>"+rs1.getString("order_details.order_id") +"</span></td>"); 
+                                    out.println("<td><span>"+rs1.getString("order_details.order_time") +"</span></td>");
+                                    out.println("<td><span>"+rs1.getString("order_details.product_id") +"</span></td>");
+                                    out.println("<td><span>"+rs1.getInt("product_infor.product_price") +"</span></td>");
+                                    out.println("<td><span>"+rs1.getInt("order_details.howmuch")+ "</span></td>");
+                                    out.println("<td><span>"+rs1.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
+                                    out.println("</tr>");
+                                    order2++;
+                                } 
+                            
+                             
+                        %>                            
+                         
+
                         </tbody>
                     </table>
                 </div>

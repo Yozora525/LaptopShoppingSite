@@ -1,5 +1,7 @@
-
-<jsp:include page="connectsql.jsp">
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<%@page import ="java.sql.*"%>
+<%@include file = "connectsql.jsp" %> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
