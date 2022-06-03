@@ -11,7 +11,7 @@
     <script src="../assets/js/lib/blockUI/jquery.blockUI.js"></script>
     <!-- 引入自寫js -->
     <script src="../assets/js/loading.js"></script>
-
+    <script src="../assets/js/product.js"></script>
     <!-- 引入css -->
     <link rel="stylesheet" href="../assets/sass/common.css" />
     <link rel="stylesheet" href="../assets/sass/proIntro.css" />
@@ -56,16 +56,16 @@
             <div class="pro-img-container">
                 <div class="img-up">
                     <div class="img">
-                        <img src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                        <img id="img-show" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                     </div>
                 </div>
                 <div class="img-down">
                     <div class="img-down-container">
                         <div>
-                            <img src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                            <img name="img-list" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                         </div>
                         <div>
-                            <img src="../assets/img/pro/ASUS/ASUS X515_2.png" />
+                            <img name="img-list" src="../assets/img/pro/ASUS/ASUS X515_2.png" />
                         </div>
                     </div>
                 </div>
@@ -83,13 +83,13 @@
                 </div>
                 <div class="pro-inventory">
                     <span>存貨：</span>
-                    <span>3890</span>
+                    <span id="inventory">3890</span>
                 </div>
                 <div class="pro-quan">
                     <span>數量：</span>
-                    <button>-</button>
-                    <input type="text" value="1" oninput = "value=value.replace(/[^\d]/g,'')" />
-                    <button>+</button>
+                    <button id="minus">-</button>
+                    <input type="text" id="quan" value="1" oninput = "value=value.replace(/[^\d]/g,'')" />
+                    <button id="plus">+</button>
                 </div>
                 <div class="pro-btn-container">
                     <div>

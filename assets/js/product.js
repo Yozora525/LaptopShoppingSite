@@ -25,4 +25,12 @@ $(function() {
         }
         $('#quan').val(parseInt($('#quan').val())); // 避免使用者在數量前打0
     });
+
+    $('img[name="img-list"]').on('click', function(){
+        $('#img-show').attr('src', $(this).attr('src'));
+    });
+
+    $('img[name="img-list"]').on('mouseenter', function(){
+        $('#img-show').attr('src', $(this).attr('src'));
+    });
 });
