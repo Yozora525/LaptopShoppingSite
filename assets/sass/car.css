@@ -1,18 +1,112 @@
+.car-container {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 @media (min-width: 0px) {
   .car-container .car-title-container {
-    display: none;
+    display: flex;
+    font-size: 1em;
+    height: 32px;
+    padding-top: 2%;
+    background-color: #fff;
+    color: #aaa;
+    margin-bottom: 2%;
+  }
+  .car-container .car-title-container .car-title-checkbox {
+    width: 10%;
+    padding-left: 3%;
+    padding-top: 0.25%;
+  }
+  .car-container .car-title-container .car-title-checkbox input {
+    height: 50%;
+    width: 50%;
+  }
+  .car-container .car-title-container .car-title-item {
+    width: 45%;
+  }
+  .car-container .car-title-container .car-title {
+    width: 12%;
+  }
+  .car-container .car-item {
+    display: flex;
+    margin-bottom: 1.5%;
+    height: 32px;
+    padding-top: 1%;
+    background-color: #FFF;
+  }
+  .car-container .car-item .car-item-checkbox {
+    display: flex;
+    width: 55%;
+  }
+  .car-container .car-item .car-item-checkbox .item-checkbox {
+    width: 17%;
+    padding-left: 5.25%;
+  }
+  .car-container .car-item .car-item-checkbox .item-checkbox input {
+    height: 50%;
+    width: 50%;
+  }
+  .car-container .car-item .car-item-checkbox .item-name {
+    width: 83%;
+  }
+  .car-container .car-item .car-item-checkbox .item-name input {
+    font-size: 0.75em;
+    border: 0;
+  }
+  .car-container .car-item .car-item-other {
+    width: 45%;
+    display: flex;
+    font-size: 0.75em;
+  }
+  .car-container .car-item .car-item-other .car-item-price {
+    width: 25%;
+  }
+  .car-container .car-item .car-item-other .car-item-price input {
+    border: 0px;
+  }
+  .car-container .car-item .car-item-other .car-item-quan {
+    width: 25%;
+  }
+  .car-container .car-item .car-item-other .car-item-quan input {
+    width: 33px;
+    text-align: center;
+    border-color: #eee;
+  }
+  .car-container .car-item .car-item-other .car-item-sum {
+    width: 27%;
+  }
+  .car-container .car-item .car-item-other .car-item-sum .item-sum {
+    color: #0096C7;
+    font-weight: bold;
+  }
+  .car-container .car-item .car-item-other .car-item-delete {
+    width: 23%;
+  }
+  .car-container .car-pay {
+    background-color: #fff;
+    display: flex;
+  }
+  .car-container .car-pay .total-container {
+    width: 80%;
+    font-size: 1em;
+    text-align: right;
+  }
+  .car-container .car-pay .car-par-btn {
+    text-align: center;
+    width: 20%;
+    padding-top: 0.25%;
+  }
+  .car-container .car-pay .car-par-btn button {
+    border: 0;
+    font-size: 1em;
+    width: 80%;
+    color: #fff;
+    background-color: #0096C7;
   }
 }
-
 @media (min-width: 1000px) {
-  .car-container {
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
   .car-container .car-title-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     font-size: 18px;
     height: 40px;
@@ -37,8 +131,6 @@
     width: 10%;
   }
   .car-container .car-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1.5%;
     height: 40px;
@@ -46,8 +138,6 @@
     background-color: #FFF;
   }
   .car-container .car-item .car-item-checkbox {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 61%;
   }
@@ -68,8 +158,6 @@
   }
   .car-container .car-item .car-item-other {
     width: 39%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .car-container .car-item .car-item-other .car-item-price {
@@ -98,8 +186,6 @@
   }
   .car-container .car-pay {
     background-color: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .car-container .car-pay .total-container {
@@ -119,5 +205,4 @@
     color: #fff;
     background-color: #0096C7;
   }
-}
-/*# sourceMappingURL=car.css.map */
+}/*# sourceMappingURL=car.css.map */

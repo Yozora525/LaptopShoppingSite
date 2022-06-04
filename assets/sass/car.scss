@@ -13,21 +13,128 @@
 
 
 .car-container{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     @include small{
-
-
         .car-title-container{
-            display: none;
+            display: flex;
+            font-size: 1em;
+            height: 32px;
+            padding-top: 2%;
+            background-color: #fff;
+            color: #aaa;
+            margin-bottom: 2%;
+            .car-title-checkbox{
+                width: 10%;
+                padding-left: 3%;
+                padding-top: 0.25%;
+
+                input{
+                    height: 50%;
+                    width: 50%;
+                }
+            }
+            .car-title-item{
+                width: 45%;
+
+            }
+            .car-title{
+                width: 12%;
+            }
+        }
+
+        .car-item{
+            display: flex;
+            margin-bottom: 1.5%;
+            height: 32px;
+            padding-top: 1%;
+            background-color: #FFF;
+
+            .car-item-checkbox{
+                display: flex;
+                width: 55%;
+
+                .item-checkbox{
+                    width: 17%;
+                    padding-left: 5.25%;
+
+                    input{
+                        height: 50%;
+                        width: 50%;
+                    }
+                }
+
+                .item-name{
+                    width: 83%;
+                    input{
+                        font-size: 0.75em;
+                        border: 0;
+                    }
+                }
+            }
+
+            .car-item-other{
+                width: 45%;
+                display: flex;
+                font-size: 0.75em;
+
+                .car-item-price{
+                    width: 25%;
+                    input{
+                        border: 0px;
+                    }
+                }
+
+                .car-item-quan{
+                    width: 25%;
+                    input{
+                        width: 33px;
+                        text-align: center;
+                        border-color: #eee;
+                    }
+                }
+
+                .car-item-sum{
+                    width: 27%;
+                    .item-sum{
+                        color: #0096C7;
+                        font-weight: bold;
+                    }
+                }
+
+                .car-item-delete{
+                    width: 23%;
+                }
+            }
+        }
+
+        .car-pay{
+            background-color: #fff;
+            display: flex;
+            .total-container{
+                width: 80%;
+                font-size: 1em;
+                text-align: right;
+            }
+            .car-par-btn{
+                text-align: center;
+                width: 20%;
+                padding-top:0.25%;
+                button{
+                    border: 0;
+                    font-size: 1em;
+                    width: 80%;
+                    color: #fff;
+                    background-color: #0096C7;
+                }
+            }
+            
         }
 
     }
 
     @include large{
-        // border: 1px solid #ccc;
-        margin-top: 5%;
-        margin-left: 5%;
-        margin-right: 5%;
-
         .car-title-container{
             display: flex;
             font-size: 18px;
