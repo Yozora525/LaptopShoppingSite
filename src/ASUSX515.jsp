@@ -80,7 +80,7 @@
             <div class="L-INFO">
                 <div class="L-I-IMG">
                     <div class="L-I-IMG-1">
-                    <%out.println("<img style='width:200px;' src= '" + rs.getString("img_link") + "'  /> "); %>
+                    <%out.println("<img style='width:200px;' src= '" + rs1.getString("img_link") + "'  /> "); %>
                     </div>
                     <div class="L-I-IMG-IN">
                         <img width="100px"  src="../assets/img/pro/ASUS/ASUS X515_1.png" /> 

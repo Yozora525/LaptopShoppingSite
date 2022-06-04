@@ -1,6 +1,7 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %> 
+<%@include file = "connectsql.jsp" %> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,13 +70,13 @@
                 <img src="../assets/img/loading.gif">
             </div>
         </div>                    
-                   
+        <% if(rs1.next()){ %>           
         <div class="pro-container">
             <div class="pro-img-container">
                 <div class="img-up">
                     <div class="img">
                         <%
-                        out.println("<img id='img-show' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png' />");
+                        out.println("<img id='img-show' src= '" + rs1.getString("img_link") + "' />");
                         %>
                     </div>
                 </div>
@@ -83,22 +84,24 @@
                     <div class="img-down-container">
                         <div>
                         <%
-                        out.println("<img name='img-list' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png' />");
+                        out.println("<img name='img-list' src= '" + rs1.getString("img_link") + "' />");
                         %>
                         </div>
                         <div>
                         <%
-                        out.println("<img name='img-list' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_2.png' />");
+                        out.println("<img name='img-list' src= '" + rs1.getString("img_link") + "' />");
                         %>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+            <%}%>
+
+            <%if(rs.next()){%>
             <div class="pro-info-container">
                 <div class="pro-name">
-                    <%
-                        out.println("<span>"+rs.getString("product_name")+"</span>");
-                    %>
+                    <%=rs.getString("product_name")%>
                 <div class="pro-sold-quan">
                     <%
                         out.println("<span>"+rs.getInt("product_sold")+"</span>");
@@ -106,15 +109,11 @@
                     <span style="color: #bbb;">已賣出</span>
                 </div>
                 <div class="pro-price">
-                    <%
-                        out.println("<span>"+rs.getInt("product_price")+"</span>");
-                    %>
+                    <%=rs.getInt("product_price")%>
                 </div>
                 <div class="pro-inventory">
                     <span>存貨：</span>
-                    <%
-                        out.println("<span id='inventory'>"+rs.getInt("product_amount")+"</span>");
-                    %>
+                    <%=rs.getInt("product_amount")%>
                 </div>
                 <div class="pro-quan">
                     <span>數量：</span>
