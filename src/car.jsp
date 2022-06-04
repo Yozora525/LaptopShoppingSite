@@ -111,8 +111,8 @@
                             out.println("</div>");
                             out.println("<div class='car-item-quan'>");
                             out.println("<div class='item-quan'>");
-                            out.println("<input type='number' name='item-quan' value='"+rs.getString("cart.order_amount")+"' min='1' max='' oninput =' value=value.replace(/[^&#92;d]/g,'') ' /> ");
                             
+                            out.println("<input type='number' name='item-quan' value='"+rs.getString("cart.order_amount")+"' min='1' max='' oninput =' value=value.replace(/[^&#92;d]/g,'') ' /> ");
                             
                             out.println("</div>");
                             out.println("</div>");
