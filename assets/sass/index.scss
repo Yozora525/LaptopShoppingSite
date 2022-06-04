@@ -10,6 +10,28 @@
     }
 }
 
+
+// 輪播圖 + 動態廣告
+.slick{
+    @include small{
+
+    }
+
+    @include large{
+        .slick-hot-container{
+            // border: 1px solid #cac;
+            .hot-pro-img{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+// 篩絢
 .product-group{
     @include small{
 
@@ -22,41 +44,6 @@
     }
 }
 
-
-.prohot{
-    @include small{
-
-    }
-    @include large{
-        display: flex;
-        margin-left: 10%;
-
-    }
-}
-.prohotlist{
-    @include small{
-
-    }
-    @include large{
-        padding-left: 5%;
-
-    }
-}
-
-.prohottext{
-    @include small{
-
-    }
-    @include large{
-        padding-top: 1%;
-        text-align: center;
-
-    }
-}
-
-
-
-// 篩絢
 .product-filter{
     @include small{
         .filter{
@@ -75,6 +62,19 @@
                 margin-bottom: 10%;
             }
         }
+    }
+}
+
+.btn-filter{
+    @include small{
+       
+    }
+
+    @include large{
+        background-color: #0096C7;
+        color: #fff;
+        width: 50%;
+        font-size: 1em;
     }
 }
 
@@ -106,74 +106,46 @@
 }
 
 .list{
-
+    background-color:white;
     @include small{
         display: flex;
-        background-color:white;
-        border-radius: 10px;
         height: 150px;
         margin-bottom: 2%;
     }
 
     @include large{
         display:block;
-        background-color:white;
-        border-radius: 10px;
-        width: 25%;
+        width: 20%;
         margin-left: 1%;
         margin-right: 1%;
-        height: 300px;
+        // height: 300px;
+        height: 200px;
         margin-bottom: 0%;
-    }
-    
-}
 
-.listimg{
+        .pro-img{
+            border: 1px solid #34574a;
+            height: 130px;
+            // padding-left: 3%;
+            // padding-right: 3%;
+            text-align: center;
+            img{
+                width: 80%;
+                height: 80%;
+            }
+        }
 
-    @include small{
-        max-height: 150px;
-        width: 100%;
-        // padding-top: 10px ;
-    }
-
-    @include large{
-        max-height: 200px;
-        width: 100%;
-        padding-top: 10px ;
-    }
-  
-}
-
-.protext{
-    @include small{
-        max-height: 150px;
-        width: 100%;
-        // padding-top: 10px ;
-    }
-
-    @include large{
-       text-align: center;
-       
-    }
-}
-.btn-filter{
-    @include small{
-       
-    }
-
-    @include large{
-        background-color: #84C1FF;
-        width: 50%;
-        border-radius: 10px;
+        .protext{
+            height: 35px;
+            border: 1px solid #000;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        .pro-price{
+            border: 1px solid #000;
+            height: 30px;
+            font-size: 1.25em;
+            color: #0096C7;
+        }
     }
 }
 
-.input{
-    @include small{
-       
-    }
-
-    @include large{
-        width: 50%;
-    }
-}

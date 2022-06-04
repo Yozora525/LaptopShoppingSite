@@ -1,32 +1,14 @@
 @media (min-width: 1000px) {
+  .slick .slick-hot-container .hot-pro-img img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
   .product-group {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 5% 2.5% 5% 2.5%;
     border: 1px solid #ccc;
-  }
-}
-
-@media (min-width: 1000px) {
-  .prohot {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: 10%;
-  }
-}
-
-@media (min-width: 1000px) {
-  .prohotlist {
-    padding-left: 5%;
-  }
-}
-
-@media (min-width: 1000px) {
-  .prohottext {
-    padding-top: 1%;
-    text-align: center;
   }
 }
 
@@ -37,6 +19,15 @@
   .product-filter .filter .filter-container {
     margin-top: 2%;
     margin-bottom: 10%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .btn-filter {
+    background-color: #0096C7;
+    color: #fff;
+    width: 50%;
+    font-size: 1em;
   }
 }
 
@@ -53,79 +44,50 @@
     margin-bottom: 2%;
   }
 }
-
 @media (min-width: 1000px) {
   .product {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 }
 
+.list {
+  background-color: white;
+}
 @media (min-width: 0px) {
   .list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    background-color: white;
-    border-radius: 10px;
     height: 150px;
     margin-bottom: 2%;
   }
 }
-
 @media (min-width: 1000px) {
   .list {
     display: block;
-    background-color: white;
-    border-radius: 10px;
-    width: 25%;
+    width: 20%;
     margin-left: 1%;
     margin-right: 1%;
-    height: 300px;
+    height: 200px;
     margin-bottom: 0%;
   }
-}
-
-@media (min-width: 0px) {
-  .listimg {
-    max-height: 150px;
-    width: 100%;
-  }
-}
-
-@media (min-width: 1000px) {
-  .listimg {
-    max-height: 200px;
-    width: 100%;
-    padding-top: 10px;
-  }
-}
-
-@media (min-width: 0px) {
-  .protext {
-    max-height: 150px;
-    width: 100%;
-  }
-}
-
-@media (min-width: 1000px) {
-  .protext {
+  .list .pro-img {
+    border: 1px solid #34574a;
+    height: 130px;
     text-align: center;
   }
-}
-
-@media (min-width: 1000px) {
-  .btn-filter {
-    background-color: #84C1FF;
-    width: 50%;
-    border-radius: 10px;
+  .list .pro-img img {
+    width: 80%;
+    height: 80%;
   }
-}
-
-@media (min-width: 1000px) {
-  .input {
-    width: 50%;
+  .list .protext {
+    height: 35px;
+    border: 1px solid #000;
+    text-align: left;
+    font-size: 0.9em;
   }
-}
-/*# sourceMappingURL=index.css.map */
+  .list .pro-price {
+    border: 1px solid #000;
+    height: 30px;
+    font-size: 1.25em;
+    color: #0096C7;
+  }
+}/*# sourceMappingURL=index.css.map */

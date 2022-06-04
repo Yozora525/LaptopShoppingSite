@@ -5,6 +5,8 @@ $(function(){
         arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
+        slidesToShow: 5,
+        slidesToScroll: 5,
 
     });
 });
