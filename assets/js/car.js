@@ -12,7 +12,10 @@ $(function() {
     $('input[name="item-quan"').on('keyup', function(event){
         if($(this).val() == 0 || typeof($(this)) == null){
             $(this).val(1);
+        }else{
+            $(this).val($(this).val());
         }
+        alert($(this).val());
         $('input[name="item-quan"').change();
     });
 
