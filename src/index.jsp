@@ -1,6 +1,7 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %> 
+<%@include file = "connectsql.jsp" %> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -212,65 +213,37 @@
              <%
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");    
-                try{
-                    Class.forName("com.mysql.jdbc.Driver");	  
-                    try{
-                        String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-                        Connection con = DriverManager.getConnection(url,"root","1234");
 
-                        if(con.isClosed()){
-                            out.println("connection fail ");
-                        }
-                        else{
-
-                            String sql = "USE `computer_shop`";
-                            con.createStatement().execute(sql);
-                            
-                            sql = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor` WHERE `product_status`=1";
-                            ResultSet rs = con.createStatement().executeQuery(sql);
-                            
-                            
-                                out.println("<div class='product'>");
-                                int k=1;
+                    String sql2 = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor` WHERE `product_status`=1";
+                    ResultSet rs = con.createStatement().executeQuery(sql2);
+                    out.println("<div class='product'>");
+                    int k=1;
                                 
-                                    while(rs.next()){
+                    while(rs.next()){
                                        
-                                       if (k%5!=0){
-                                           k++;
-                                        out.println("<div class='list'>");   
-                                        out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
-                                        out.println("<div class='protext'>");
-                                        out.println(rs.getString("product_name")+"<br>");
-                                        out.println("NT$"+rs.getInt("product_price"));                
-                                        out.println("</div>");  
-                                        out.println("</div>");
-                                         }else {
-                                        out.println("</div>");
-                                        out.println("<div class='product'>");
-                                        out.println("<div class='list'>");   
-                                        out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
-                                        out.println("<div class='protext'>");
-                                        out.println(rs.getString("product_name")+"<br>");
-                                        out.println("NT$"+rs.getInt("product_price"));                
-                                        out.println("</div>");  
-                                        out.println("</div>");
-                                        k=2;
-                                         }  
-                                    }
-                                 out.println("</div>");
-                                
-
-                        }
-                        con.close();
+                    if (k%6!=0){
+                     k++;
+                    out.println("<div class='list'>");   
+                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                    out.println("<div class='protext'>");
+                    out.println(rs.getString("product_name")+"<br>");
+                    out.println("NT$"+rs.getInt("product_price"));                
+                    out.println("</div>");  
+                    out.println("</div>");
+                    }else {
+                    out.println("</div>");
+                    out.println("<div class='product'>");
+                    out.println("<div class='list'>");   
+                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                    out.println("<div class='protext'>");
+                    out.println(rs.getString("product_name")+"<br>");
+                    out.println("NT$"+rs.getInt("product_price"));                
+                    out.println("</div>");  
+                    out.println("</div>");
+                    k=2;
+                    }  
                     }
-                    catch(SQLException sExec){
-                        out.println("sql error "+ sExec.toString());
-                    }
-                }
-                catch(ClassNotFoundException err){
-                    out.println("class error "+ err.toString());
-                }
-
+                     out.println("</div>");
             %>
              
             
