@@ -55,7 +55,7 @@
             </div>
 
             <div class="btn-add-pro-container">
-                <a href="addPro.html"><button>新增商品</button></a>
+                <a href="addPro.jsp"><button>新增商品</button></a>
             </div>
 
             <div class="pro-container">
