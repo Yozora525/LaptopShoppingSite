@@ -74,39 +74,62 @@
                 <div class="content_format">
                     <div class="slick">
                         <!-- 要輪播的內容 -->
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
+                        <div class="slick-hot-container">
+                            <div class="hot-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
+                            </div>
+                        </div>
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
+                            </div>
+                        </div>
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
+                            </div>
+                        </div>
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
+                            </div>
+                        </div>
+                        
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
+                            </div>
+                        </div>
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
+                            </div>
+                        </div>
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
+                            </div>
+                        </div>
+                        <div class="slick-hot-container">
+                            <div class="hot-pro-rank">
+                                <img src="../assets/img/icon/hot-large.png" />
+                                <img width="100%" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <h1 style="text-align: center;">熱銷商品</h1>
-            <div class="prohot">
-                <div class="prohotlist">
-                    <img width="300px" class="prohot-img" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                    <div class="prohottext">
-                        No1.ACER Aspire5 A514-54G-58HW
-                    </div>
-                </div>
-                <div class="prohotlist">
-                    <img width="300px" class="prohot-img" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                    <div class="prohottext">
-                        No2.ASUS TUF Gaming F15
-                    </div>
-                    
-                </div>
-                <div class="prohotlist">
-                    <img width="300px" class="prohot-img" src="../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_1.png" />
-                    <div class="prohottext">
-                        No3.ASUS Zenbook 14 Flip OLED
-                    </div>  
                 </div>
             </div>
             
             <!-- 產品 and 篩選 -->
             <div class="product-group">
-                <!-- 篩選 -->
-                
+                <!-- 篩選 -->          
                 <div class="product-filter">
                     <form action="" method="GET" id="" name="">
                     <div id="filter-slide" class="" style="text-align:center;">
@@ -223,22 +246,35 @@
                                        
                     if (k%6!=0){
                      k++;
+
                     out.println("<div class='list'>");   
+                    out.println("<div class='pro-img'>");
                     out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
-                    out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name")+"<br>");
-                    out.println("NT$"+rs.getInt("product_price"));                
                     out.println("</div>");  
+                    out.println("<div class='pro-content'>");
+                    out.println("<div class='protext'>");
+                    out.println(rs.getString("product_name"));    
+                    out.println("</div>"); 
+                    out.println("<div class='pro-price'>");
+                    out.println("$"+rs.getInt("product_price"));  
+                    out.println("</div>");
+                    out.println("</div>");
                     out.println("</div>");
                     }else {
                     out.println("</div>");
                     out.println("<div class='product'>");
                     out.println("<div class='list'>");   
+                    out.println("<div class='pro-img'>");
                     out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
-                    out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name")+"<br>");
-                    out.println("NT$"+rs.getInt("product_price"));                
                     out.println("</div>");  
+                    out.println("<div class='pro-content'>");
+                    out.println("<div class='protext'>");
+                    out.println(rs.getString("product_name"));    
+                    out.println("</div>"); 
+                    out.println("<div class='pro-price'>");
+                    out.println("$"+rs.getInt("product_price"));  
+                    out.println("</div>");
+                    out.println("</div>");
                     out.println("</div>");
                     k=2;
                     }  

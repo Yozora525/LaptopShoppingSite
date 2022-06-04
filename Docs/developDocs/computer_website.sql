@@ -57,9 +57,9 @@ INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, '', 200
 INSERT INTO product_infor VALUES ("P013", "MSI Prestige 14", 30900, 200, 1, '', 20040, 14, 'MSI', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P014", "HP Elite Dragonfly G2", 59900, 200, 1, '', 20700, 13, 'HP', 1, '商務');
 INSERT INTO product_infor VALUES ("P015", "HP 470 G8", 29999, 200, 1, '', 20600, 17.3, 'HP', 0, '商務'); 
-INSERT INTO product_infor VALUES ("P016", "HP 14s-dq4001TU", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');			#型號就好
-INSERT INTO product_infor VALUES ("P017", "HP OMEN 16-C0668AX", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競'); 			#型號就好
-INSERT INTO product_infor VALUES ("P018", "ACER TravelMate P214-53-78QY", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務'); #型號就好
+INSERT INTO product_infor VALUES ("P016", "HP 14s", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');			
+INSERT INTO product_infor VALUES ("P017", "HP OMEN 16", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競'); 			
+INSERT INTO product_infor VALUES ("P018", "ACER TravelMate", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務'); 
 INSERT INTO product_infor VALUES ("P019", "ASUS E410", 9488, 200, 1, '', 20900, 14, 'ASUS', 0, '輕薄便攜');
 INSERT INTO product_infor VALUES ("P020", "MSI Summit E16 Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');
 
@@ -214,80 +214,60 @@ CREATE TABLE product_img(
 
 INSERT INTO product_img VALUES ('P001', '../assets/img/pro/ASUS/ASUS X515_1.png');
 INSERT INTO product_img VALUES ('P001', '../assets/img/pro/ASUS/ASUS X515_2.png');
-INSERT INTO product_img VALUES ('P001', '../assets/img/pro/ASUS/ASUS X515_3.png');
 
-INSERT INTO product_img VALUES ('P002', 'P002-1');
-INSERT INTO product_img VALUES ('P002', 'P002-2');
-INSERT INTO product_img VALUES ('P002', 'P002-3');
+INSERT INTO product_img VALUES ('P002', '../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_1.png');
+INSERT INTO product_img VALUES ('P002', '../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_2.png');
 
-INSERT INTO product_img VALUES ('P003', 'P003-1');
-INSERT INTO product_img VALUES ('P003', 'P003-2');
-INSERT INTO product_img VALUES ('P003', 'P003-3');
+INSERT INTO product_img VALUES ('P003','../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png');
+INSERT INTO product_img VALUES ('P003', '../assets/img/pro/ASUS/ASUS TUF Gaming F15_2.png');
 
-INSERT INTO product_img VALUES ('P004', 'P004-1');
-INSERT INTO product_img VALUES ('P004', 'P004-2');
-INSERT INTO product_img VALUES ('P004', 'P004-3');
+INSERT INTO product_img VALUES ('P004','../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png');
+INSERT INTO product_img VALUES ('P004', '../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_2.png');
 
-INSERT INTO product_img VALUES ('P005', 'P005-1');
-INSERT INTO product_img VALUES ('P005', 'P005-2');
-INSERT INTO product_img VALUES ('P005', 'P005-3');
+INSERT INTO product_img VALUES ('P005', '../assets/img/pro/APPLE/APPLE MacBook Air_1.png');
+INSERT INTO product_img VALUES ('P005', '../assets/img/pro/APPLE/APPLE MacBook Air_2.png');
 
-INSERT INTO product_img VALUES ('P006', 'P006-1');
-INSERT INTO product_img VALUES ('P006', 'P006-2');
-INSERT INTO product_img VALUES ('P006', 'P006-3');
+INSERT INTO product_img VALUES ('P006', '../assets/img/pro/APPLE/APPLE MacBook Pro_1.png');
+INSERT INTO product_img VALUES ('P006', '../assets/img/pro/APPLE/APPLE MacBook Pro_2.png');
 
-INSERT INTO product_img VALUES ('P007', 'P007-1');
-INSERT INTO product_img VALUES ('P007', 'P007-2');
-INSERT INTO product_img VALUES ('P007', 'P007-3');
+INSERT INTO product_img VALUES ('P007', '../assets/img/pro/ACER/ACER Nitro5_1.png');
+INSERT INTO product_img VALUES ('P007', '../assets/img/pro/ACER/ACER Nitro5_2.png');
 
-INSERT INTO product_img VALUES ('P008', 'P008-1');
-INSERT INTO product_img VALUES ('P008', 'P008-2');
-INSERT INTO product_img VALUES ('P008', 'P008-3');
+INSERT INTO product_img VALUES ('P008', '../assets/img/pro/ACER/ACER Swift5_1.png');
+INSERT INTO product_img VALUES ('P008', '../assets/img/pro/ACER/ACER Swift5_2.png');
 
-INSERT INTO product_img VALUES ('P009', 'P009-1');
-INSERT INTO product_img VALUES ('P009', 'P009-2');
-INSERT INTO product_img VALUES ('P009', 'P009-3');
+INSERT INTO product_img VALUES ('P009', '../assets/img/pro/ACER/ACER Aspire5_1.png');
+INSERT INTO product_img VALUES ('P009', '../assets/img/pro/ACER/ACER Aspire5_2.png');
 
-INSERT INTO product_img VALUES ('P010', 'P010-1');
-INSERT INTO product_img VALUES ('P010', 'P010-2');
-INSERT INTO product_img VALUES ('P010', 'P010-3');
+INSERT INTO product_img VALUES ('P010', '../assets/img/pro/MSI/MSI Stealth 15M_1.png');
+INSERT INTO product_img VALUES ('P010', '../assets/img/pro/MSI/MSI Stealth 15M_2.png');
 
-INSERT INTO product_img VALUES ('P011', 'P011-1');
-INSERT INTO product_img VALUES ('P011', 'P011-2');
-INSERT INTO product_img VALUES ('P011', 'P011-3');
+INSERT INTO product_img VALUES ('P011', '../assets/img/pro/MSI/MSI Modern14_1.png');
+INSERT INTO product_img VALUES ('P011', '../assets/img/pro/MSI/MSI Modern14_2.png');
 
-INSERT INTO product_img VALUES ('P012', 'P012-1');
-INSERT INTO product_img VALUES ('P012', 'P012-2');
-INSERT INTO product_img VALUES ('P012', 'P012-3');
+INSERT INTO product_img VALUES ('P012', '../assets/img/pro/MSI/MSI Alpha 15_1.png');
+INSERT INTO product_img VALUES ('P012', '../assets/img/pro/MSI/MSI Alpha 15_2.png');
 
-INSERT INTO product_img VALUES ('P013', 'P013-1');
-INSERT INTO product_img VALUES ('P013', 'P013-2');
-INSERT INTO product_img VALUES ('P013', 'P013-3');
+INSERT INTO product_img VALUES ('P013', '../assets/img/pro/MSI/MSI Prestige 14_1.png');
+INSERT INTO product_img VALUES ('P013', '../assets/img/pro/MSI/MSI Prestige 14_2.png');
 
-INSERT INTO product_img VALUES ('P014', 'P014-1');
-INSERT INTO product_img VALUES ('P014', 'P014-2');
-INSERT INTO product_img VALUES ('P014', 'P014-3');
+INSERT INTO product_img VALUES ('P014', '../assets/img/pro/HP/HP Elite Dragonfly G2_1.png');
+INSERT INTO product_img VALUES ('P014', '../assets/img/pro/HP/HP Elite Dragonfly G2_2.png');
 
-INSERT INTO product_img VALUES ('P015', 'P015-1');
-INSERT INTO product_img VALUES ('P015', 'P015-2');
-INSERT INTO product_img VALUES ('P015', 'P015-3');
+INSERT INTO product_img VALUES ('P015', '../assets/img/pro/HP/HP 470 G8_1.png');
+INSERT INTO product_img VALUES ('P015', '../assets/img/pro/HP/HP 470 G8_2.png');
 
-INSERT INTO product_img VALUES ('P016', 'P016-1');
-INSERT INTO product_img VALUES ('P016', 'P016-2');
-INSERT INTO product_img VALUES ('P016', 'P016-3');
+INSERT INTO product_img VALUES ('P016', '../assets/img/pro/HP/HP 14s_1.png');
+INSERT INTO product_img VALUES ('P016', '../assets/img/pro/HP/HP 14s_2.png');
 
-INSERT INTO product_img VALUES ('P017', 'P017-1');
-INSERT INTO product_img VALUES ('P017', 'P017-2');
-INSERT INTO product_img VALUES ('P017', 'P017-3');
+INSERT INTO product_img VALUES ('P017', '../assets/img/pro/HP/HP OMEN 16_1.png');
+INSERT INTO product_img VALUES ('P017', '../assets/img/pro/HP/HP OMEN 16_2.png');
 
-INSERT INTO product_img VALUES ('P018', 'P018-1');
-INSERT INTO product_img VALUES ('P018', 'P018-2');
-INSERT INTO product_img VALUES ('P018', 'P018-3');
+INSERT INTO product_img VALUES ('P018', '../assets/img/pro/ACER/ACER TravelMate_1.png');
+INSERT INTO product_img VALUES ('P018', '../assets/img/pro/ACER/ACER TravelMate_2.png');
 
-INSERT INTO product_img VALUES ('P019', 'P019-1');
-INSERT INTO product_img VALUES ('P019', 'P019-2');
-INSERT INTO product_img VALUES ('P019', 'P019-3');
+INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png');
+INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_2.png');
 
-INSERT INTO product_img VALUES ('P020', 'P020-1');
-INSERT INTO product_img VALUES ('P020', 'P020-2');
-INSERT INTO product_img VALUES ('P020', 'P020-3');
+INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');
+INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');

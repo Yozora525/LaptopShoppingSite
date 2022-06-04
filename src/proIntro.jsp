@@ -50,47 +50,26 @@
             </nav>
         </div>
     </header>
+
+    <%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");    
+    String pname = request.getParameter("");                                         // 量 填你傳過來的名字
+    //String sql = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; //填完之後把這行註解拿掉
+    sql = "SELECT * FROM `product_infor` WHERE (product_id='P001')";        //然後把這行刪掉
+    ResultSet rs = con.createStatement().executeQuery(sql);
+    sql = "SELECT * FROM `product_img` WHERE (product_id='P001')"; 
+    ResultSet rs1 = con.createStatement().executeQuery(sql);
+
+    %>
+
     <main class="main">
         <div class="content">
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-        </div>
-        <%
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");    
-
-            String sqlproduct = "SELECT `product_brand`, `product_name`, `product_price`, `product_amount`, `product_sold` FROM `product_infor` WHERE `product_status`=1";
-            ResultSet rs = con.createStatement().executeQuery(sqlproduct);
-                    out.println("<div class='product'>");
-                    int k=1;
-                                
-                    while(rs.next()){
-                                       
-                    if (k%6!=0){
-                     k++;
-                    out.println("<div class='list'>");   
-                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
-                    out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name")+"<br>");
-                    out.println("NT$"+rs.getInt("product_price"));                
-                    out.println("</div>");  
-                    out.println("</div>");
-                    }else {
-                    out.println("</div>");
-                    out.println("<div class='product'>");
-                    out.println("<div class='list'>");   
-                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
-                    out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name")+"<br>");
-                    out.println("NT$"+rs.getInt("product_price"));                
-                    out.println("</div>");  
-                    out.println("</div>");
-                    k=2;
-                    }  
-                    }
-                     out.println("</div>");
-            %>
+        </div>                    
+                   
         <div class="pro-container">
             <div class="pro-img-container">
                 <div class="img-up">
