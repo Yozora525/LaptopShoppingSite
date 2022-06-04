@@ -62,7 +62,6 @@ INSERT INTO product_infor VALUES ("P017", "HP OMEN 16-C0668AX", 48900, 200, 1, '
 INSERT INTO product_infor VALUES ("P018", "ACER TravelMate P214-53-78QY", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務'); #型號就好
 INSERT INTO product_infor VALUES ("P019", "ASUS E410", 9488, 200, 1, '', 20900, 14, 'ASUS', 0, '輕薄便攜');
 INSERT INTO product_infor VALUES ("P020", "MSI Summit E16 Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');
-
 SELECT * FROM product_infor;
 
 

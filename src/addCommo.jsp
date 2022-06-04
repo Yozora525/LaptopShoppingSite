@@ -28,35 +28,35 @@
     ResultSet rs = con.createStatement().executeQuery( sql );
     rs.next();
     int total = rs.getInt( 1 )+1;
-    out.println( total );
+    //out.println( total );
     String n="";
     String idn="";
 
     if( total > 0 && total < 10){
         n = Integer.toString(total);
-        idn = "000"+ n;
+        idn = "00"+ n;
     }
     else if( total < 100 && total >= 10 ){
         n = Integer.toString(total);
-        idn = "00"+ n;
+        idn = "0"+ n;
     }
     else if ( total >= 100 && total < 1000 ){
         n = Integer.toString(total);
-        idn = "0"+ n;        
+        idn = ""+ n;        
     }
 
     String id = "P" + idn;
 
-    sql = "INSERT INTO `product_infor` VALUES (" + "'" + id + "'," ;
-    sql += "'" + name + "','" + price + "','" +  store + "','" + " 1'," + "'" + discript + "'," + " '0', '" + size + "'," ;
+    sql = "INSERT INTO `product_infor` VALUES ('" + id + "'," ;
+    sql += "'" + name + "','" + price + "','" +  store + "','" + "1','" + discript + "','" + "0','" + size + "'," ;
     sql += "'" + brand + "','"  + addprotouch + "','"  + price + "')" ;
-  
-    int no = con.createStatement().executeUpdate(sql);
+    //out.println(sql);
+    int change = con.createStatement().executeUpdate(sql);
 
     
-    if (no>0) 
-        out.println("<a href='backstage.jsp'>新增成功</a>");
-
+    if ( change > 0 ) 
+        out.println("新增成功<a href='backstage.jsp'>回清單</a>");
+    con.close();
 %>
 </body>
 </html>
