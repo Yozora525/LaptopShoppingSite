@@ -25,15 +25,6 @@
 
 // 篩絢
 .product-filter{
-    @include small{
-        .filter{
-            .filter-container{
-
-            }
-            
-        }
-    }
-
     @include large{
         width: 15%;
         .filter{
