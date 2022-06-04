@@ -32,11 +32,11 @@
         <div class="backstage-guide-container">
             <nav class="backstage-nav-header">
                 <div class="backstage-home">
-                    <a href="backstage.html">後台管理</a>
+                    <a href="backstage.jsp">後台管理</a>
                 </div>
                 <div class="link-icon">
                     <div class="icon-backstage">
-                        <a  href="backstage.html"><img src="../assets/img/google-icon/ic_home_white_36dp.png"></a>
+                        <a  href="backstage.jsp"><img src="../assets/img/google-icon/ic_home_white_36dp.png"></a>
                     </div>
                     <div class="icon-homepage">
                         <a  href="index.html" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
@@ -70,7 +70,7 @@
                                     <span>#</span>
                                 </th>
                                 <th>
-                                    <span>產品id</span>
+                                    <span>產品品牌</span>
                                 </th>
                                 <th>
                                     <span>產品名稱</span>
@@ -89,15 +89,18 @@
                         <tbody>
                             <!-- 商品 -->
                             <%
+                                                    
+                            request.setCharacterEncoding("UTF-8");
+                            response.setCharacterEncoding("UTF-8");   
                             int order1=0;
-                            String sql2 = "SELECT `product_id`, `product_name`, `product_amount`,`product_status` FROM `product_infor`";                            
+                            String sql2 = "SELECT `product_brand`, `product_name`, `product_amount`,`product_status` FROM `product_infor`";                            
                             ResultSet rs2 = con.createStatement().executeQuery(sql2);
                         
                             while(rs2.next()){
                                 ++order1;
                                 out.println("<tr>");
                                 out.println("<td><span>"+ order1 +"</span></td>"); 
-                                out.println("<td><span name='pro-brand'>"+rs2.getString("product_id") +"</span></td>"); 
+                                out.println("<td><span name='pro-brand'>"+rs2.getString("product_brand") +"</span></td>"); 
                                 out.println("<td><span name='pro-name'>"+rs2.getString("product_name") +"</span></td>");
                                 out.println("<td><span name='pro-inventory'>"+rs2.getString("product_amount")+"</span></td>");
                                 if( rs2.getString("product_status").equals("1") ){
@@ -111,48 +114,6 @@
                                 
                             } 
                             %>  
-                            <tr>
-                                <td>
-                                    <span>1</span>
-                                </td>
-                                <td>
-                                    <span name="pro-brand">APPLE</span>
-                                </td>
-                                <td>
-                                    <span name="pro-name">MacBook Air</span>
-                                </td>
-                                <td>
-                                    <span name="pro-inventory">999</span>
-                                </td>
-                                <td>
-                                    <span name="pro-status">上架</span>
-                                </td>
-                                <td>
-                                    <button name="switch">下架</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <span>2</span>
-                                </td>
-                                <td>
-                                    <span name="pro-brand">APPLE</span>
-                                </td>
-                                <td>
-                                    <span name="pro-name">MacBook Air</span>
-                                </td>
-                                <td>
-                                    <span name="pro-inventory">999</span>
-                                </td>
-                                <td>
-                                    <span name="pro-status">上架</span>
-                                </td>
-                                <td>
-                                    <button name="switch">下架</button>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -170,10 +131,10 @@
                             <option value=''>--請選擇--</option>
                         <%  
                             
-                            sql = "SELECT `product_id` FROM `product_infor`";
+                            sql = "SELECT `product_id`,`product_name` FROM `product_infor`";
                             ResultSet rs=con.createStatement().executeQuery(sql);
                             while(rs.next()){
-                                out.println("<option value='"+rs.getString(1)+"'> "+ rs.getString(1)+"</option>");
+                                out.println("<option value='"+rs.getString("product_id")+"'> "+ rs.getString("product_name")+"</option>");
                             }
                                
                         %>
@@ -197,7 +158,7 @@
                                     <span>交易日期</span>
                                 </th>
                                 <th>
-                                    <span>商品ID</span>
+                                    <span>商品名稱</span>
                                 </th>
                                 <th>
                                     <span>單價</span>
@@ -223,8 +184,7 @@
 
                                   
 
-                            
-                                sql1 = "SELECT order_details.order_id, order_details.product_id, order_details.order_time, ";
+                                sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
                                 sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
                                 sql1 += "FROM `product_infor`, `order_details` ";
                                 sql1 += "WHERE (order_details.product_id=product_infor.product_id) ORDER BY order_details.order_time";
@@ -238,7 +198,7 @@
                                     out.println("<td><span>"+ order2 +"</span></td>"); 
                                     out.println("<td><span>"+rs1.getString("order_details.order_id") +"</span></td>"); 
                                     out.println("<td><span>"+rs1.getString("order_details.order_time") +"</span></td>");
-                                    out.println("<td><span>"+rs1.getString("order_details.product_id") +"</span></td>");
+                                    out.println("<td><span>"+rs1.getString("product_infor.product_name") +"</span></td>");
                                     out.println("<td><span>"+rs1.getInt("product_infor.product_price") +"</span></td>");
                                     out.println("<td><span>"+rs1.getInt("order_details.howmuch")+ "</span></td>");
                                     out.println("<td><span>"+rs1.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
@@ -247,9 +207,7 @@
                                 } 
                             
                              
-                        %>                            
-                         
-
+                        %>        
                         </tbody>
                     </table>
                 </div>
