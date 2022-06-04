@@ -1,18 +1,77 @@
+.pay-container {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 @media (min-width: 0px) {
   .pay-container .pay-title-container {
-    display: none;
+    display: flex;
+    font-size: 1em;
+    height: 1.25em;
+    background-color: #fff;
+    color: #aaa;
+  }
+  .pay-container .pay-title-container .pay-title-order {
+    width: 58%;
+    padding-left: 5%;
+  }
+  .pay-container .pay-title-container .pay-title {
+    width: 20%;
+    text-align: left;
+  }
+  .pay-container .pay-item {
+    display: flex;
+    margin-bottom: 1%;
+    height: 40px;
+    padding-top: 1%;
+    background-color: #FFF;
+    font-size: 0.9em;
+  }
+  .pay-container .pay-item .item-info-name {
+    width: 58%;
+    padding-left: 5%;
+  }
+  .pay-container .pay-item .item-info {
+    width: 20%;
+    text-align: center;
+  }
+  .pay-container .pay-item input {
+    font-size: 1em;
+    border: 0;
+    width: 100%;
+  }
+  .pay-container .pay-checkout {
+    display: flex;
+    background-color: #FFF;
+    font-size: 0.9em;
+    height: 1.25em;
+  }
+  .pay-container .pay-checkout .send-addr {
+    width: 50%;
+    padding-left: 5%;
+  }
+  .pay-container .pay-checkout .send-addr input {
+    font-size: 0.9em;
+    width: 70%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .pay-container .pay-checkout .pay-revenue {
+    width: 35%;
+  }
+  .pay-container .pay-checkout .pay-btn-container {
+    width: 15%;
+  }
+  .pay-container .pay-checkout .pay-btn-container button {
+    border: 0;
+    font-size: 1em;
+    width: 90%;
+    color: #fff;
+    background-color: #0096C7;
   }
 }
-
 @media (min-width: 1000px) {
-  .pay-container {
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
   .pay-container .pay-title-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     font-size: 18px;
     height: 40px;
@@ -29,8 +88,6 @@
     text-align: left;
   }
   .pay-container .pay-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1.5%;
     height: 40px;
@@ -51,8 +108,6 @@
     width: 100%;
   }
   .pay-container .pay-checkout {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     background-color: #FFF;
     font-size: 18px;
@@ -79,5 +134,4 @@
     color: #fff;
     background-color: #0096C7;
   }
-}
-/*# sourceMappingURL=pay.css.map */
+}/*# sourceMappingURL=pay.css.map */
