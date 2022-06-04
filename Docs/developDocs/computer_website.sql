@@ -192,15 +192,15 @@ CREATE TABLE cart(
 
 );
 
-#INSERT INTO cart VALUES ('MEM20220601112045001', 'P011', '5');
-#INSERT INTO cart VALUES ('MEM20220531100430002', 'P007', '3');
-#INSERT INTO cart VALUES ('MEM20220531100430002', 'P001', '10');
-#INSERT INTO cart VALUES ('MEM20220609222218003', 'P016', '4');
-#INSERT INTO cart VALUES ('MEM20220609222218003', 'P005', '2');
-#INSERT INTO cart VALUES ('MEM20220609222218003', 'P019', '1');
-#INSERT INTO cart VALUES ('MEM20220530130455004', 'P012', '13');
-#INSERT INTO cart VALUES ('MEM20220602194439005', 'P015', '6');
-#INSERT INTO cart VALUES ('MEM20220602194439005', 'P020', '9');
+INSERT INTO cart VALUES ('MEM20220601112045001', 'P011', '5');
+INSERT INTO cart VALUES ('MEM20220531100430002', 'P007', '3');
+INSERT INTO cart VALUES ('MEM20220531100430002', 'P001', '10');
+INSERT INTO cart VALUES ('MEM20220609222218003', 'P016', '4');
+INSERT INTO cart VALUES ('MEM20220609222218003', 'P005', '2');
+INSERT INTO cart VALUES ('MEM20220609222218003', 'P019', '1');
+INSERT INTO cart VALUES ('MEM20220530130455004', 'P012', '13');
+INSERT INTO cart VALUES ('MEM20220602194439005', 'P015', '6');
+INSERT INTO cart VALUES ('MEM20220602194439005', 'P020', '9');
 
 #10.商品圖片
 CREATE TABLE product_img(
@@ -269,4 +269,9 @@ INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png'
 INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_2.png');
 
 INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');
-INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');
+INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_2.png');
+
+
+SELECT cart.mem_id, product_infor.product_name , cart.product_id , product_infor.product_price ,cart.order_amount,product_infor.product_price *cart.order_amount
+FROM cart, product_infor
+WHERE cart.mem_id = 'MEM20220531100430002' AND (cart.product_id = product_infor.product_id);
