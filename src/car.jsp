@@ -1,3 +1,7 @@
+<%@ page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<%@include file = "connectsql.jsp" %> 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -82,69 +86,64 @@
                 </div>
                 <form action="" method="POST" id="" class="">
                     <!-- 購物車內商品 -->
-                    <div class="car-item" name="car-item">
-                        <div class="car-item-checkbox">
-                            <div class="item-checkbox">
-                                <input type="checkbox" name="item-check" />
-                            </div>
-                            <div class="item-name">
-                                <input type="text" name="item-name" value="Apple MacBook Ari" readonly/>
-                            </div>
-                        </div>
-                        <div class="car-item-other">
-                            <div class="car-item-price">
-                                <input type="text" class="item-price" name="item-price" value="38900" readonly/>
-                            </div>
-                            <div class="car-item-quan">
-                                <div class="item-quan">
-                                    <input type="number" name="item-quan" value="1" min="1" max="" oninput = "value=value.replace(/[^\d]/g,'')" />
-                                </div>
-                            </div>
-                            <div class="car-item-sum">
-                                <span class="item-sum" name="item-sum">38900</span>
-                            </div>
-                            <div class="car-item-delete">
-                                <span class="item-delete" name="item-delete">刪除</span>
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                        request.setCharacterEncoding("UTF-8");
+                        response.setCharacterEncoding("UTF-8");
+                        sql = "SELECT cart.mem_id, product_infor.product_name, cart.product_id , product_infor.product_price , cart.order_amount, product_infor.product_price * cart.order_amount";
+                        sql += " FROM `cart`, `product_infor`";
+                        sql += "WHERE (cart.mem_id = 'MEM20220531100430002') AND (cart.product_id = product_infor.product_id)";
+                       // out.println(sql);
+                        ResultSet rs = con.createStatement().executeQuery(sql);
 
-                    <div class="car-item" name="car-item">
-                        <div class="car-item-checkbox">
-                            <div class="item-checkbox">
-                                <input type="checkbox" name="item-check" />
-                            </div>
-                            <div class="item-name">
-                                <input type="text" name="item-name" value="Apple MacBook Ari" readonly/>
-                            </div>
-                        </div>
-                        <div class="car-item-other">
-                            <div class="car-item-price">
-                                <input type="text" class="item-price" name="item-price" value="38900" readonly/>
-                            </div>
-                            <div class="car-item-quan">
-                                <div class="item-quan">
-                                    <input type="number" name="item-quan" value="1" min="1" max="" oninput = "value=value.replace(/[^\d]/g,'')" />
-                                </div>
-                            </div>
-                            <div class="car-item-sum">
-                                <span class="item-sum" name="item-sum">38900</span>
-                            </div>
-                            <div class="car-item-delete">
-                                <span class="item-delete" name="item-delete">刪除</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                    
+                        while(rs.next()){
+                            out.println("<div class='car-item' name='car-item'>");
+                            out.println("<div class='car-item-checkbox'>");
+                            out.println("<div class='item-checkbox'>");
+                            out.println("<input type='checkbox' name='item-check' />");
+                            out.println("</div>");
+                            out.println("<div class='item-name'>");
+                            out.println("<input type='text' name='item-name' value='"+ rs.getString("product_infor.product_name") +"' readonly/>");
+                            out.println("</div>");
+                            out.println("</div>");
+                            out.println("<div class='car-item-other'>");
+                            out.println("<div class='car-item-price'>");
+                            out.println("<input type='text' class='item-price' name='item-price' value='"+ rs.getInt("product_infor.product_price") +"' readonly/>");
+                            out.println("</div>");
+                            out.println("<div class='car-item-quan'>");
+                            out.println("<div class='item-quan'>");
+                            
+                            out.println("<input type='number' name='item-quan' value='"+rs.getString("cart.order_amount")+"' min='1' max='' oninput =' value=value.replace(/[^&#92;d]/g,'') ' /> ");
+                            
+                            out.println("</div>");
+                            out.println("</div>");
+                            out.println("<div class='car-item-sum'>");
+                            out.println("<span class='item-sum' name='item-sum'>"+ rs.getInt("product_infor.product_price * cart.order_amount") +"</span>");
+                            out.println("</div>");
+                            out.println("<div class='car-item-delete'>");
+                            out.println("<span class='item-delete' name='item-delete'>刪除</span>");
+                            out.println("</div>");
+                            out.println("</div>");
+                            out.println("</div>");
+                            
+                        }
+                    %> 
 
                     
                     <div class="car-pay">
                         <div class="total-container">
-                            <span class=""> 總金額: </span>
-                            <span class="" id="car-pay-total" style="color: #0096C7;font-weight: bold;"> 0 </span>
-                        </div>
+                        <%-- <%
+                            sql = "SELECT cart.mem_id, product_infor.product_name, cart.product_id , product_infor.product_price , cart.order_amount, SUM(product_infor.product_price * cart.order_amount) AS totalprice";
+                            sql += " FROM `cart`, `product_infor`";
+                            sql += "WHERE (cart.mem_id = 'MEM20220531100430002') AND (cart.product_id = product_infor.product_id)";
+                       
+                             rs = con.createStatement().executeQuery(sql);
+                        %> --%>
+                        
+                            <span class=""> 總金額:</span>
+                            <span class="" id="car-pay-total" style="color: #0096C7;font-weight: bold;">0</span>
+                        </div> 
+                        <%-- <%if(rs.next()){%><%=rs.getString(6)%><%}%> --%>
+                        
                         <div class="car-par-btn">
                             <button type="submit" class="">去買單</button>
                         </div>
