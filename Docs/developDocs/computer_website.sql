@@ -15,6 +15,15 @@ INSERT INTO manager VALUES ('M001','serverDG','1094412253');
 
 SELECT * FROM  manager;
 
+CREATE TABLE type_list( 
+	product_type	VARCHAR	(32),
+    PRIMARY KEY (product_type)
+);
+
+INSERT INTO type_list VALUES ("輕薄便攜");
+INSERT INTO type_list VALUES ("商務");
+INSERT INTO type_list VALUES ("電競");
+INSERT INTO type_list VALUES ("創作設計");
 
 #5.產品基本資料表
 CREATE TABLE product_infor( 
@@ -48,8 +57,8 @@ INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, '', 200
 INSERT INTO product_infor VALUES ("P013", "MSI Prestige 14", 30900, 200, 1, '', 20040, 14, 'MSI', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P014", "HP Elite Dragonfly G2", 59900, 200, 1, '', 20700, 13, 'HP', 1, '商務');
 INSERT INTO product_infor VALUES ("P015", "HP 470 G8", 29999, 200, 1, '', 20600, 17.3, 'HP', 0, '商務'); 
-INSERT INTO product_infor VALUES ("P016", "HP 14s-dq4001TU", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');#型號就好
-INSERT INTO product_infor VALUES ("P017", "HP OMEN 16-C0668AX", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競'); #型號就好
+INSERT INTO product_infor VALUES ("P016", "HP 14s-dq4001TU", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');			#型號就好
+INSERT INTO product_infor VALUES ("P017", "HP OMEN 16-C0668AX", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競'); 			#型號就好
 INSERT INTO product_infor VALUES ("P018", "ACER TravelMate P214-53-78QY", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務'); #型號就好
 INSERT INTO product_infor VALUES ("P019", "ASUS E410", 9488, 200, 1, '', 20900, 14, 'ASUS', 0, '輕薄便攜');
 INSERT INTO product_infor VALUES ("P020", "MSI Summit E16 Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');

@@ -53,7 +53,7 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-
+        <form action="addCommo.jsp" method="get">
             <div class="add-pro-container">
                 <table class="add-pro-table">
                     <tr>
@@ -96,8 +96,15 @@
                             選擇產品類型：
                         </td>
                         <td>
-                            <select id="add-pro-type">
-                                <option value="商務">商務</option>
+                            <select id="add-pro-type" name="type" >
+                                <%  
+                                    sql = "SELECT `product_type` FROM `type_list`";
+                                    ResultSet rs=con.createStatement().executeQuery(sql);
+                                    while(rs.next()){
+                                        out.println("<option value='"+rs.getString("product_type")+"'> "+ rs.getString("product_type")+"</option>");
+                                    }
+                                    
+                                %>
                             </select>
                         </td>
                     </tr>
@@ -118,13 +125,21 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>
+                            產品敘述：
+                        </td>
+                        <td>
+                            <input type="text" id="discript" placeholder="請輸入產品描述" name="discript"  />
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="2">
                             <button id="add-pro">新增產品</button>
                         </td>
                     </tr>
                 </table>
             </div>
-
+        </form>
         </div>
     </main>
     <footer class="footer">
