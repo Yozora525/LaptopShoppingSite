@@ -205,73 +205,50 @@ INSERT INTO cart VALUES ('MEM20220602194439005', 'P020', '9');
 #10.商品圖片
 CREATE TABLE product_img(
 	product_id	VARCHAR	(4)  NOT NULL,
-	img_link VARCHAR(100),	#P001-1
+	img_link VARCHAR(100), #P001-1
+	img_link_two VARCHAR(100),	
 
-    PRIMARY KEY (product_id,img_link),
+    PRIMARY KEY (product_id,img_link,img_link_two),
     FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
 );
 
-INSERT INTO product_img VALUES ('P001', '../assets/img/pro/ASUS/ASUS X515_1.png');
-INSERT INTO product_img VALUES ('P001', '../assets/img/pro/ASUS/ASUS X515_2.png');
+INSERT INTO product_img VALUES ('P001', '../assets/img/pro/ASUS/ASUS X515_1.png', '../assets/img/pro/ASUS/ASUS X515_2.png');
 
-INSERT INTO product_img VALUES ('P002', '../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_1.png');
-INSERT INTO product_img VALUES ('P002', '../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_2.png');
+INSERT INTO product_img VALUES ('P002', '../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_1.png', '../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_2.png');
 
-INSERT INTO product_img VALUES ('P003','../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png');
-INSERT INTO product_img VALUES ('P003', '../assets/img/pro/ASUS/ASUS TUF Gaming F15_2.png');
+INSERT INTO product_img VALUES ('P003','../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png', '../assets/img/pro/ASUS/ASUS TUF Gaming F15_2.png');
 
-INSERT INTO product_img VALUES ('P004','../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png');
-INSERT INTO product_img VALUES ('P004', '../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_2.png');
+INSERT INTO product_img VALUES ('P004','../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png', '../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_2.png');
 
-INSERT INTO product_img VALUES ('P005', '../assets/img/pro/APPLE/APPLE MacBook Air_1.png');
-INSERT INTO product_img VALUES ('P005', '../assets/img/pro/APPLE/APPLE MacBook Air_2.png');
+INSERT INTO product_img VALUES ('P005', '../assets/img/pro/APPLE/APPLE MacBook Air_1.png', '../assets/img/pro/APPLE/APPLE MacBook Air_2.png');
 
-INSERT INTO product_img VALUES ('P006', '../assets/img/pro/APPLE/APPLE MacBook Pro_1.png');
-INSERT INTO product_img VALUES ('P006', '../assets/img/pro/APPLE/APPLE MacBook Pro_2.png');
+INSERT INTO product_img VALUES ('P006', '../assets/img/pro/APPLE/APPLE MacBook Pro_1.png', '../assets/img/pro/APPLE/APPLE MacBook Pro_2.png');
 
-INSERT INTO product_img VALUES ('P007', '../assets/img/pro/ACER/ACER Nitro5_1.png');
-INSERT INTO product_img VALUES ('P007', '../assets/img/pro/ACER/ACER Nitro5_2.png');
+INSERT INTO product_img VALUES ('P007', '../assets/img/pro/ACER/ACER Nitro5_1.png', '../assets/img/pro/ACER/ACER Nitro5_2.png');
 
-INSERT INTO product_img VALUES ('P008', '../assets/img/pro/ACER/ACER Swift5_1.png');
-INSERT INTO product_img VALUES ('P008', '../assets/img/pro/ACER/ACER Swift5_2.png');
+INSERT INTO product_img VALUES ('P008', '../assets/img/pro/ACER/ACER Swift5_1.png', '../assets/img/pro/ACER/ACER Swift5_2.png');
 
-INSERT INTO product_img VALUES ('P009', '../assets/img/pro/ACER/ACER Aspire5_1.png');
-INSERT INTO product_img VALUES ('P009', '../assets/img/pro/ACER/ACER Aspire5_2.png');
+INSERT INTO product_img VALUES ('P009', '../assets/img/pro/ACER/ACER Aspire5_1.png', '../assets/img/pro/ACER/ACER Aspire5_2.png');
 
-INSERT INTO product_img VALUES ('P010', '../assets/img/pro/MSI/MSI Stealth 15M_1.png');
-INSERT INTO product_img VALUES ('P010', '../assets/img/pro/MSI/MSI Stealth 15M_2.png');
+INSERT INTO product_img VALUES ('P010', '../assets/img/pro/MSI/MSI Stealth 15M_1.png', '../assets/img/pro/MSI/MSI Stealth 15M_2.png');
 
-INSERT INTO product_img VALUES ('P011', '../assets/img/pro/MSI/MSI Modern14_1.png');
-INSERT INTO product_img VALUES ('P011', '../assets/img/pro/MSI/MSI Modern14_2.png');
+INSERT INTO product_img VALUES ('P011', '../assets/img/pro/MSI/MSI Modern14_1.png', '../assets/img/pro/MSI/MSI Modern14_2.png');
 
-INSERT INTO product_img VALUES ('P012', '../assets/img/pro/MSI/MSI Alpha 15_1.png');
-INSERT INTO product_img VALUES ('P012', '../assets/img/pro/MSI/MSI Alpha 15_2.png');
+INSERT INTO product_img VALUES ('P012', '../assets/img/pro/MSI/MSI Alpha 15_1.png', '../assets/img/pro/MSI/MSI Alpha 15_2.png');
 
-INSERT INTO product_img VALUES ('P013', '../assets/img/pro/MSI/MSI Prestige 14_1.png');
-INSERT INTO product_img VALUES ('P013', '../assets/img/pro/MSI/MSI Prestige 14_2.png');
+INSERT INTO product_img VALUES ('P013', '../assets/img/pro/MSI/MSI Prestige 14_1.png', '../assets/img/pro/MSI/MSI Prestige 14_2.png');
 
-INSERT INTO product_img VALUES ('P014', '../assets/img/pro/HP/HP Elite Dragonfly G2_1.png');
-INSERT INTO product_img VALUES ('P014', '../assets/img/pro/HP/HP Elite Dragonfly G2_2.png');
+INSERT INTO product_img VALUES ('P014', '../assets/img/pro/HP/HP Elite Dragonfly G2_1.png', '../assets/img/pro/HP/HP Elite Dragonfly G2_2.png');
 
-INSERT INTO product_img VALUES ('P015', '../assets/img/pro/HP/HP 470 G8_1.png');
-INSERT INTO product_img VALUES ('P015', '../assets/img/pro/HP/HP 470 G8_2.png');
+INSERT INTO product_img VALUES ('P015', '../assets/img/pro/HP/HP 470 G8_1.png', '../assets/img/pro/HP/HP 470 G8_2.png');
 
-INSERT INTO product_img VALUES ('P016', '../assets/img/pro/HP/HP 14s_1.png');
-INSERT INTO product_img VALUES ('P016', '../assets/img/pro/HP/HP 14s_2.png');
+INSERT INTO product_img VALUES ('P016', '../assets/img/pro/HP/HP 14s_1.png', '../assets/img/pro/HP/HP 14s_2.png');
 
-INSERT INTO product_img VALUES ('P017', '../assets/img/pro/HP/HP OMEN 16_1.png');
-INSERT INTO product_img VALUES ('P017', '../assets/img/pro/HP/HP OMEN 16_2.png');
+INSERT INTO product_img VALUES ('P017', '../assets/img/pro/HP/HP OMEN 16_1.png', '../assets/img/pro/HP/HP OMEN 16_2.png');
 
-INSERT INTO product_img VALUES ('P018', '../assets/img/pro/ACER/ACER TravelMate_1.png');
-INSERT INTO product_img VALUES ('P018', '../assets/img/pro/ACER/ACER TravelMate_2.png');
+INSERT INTO product_img VALUES ('P018', '../assets/img/pro/ACER/ACER TravelMate_1.png', '../assets/img/pro/ACER/ACER TravelMate_2.png');
 
-INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png');
-INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_2.png');
+INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png', '../assets/img/pro/ASUS/ASUS E410_2.png');
 
-INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');
-INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_2.png');
+INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');
 
-
-SELECT cart.mem_id, product_infor.product_name , cart.product_id , product_infor.product_price ,cart.order_amount,product_infor.product_price *cart.order_amount
-FROM cart, product_infor
-WHERE cart.mem_id = 'MEM20220531100430002' AND (cart.product_id = product_infor.product_id);
