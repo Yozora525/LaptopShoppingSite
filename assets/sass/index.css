@@ -1,7 +1,5 @@
-@media (min-width: 1000px) {
-  .slick .slick-hot-container .hot-pro-img img {
-    width: 100%;
-  }
+.slick .slick-hot-container .hot-pro-img img {
+  width: 100%;
 }
 
 @media (min-width: 1000px) {
@@ -14,33 +12,48 @@
   }
 }
 
+.btn-filter {
+  background-color: #0096C7;
+  color: #fff;
+  font-size: 1em;
+}
+@media (min-width: 0px) {
+  .btn-filter {
+    width: 15%;
+  }
+}
 @media (min-width: 1000px) {
   .btn-filter {
-    background-color: #0096C7;
-    color: #fff;
     width: 50%;
-    font-size: 1em;
   }
 }
 
+@media (min-width: 0px) {
+  .product-group {
+    display: block;
+    margin: 2.5%;
+  }
+}
 @media (min-width: 1000px) {
   .product-group {
     display: flex;
     margin: 5%;
-    border: 1px solid #ccc;
   }
 }
 
+@media (min-width: 0px) {
+  .product-list {
+    margin-top: 3%;
+  }
+}
 @media (min-width: 1000px) {
   .product-list {
     width: 85%;
-    border: 1px solid #ccc;
   }
 }
 
 @media (min-width: 0px) {
   .product {
-    border: 1px solid #ccc;
     margin-bottom: 2%;
   }
 }
@@ -56,8 +69,29 @@
 @media (min-width: 0px) {
   .list {
     display: flex;
-    height: 150px;
+    height: 120px;
     margin-bottom: 2%;
+  }
+  .list .pro-img {
+    width: 40%;
+    text-align: center;
+  }
+  .list .pro-img img {
+    width: 80%;
+    height: 80%;
+  }
+  .list .pro-content {
+    width: 60%;
+  }
+  .list .pro-content .protext {
+    height: 80px;
+    text-align: left;
+    font-size: 1em;
+  }
+  .list .pro-content .pro-price {
+    height: 40px;
+    font-size: 1.25em;
+    color: #0096C7;
   }
 }
 @media (min-width: 1000px) {
@@ -70,7 +104,7 @@
     margin-bottom: 0%;
   }
   .list .pro-img {
-    border: 1px solid #34574a;
+    width: 100%;
     height: 130px;
     text-align: center;
   }
@@ -78,14 +112,15 @@
     width: 80%;
     height: 80%;
   }
-  .list .protext {
+  .list .pro-content {
+    width: 100%;
+  }
+  .list .pro-content .protext {
     height: 35px;
-    border: 1px solid #000;
     text-align: left;
     font-size: 0.9em;
   }
-  .list .pro-price {
-    border: 1px solid #000;
+  .list .pro-content .pro-price {
     height: 30px;
     font-size: 1.25em;
     color: #0096C7;
