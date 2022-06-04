@@ -1,3 +1,94 @@
+@media (min-width: 0px) {
+  .pro-container {
+    margin: 0% 5% 3% 5%;
+    display: block;
+    background-color: #fff;
+  }
+  .pro-container .pro-img-container {
+    width: 100%;
+  }
+  .pro-container .pro-img-container .img-up {
+    height: 200px;
+  }
+  .pro-container .pro-img-container .img-up .img {
+    width: 100%;
+    text-align: center;
+  }
+  .pro-container .pro-img-container .img-up .img img {
+    width: 200px;
+    height: 200px;
+  }
+  .pro-container .pro-img-container .img-down {
+    height: 120px;
+  }
+  .pro-container .pro-img-container .img-down .img-down-container {
+    height: 100%;
+    margin-top: 0;
+    display: flex;
+  }
+  .pro-container .pro-img-container .img-down .img-down-container div {
+    height: 100%;
+    width: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .pro-container .pro-img-container .img-down .img-down-container div img {
+    width: 100%;
+    height: 100%;
+  }
+  .pro-container .pro-info-container {
+    margin-top: 1%;
+    border-top: 1px solid #ccc;
+    width: 100%;
+  }
+  .pro-container .pro-info-container .pro-name {
+    font-size: 1.5em;
+  }
+  .pro-container .pro-info-container .pro-sold-quan {
+    margin-top: 1%;
+    font-size: 1em;
+  }
+  .pro-container .pro-info-container .pro-price {
+    margin-top: 1.5%;
+    font-size: 1.5em;
+    color: #0096C7;
+  }
+  .pro-container .pro-info-container .pro-inventory {
+    margin-top: 1.35%;
+    font-size: 1em;
+  }
+  .pro-container .pro-info-container .pro-quan {
+    margin-top: 1%;
+    font-size: 1em;
+  }
+  .pro-container .pro-info-container .pro-quan input {
+    width: 5%;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    height: 1.25em;
+  }
+  .pro-container .pro-info-container .pro-quan button {
+    text-align: center;
+    width: 5%;
+    height: 1.5em;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0;
+  }
+  .pro-container .pro-info-container .pro-btn-container {
+    height: 50px;
+    margin-top: 3%;
+  }
+  .pro-container .pro-info-container .pro-btn-container button {
+    height: 40px;
+    font-size: 1em;
+    width: 35%;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0;
+  }
+}
 @media (min-width: 1000px) {
   .pro-container {
     margin: 0% 10% 3% 10%;
@@ -38,6 +129,7 @@
   }
   .pro-container .pro-info-container {
     width: 65%;
+    border-top: 0;
   }
   .pro-container .pro-info-container .pro-name {
     font-size: 2.25em;
@@ -88,6 +180,20 @@
   }
 }
 
+@media (min-width: 0px) {
+  .pro-intro-container {
+    margin: 3% 5% 3% 5%;
+    background-color: #fff;
+  }
+  .pro-intro-container .pro-intro-content {
+    margin-top: 1.5%;
+    font-size: 1em;
+    padding-left: 2%;
+  }
+  .pro-intro-container .pro-intro-content span {
+    line-height: 2em;
+  }
+}
 @media (min-width: 1000px) {
   .pro-intro-container {
     margin: 3% 10% 3% 10%;
@@ -103,6 +209,30 @@
   }
 }
 
+@media (min-width: 0px) {
+  .pro-eval-container {
+    margin: 3% 5% 3% 5%;
+    background-color: #fff;
+  }
+  .pro-eval-container .pro-eval {
+    border-bottom: 1px solid #ccc;
+  }
+  .pro-eval-container .pro-eval .eval-user {
+    margin-top: 1.5%;
+    padding-left: 2%;
+    font-size: 0.5em;
+  }
+  .pro-eval-container .pro-eval .eval-info {
+    margin-top: 0.5%;
+    padding-left: 2%;
+    font-size: 0.5em;
+  }
+  .pro-eval-container .pro-eval .eval-content {
+    margin-top: 1.5%;
+    padding-left: 2%;
+    font-size: 0.8em;
+  }
+}
 @media (min-width: 1000px) {
   .pro-eval-container {
     margin: 3% 10% 3% 10%;
@@ -132,6 +262,12 @@
   color: #0096C7;
 }
 
+@media (min-width: 0px) {
+  .pro-intro-title {
+    font-size: 1em;
+    padding-left: 2%;
+  }
+}
 @media (min-width: 1000px) {
   .pro-intro-title {
     font-size: 1.5em;

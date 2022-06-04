@@ -14,10 +14,100 @@
 // 最上方產品圖片及資訊
 .pro-container{
     @include small{
+        margin: 0% 5% 3% 5%;
+        display: block;
+        background-color: #fff;
+
         .pro-img-container{
+            width: 100%;
+            .img-up{
+                height: 200px;
+                .img{
+                    width: 100%;
+                    text-align: center;
+                    img{
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+            }
+
+            .img-down{
+                height: 120px;
+                .img-down-container{
+                    height:100%;
+                    margin-top: 0;
+                    display: flex;
+                    div{
+                        height: 100%;
+                        width: 30%;
+                        margin-left: 1%;
+                        margin-right: 1%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
         }
 
         .pro-info-container{
+            margin-top: 1%;
+            border-top: 1px solid #ccc;
+            width: 100%;
+            .pro-name{
+                font-size: 1.5em;
+            }
+            
+            .pro-sold-quan{
+                margin-top: 1%;
+                font-size: 1em;
+            }
+
+            .pro-price{
+                margin-top: 1.5%;
+                font-size: 1.5em;
+                color: #0096C7;
+            }
+
+            .pro-inventory{
+                margin-top: 1.35%;
+                font-size: 1em;
+            }
+
+            .pro-quan{
+                margin-top: 1%;
+                font-size: 1em;
+                input{
+                    width: 5%;
+                    text-align: center;
+                    margin-left: 0;
+                    margin-right: 0;
+                    height: 1.25em;
+                }
+                button{
+                    text-align: center;
+                    width: 5%;
+                    height: 1.5em;
+                    background-color: #0096C7;
+                    color: #fff;
+                    border: 0;
+                }
+            }
+
+            .pro-btn-container{
+                height: 50px;
+                margin-top: 3%;
+                button{
+                    height: 40px;
+                    font-size: 1em;
+                    width: 35%;
+                    background-color: #0096C7;
+                    color: #fff;
+                    border: 0;
+                }
+            }
         }
 
     }
@@ -63,6 +153,7 @@
 
         .pro-info-container{
             width: 65%;
+            border-top: 0;
 
             .pro-name{
                 font-size: 2.25em;
@@ -123,7 +214,17 @@
 
 .pro-intro-container{
     @include small{
+        margin: 3% 5% 3% 5%;
+        background-color: #fff;
 
+        .pro-intro-content{
+            margin-top: 1.5%;
+            font-size: 1em;
+            padding-left: 2%;
+            span{
+                line-height: 2em;
+            }
+        }
     }
 
     @include large {
@@ -143,7 +244,26 @@
 
 .pro-eval-container{
     @include small{
-
+        margin: 3% 5% 3% 5%;
+        background-color: #fff;
+        .pro-eval{
+            border-bottom: 1px solid #ccc;
+            .eval-user{
+                margin-top: 1.5%;
+                padding-left: 2%;    
+                font-size: 0.5em;
+            }
+            .eval-info{
+                margin-top: 0.5%;
+                padding-left: 2%;    
+                font-size: 0.5em;
+            }
+            .eval-content{
+                margin-top: 1.5%;
+                padding-left: 2%;    
+                font-size: 0.8em;
+            }
+        }
     }
 
     @include large {
@@ -176,7 +296,8 @@
 
 .pro-intro-title{
     @include small{
-
+        font-size: 1em;
+        padding-left: 2%;
     }
 
     @include large {
