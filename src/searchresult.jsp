@@ -38,17 +38,17 @@
                     <option value=''>--請選擇--</option>
                 <%  
                     
-                    sql = "SELECT `product_id` FROM `product_infor`";
+                    sql = "SELECT `product_id`,`product_name` FROM `product_infor`";
                     ResultSet rs=con.createStatement().executeQuery(sql);
                     while(rs.next()){
-                        out.println("<option value='"+rs.getString(1)+"'> "+ rs.getString(1)+"</option>");
+                        out.println("<option value='"+rs.getString("product_id")+"'> "+ rs.getString("product_name")+"</option>");
                     }
                        
                 %>
                 </select>
                 起:<input type="date" name="start" required/>
                 迄:<input type="date" name="end" required/>
-                <input type="submit" name="k" value="查詢" />
+                <input type="submit" value="查詢" />
             </form>
         </div>
         <div id="trans-table">
@@ -65,7 +65,7 @@
                             <span>交易日期</span>
                         </th>
                         <th>
-                            <span>商品ID</span>
+                            <span>商品名稱</span>
                         </th>
                         <th>
                             <span>單價</span>
@@ -80,31 +80,60 @@
                 </thead>
                 <tbody>
                     <% 
+                        request.setCharacterEncoding("UTF-8");
+                        response.setCharacterEncoding("UTF-8");
+                           
                         String name = request.getParameter("filter-pro");
                         String start = request.getParameter("start");
                         String end = request.getParameter("end");
                         int order2=1;
-                        String sql1 = "SELECT order_details.order_id, order_details.product_id, order_details.order_time, ";
-                        sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
-                        sql1 += "FROM `product_infor`, `order_details` ";
-                        sql1 += "WHERE (order_details.product_id=product_infor.product_id) ";
-                        sql1 += "AND (order_details.product_id= '"+ name + "' ) AND ";
-                        sql1 += "(order_details.order_time BETWEEN '" + start + "' AND '" + end +"')  ORDER BY order_details.order_time" ;
+                        String sql1;
+                        if( name.equals("") ){
+                            sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
+                            sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
+                            sql1 += "FROM `product_infor`, `order_details` ";
+                            sql1 += "WHERE (order_details.product_id=product_infor.product_id) AND ";
+                            sql1 += "(order_details.order_time BETWEEN '" + start + "' AND '" + end +"')  ORDER BY order_details.order_time" ;
+                            
+                            ResultSet rs1 = con.createStatement().executeQuery(sql1);
                         
-                        ResultSet rs1 = con.createStatement().executeQuery(sql1);
-                    
-                        while(rs1.next()){
-                            out.println("<tr>");
-                            out.println("<td><span>"+ order2 +"</span></td>"); 
-                            out.println("<td><span>"+rs1.getString("order_details.order_id") +"</span></td>"); 
-                            out.println("<td><span>"+rs1.getString("order_details.order_time") +"</span></td>");
-                            out.println("<td><span>"+rs1.getString("order_details.product_id") +"</span></td>");
-                            out.println("<td><span>"+rs1.getInt("product_infor.product_price") +"</span></td>");
-                            out.println("<td><span>"+rs1.getInt("order_details.howmuch")+ "</span></td>");
-                            out.println("<td><span>"+rs1.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
-                            out.println("</tr>");
-                            order2++;
-                        } 
+                            while(rs1.next()){
+                                out.println("<tr>");
+                                out.println("<td><span>"+ order2 +"</span></td>"); 
+                                out.println("<td><span>"+rs1.getString("order_details.order_id") +"</span></td>"); 
+                                out.println("<td><span>"+rs1.getString("order_details.order_time") +"</span></td>");
+                                out.println("<td><span>"+rs1.getString("product_infor.product_name") +"</span></td>");
+                                out.println("<td><span>"+rs1.getInt("product_infor.product_price") +"</span></td>");
+                                out.println("<td><span>"+rs1.getInt("order_details.howmuch")+ "</span></td>");
+                                out.println("<td><span>"+rs1.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
+                                out.println("</tr>");
+                                order2++;
+                            } 
+                        }
+                        else{
+                            sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
+                            sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
+                            sql1 += "FROM `product_infor`, `order_details` ";
+                            sql1 += "WHERE (order_details.product_id=product_infor.product_id) ";
+                            sql1 += "AND (order_details.product_id= '"+ name + "' ) AND ";
+                            sql1 += "(order_details.order_time BETWEEN '" + start + "' AND '" + end +"')  ORDER BY order_details.order_time" ;
+                            
+                            ResultSet rs1 = con.createStatement().executeQuery(sql1);
+                        
+                            while(rs1.next()){
+                                out.println("<tr>");
+                                out.println("<td><span>"+ order2 +"</span></td>"); 
+                                out.println("<td><span>"+rs1.getString("order_details.order_id") +"</span></td>"); 
+                                out.println("<td><span>"+rs1.getString("order_details.order_time") +"</span></td>");
+                                out.println("<td><span>"+rs1.getString("product_infor.product_name") +"</span></td>");
+                                out.println("<td><span>"+rs1.getInt("product_infor.product_price") +"</span></td>");
+                                out.println("<td><span>"+rs1.getInt("order_details.howmuch")+ "</span></td>");
+                                out.println("<td><span>"+rs1.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
+                                out.println("</tr>");
+                                order2++;
+                            } 
+                        }
+                        
                     %>                            
                 
                 </tbody>

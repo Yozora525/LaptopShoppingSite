@@ -1,3 +1,6 @@
+<%@ page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<%@include file = "connectsql.jsp" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,41 +60,13 @@
     <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");    
-    try{
-        Class.forName("com.mysql.jdbc.Driver");	  
-        try{
-            String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-            Connection con = DriverManager.getConnection(url,"root","1234");
+    String pname = request.getParameter("");                                         // 量 填你傳過來的名字
+    //String sql = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; //填完之後把這行註解拿掉
+    sql = "SELECT * FROM `product_infor` WHERE (product_id='P001')";        //然後把這行刪掉
+    ResultSet rs = con.createStatement().executeQuery(sql);
+    sql = "SELECT * FROM `product_img` WHERE (product_id='P001')"; 
+    ResultSet rs1 = con.createStatement().executeQuery(sql);
 
-            if(con.isClosed()){
-                //out.println("connection fail ");
-            }
-            else{
-                //out.println("connection success ");
-    
-                String sql = "USE `computer_shop`";
-                con.createStatement().execute(sql);
-     %>        
-     <%   
-                sql = "SELECT `product_name`, `product_price` FROM `product_infor`";
-                ResultSet rs = con.createStatement().executeQuery(sql);
-                
-                while(rs.next()){
-                   for (int i=0; i<5; i++) {
-                        out.println("<div class='product'>");
-                        for (int x=0; x<4; x++) {
-                            out.println("<div class='list'>");
-                            out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"_1.png' />");             
-                            out.println("<div class='protext'>");
-                            out.println(rs.getString("product_brand")+"&nbsp;"+rs.getString("product_name")+"<br>");
-                            out.println("NT$"+rs.getInt("product_price"));                
-                            out.println("</div>");  
-                            out.println("</div>");
-                            }
-                        out.println("</div");
-                        }
-                    }
-                
     %>
 
     <main class="main">
@@ -100,21 +75,24 @@
                 <img src="../assets/img/loading.gif">
             </div>
         </div>
+        <% if(rs1.next()){ %>
         <div class="LAP">
             <div class="L-INFO">
                 <div class="L-I-IMG">
                     <div class="L-I-IMG-1">
-                        <img width="200px" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                    <%out.println("<img style='width:200px;' src= '" + rs.getString("img_link") + "'  /> "); %>
                     </div>
                     <div class="L-I-IMG-IN">
                         <img width="100px"  src="../assets/img/pro/ASUS/ASUS X515_1.png" /> 
                         <img width="100px"  src="../assets/img/pro/ASUS/ASUS X515_2.png" />
                     </div>
                 </div>
+        <%}%>
                 <div class="L-I-CONTENT">
-                    <h1>ASUS X515</h1><hr style="width: 80%;"><br>
-                    <h3>NT$17900</h3><br>
-                    <h3>存貨數量:<%=%></h3><br>
+                    <%if(rs.next()){%>
+                    <h1><%=rs.getString("product_name")%></h1><hr style="width: 80%;"><br>
+                    <h3>NT$<%=rs.getInt("product_price")%></h3><br>
+                    <h3>存貨數量:<%=rs.getInt("product_amount")%></h3><br>
                     <div class="buy">
                         <h3>購買數量:</h3> 
                         <input onkeyup="value=value.replace(/[^\d]/g,'') " type="number" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  min="1" max="10" value="1" class="input">
@@ -138,6 +116,7 @@
                 </div>
             </div>  
         </div>
+        <%}%>
         <h1 style="text-align: center ;padding-top:3%;">商品評論</h1>
         <div class="COMMENTLIST">
             <div class="COMMENT">
@@ -168,16 +147,3 @@
     </footer>
 </body>
 </html>
-<%
-}
-con.close();
-}
-catch(SQLException sExec){
-out.println("sql error "+ sExec.toString());
-}
-}
-catch(ClassNotFoundException err){
-out.println("class error "+ err.toString());
-}
-
-%>
