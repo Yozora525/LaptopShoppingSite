@@ -52,7 +52,7 @@
         </div>
     </header>
 
-    <%
+<%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");    
     String pname = request.getParameter("");                                         // 量 填你傳過來的名字
@@ -69,52 +69,44 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-        </div>                    
-        <% if(rs1.next()){ %>           
+        </div>
+        <% if(rs1.next()){ %>
         <div class="pro-container">
             <div class="pro-img-container">
                 <div class="img-up">
                     <div class="img">
-                        <%
-                        out.println("<img id='img-show' src= '" + rs1.getString("img_link") + "' />");
-                        %>
+                        <img id="img-show" src="<%=rs1.getString("img_link")%>" />
                     </div>
                 </div>
                 <div class="img-down">
                     <div class="img-down-container">
                         <div>
-                        <%
-                        out.println("<img name='img-list' src= '" + rs1.getString("img_link") + "' />");
-                        %>
+                            <img name="img-list" src="<%=rs1.getString("img_link")%>" />
                         </div>
                         <div>
-                        <%
-                        out.println("<img name='img-list' src= '" + rs1.getString("img_link") + "' />");
-                        %>
+                            <img name="img-list" src="<%=rs1.getString("img_link_two")%>" />
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
             <%}%>
-
-            <%if(rs.next()){%>
+             <%if(rs.next()){%>
             <div class="pro-info-container">
                 <div class="pro-name">
-                    <%=rs.getString("product_name")%>
+                    <span><%=rs.getString("product_name")%></span>
+                </div>
                 <div class="pro-sold-quan">
-                    <%
-                        out.println("<span>"+rs.getInt("product_sold")+"</span>");
-                    %>
+                    <span><%=rs.getInt("product_sold")%></span> <!-- 從資料庫抓 -->
                     <span style="color: #bbb;">已賣出</span>
                 </div>
                 <div class="pro-price">
-                    <%=rs.getInt("product_price")%>
+                    <span><%=rs.getInt("product_price")%></span>
                 </div>
                 <div class="pro-inventory">
                     <span>存貨：</span>
-                    <%=rs.getInt("product_amount")%>
+                    <span id="inventory"><%=rs.getInt("product_amount")%></span>
                 </div>
+                <%}%>
                 <div class="pro-quan">
                     <span>數量：</span>
                     <button id="minus">-</button>
@@ -129,6 +121,7 @@
                 </div>
             </div>
         </div>
+         
         <!-- 商品介紹 -->
         <div class="pro-intro-container">
             <div class="pro-intro-title">
@@ -184,3 +177,4 @@
     </footer>
 </body>
 </html>
+
