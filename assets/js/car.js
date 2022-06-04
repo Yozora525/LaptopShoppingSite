@@ -18,44 +18,45 @@ $(function() {
 
     $('input[name="item-quan"').on('change', function(event){
         let index = $('input[name="item-quan"').index(this);
+        alert($(this).val());
         let sum = parseInt($($('input[name="item-price"]')[index]).val()) * parseInt($(this).val());
         let item = $($('input[name="item-name"]')[index]).val();
         // $($('span[name="item-sum"]')[index]).html(sum);
         // $('span[name="item-sum"]').change();
-        $.blockUI({
-            message: $("#loading"),
-            css: {
-                "border": "none",
-                "backgroundColor": "rgba(0,0,0,0)",
-                "backgroundImage": "url('LaptopShoppingSiteFront/assets/img/loading.gif')",
-                "backgroundSize": "100%",
+        // $.blockUI({
+        //     message: $("#loading"),
+        //     css: {
+        //         "border": "none",
+        //         "backgroundColor": "rgba(0,0,0,0)",
+        //         "backgroundImage": "url('LaptopShoppingSiteFront/assets/img/loading.gif')",
+        //         "backgroundSize": "100%",
                 
-            }
-        });
+        //     }
+        // });
 
-        $.ajax({
-            url: "/",
-            type: "POST",
-            // dataType: 'json',
-            data: {'product':item,'quan':$(this).val(),'sum':sum},
-            success: function(data) {
-                if(data['res']=='success'){
-                    $($('span[name="item-sum"]')[index]).html(sum);
-                    $('span[name="item-sum"]').change();
-                    $.unblockUI();
-                }
-                else{
-                    alert(data['msg']);
-                    $.unblockUI();
-                    // alert('發生錯誤，請稍後再試');
-                    location.reload();
-                }
-            },
-            error: function(jqXHR) {
-                alert(jqXHR.statusText);
-                alert(jqXHR.responseText);
-            }
-        });
+        // $.ajax({
+        //     url: "/",
+        //     type: "POST",
+        //     // dataType: 'json',
+        //     data: {'product':item,'quan':$(this).val(),'sum':sum},
+        //     success: function(data) {
+        //         if(data['res']=='success'){
+        //             $($('span[name="item-sum"]')[index]).html(sum);
+        //             $('span[name="item-sum"]').change();
+        //             $.unblockUI();
+        //         }
+        //         else{
+        //           //  alert(data['msg']);
+        //             $.unblockUI();
+        //             // alert('發生錯誤，請稍後再試');
+        //             location.reload();
+        //         }
+        //     },
+        //     error: function(jqXHR) {
+        //         alert(jqXHR.statusText);
+        //         alert(jqXHR.responseText);
+        //     }
+        // });
     });
 
     $('input[name="item-check"]').on('change', function(event){
