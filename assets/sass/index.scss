@@ -32,17 +32,7 @@
 
 
 // 篩絢
-.product-group{
-    @include small{
 
-    }
-
-    @include large{
-        display:flex;
-        margin: 5% 2.5% 5% 2.5%;
-        border: 1px solid #ccc;
-    }
-}
 
 .product-filter{
     @include small{
@@ -80,6 +70,17 @@
 
 
 // 產品列表
+.product-group{
+    @include small{
+
+    }
+
+    @include large{
+        display:flex;
+        margin: 5%;
+        border: 1px solid #ccc;
+    }
+}
 .product-list{
     @include small{
 
@@ -125,8 +126,6 @@
         .pro-img{
             border: 1px solid #34574a;
             height: 130px;
-            // padding-left: 3%;
-            // padding-right: 3%;
             text-align: center;
             img{
                 width: 80%;
