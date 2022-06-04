@@ -9,6 +9,13 @@ $(function() {
        $('input[name="item-check"]').change();
     });
 
+    $('input[name="item-quan"').on('keyup', function(event){
+        if($(this).val() == 0 || typeof($(this)) == null){
+            $(this).val(1);
+        }
+        $('input[name="item-quan"').change();
+    });
+
     $('input[name="item-quan"').on('change', function(event){
         let index = $('input[name="item-quan"').index(this);
         let sum = parseInt($($('input[name="item-price"]')[index]).val()) * parseInt($(this).val());
@@ -116,6 +123,6 @@ $(function() {
               }
             }
           });
-    })
+    });
 
 });
