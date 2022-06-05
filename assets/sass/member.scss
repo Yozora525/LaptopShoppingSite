@@ -1,0 +1,104 @@
+@mixin small {
+    @media (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1000px){
+        @content;
+    }
+}
+
+
+.info{
+    // @include small{
+        
+    // }
+    
+    // @include large{
+        margin-left: 5%;
+        margin-right: 5%;
+
+        .info-title{
+            width: 100%;
+            font-size: 24px;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }
+
+        .info-container{
+            display: flex;
+            background-color: #fff;
+
+            .info-img-container{
+                width: 30%;
+                border-right: 1px solid #ddd;
+                text-align: center;
+            }
+
+            .info-content-container{
+                width: 70%;
+            }
+        }
+    // }
+}
+
+
+.trans-data-container{
+    @include small{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 2.5%;
+        .trans-table-title{
+            width: 100%;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }
+        .trans-table{
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid black; 
+            border-collapse: collapse;
+
+            th,td{
+                text-align: center;
+                font-size: 16px;
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+        }       
+    }
+
+    @include large{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        .trans-table-title{
+            width: 100%;
+            font-size: 24px;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }
+
+        .trans-table{
+            width: 100%;
+            background-color: #fff;
+            border-collapse: collapse;
+
+            th,td{
+                text-align: center;
+                font-size: 16px;
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+        }
+    }
+}
+
+
