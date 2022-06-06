@@ -12,37 +12,36 @@
 
 
 .info{
-    // @include small{
-        
-    // }
-    
-    // @include large{
-        margin-left: 5%;
-        margin-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 
-        .info-title{
-            width: 100%;
-            font-size: 24px;
-            border-radius: 10px;
-            background-color: #0096c7;
-            color: #fff;
+    .info-title{
+        width: 100%;
+        font-size: 24px;
+        border-radius: 10px;
+        background-color: #0096c7;
+        color: #fff;
+    }
+
+    .info-container{
+        display: flex;
+        background-color: #fff;
+
+        .info-img-container{
+            width: 30%;
+            border-right: 1px solid #ddd;
+            text-align: center;
+            padding-top: 5%;
         }
 
-        .info-container{
-            display: flex;
-            background-color: #fff;
-
-            .info-img-container{
-                width: 30%;
-                border-right: 1px solid #ddd;
-                text-align: center;
-            }
-
-            .info-content-container{
-                width: 70%;
+        .info-content-container{
+            padding-left: 1%;
+            width: 70%;
+            div{
+                margin-bottom: 1%;
             }
         }
-    // }
+    }
 }
 
 
@@ -102,3 +101,33 @@
 }
 
 
+.change-pwd{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+
+    .change-pwd-title{
+        width: 100%;
+        font-size: 24px;
+        border-radius: 10px;
+        background-color: #0096c7;
+        color: #fff;
+    }
+
+    .change-pwd-container{
+        padding-left: 1%;
+        background-color: #fff;
+        div{
+            margin-bottom: 1%;
+        }
+    }
+}
+
+
+.btn-change{
+    background-color: #0096c7;
+    color: #fff;
+    border: 0;
+    width: 10%;
+    font-size: 1em;
+}

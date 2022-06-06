@@ -69,14 +69,49 @@
                     <img src="../assets/img/icon/memcenter-mem2.png" />
                 </div>
                 <div class="info-content-container">
-                    <div>
-                        <span>姓名</span>
-                        <input type="text" class="" value="" />
-                    </div>
-                    <div>
-                        <span>電子信箱</span>
-                        <input type="text" class="" value="" />
-                    </div>
+                    <form action="" method="POST">
+                        <div>
+                            <span>姓名</span>
+                            <input type="text" class="" value="" required/>
+                        </div>
+                        <div>
+                            <span>電子信箱</span>
+                            <input type="email" class="" value="" required/>
+                        </div>
+                        <div>
+                            <span>手機號碼</span>
+                            <input type="text" class="" value="" required/>
+                        </div>
+                        <div>
+                            <span>生日</span>
+                            <input type="date" class="" value="" required/>
+                        </div>
+                        <div>
+                            <button class="btn-change" >儲存</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="change-pwd">
+            <div id="change-pwd-title" class="change-pwd-title">
+                <span>變更密碼</span>
+            </div>
+            <div class="change-pwd-container" id="">
+                <div>
+                    <span>目前密碼</span>
+                    <input type="password" class="" value="" />
+                </div>
+                <div>
+                    <span>新密碼</span>
+                    <input type="password" class="" value="" />
+                </div>
+                <div>
+                    <span>確認新密碼</span>
+                    <input type="password" class="" value="" />
+                </div>
+                <div>
+                    <button class="btn-change" >儲存</button>
                 </div>
             </div>
         </div>
@@ -165,7 +200,71 @@
             </div>
         </div>
             
-            
+        <div class="trans-data-container">
+            <div id="trans-table-title" class="trans-table-title">
+                <span>評論記錄</span>
+            </div>
+            <div  class="trans-table">
+                <table class="trans-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>#</span>
+                            </th>
+                            <th>
+                                <span>留言日期</span>
+                            </th>
+                            <th>
+                                <span>商品名稱</span>
+                            </th>
+                            <th>
+                                <span>內容</span>
+                            </th>
+                            <th>
+                                <span>評價</span>
+                            </th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span>1</span>
+                            </td>
+                            <td>
+                                <span name="">2022-06-05</span>
+                            </td>
+                            <td>
+                                <span name="">MacBook Air</span>
+                            </td>
+                            <td>
+                                <span name="">good</span>
+                            </td>
+                            <td>
+                                <span name="">4.0</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>2</span>
+                            </td>
+                            <td>
+                                <span name="">2022-06-02</span>
+                            </td>
+                            <td>
+                                <span name="">MacBook Air</span>
+                            </td>
+                            <td>
+                                <span name="">goodgoodgood</span>
+                            </td>
+                            <td>
+                                <span name="">5.0</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         
     </main>
     <footer class="footer">
