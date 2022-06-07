@@ -182,7 +182,7 @@ $(function(){
             success: function(data) {
                 if(data['res']=='success'){
                     alert('登入成功');
-                    window.location.replace('LaptopShoppingSiteFront/templates/.html'); //跳轉頁面
+                    window.location.replace('LaptopShoppingSiteFront/templates/backstage.html'); //跳轉頁面
                 }
                 else{
                     alert(data['msg']);
