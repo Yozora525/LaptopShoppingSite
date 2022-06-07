@@ -11,6 +11,7 @@ $(function(){
     });
 
     $('#login').on('click', function(event){
+        let formData = new FormData();
         let acc = $('#acc').val();
         let pwd = $('#pwd').val();
 
@@ -19,6 +20,7 @@ $(function(){
             return;
         }else{
             $('#login-acc-tip').html('');
+            formData.append('acc', acc);
         }
 
         if(pwd.length == 0){
@@ -26,13 +28,16 @@ $(function(){
             return;
         }else{
             $('#login-pwd-tip').html('');
+            formData.append('pwd', pwd);
         }
 
+
         $.ajax({
+            // ex:/專案名/資料夾名/檔案名
             url: "/",
             type: "POST",
-            dataType: 'json',
-            data: {'acc':acc,'pwd':pwd},
+            // dataType: 'json',
+            data: formData,
             success: function(data) {
                 if(data['res']=='success'){
                     alert('登入成功');
@@ -47,10 +52,10 @@ $(function(){
                 alert(jqXHR.responseText);
             }
         });
-
     });
 
     $('#register').on('click',function(event){
+        let formData = new FormData();
         let acc = $('#reg-acc').val();
         let pwd = $('#reg-pwd').val();
         let reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/;
@@ -64,6 +69,7 @@ $(function(){
             return
         }else{
             $('#acc-tip').html('');
+            formData.append('acc', acc);
         }
 
         if (reg.test(pwd)) {
@@ -82,6 +88,7 @@ $(function(){
         }else{
             $('#pwd-tip').html('');
             $('#check-pwd-tip').html('');
+            formData.append('pwd', pwd);
         }
         
         
@@ -89,8 +96,12 @@ $(function(){
             // ex:/專案名/資料夾名/檔案名
             url: "/",
             type: "POST",
-            dataType: 'json',
-            data: {'acc':acc,'pwd':pwd},
+            // dataType: 'json',
+            data: formData,
+            // 告訴jQuery不要去處理髮送的資料
+            processData : false, 
+            // 告訴jQuery不要去設定Content-Type請求頭
+            contentType : false,
             success: function(data) {
                 if(data['res']=='success'){
                     alert('註冊成功');
@@ -141,6 +152,7 @@ $(function(){
     });
 
     $('#admin-login').on('click', function(event){
+        let formData = new FormData();
         let acc = $('#admin-acc').val();
         let pwd = $('#admin-pwd').val();
 
@@ -149,6 +161,7 @@ $(function(){
             return;
         }else{
             $('#login-acc-tip').html('');
+            formData.append('acc', acc);
         }
 
         if(pwd.length == 0){
@@ -156,6 +169,7 @@ $(function(){
             return;
         }else{
             $('#login-pwd-tip').html('');
+            formData.append('pwd', pwd);
         }
 
 
@@ -163,8 +177,8 @@ $(function(){
             // ex:/專案名/資料夾名/檔案名
             url: "/",
             type: "POST",
-            dataType: 'json',
-            data: {'acc':acc,'pwd':pwd},
+            // dataType: 'json',
+            data: formData,
             success: function(data) {
                 if(data['res']=='success'){
                     alert('登入成功');
