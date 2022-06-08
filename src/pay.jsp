@@ -29,7 +29,7 @@
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">首頁 | 結帳</a>
+                    <a href="index.html">首頁 | 結帳</a>
                 </div>
             </nav>
         </div>
@@ -67,7 +67,7 @@
                             <input class="" name="item-quan" value="1" readonly/>
                         </div>
                         <div class="item-info">
-                            <input class="" name="item-revenue" value="38900" readonly/>
+                            <input class=""name="item-revenue" value="38900" readonly/>
                         </div>
                     </div>
 

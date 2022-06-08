@@ -25,6 +25,26 @@
         <link rel="stylesheet" href="../assets/sass/backstage.css" />
 </head>
 <body>
+    <header>
+        <div class="backstage-guide-container">
+            <nav class="backstage-nav-header">
+                <div class="backstage-home">
+                    <a href="backstage.jsp">後台管理</a>
+                </div>
+                <div class="link-icon">
+                    <div class="icon-backstage">
+                        <a  href="backstage.jsp"><img src="../assets/img/google-icon/ic_home_white_36dp.png"></a>
+                    </div>
+                    <div class="icon-homepage">
+                        <a  href="index.jsp" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
+                    </div>
+                    <div class="icon-logout">
+                        <a  href=""><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
     <div style="height: 50px;"></div>
     <div class="trans-data-container">
         <div class="trans-table-title" id="trans-table-title">
@@ -49,6 +69,7 @@
                 起:<input type="date" name="start" required/>
                 迄:<input type="date" name="end" required/>
                 <input type="submit" value="查詢" />
+            <a href="backstage.jsp">回後台首頁</a>
             </form>
         </div>
         <div id="trans-table">
@@ -88,7 +109,7 @@
                         String end = request.getParameter("end");
                         int order2=1;
                         String sql1;
-                        if( name.equals("") ){
+                        if( name.equals("") | name == null ){
                             sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
                             sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
                             sql1 += "FROM `product_infor`, `order_details` ";

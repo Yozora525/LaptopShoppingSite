@@ -39,7 +39,7 @@
                         <a  href="backstage.jsp"><img src="../assets/img/google-icon/ic_home_white_36dp.png"></a>
                     </div>
                     <div class="icon-homepage">
-                        <a  href="index.html" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
+                        <a  href="index.jsp" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
                     </div>
                     <div class="icon-logout">
                         <a  href=""><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
