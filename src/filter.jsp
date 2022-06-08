@@ -17,10 +17,6 @@
     <!-- 引入jQuery-Confirm -->
     <script src="../assets/js/lib/jquery-confirm/jquery-confirm.min.js"></script>
     <link rel="stylesheet" href="../assets/js/lib/jquery-confirm/jquery-confirm.min.css" />
-    <!-- 引入slick -->
-    <script src="../assets/js/lib/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="../assets/js/lib/slick/slick-theme.css" />
-    <link rel="stylesheet" href="../assets/js/lib/slick/slick.css" />
     <!-- 引入blockUI -->
     <script src="../assets/js/lib/blockUI/jquery.blockUI.js"></script>
     <!-- 引入css -->
@@ -28,21 +24,17 @@
     <link rel="stylesheet" href="../assets/sass/index.css" />
     <!-- 引入自寫js -->
     <script src="../assets/js/loading.js"></script>
-    <script src="../assets/js/slick.js"></script>
     <script src="../assets/js/index.js"></script>
-    <!-- <style>
-        @import url("../assets/sass/product.css");
-    </style> -->
 </head>
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.jsp" class="manage">網站管理</a>
+            <a href="manage.html" class="manage">網站管理</a>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">首頁</a>
+                    <a href="index.html">首頁</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="">
@@ -52,13 +44,13 @@
                 </div>
                 <div class="link-icon">
                     <div class="icon-login">
-                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
-                        <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
@@ -69,64 +61,6 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-            <!-- 輪播套件 -->
-            <div class="slick-container" style="width:100%;">
-                <div class="content_format">
-                    <div class="slick">
-                        <!-- 要輪播的內容 -->
-                        <div class="slick-hot-container">
-                            <div class="hot-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                            </div>
-                        </div>
-                        
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <!-- 產品 and 篩選 -->
             <div class="product-group">
                 <!-- 篩選 -->          
@@ -229,22 +163,94 @@
                         </form>
                     </div>
                 </div>
-
                 <!-- 產品列表 -->
                 <div class="product-list">
-             
-             <%
+            <%
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");    
+                
+		        String brand[]= request.getParameterValues("brand");
+                String allbs="";
+                String type[]= request.getParameterValues("type");
+                String allts="";
+                String size[]= request.getParameterValues("size");
+                String allss="";
+                String allssi="";
+                String maxprice = request.getParameter("maxrange");
+                String miniprice = request.getParameter("minirange");
 
-                    String sql2 = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor` WHERE `product_status`=1";
-                    ResultSet rs = con.createStatement().executeQuery(sql2);
-                    out.println("<div class='product'>");
+                if (brand == null || brand.length == 0) { 
+                        allbs="|";
+                }else{
+                    for(int i = 0; i < brand.length; i++){
+                        if (i<brand.length-1){
+                           allbs+=brand[i]+"|";  
+                        }else{
+                           allbs+=brand[i];
+                        }                        
+                    }
+                }
+
+                if (type == null || type.length == 0) { 
+                        allts="|";
+                }else{
+                    for(int i = 0; i < type.length; i++){
+                        if (i<type.length-1){
+                           allts+=type[i]+"|";  
+                        }else{
+                           allts+=type[i];
+                        }                        
+                    }
+                }
+
+                           
+                
+                if (size == null || size.length == 0){
+                    allss+="BETWEEN '13' AND '30'";
+                }else {
+                    for(int i=0;i<size.length;i++)
+                           allssi+=size[i];
+
+                 if (size != null && size.length == 1){
+                    if (allssi.contains("A")){
+                        allss+="BETWEEN '13' AND '15'"; 
+                    }else if (allssi.contains("B")){
+                        allss+="BETWEEN '15' AND '17'"; 
+                    }else if (allssi.contains("C")){
+                        allss+="BETWEEN '17' AND '30'"; 
+                    }
+                }else if (size != null && size.length == 2){
+                    if (allssi.contains("AB")){
+                        allss+="BETWEEN '13' AND '17'"; 
+                    }else if (allssi.contains("BC")){
+                        allss+="BETWEEN '15' AND '30'"; 
+                    }else if (allssi.contains("AC")){
+                        allss+="NOT BETWEEN '15' AND '17'"; 
+                    }            
+                }else if (size != null && size.length == 3)
+                     allss+="BETWEEN '17' AND '30'";
+                }
+              
+                
+                if(miniprice == null || miniprice.equals(""))
+                    miniprice = "0";
+                if(maxprice == null || maxprice.equals(""))
+                    maxprice = "99999999";
+                if(Integer.parseInt(maxprice) < Integer.parseInt(miniprice)){
+                    String lessmax = maxprice;
+                    maxprice = miniprice;
+                    miniprice = lessmax;
+                }
+
+                ResultSet rs;
+
+                String sqlb = "SELECT * FROM `product_infor` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
+                rs = con.createStatement().executeQuery(sqlb);
+                out.println("<div class='product'>");
                     int k=1;
-                                
-                    while(rs.next()){
-                                       
-                    if (k%6!=0){
+
+                while(rs.next()){
+                     if (k%6!=0){
                      k++;
 
                     out.println("<div class='list'>");   
@@ -278,13 +284,10 @@
                     out.println("</div>");
                     k=2;
                     }  
-                    }
-                     out.println("</div>");
-            %>
-             
-            
-                </div>
                     
+                    }
+                     out.println("</div>");                             
+            %>
         </div>
     </main>
     <footer class="footer">
@@ -293,4 +296,3 @@
     </footer>
 </body>
 </html>
-
