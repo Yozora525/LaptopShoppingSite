@@ -19,6 +19,7 @@ $(function(){
             $('#pwd-tip').html('');
         }else{
             $('#pwd-tip').html('密碼長度須為8-16，大小寫英數混合');
+            $('#change-pwd').prop('disabled', true);
         }
 
         if(pwd != check_pwd){
