@@ -31,7 +31,7 @@ $(function(){
 
         $.ajax({
             // ex:/專案名/資料夾名/檔案名
-            url: "/",
+            url: "/LaptopShoppingSite/src/test.jsp",
             type: "POST",
             dataType: 'json',
             data: {'acc':acc,'pwd':pwd},
