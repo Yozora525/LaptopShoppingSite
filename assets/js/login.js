@@ -46,7 +46,7 @@ $(function(){
 
     $('#reg-acc').on('keyup', function(event){
         let acc = $(this).val();
-        if(acc.indexOf('@') == -1){
+        if(acc.indexOf('@') == -1 || acc.indexOf('@') == acc.length-1){
             $('#acc-tip').html('信箱格式不正確');
         }else{
             $('#acc-tip').html('');
