@@ -22,43 +22,46 @@ $(function() {
     $('input[name="item-quan"').on('change', function(event){
         let index = $('input[name="item-quan"').index(this);
         let sum = parseInt($($('input[name="item-price"]')[index]).val()) * parseInt($(this).val());
-        let item = $($('input[name="item-name"]')[index]).val();
+        let item = $($('label[name="item-name"]')[index]).text();
         // $($('span[name="item-sum"]')[index]).html(sum);
         // $('span[name="item-sum"]').change();
-        $.blockUI({
-            message: $("#loading"),
-            css: {
-                "border": "none",
-                "backgroundColor": "rgba(0,0,0,0)",
-                "backgroundImage": "url('LaptopShoppingSiteFront/assets/img/loading.gif')",
-                "backgroundSize": "100%",
+        // $.blockUI({
+        //     message: $("#loading"),
+        //     css: {
+        //         "border": "none",
+        //         "backgroundColor": "rgba(0,0,0,0)",
+        //         "backgroundImage": "url('LaptopShoppingSiteFront/assets/img/loading.gif')",
+        //         "backgroundSize": "100%",
                 
-            }
-        });
+        //     }
+        // });
 
-        $.ajax({
-            url: "/",
-            type: "POST",
-            // dataType: 'json',
-            data: {'product':item,'quan':$(this).val(),'sum':sum},
-            success: function(data) {
-                if(data['res']=='success'){
-                    $($('span[name="item-sum"]')[index]).html(sum);
-                    $('span[name="item-sum"]').change();
-                    $.unblockUI();
-                }
-                else{
-                    alert(data['msg']);
-                    $.unblockUI();
-                    // alert('發生錯誤，請稍後再試');
-                    location.reload();
-                }
-            },
-            error: function(jqXHR) {
-                alert(jqXHR.statusText);
-                alert(jqXHR.responseText);
-            }
-        });
+        // 虛擬機上路徑可能要改
+        window.location.replace("index.html?product=" + item +"&quan=" + $(this).val() + "&sum=" + sum);
+
+        // $.ajax({
+        //     url: "/",
+        //     type: "POST",
+        //     // dataType: 'json',
+        //     data: {'product':item,'quan':$(this).val(),'sum':sum},
+        //     success: function(data) {
+        //         if(data['res']=='success'){
+        //             $($('span[name="item-sum"]')[index]).html(sum);
+        //             $('span[name="item-sum"]').change();
+        //             $.unblockUI();
+        //         }
+        //         else{
+        //             alert(data['msg']);
+        //             $.unblockUI();
+        //             // alert('發生錯誤，請稍後再試');
+        //             location.reload();
+        //         }
+        //     },
+        //     error: function(jqXHR) {
+        //         alert(jqXHR.statusText);
+        //         alert(jqXHR.responseText);
+        //     }
+        // });
     });
 
     $('input[name="item-check"]').on('change', function(event){
@@ -89,7 +92,7 @@ $(function() {
 
     $('span[name="item-delete"]').on('click', function(event){
         let index = $('span[name="item-delete"]').index(this);
-        let item = $($('input[name="item-name"]')[index]).val();
+        let item = $($('label[name="item-name"]')[index]).text();
         // $($('div[name="car-item"]')[index]).remove();
 
         $.confirm({
@@ -99,28 +102,32 @@ $(function() {
             content: '確定要將'+ item + '從購物車內移除嗎？',
             buttons: {
               確認: function() {
-                $.ajax({
-                    url: "/",
-                    type: "POST",
-                    // dataType: 'json',
-                    data: {'product':item},
-                    success: function(data) {
-                        if(data['res']=='success'){
-                            alert('刪除成功');
-                            $($('div[name="car-item"]')[index]).remove();
-                            location.reload();
-                        }
-                        else{
-                            alert(data['msg']);
-                            // alert('發生錯誤，請稍後再試');
-                            location.reload();
-                        }
-                    },
-                    error: function(jqXHR) {
-                        alert(jqXHR.statusText);
-                        alert(jqXHR.responseText);
-                    }
-                });
+                // $.ajax({
+                //     url: "/",
+                //     type: "POST",
+                //     // dataType: 'json',
+                //     data: {'product':item},
+                //     success: function(data) {
+                //         if(data['res']=='success'){
+                //             alert('刪除成功');
+                //             $($('div[name="car-item"]')[index]).remove();
+                //             location.reload();
+                //         }
+                //         else{
+                //             alert(data['msg']);
+                //             // alert('發生錯誤，請稍後再試');
+                //             location.reload();
+                //         }
+                //     },
+                //     error: function(jqXHR) {
+                //         alert(jqXHR.statusText);
+                //         alert(jqXHR.responseText);
+                //     }
+                // });
+
+
+                // 虛擬機上路徑可能要改
+                window.location.replace("index.html?product=" + item);
               },
               取消: function() {
               }
