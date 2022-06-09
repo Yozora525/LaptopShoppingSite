@@ -16,7 +16,7 @@ $(function() {
             $(this).val($(this).val());
         }
         // alert($(this).val());
-        $('input[name="item-quan"').change();
+        // $('input[name="item-quan"').change();
     });
 
     $('input[name="item-quan"').on('change', function(event){
