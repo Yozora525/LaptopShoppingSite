@@ -4,22 +4,8 @@
 <%@include file = "catchDateRan.jsp" %> 
 
 <%
-    request.setCharacterEncoding("UTF-8");
-    try{
-        Class.forName("com.mysql.jdbc.Driver");	  
-        try{
-        	String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-            Connection con = DriverManager.getConnection(url,"root","1234");
-
-            if(con.isClosed()){
-                out.println("connection fail ");
-            }
-            else{
-                out.println("connection success ");
 
 
-                String sql = "USE `computer_shop`";
-                con.createStatement().execute(sql);
 
                 //抓前端輸入帳號密碼
                 String logacc = request.getParameter("");
