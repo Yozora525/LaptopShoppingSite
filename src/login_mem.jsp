@@ -5,16 +5,19 @@
 <%
     String lacc = request.getParameter("lacc");
     String lpwd = request.getParameter("lpwd");
-   if(lacc !=null && !lacc.equals("") && lpwd != null && !lpwd.equals("")){ 
-    
-        sql = "SELECT * FROM `login` WHERE `mem_account`='"+lacc+"' AND `mem_password`='"+ lpwd +"'";
+    ResultSet rs;
+    PreparedStatement ps;
 
-        PreparedStatement ps = con.prepareStatement(sql);
+   if( lacc !=null && !lacc.equals("") && lpwd != null && !lpwd.equals("")){ 
+    
+        sql = "SELECT `mem_account`,`mem_password` FROM `login` WHERE `mem_account`=? AND `mem_password`=?";
+
+        ps = con.prepareStatement(sql);
 
         ps.setString(1, lacc);
         ps.setString(2, lpwd);
 
-        ResultSet rs = ps.executeQuery();
+        rs = ps.executeQuery();
 
         if(rs.next()){            
             session.setAttribute("mem_account", lacc);

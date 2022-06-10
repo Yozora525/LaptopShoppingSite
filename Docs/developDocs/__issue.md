@@ -23,10 +23,11 @@
         * res 回傳 success or fail
         * data 回傳資料，格式請用list(Array)回傳 e.g. 'data':[[1,2,3],[4,5,6]]
         * msg 回傳錯誤訊息，當 res == fail 才會有
-    2. 跳到會員中心填資料  
+    2. 註冊完跳到會員中心填資料        
     3. 註冊時製造會員ID         catchDateRan.jsp                     202205_daiyun
     4. 新增會員                 reg_mem.jsp
-    5. 登入確認                 login_mem.jsp
+    5. 登入確認                 login_mem.jsp                       20220611_daiyun
+    6. 登出                     logout_mem.jsp
 ## 購物車 ## session部分尚未完成 
     1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料，前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
        cardelete.jsp session部分尚未完成 
@@ -40,6 +41,7 @@
     3. 商品訂單匯入            列於backstage.jsp                     20220604_daiyun
     4. 訂單篩選                searchresult.jsp                     20220604_daiyun
     5. 管理員登入              login_man.jsp                        20220611_daiyun
+    6. 登出                    logout_man.jsp
 ## 會員中心 ## session部分尚未完成 
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun

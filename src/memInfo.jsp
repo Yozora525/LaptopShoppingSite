@@ -60,16 +60,16 @@
     </header>
     <%
         if(session.getAttribute("mem_account") == null) {
-           // response.sendRedirect("login.jsp");
+           response.sendRedirect("login.jsp");
         }
-        
-            // sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + mem_account + "'";
-            sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
+            String acc = session.getAttribute("mem_account").toString();
+            sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
+            //sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
             ResultSet rs = con.createStatement().executeQuery(sql);
             rs.next();
             String id = rs.getString("mem_id");
             
-            out.println(id);
+            
             sql = "SELECT `mem_name`,`mem_email`,`mem_phone`,`mem_birth` FROM `mem_infor` WHERE `mem_id` ='"+ id+"'";
             ResultSet rs1 = con.createStatement().executeQuery(sql);
             rs1.next();
