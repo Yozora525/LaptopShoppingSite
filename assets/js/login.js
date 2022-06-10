@@ -26,10 +26,10 @@ $(function(){
             $('#check-pwd-tip').html('兩次密碼輸入不一致');
             $('#register').prop('disabled', true);
         }else if(reg.test(pwd)){
-            $('#register').prop('disabled', true);
-        }else{
             $('#check-pwd-tip').html('');
             $('#register').prop('disabled', false);
+        }else{
+            $('#register').prop('disabled', true);
         }
         
     });
@@ -43,10 +43,10 @@ $(function(){
             $('#check-pwd-tip').html('兩次密碼輸入不一致');
             $('#register').prop('disabled', true);
         }else if(reg.test(pwd)){
-            $('#register').prop('disabled', true);
-        }else{
             $('#check-pwd-tip').html('');
             $('#register').prop('disabled', false);
+        }else{
+            $('#register').prop('disabled', true);
         }
     });
 
