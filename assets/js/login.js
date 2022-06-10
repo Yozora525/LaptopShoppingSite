@@ -19,7 +19,7 @@ $(function(){
             $('#pwd-tip').html('');
         }else{
             $('#pwd-tip').html('密碼長度須為8-16，大小寫英數混合');
-            $('#change-pwd').prop('disabled', true);
+            $('#register').prop('disabled', true);
         }
 
         if(pwd != check_pwd){
@@ -42,7 +42,7 @@ $(function(){
         if(pwd != check_pwd){
             $('#check-pwd-tip').html('兩次密碼輸入不一致');
             $('#register').prop('disabled', true);
-        }else if(reg.test(pwd)){
+        }else if(reg.test(check_pwd)){
             $('#check-pwd-tip').html('');
             $('#register').prop('disabled', false);
         }else{
