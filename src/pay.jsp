@@ -54,7 +54,7 @@
                         <span>總價</span>
                     </div>
                 </div>
-                <form action="" method="POST">
+                <form action="addorder.jsp" method="POST">
                     <!-- 訂單商品 -->
                     <div class="pay-item">
                         <div class="item-info-name">
