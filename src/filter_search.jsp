@@ -17,10 +17,6 @@
     <!-- 引入jQuery-Confirm -->
     <script src="../assets/js/lib/jquery-confirm/jquery-confirm.min.js"></script>
     <link rel="stylesheet" href="../assets/js/lib/jquery-confirm/jquery-confirm.min.css" />
-    <!-- 引入slick -->
-    <script src="../assets/js/lib/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="../assets/js/lib/slick/slick-theme.css" />
-    <link rel="stylesheet" href="../assets/js/lib/slick/slick.css" />
     <!-- 引入blockUI -->
     <script src="../assets/js/lib/blockUI/jquery.blockUI.js"></script>
     <!-- 引入css -->
@@ -28,21 +24,17 @@
     <link rel="stylesheet" href="../assets/sass/index.css" />
     <!-- 引入自寫js -->
     <script src="../assets/js/loading.js"></script>
-    <script src="../assets/js/slick.js"></script>
     <script src="../assets/js/index.js"></script>
-    <!-- <style>
-        @import url("../assets/sass/product.css");
-    </style> -->
 </head>
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.jsp" class="manage">網站管理</a>
+            <a href="manage.html" class="manage">網站管理</a>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">首頁</a>
+                    <a href="index.html">首頁</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="filter_search.jsp">
@@ -53,13 +45,13 @@
                 </div>
                 <div class="link-icon">
                     <div class="icon-login">
-                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
-                        <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
@@ -70,34 +62,6 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-            <!-- 輪播套件 -->
-            <div class="slick-container" style="width:100%;">
-                <div class="content_format">
-                    <div class="slick">
-                        <!-- 要輪播的內容 -->
-                        <%
-                            request.setCharacterEncoding("UTF-8");
-                            response.setCharacterEncoding("UTF-8");    
-
-                            String sqlrank = "SELECT * FROM `product_infor` WHERE `product_status`=1 ORDER BY `product_sold` DESC";
-                            ResultSet rsr = con.createStatement().executeQuery(sqlrank);
-
-                            int R=1;   
-
-                            while(rsr.next() && R<9){
-                            R++;
-                            out.println("<div class='slick-hot-container'>");
-                            out.println("<div class='hot-rank'>");
-                            out.println("<img src='../assets/img/icon/hot-large.png' />");
-                            out.println("<a href='proIntro.jsp?proID="+rsr.getString("product_id")+"'><img width='100%'' src='../assets/img/pro/"+rsr.getString("product_brand")+"/"+rsr.getString("product_name")+"_1.png' /></a>");
-                            out.println("</div>");
-                            out.println("</div>");
-                            }
-                        %>
-                    </div>
-                </div>
-            </div>
-            
             <!-- 產品 and 篩選 -->
             <div class="product-group">
                 <!-- 篩選 -->          
@@ -200,60 +164,59 @@
                         </form>
                     </div>
                 </div>
-
                 <!-- 產品列表 -->
                 <div class="product-list">
-             
-             
             <%
-                    String sql2 = "SELECT * FROM `product_infor` WHERE `product_status`=1";
-                    ResultSet rs = con.createStatement().executeQuery(sql2);
-                    out.println("<div class='product'>");
+                request.setCharacterEncoding("UTF-8");
+                response.setCharacterEncoding("UTF-8");    
+
+                String search_bar = request.getParameter("search_bar");
+                ResultSet sr;
+
+                String sqlsr = "SELECT * FROM `product_infor` WHERE (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%') AND (`product_status`=1)";
+                sr = con.createStatement().executeQuery(sqlsr);
+
+                out.println("<div class='product'>");
                     int k=1;
-                                
-                    while(rs.next()){
-                                       
-                    if (k%6!=0){
+
+                    while(sr.next()){
+                     if (k%6!=0){
                      k++;
-                      
-                    out.println("<div class='list'>");  
+                    out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name"));    
+                    out.println(sr.getString("product_name"));    
                     out.println("</div>"); 
                     out.println("<div class='pro-price'>");
-                    out.println("$"+rs.getInt("product_price"));  
+                    out.println("$"+sr.getInt("product_price"));  
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</div>");
                     }else {
                     out.println("</div>");
                     out.println("<div class='product'>");
-                    out.println("<div class='list'>"); 
+                    out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name"));    
+                    out.println(sr.getString("product_name"));    
                     out.println("</div>"); 
                     out.println("<div class='pro-price'>");
-                    out.println("$"+rs.getInt("product_price"));  
+                    out.println("$"+sr.getInt("product_price"));  
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</div>");
                     k=2;
                     }  
-                    }
-                     out.println("</div>");
-            %>
-             
-            
-                </div>
                     
+                    }
+                     out.println("</div>");                             
+            %>
         </div>
     </main>
     <footer class="footer">
@@ -262,4 +225,3 @@
     </footer>
 </body>
 </html>
-

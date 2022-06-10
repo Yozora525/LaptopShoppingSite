@@ -55,12 +55,13 @@
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");    
-    String pname = request.getParameter("");                                         // 量 填你傳過來的名字
-    //String sql = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; //填完之後把這行註解拿掉
-    sql = "SELECT * FROM `product_infor` WHERE (product_id='P001')";        //然後把這行刪掉
-    ResultSet rs = con.createStatement().executeQuery(sql);
-    sql = "SELECT * FROM `product_img` WHERE (product_id='P001')"; 
-    ResultSet rs1 = con.createStatement().executeQuery(sql);
+    String pname = request.getParameter("proID");                                        
+    String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; 
+    ResultSet rs = con.createStatement().executeQuery(sqlinfo);
+    String sqlp = "SELECT * FROM `product_img` WHERE product_id='" + pname + "'"; 
+    ResultSet rs1 = con.createStatement().executeQuery(sqlp);
+    String sqlcomment = "SELECT * FROM `comment` WHERE product_id='" + pname + "'";
+    ResultSet rscomment = con.createStatement().executeQuery(sqlcomment);
 
     %>
 
@@ -140,36 +141,28 @@
                 <span>商品評價</span>
             </div>
             <!-- 個別用戶評價 -->
-            <div class="pro-eval">
-                <div class="eval-user">
-                    <span>使用者名稱</span>
-                </div>
-                <div class="eval-info">
-                    <span class="eval-star">★</span>
-                    <span class="eval-star">★</span>
-                    <span class="eval-star">★</span>
-                </div>
-                <div class="eval-info">
-                    <span>2022-06-03 21:07:57</span>
-                </div>
-                <div class="eval-content">
-                    <span>評價內容</span>
-                </div>
-            </div>
-            <div class="pro-eval">
-                <div class="eval-user">
-                    <span>使用者名稱</span>
-                </div>
-                <div class="eval-info">
-                    <span class="eval-star">★</span>
-                </div>
-                <div class="eval-info">
-                    <span>2022-06-03 21:07:57</span>
-                </div>
-                <div class="eval-content">
-                    <span>評價內容</span>
-                </div>
-            </div>
+            <%                               
+                   while(rscomment.next()){ 
+                    out.println("<div class='pro-eval'>");
+                    out.println("<div class='eval-user'>");      
+                    out.println("<span>"+rscomment.getString("mem_id")+"</span>");      
+                    out.println("</div>");                      
+                    out.println("<div class='eval-info'>"); 
+
+                    for(int s=0; s<rscomment.getInt("star"); s++)
+                    out.println("<span class='eval-star'>★</span>");
+
+                    out.println("</div>");
+                    out.println("<div class='eval-info'>");
+                    out.println("<span>"+rscomment.getString("comment_time")+"</span>");
+                    out.println("</div>");
+                    out.println("<div class='eval-content'>");
+                    out.println("<span>"+rscomment.getString("mem_comment")+"</span>");
+                    out.println("</div>");
+                    out.println("</div>");
+                   }
+                    
+            %>
         </div>
     </main>
     <footer class="footer">
