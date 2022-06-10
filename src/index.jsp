@@ -75,55 +75,25 @@
                 <div class="content_format">
                     <div class="slick">
                         <!-- 要輪播的內容 -->
-                        <div class="slick-hot-container">
-                            <div class="hot-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                            </div>
-                        </div>
-                        
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png" />
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
-                            </div>
-                        </div>
-                        <div class="slick-hot-container">
-                            <div class="hot-pro-rank">
-                                <img src="../assets/img/icon/hot-large.png" />
-                                <img width="100%" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
-                            </div>
-                        </div>
+                        <%
+                            request.setCharacterEncoding("UTF-8");
+                            response.setCharacterEncoding("UTF-8");    
+
+                            String sqlrank = "SELECT * FROM `product_infor` WHERE `product_status`=1 ORDER BY `product_sold` DESC";
+                            ResultSet rsr = con.createStatement().executeQuery(sqlrank);
+
+                            int R=1;   
+
+                            while(rsr.next() && R<9){
+                            R++;
+                            out.println("<div class='slick-hot-container'>");
+                            out.println("<div class='hot-rank'>");
+                            out.println("<img src='../assets/img/icon/hot-large.png' />");
+                            out.println("<a href='proIntro.jsp?proID="+rsr.getString("product_id")+"'><img width='100%'' src='../assets/img/pro/"+rsr.getString("product_brand")+"/"+rsr.getString("product_name")+"_1.png' /></a>");
+                            out.println("</div>");
+                            out.println("</div>");
+                            }
+                        %>
                     </div>
                 </div>
             </div>
@@ -234,11 +204,9 @@
                 <!-- 產品列表 -->
                 <div class="product-list">
              
-             <%
-                request.setCharacterEncoding("UTF-8");
-                response.setCharacterEncoding("UTF-8");    
-
-                    String sql2 = "SELECT `product_brand`, `product_name`, `product_price` FROM `product_infor` WHERE `product_status`=1";
+             
+            <%
+                    String sql2 = "SELECT * FROM `product_infor` WHERE `product_status`=1";
                     ResultSet rs = con.createStatement().executeQuery(sql2);
                     out.println("<div class='product'>");
                     int k=1;
@@ -247,10 +215,10 @@
                                        
                     if (k%6!=0){
                      k++;
-
-                    out.println("<div class='list'>");   
+                      
+                    out.println("<div class='list'>");  
                     out.println("<div class='pro-img'>");
-                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
@@ -264,9 +232,9 @@
                     }else {
                     out.println("</div>");
                     out.println("<div class='product'>");
-                    out.println("<div class='list'>");   
+                    out.println("<div class='list'>"); 
                     out.println("<div class='pro-img'>");
-                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");

@@ -12,52 +12,54 @@
 
 .finish{
     @include small{
-
+        margin-top: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
     @include large{
-        display: block;
-        margin-top: 0%;
-        
-        
+        margin-top: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 
-.f-pic{
-    @include small{
-
-    }
-    @include large{
-        padding-left: 35%;  
-        margin-top: -10%;   
-    }
+.finish-img{
+    text-align: center;
 }
 
-.f-word{
-    @include small{
-
-    }
-    @include large{
-        padding-top: -20%;
-        margin-top: -10%;
+.finish-word{
         text-align: center;
-        padding-bottom: 5%;
-    }
+        margin-top: 3%;
 }
 
-.f-back{
+.finish-back{
     @include small{
-
+        text-align: center;
+        background-color: #0096C7;  
+        text-align: center;
+        background-color: #0096C7;
+        margin-left: 35%;
+        margin-right: 35%;
+        height: 28px;
+        
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.25em;
+        }
     }
     @include large{
-        font-size: 30px;
-        margin-left:40%;
-        background-color:#84C1FF;
-        border-radius: 10px;
-        padding:1%;
-        margin-right: 45%;
         text-align: center;
+        background-color: #0096C7;
+        margin-left: 40%;
+        margin-right: 40%;
+        height: 32px;
         
-
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
     }
 }
 

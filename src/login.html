@@ -59,35 +59,39 @@
                 </div>
                 <!-- 登入介面 -->
                 <div id="login-container" class="login-container">
-                    <div class="login">
-                        <input type="text" id="acc" placeholder="帳號"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" /><br/>
-                        <label id="login-acc-tip" class="tip"></label>
-                    </div>
-                    <div  class="login">
-                        <input type="password" id="pwd" placeholder="密碼" /><br/>
-                        <label id="login-pwd-tip" class="tip"></label>
-                    </div>
-                    <div class="btn-login">
-                        <button id="login">登入</button>
-                    </div>
+                    <form action="index.html" method="post">
+                        <div class="login">
+                            <input type="text" id="acc" placeholder="帳號"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" / required><br/>
+                            <label id="login-acc-tip" class="tip"></label>
+                        </div>
+                        <div  class="login">
+                            <input type="password" id="pwd" placeholder="密碼" required/><br/>
+                            <label id="login-pwd-tip" class="tip"></label>
+                        </div>
+                        <div class="btn-login">
+                            <button id="login">登入</button>
+                        </div>
+                    </form>
                 </div>
                 <!-- 註冊介面 -->
                 <div id="register-container" class="login-container" style="display:none;">
-                    <div class="login">
-                        <input type="text" id="reg-acc" placeholder="帳號(電子信箱)"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" required/><br/>
-                        <label id="acc-tip" class="tip"></label>
-                    </div>
-                    <div class="login">
-                        <input type="password" id="reg-pwd" placeholder="密碼" required/><br/>
-                        <label id="pwd-tip" class="tip"></label>
-                    </div>
-                    <div class="login">
-                        <input type="password" id="check-pwd" placeholder="確認密碼" required/><br/>
-                        <label id="check-pwd-tip" class="tip"></label>
-                    </div>
-                    <div class="btn-login">
-                        <button id="register">註冊</button>
-                    </div>
+                    <form action="index.html" method="post">
+                        <div class="login">
+                            <input type="email" id="reg-acc" placeholder="帳號(電子信箱)"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" required/><br/>
+                            <label id="acc-tip" class="tip"></label>
+                        </div>
+                        <div class="login">
+                            <input type="password" id="reg-pwd"  maxlength="16" placeholder="密碼" required/><br/>
+                            <label id="pwd-tip" class="tip"></label>
+                        </div>
+                        <div class="login">
+                            <input type="password" id="check-pwd"  maxlength="16" placeholder="確認密碼" required/><br/>
+                            <label id="check-pwd-tip" class="tip"></label>
+                        </div>
+                        <div class="btn-login">
+                            <button id="register">註冊</button>
+                        </div>
+                    </form>
                 </div>
             </div>
                 
