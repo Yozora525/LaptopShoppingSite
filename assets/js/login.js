@@ -25,6 +25,8 @@ $(function(){
         if(pwd != check_pwd){
             $('#check-pwd-tip').html('兩次密碼輸入不一致');
             $('#register').prop('disabled', true);
+        }else if(reg.test(pwd)){
+            $('#register').prop('disabled', true);
         }else{
             $('#check-pwd-tip').html('');
             $('#register').prop('disabled', false);
@@ -35,9 +37,12 @@ $(function(){
     $('#check-pwd').on('keyup', function(event){
         let pwd = $('#reg-pwd').val();
         let check_pwd = $(this).val();
+        let reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/;
 
         if(pwd != check_pwd){
             $('#check-pwd-tip').html('兩次密碼輸入不一致');
+            $('#register').prop('disabled', true);
+        }else if(reg.test(pwd)){
             $('#register').prop('disabled', true);
         }else{
             $('#check-pwd-tip').html('');
