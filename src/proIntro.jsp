@@ -55,12 +55,11 @@
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");    
-    String pname = request.getParameter("");                                         // 量 填你傳過來的名字
-    //String sql = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; //填完之後把這行註解拿掉
-    sql = "SELECT * FROM `product_infor` WHERE (product_id='P001')";        //然後把這行刪掉
-    ResultSet rs = con.createStatement().executeQuery(sql);
-    sql = "SELECT * FROM `product_img` WHERE (product_id='P001')"; 
-    ResultSet rs1 = con.createStatement().executeQuery(sql);
+    String pname = request.getParameter("proID");                                        
+    String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; 
+    ResultSet rs = con.createStatement().executeQuery(sqlinfo);
+    String sqlp = "SELECT * FROM `product_img` WHERE product_id='" + pname + "'"; 
+    ResultSet rs1 = con.createStatement().executeQuery(sqlp);
 
     %>
 

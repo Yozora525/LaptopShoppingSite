@@ -184,7 +184,7 @@
                      k++;
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'>");
+                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
@@ -200,7 +200,7 @@
                     out.println("<div class='product'>");
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'>");
+                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");

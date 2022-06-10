@@ -250,5 +250,5 @@ INSERT INTO product_img VALUES ('P018', '../assets/img/pro/ACER/ACER TravelMate_
 
 INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png', '../assets/img/pro/ASUS/ASUS E410_2.png');
 
-INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png');
+INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png', '../assets/img/pro/MSI/MSI Summit E16 Flip_2.png');
 
