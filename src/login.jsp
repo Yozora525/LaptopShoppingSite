@@ -1,7 +1,8 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page import ="java.sql.*"%>
-<%@include file = "connectsql.jsp" %> 
+<%@ include file = "connectsql.jsp" %> 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,12 +24,12 @@
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.html" class="manage">網站管理</a>
+            <a href="manage.jsp" class="manage">網站管理</a>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.html">首頁</a>
+                    <a href="index.jsp">首頁</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="">
@@ -38,13 +39,13 @@
                 </div>
                 <div class="link-icon">
                     <div class="icon-login">
-                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
-                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                        <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
@@ -63,35 +64,39 @@
                 </div>
                 <!-- 登入介面 -->
                 <div id="login-container" class="login-container">
-                    <div class="login">
-                        <input type="text" id="acc" placeholder="帳號"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" /><br/>
-                        <label id="login-acc-tip" class="tip"></label>
-                    </div>
-                    <div  class="login">
-                        <input type="password" id="pwd" placeholder="密碼" /><br/>
-                        <label id="login-pwd-tip" class="tip"></label>
-                    </div>
-                    <div class="btn-login">
-                        <button id="login">登入</button>
-                    </div>
+                    <form action="login_mem.jsp" method="post">
+                        <div class="login">
+                            <input type="text" id="acc" name="lacc"  placeholder="帳號"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" / required><br/>
+                            <label id="login-acc-tip" class="tip"></label>
+                        </div>
+                        <div  class="login">
+                            <input type="password" id="pwd" name="lpwd" placeholder="密碼" required/><br/>
+                            <label id="login-pwd-tip" class="tip"></label>
+                        </div>
+                        <div class="btn-login">
+                            <button id="login">登入</button>
+                        </div>
+                    </form>
                 </div>
                 <!-- 註冊介面 -->
                 <div id="register-container" class="login-container" style="display:none;">
-                    <div class="login">
-                        <input type="text" id="reg-acc" placeholder="帳號(電子信箱)"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" required/><br/>
-                        <label id="acc-tip" class="tip"></label>
-                    </div>
-                    <div class="login">
-                        <input type="password" id="reg-pwd" placeholder="密碼"  required/><br/>
-                        <label id="pwd-tip" class="tip"></label>
-                    </div>
-                    <div class="login">
-                        <input type="password" id="check-pwd" placeholder="確認密碼" required/><br/>
-                        <label id="check-pwd-tip" class="tip"></label>
-                    </div>
-                    <div class="btn-login">
-                        <button id="register">註冊</button>
-                    </div>
+                    <form action="reg_mem.jsp" method="post">
+                        <div class="login">
+                            <input type="email" id="reg-acc"  name="racc"  placeholder="帳號(電子信箱)"  onkeyup="value=value.replace(/[^\w=@#\.\/\*]/ig,'')" required/><br/>
+                            <label id="acc-tip" class="tip"></label>
+                        </div>
+                        <div class="login">
+                            <input type="password" id="reg-pwd" name="rpwd" maxlength="16" placeholder="密碼" required/><br/>
+                            <label id="pwd-tip" class="tip"></label>
+                        </div>
+                        <div class="login">
+                            <input type="password" id="check-pwd"  maxlength="16" placeholder="確認密碼" required/><br/>
+                            <label id="check-pwd-tip" class="tip"></label>
+                        </div>
+                        <div class="btn-login">
+                            <button id="register">註冊</button>
+                        </div>
+                    </form>
                 </div>
             </div>
                 

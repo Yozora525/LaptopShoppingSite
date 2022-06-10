@@ -26,7 +26,6 @@
         con.createStatement().execute(sql0);
         int change = con.createStatement().executeUpdate(sql0);
         if(change>0){
-           
           con.close();
           response.sendRedirect("backstage.jsp");
         }

@@ -29,7 +29,7 @@
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.html">首頁 | 結帳</a>
+                    <a href="index.jsp">首頁 | 結帳</a>
                 </div>
             </nav>
         </div>

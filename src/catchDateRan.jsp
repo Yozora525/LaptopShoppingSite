@@ -1,10 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java"%>
+<%@ page contentType="text/html"%>
+<%@ page pageEncoding="UTF-8"%>
+<%@ page import ="java.sql.*"%>
+<%@ include file = "connectsql.jsp" %> 
 <%@ page import="java.io.*,java.util.*"%>
 <%@ page import="javax.servlet.*,java.text.*"%>
+<%@ page import="java.sql.*"%>
 <%
     SimpleDateFormat time = new SimpleDateFormat("yyyyMMddhhmmss");  
-    String CDate = time.format(new Date()); 
+    String CDate = time.format(new java.util.Date()); 
     
     //out.println(CDate);
     int num = Math.round( (float)Math.random()*1000);
@@ -13,5 +17,5 @@
     }
     String RanNum = "" + num;
     CDate += RanNum;
-    out.println(CDate);
+    //out.println(CDate);
 %>

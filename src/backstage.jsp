@@ -1,6 +1,11 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@include file = "connectsql.jsp" %> 
+<% 
+    if(session.getAttribute("man_account")==null){
+        response.sendRedirect("manage.jsp");
+    } 
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
