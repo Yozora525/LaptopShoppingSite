@@ -60,62 +60,86 @@
             <div class="product-group">
                 <!-- 篩選 -->          
                 <div class="product-filter">
-                    <form action="" method="GET" id="" name="">
+                    <form action="filter.html" method="GET" id="" name="">
                     <div id="filter-slide" class="" style="text-align:center;">
                         <span class="">篩選</span>
                     </div>
                     <div id="filter" class="filter">
 
-                        <div class="filter-container">
-                            <!-- 品牌 -->
-                            <div class="filter-type">
-                                <span>品牌</span>
+                        <div class="filter-type">
+                            <span>品牌</span>
+                        </div>
+                        <div class="filter-item">
+                            <!-- checkBox -->
+                            <div>
+                                <input type="checkbox" name="brand" value="APPLE" />
+                                <label>Apple</label>
                             </div>
-                            <div class="filter-item">
-                                <!-- checkBox -->
-                                <div>
-                                    <input type="checkbox" name="" value="APPLE" />
-                                    <label>Apple</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="" value="MSI" />
-                                    <label>MSI</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="" value="ASUS" />
-                                    <label>ASUS</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="" value="ACER" />
-                                    <label>ACER</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="" value="HP" />
-                                    <label>HP</label>
-                                </div>
+                            <div>
+                                <input type="checkbox" name="brand" value="MSI" />
+                                <label>MSI</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="brand" value="ASUS" />
+                                <label>ASUS</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="brand" value="ACER" />
+                                <label>ACER</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="brand" value="HP" />
+                                <label>HP</label>
                             </div>
                         </div>
-                        <div class="filter-container">
-                            <!-- 螢幕尺寸 -->
-                            <div class="filter-type">
-                                <span>螢幕尺寸</span>
+                    </div>
+                    <div class="filter-container">
+                        <!-- 螢幕尺寸 -->
+                        <div class="filter-type">
+                            <span>螢幕尺寸</span>
+                        </div>
+                        <div class="filter-item">
+                            <!-- checkBox -->
+                            <div>
+                                <input type="checkbox" name="size" value="" />
+                                <label>13~15吋</label>
                             </div>
-                            <div class="filter-item">
-                                <!-- checkBox -->
-                                <div>
-                                    <input type="checkbox" name="" value="" />
-                                    <label>13~15吋</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="" value="" />
-                                    <label>15~17吋</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="" value="" />
-                                    <label>17吋以上</label>
-                                </div>
+                            <div>
+                                <input type="checkbox" name="size" value="" />
+                                <label>15~17吋</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="size" value="" />
+                                <label>17吋以上</label>
                             </div>
                         </div>
+                    </div>
+                    <div class="filter-container">
+                        <!-- 使用類型 -->
+                        <div class="filter-type">
+                            <span>使用類型</span>
+                        </div>
+                        <div class="filter-item">
+                            <!-- checkBox -->
+                            <div>
+                                <input type="checkbox" name="use-type" value="電競" />
+                                <label>電競</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="use-type" value="商務" />
+                                <label>商務</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="use-type" value="創作設計" />
+                                <label>創作設計</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="use-type" value="輕薄便攜" />
+                                <label>輕薄便攜</label>
+                            </div>
+                            
+                        </div>
+                    </div>
                         <div class="filter-container">
                             <!-- 使用類型 -->
                             <div class="filter-type">
@@ -158,8 +182,8 @@
                         </form>
                     </div>
                 </div>
-                <!-- 產品列表 -->
-                <div class="product-list">
+                 <!-- 產品列表 -->
+                 <div class="product-list">
                     <div class="product">
                         <div class="list">
                             <div class="pro-img">
@@ -167,7 +191,7 @@
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    ASUS X515
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
                                 </div>
                                 <div class="pro-price">
                                     $17900
@@ -176,53 +200,53 @@
                         </div>
                         <div class="list">
                             <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS Zenbook 14 Flip OLED_1.png"/>
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    ASUS Zenbook 14 Flip OLED
-                                </div>  
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
                                 <div class="pro-price">
-                                    $40900
+                                    $17900
                                 </div>
                             </div>
                         </div>
                         <div class="list">
                             <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS TUF Gaming F15_1.png"/>
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    ASUS TUF Gaming F15
-                                </div>  
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
                                 <div class="pro-price">
-                                    $33500
+                                    $17900
                                 </div>
                             </div>
                         </div>
                         <div class="list">
                             <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS ZenBook 13 OLED_1.png"/>
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    ASUS ZenBook 13 OLED
-                                </div>  
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
                                 <div class="pro-price">
-                                    $34900
+                                    $17900
                                 </div>
                             </div>
                         </div>
                         <div class="list">
                             <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS E410_1.png"/>
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    ASUS E410
-                                </div> 
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
                                 <div class="pro-price">
-                                    $9488
+                                    $17900
                                 </div>
                             </div>
                         </div>
@@ -231,204 +255,71 @@
                     <div class="product">
                         <div class="list">
                             <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/APPLE/APPLE MacBook Air_1.png"/>
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    APPLE MacBook Air
-                                </div>  
-                                <div  class="pro-price">
-                                    $38900
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/APPLE/APPLE MacBook Pro_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    APPLE MacBook Pro_15
-                                </div>  
-                                <div  class="pro-price">
-                                    $104900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ACER/ACER Nitro5 AN515-58-77 MX_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    ACER Nitro5 AN515-58-77 MX
-                                </div>  
                                 <div class="pro-price">
-                                    $39500
+                                    $17900
                                 </div>
                             </div>
                         </div>
                         <div class="list">
                             <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ACER/ACER Swift5 SF514-55TA-5884_1.png"/>
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
                             </div>
                             <div class="pro-content">
                                 <div class="protext">
-                                    ACER Swift5
-                                </div> 
-                                <div  class="pro-price">
-                                    $29900
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ACER/ACER Aspire5 A514-54G-58HW_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    ACER Aspire5 A514-54G-58HW
-                                </div>  
                                 <div class="pro-price">
-                                    $21900
+                                    $17900
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="pro-img">
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                            </div>
+                            <div class="pro-content">
+                                <div class="protext">
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
+                                <div class="pro-price">
+                                    $17900
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="pro-img">
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                            </div>
+                            <div class="pro-content">
+                                <div class="protext">
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
+                                <div class="pro-price">
+                                    $17900
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="pro-img">
+                                <img  class="listimg" src="../assets/img/pro/ASUS/ASUS X515_1.png" />
+                            </div>
+                            <div class="pro-content">
+                                <div class="protext">
+                                    <a  href="proIntro.html" style="text-decoration: none;color: #000;">ASUS X515</a>
+                                </div>
+                                <div class="pro-price">
+                                    $17900
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product">
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/ACER/ACER TravelMate P214-53-78QY_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    ACER TravelMate P214-53-78QY
-                                </div>  
-                                <div class="pro-price">
-                                    $31900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/MSI/MSI Stealth 15M_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    MSI Stealth 15M
-                                </div>  
-                                <div class="pro-price">
-                                     $47900 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/MSI/MSI Modern14-B5M_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext" >
-                                    MSI Modern14-B5M
-                                </div> 
-                                <div class="pro-price">
-                                    $23900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/MSI/MSI Alpha 15_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    MSI Alpha 15
-                                </div>  
-                                <div class="pro-price">
-                                    $34900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/MSI/MSI  Prestige 14 i7-10710u_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    MSI  Prestige 14 i7-10710u
-                                </div>
-                                <div class="pro-price">
-                                    $30900
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="list">
-                            <div class="pro-img">
-                                <img class="listimg" src="../assets/img/pro/MSI/MSI Summit E16 Flip_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    MSI Summit E16 Flip
-                                </div>  
-                                <div class="pro-price">
-                                    $55900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/HP/HP Elite Dragonfly G2_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    HP Elite Dragonfly G2
-                                </div> 
-                                <div class="pro-price">
-                                    $59900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/HP/HP 470 G8_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    HP 470 G8
-                                </div>  
-                                <div class="pro-price">
-                                    $29999
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/HP/HP 14s-dq4001TU_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">
-                                    HP 14s-dq4001TU
-                                </div>  
-                                <div class="pro-price">
-                                    $31900
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <div class="pro-img">
-                                <img  class="listimg" src="../assets/img/pro/HP/HP OMEN 16-C0668AX_1.png"/>
-                            </div>
-                            <div class="pro-content">
-                                <div class="protext">      
-                                    HP OMEN 16-C0668AX
-                                </div>  
-                                <div class="pro-price">
-                                    $48900
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
