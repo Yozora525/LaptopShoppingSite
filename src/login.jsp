@@ -1,14 +1,7 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page import ="java.sql.*"%>
-<%-- <%@include file = "connectsql.jsp" %>  --%>
-<%
-    Class.forName("com.mysql.jdbc.Driver");	  
-    String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-    Connection con = DriverManager.getConnection(url,"root","1234");
-    String sql = "USE `test_computer_shop`";
-    con.createStatement().execute(sql);
-%>
+<%@include file = "connectsql.jsp" %> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
