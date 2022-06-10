@@ -122,7 +122,7 @@
                 <span>變更密碼</span>
             </div>
             <div class="change-pwd-container" id="">
-                <form action="changeinfo.jsp" method="POST">
+                <form action="changepwd.jsp" method="POST">
                     <div>
                         <span>目前密碼</span>
                         <input type="password" name="prepwd" class="" value="" required/>

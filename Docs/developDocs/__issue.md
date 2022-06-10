@@ -19,15 +19,17 @@
     2. 匯入評論區... 20220610_JLC
 
 ## 登入/註冊 ## 
+    1. 註冊時製造會員ID          catchDateRan.jsp                     202205_daiyun
+    2. 新增會員                 reg_mem.jsp
+    3. 登入確認                 login_mem.jsp                       20220611_daiyun
+    4. 登出                     logout_mem.jsp                      20220611_daiyun
+    
+    #需求#
     1. 前端會將登入/註冊的資訊利用ajax的方式傳至後端，後端處理完成請利用json格式回傳結果，e.g. {'res':'', 'data':[], 'msg': ''}
         * res 回傳 success or fail
         * data 回傳資料，格式請用list(Array)回傳 e.g. 'data':[[1,2,3],[4,5,6]]
         * msg 回傳錯誤訊息，當 res == fail 才會有
-    2. 註冊完跳到會員中心填資料        
-    3. 註冊時製造會員ID          catchDateRan.jsp                     202205_daiyun
-    4. 新增會員                 reg_mem.jsp
-    5. 登入確認                 login_mem.jsp                       20220611_daiyun
-    6. 登出                     logout_mem.jsp                      20220611_daiyun
+    2. 註冊完跳到會員中心填資料  
 ## 購物車 ## 
     1. 刪除欲購買商品           cardelete.jsp
     2. 更改商品數量             caramount.jsp                        20220611_daiyun
