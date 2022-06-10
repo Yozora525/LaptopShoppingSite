@@ -1,6 +1,7 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@include file = "connectsql.jsp" %> 
+<%-- <%@include file = "pullshelves.jsp" %>  --%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -174,6 +175,29 @@
                         <tbody>
                             <!-- <iframe src="searchresult.jsp" frameborder="0" style="width:100%"></iframe> -->
 
+<%
+    //sql = "SELECT `product_id`,`product_name`, `product_status` FROM `product_infor` WHERE `product_name`";
+    //ResusltSet rs = con.createStatement().executeQuery(sql);
+    String pname = request.getParameter("product");
+    String sta = request.getParameter("bstatus");
+    int index=0;
+    while ( (index= pname.indexOf("%20")) != -1 || (index= pname.indexOf("+")) != -1 ) {
+        pname = pname.substring(0,index) + " " + pname.substring(index+1);
+    }
+    out.println(pname);
+    String sql0 = "SELECT `product_id` FROM `product_infor` WHERE `product_name`='" + pname + "'";
+    ResusltSet rsid = con.createStatement().executeQuery(sql0);
+    rsid.next();
+    String pid = rsid.getString("product_id");
+
+    sql = "UPDATE `product_infor` SET `product_status`='"+sta+"' WHERE `product_id`='"+pid+"'";
+    con.createStatement().execute(sql0);
+    int change = con.createStatement().executeUpdate(sql0);
+    if(change>0){
+        con.close();
+    }
+
+%>
                         <% 
                             String name = request.getParameter("filter-pro");
                             String start = request.getParameter("start");
@@ -205,8 +229,6 @@
                                     out.println("</tr>");
                                     order2++;
                                 } 
-                            
-                             
                         %>        
                         </tbody>
                     </table>

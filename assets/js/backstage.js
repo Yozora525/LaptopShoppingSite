@@ -4,12 +4,14 @@ $(function(){
         let status = $($('span[name="pro-status"]')[index]).text();
         let pro = $($('span[name="pro-name"]')[index]).text();
         var statusAfter = ''
-        
+        var bstatus = 0;
 
         if(status == "上架"){
             statusAfter = '下架';
+            bstatus = 0;
         }else{
             statusAfter = '上架';
+            bstatus = 1;
         }
 
         $.confirm({
@@ -47,7 +49,7 @@ $(function(){
                 // });
 
                 // 虛擬機上路徑可能要改
-                window.location.replace("index.html?product=" + pro + "&status=" + statusAfter);
+                window.location.replace("backstage.jsp?product=" + pro + "&status=" + bstatus);
               },
               取消: function() {
               }
