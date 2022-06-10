@@ -169,103 +169,29 @@
             <%
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");    
-                
-		        String brand[]= request.getParameterValues("brand");
-                String allbs="";
-                String type[]= request.getParameterValues("type");
-                String allts="";
-                String size[]= request.getParameterValues("size");
-                String allss="";
-                String allssi="";
-                String maxprice = request.getParameter("maxrange");
-                String miniprice = request.getParameter("minirange");
-                
 
-                if (brand == null || brand.length == 0) { 
-                        allbs="|";
-                }else{
-                    for(int i = 0; i < brand.length; i++){
-                        if (i<brand.length-1){
-                           allbs+=brand[i]+"|";  
-                        }else{
-                           allbs+=brand[i];
-                        }                        
-                    }
-                }
+                String search_bar = request.getParameter("search_bar");
+                ResultSet sr;
 
-                if (type == null || type.length == 0) { 
-                        allts="|";
-                }else{
-                    for(int i = 0; i < type.length; i++){
-                        if (i<type.length-1){
-                           allts+=type[i]+"|";  
-                        }else{
-                           allts+=type[i];
-                        }                        
-                    }
-                }
-
-                           
-                
-                if (size == null || size.length == 0){
-                    allss+="BETWEEN '13' AND '30'";
-                }else {
-                    for(int i=0;i<size.length;i++)
-                           allssi+=size[i];
-
-                 if (size != null && size.length == 1){
-                    if (allssi.contains("A")){
-                        allss+="BETWEEN '13' AND '15'"; 
-                    }else if (allssi.contains("B")){
-                        allss+="BETWEEN '15' AND '17'"; 
-                    }else if (allssi.contains("C")){
-                        allss+="BETWEEN '17' AND '30'"; 
-                    }
-                }else if (size != null && size.length == 2){
-                    if (allssi.contains("AB")){
-                        allss+="BETWEEN '13' AND '17'"; 
-                    }else if (allssi.contains("BC")){
-                        allss+="BETWEEN '15' AND '30'"; 
-                    }else if (allssi.contains("AC")){
-                        allss+="NOT BETWEEN '15' AND '17'"; 
-                    }            
-                }else if (size != null && size.length == 3)
-                     allss+="BETWEEN '17' AND '30'";
-                }
-              
-                
-                if(miniprice == null || miniprice.equals(""))
-                    miniprice = "0";
-                if(maxprice == null || maxprice.equals(""))
-                    maxprice = "99999999";
-                if(Integer.parseInt(maxprice) < Integer.parseInt(miniprice)){
-                    String lessmax = maxprice;
-                    maxprice = miniprice;
-                    miniprice = lessmax;
-                }
-
-                ResultSet rs;
-
-                String sqlb = "SELECT * FROM `product_infor` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
-                rs = con.createStatement().executeQuery(sqlb);
+                String sqlsr = "SELECT * FROM `product_infor` WHERE (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%') AND (`product_status`=1)";
+                sr = con.createStatement().executeQuery(sqlsr);
 
                 out.println("<div class='product'>");
                     int k=1;
 
-                while(rs.next()){
+                    while(sr.next()){
                      if (k%6!=0){
                      k++;
-
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                    out.println("<img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name"));    
+                    out.println(sr.getString("product_name"));    
                     out.println("</div>"); 
                     out.println("<div class='pro-price'>");
-                    out.println("$"+rs.getInt("product_price"));  
+                    out.println("$"+sr.getInt("product_price"));  
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</div>");
@@ -274,14 +200,14 @@
                     out.println("<div class='product'>");
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'>");
+                    out.println("<img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
-                    out.println(rs.getString("product_name"));    
+                    out.println(sr.getString("product_name"));    
                     out.println("</div>"); 
                     out.println("<div class='pro-price'>");
-                    out.println("$"+rs.getInt("product_price"));  
+                    out.println("$"+sr.getInt("product_price"));  
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</div>");

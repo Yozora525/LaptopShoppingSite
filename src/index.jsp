@@ -45,9 +45,10 @@
                     <a href="index.jsp">首頁</a>
                 </div>
                 <div class="key-word-search">
-                    <form method="GET" action="">
-                        <input type="search" name="" placeholder="請輸入關鍵字">
-                        <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
+                    <form method="GET" action="filter_search.jsp">
+                        <input type="search" name="search_bar" placeholder="請輸入關鍵字">
+                        <button style="background-color:transparent;border:0px">
+                        <img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
                 </div>
                 <div class="link-icon">
