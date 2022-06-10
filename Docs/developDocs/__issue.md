@@ -18,30 +18,34 @@
     1. 產品詳情匯入
     2. 匯入評論區... 20220610_JLC
 
-## 登入/註冊 ## session部分尚未完成 
+## 登入/註冊 ## 
     1. 前端會將登入/註冊的資訊利用ajax的方式傳至後端，後端處理完成請利用json格式回傳結果，e.g. {'res':'', 'data':[], 'msg': ''}
         * res 回傳 success or fail
         * data 回傳資料，格式請用list(Array)回傳 e.g. 'data':[[1,2,3],[4,5,6]]
         * msg 回傳錯誤訊息，當 res == fail 才會有
     2. 註冊完跳到會員中心填資料        
-    3. 註冊時製造會員ID         catchDateRan.jsp                     202205_daiyun
+    3. 註冊時製造會員ID          catchDateRan.jsp                     202205_daiyun
     4. 新增會員                 reg_mem.jsp
     5. 登入確認                 login_mem.jsp                       20220611_daiyun
-    6. 登出                     logout_mem.jsp
-## 購物車 ## session部分尚未完成 
+    6. 登出                     logout_mem.jsp                      20220611_daiyun
+## 購物車 ## 
+    1. 刪除欲購買商品           cardelete.jsp
+    2. 更改商品數量             caramount.jsp                        20220611_daiyun
+    3. 新增訂單                 addorder.jsp 
+    4. 顯示訂單
+
+    #需求#
     1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料，前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
-       cardelete.jsp session部分尚未完成 
     2. 檢查數量是否超過存貨 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
-       caramount.jsp session部分尚未完成 
     3. 目前可顯示但無法更改數字 已解決 
-    4. 付款介面 addorder.jsp 跳pay 
+    4. 付款介面 跳pay 
 ## 後台 ##  20220611_daiyun
     1. 上下架                  pullsheleve.jsp                      20220611_daiyun
     2. 新增產品                addCommo.jsp                         20220604_daiyun
     3. 商品訂單匯入            列於backstage.jsp                     20220604_daiyun
     4. 訂單篩選                searchresult.jsp                     20220604_daiyun
     5. 管理員登入              login_man.jsp                        20220611_daiyun
-    6. 登出                    logout_man.jsp
+    6. 管理員登出              logout_man.jsp                       20220611_daiyun
 ## 會員中心 ## session部分尚未完成 
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun

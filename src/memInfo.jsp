@@ -70,7 +70,7 @@
             String id = rs.getString("mem_id");
             
             
-            sql = "SELECT `mem_name`,`mem_email`,`mem_phone`,`mem_birth` FROM `mem_infor` WHERE `mem_id` ='"+ id+"'";
+            sql = "SELECT `mem_name`,`mem_email`,`mem_phone`,`mem_birth` FROM `mem_infor` WHERE `mem_id` ='"+ id +"'";
             ResultSet rs1 = con.createStatement().executeQuery(sql);
             rs1.next();
             //http://localhost:8080/LaptopShoppingSite/src/memInfo.jsp
@@ -177,52 +177,32 @@
                         
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <span>  1</span>
-                            </td>
-                            <td>
-                                <span name=""></span>
-                            </td>
-                            <td>
-                                <span name="">2000-05-06</span>
-                            </td>
-                            <td>
-                                <span name="">ASUS X515</span>
-                            </td>
-                            <td>
-                                <span name="">$17900</span>
-                            </td>
-                            <td>
-                                <span name="">1</span>
-                            </td>
-                            <td>
-                                <span name="">$17900</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>  2</span>
-                            </td>
-                            <td>
-                                <span name=""></span>
-                            </td>
-                            <td>
-                                <span name="">2000-05-15</span>
-                            </td>
-                            <td>
-                                <span name="">ACER Swift5</span>
-                            </td>
-                            <td>
-                                <span name="">$29900</span>
-                            </td>
-                            <td>
-                                <span name="">1</span>
-                            </td>
-                            <td>
-                                <span name="">$29900</span>
-                            </td>
-                        </tr>
+                    <%
+                        int order2 = 1;
+                        String sql1="";
+                        ResultSet rs3;
+
+                        sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
+                        sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
+                        sql1 += "FROM `product_infor`, `order_details` ";
+                        sql1 += "WHERE (order_details.product_id=product_infor.product_id)";
+                        sql1 += " ORDER BY order_details.order_time";
+                        out.println(sql1);
+                        rs3 = con.createStatement().executeQuery(sql1);
+                    
+                        while(rs3.next()){
+                            out.println("<tr>");
+                            out.println("<td><span>"+ order2 +"</span></td>"); 
+                            out.println("<td><span>"+rs3.getString("order_details.order_id") +"</span></td>"); 
+                            out.println("<td><span>"+rs3.getString("order_details.order_time") +"</span></td>");
+                            out.println("<td><span>"+rs3.getString("product_infor.product_name") +"</span></td>");
+                            out.println("<td><span>"+rs3.getInt("product_infor.product_price") +"</span></td>");
+                            out.println("<td><span>"+rs3.getInt("order_details.howmuch")+ "</span></td>");
+                            out.println("<td><span>"+rs3.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
+                            out.println("</tr>");
+                            order2++;
+                        } 
+                    %>
                     </tbody>
                 </table>
             </div>
