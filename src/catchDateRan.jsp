@@ -7,8 +7,13 @@
 <%@ page import="javax.servlet.*,java.text.*"%>
 <%@ page import="java.sql.*"%>
 <%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8"); 
     SimpleDateFormat time = new SimpleDateFormat("yyyyMMddhhmmss");  
     String CDate = time.format(new java.util.Date()); 
+    
+    SimpleDateFormat ctime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");  
+    String credate = ctime.format(new java.util.Date()); 
     
     //out.println(CDate);
     int num = Math.round( (float)Math.random()*1000);

@@ -5,7 +5,7 @@
     1. 需新增一張表存管理員的資料 e.g. 帳密... 20220528_daiyun
 
 ## 所有頁面 ##
-    1. 判斷登入和會員 / 管理與登出                                   20220611_daiyun
+    1. 判斷登入和會員 / 管理與登出 之按鈕顯示                          20220611_daiyun
     2. 套用在所有版面 (把memInfo的header替代所有頁面的header)
     3. 把所有標籤是.html的改成.jsp
 
@@ -23,10 +23,11 @@
     1. 產品詳情匯入
     2. 匯入評論區... 20220610_JLC
     3. 留言板
+    4. 新增進購物車
 
-## 登入/註冊 ## 
+## 登入/註冊 ## 20220611_daiyun
     1. 註冊時製造會員ID         catchDateRan.jsp+reg_mem.jsp        20220528_daiyun
-    2. 新增會員                 reg_mem.jsp
+    2. 新增會員                 reg_mem.jsp                         20220611_daiyun
     3. 登入確認                 login_mem.jsp                       20220611_daiyun
     4. 登出                     logout_mem.jsp                      20220611_daiyun
 
@@ -35,20 +36,20 @@
         * res 回傳 success or fail
         * data 回傳資料，格式請用list(Array)回傳 e.g. 'data':[[1,2,3],[4,5,6]]
         * msg 回傳錯誤訊息，當 res == fail 才會有
-    2. 註冊完跳到會員中心填資料  
-    3. 判斷會員新增的帳密跟製造的id是否重複
+  O 2. 註冊完跳到會員中心填資料  
+  O 3. 判斷會員新增的帳密跟製造的id是否重複
   O 4. 流水號後三碼維持三位
 ## 購物車 ## 
     1. 匯入欲購買商品           列於car.jsp                          20220604_daiyun 
-    1. 刪除欲購買商品           cardelete.jsp
-    2. 更改商品數量             caramount.jsp           庫存判斷未做  20220611_daiyun
+    1. 刪除欲購買商品           cardelete.jsp                        20220611_daiyun
+    2. 更改商品數量             caramount.jsp                        20220611_daiyun
     3. 新增訂單                 addorder.jsp 
     4. 顯示訂單                列於car.jsp
     5. 製造訂單id              
 
     #需求#
     1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料 // 前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
-    2. 檢查數量是否超過存貨 // 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
+  O 2. 檢查數量是否超過存貨 // 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
   O 3. 目前可顯示但無法更改數字  
     4. 付款介面 跳pay 最後跳finish.jsp
     5. 增加訂單時同時減少庫存
@@ -60,11 +61,11 @@
     5. 管理員登入              login_man.jsp                        20220611_daiyun
     6. 管理員登出              logout_man.jsp                       20220611_daiyun
     #需求#
-    1. 更改上下架按鈕名稱
+  O 1. 更改上下架按鈕名稱
 ## 會員中心 ## 記得抓session
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun
     3. 購買紀錄匯入            列於memInfo.jsp                       20220611_diayun  
     4. 評論紀錄     
     #需求#
-    1. 列出訂單清單後用url連接到訂單詳情
+  O 1. 列出訂單清單後用url連接到訂單詳情
