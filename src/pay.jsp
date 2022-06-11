@@ -2,6 +2,12 @@
 <%@page pageEncoding="UTF-8"%>
 <%@include file = "connectsql.jsp"%>
 <!DOCTYPE html>
+<%
+    if (session.getAttribute("mem_account")==null || session.getAttribute("mem_account").equals("") ){
+        response.sendRedirect("login.jsp");
+    }
+    else{
+%>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -59,29 +65,94 @@
                 </div>
                 <form action="addorder.jsp" method="POST">
                     <!-- 訂單商品 -->
-                    <div class="pay-item">
-                        <div class="item-info-name">
-                            <input class="" name="item-name" value="Apple MacBook Ari" readonly/>
-                        </div>
-                        <div class="item-info">
-                            <input class="" name="item-price" value="38900" readonly/>
-                        </div>
-                        <div class="item-info">
-                            <input class="" name="item-quan" value="1" readonly/>
-                        </div>
-                        <div class="item-info">
-                            <input class=""name="item-revenue" value="38900" readonly/>
-                        </div>
-                    </div>
+                    <%
+                        request.setCharacterEncoding("UTF-8");
+                        response.setCharacterEncoding("UTF-8");
+                        
+                        
+                        String acc = session.getAttribute("mem_account").toString();
+                        
+                        sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
+                        //sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
+                        ResultSet rs1 = con.createStatement().executeQuery(sql);
+                        rs1.next();
+                        String id = rs1.getString("mem_id");
+                    %>
+                    <%
 
+                        int tprice=0;
+                        String cname[] = request.getParameterValues("item-check");
+                        
+                        int ta = 0;
+                        try {
+                            ta = cname.length;
+                        }
+                        catch(Exception e){
+                            response.sendRedirect("car.jsp");
+                        }
 
+                        int[] quan= new int[ta];
+                        String[] pid = new String[ta];
+                        int[] upri = new int[ta];
+
+                        for(int i = 0 ; i < ta; i++ ){
+                            sql="SELECT `product_id` FROM `product_infor` WHERE `product_name`='"+cname[i]+"'";
+                            ResultSet rsid = con.createStatement().executeQuery(sql);
+                            rsid.next();
+                            pid[i] = rsid.getString("product_id");
+                            
+                            sql="SELECT `product_price` FROM `product_infor` WHERE `product_name`='"+cname[i]+"'";
+                            ResultSet rsp = con.createStatement().executeQuery(sql);
+                            rsp.next();
+                            upri[i] = rsp.getInt("product_price");
+
+                            sql = "SELECT `mem_id`, `product_id` ,`order_amount`";
+                            sql += " FROM `cart`";
+                            sql += "WHERE (`mem_id` = '"+id+"') AND (`product_id` = '"+pid[i]+"')";
+                            ResultSet rs = con.createStatement().executeQuery(sql);
+                            rs.next();
+                                out.println("<div class='pay-item'>");
+                                out.println("<div class='item-info-name'>");       
+                                    out.println("<input class='' name='item-name' value='"+cname[i]+"' readonly/>");     
+                                out.println("</div>");    
+                                out.println("<div class='item-info'>");   
+                                    out.println("<input class='' name='item-price' value='"+upri[i]+"' readonly/>");       
+                                out.println("</div>");    
+                                out.println(" <div class='item-info'>"); 
+                                    out.println("<input class='' name='item-quan' value='"+rs.getInt("order_amount")+"' readonly/>");            
+                                out.println("</div>");  
+                                out.println("<div class='item-info'>");      
+                                    out.println(" <input class=''name='item-revenue' value='"+upri[i]*rs.getInt("order_amount")+"' readonly/>");                            
+                                out.println("</div>"); 
+                                out.println("</div>"); 
+                                tprice+=upri[i]*rs.getInt("order_amount");
+                             
+                        }       
+                    %>
+   <%-- out.println("<div class='pay-item'>");
+                            out.println("<div class='pay-item'>");
+                                out.println("<div class='item-info-name'>");       
+                                    out.println("<input class='' name='item-name' value='"+cname[i]+"' readonly/>");     
+                                out.println("</div>");    
+                                out.println("<div class='item-info'>");   
+                                    out.println("<input class='' name='item-price' value='"+o+"' readonly/>");       
+                                out.println("</div>");    
+                                out.println(" <div class='item-info'>"); 
+                                    out.println("<input class='' name='item-quan' value='"+q+"' readonly/>");            
+                                out.println("</div>");  
+                                out.println("<div class='item-info'>");      
+                                    out.println(" <input class=''name='item-revenue' value='"+c+"' readonly/>");                            
+                                out.println("</div>"); 
+                            out.println("</div>"); 
+                          
+                            out.println("</div>"); --%>
                     <div class="pay-checkout">
                         <div class="send-addr">
                             <input type="text" class="" name="addr" placeholder="請輸入宅配地址" />
                         </div>
                         <div class="pay-revenue">
                             <span>總金額：</span>
-                            <span name="pay-revenue" style="color: #0096C7;font-weight: bold;">38900</span>
+                            <span name="pay-revenue" style="color: #0096C7;font-weight: bold;"><%=tprice%></span>
                         </div>
                         <div class="pay-btn-container">
                             <button id="btn-checkout">結帳</button>
@@ -89,9 +160,6 @@
                     </div>
                 </form>
             </div>
-
-
-
         </div>
     </main>
     <footer class="footer">
@@ -100,3 +168,4 @@
     </footer>
 </body>
 </html>
+<%}%>

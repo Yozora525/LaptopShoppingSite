@@ -108,7 +108,7 @@
                         <span class="">操作</span>
                     </div>
                 </div>
-                <form action="pay.jsp" method="POST" id="" class="">
+                <form action="pay.jsp" method="get" id="" class="">
                     <!-- 購物車內商品 -->
                     <%
                         request.setCharacterEncoding("UTF-8");
@@ -133,7 +133,7 @@
                             out.println("<div class='car-item' name='car-item'>");
                             out.println("<div class='car-item-checkbox'>");
                             out.println("<div class='item-checkbox'>");
-                            out.println("<input type='checkbox' name='item-check' />");
+                            out.println("<input type='checkbox' name='item-check'value='"+rs.getString("product_infor.product_name")+"'/>");
                             out.println("</div>");
                             out.println("<div class='item-name'>");
                             out.println("<label name='item-name' >"+ rs.getString("product_infor.product_name") +"</label>");

@@ -42,7 +42,7 @@
                     out.println("<a href='manage.jsp' class='manage'>網站管理</a>");
                 }
                 else{
-                    out.println("<a href='logout.jsp' class='manage'>登出</a>");
+                    out.println("<a href='logout_mem.jsp' class='manage'>登出</a>");
                 }
             %>
         </div>

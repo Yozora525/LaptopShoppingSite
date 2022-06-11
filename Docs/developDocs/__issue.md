@@ -43,12 +43,12 @@
     1. 匯入欲購買商品           列於car.jsp                          20220604_daiyun 
     1. 刪除欲購買商品           cardelete.jsp                        20220611_daiyun
     2. 更改商品數量             caramount.jsp                        20220611_daiyun
-    3. 新增訂單                 addorder.jsp 
-    4. 顯示訂單                列於car.jsp
-    5. 製造訂單id              
+    3. 新增訂單                addorder.jsp 
+    4. 顯示訂單                列於car.jsp                           20220612_daiyun           這他媽到底甚麼垃圾 卡超久
+    5. 製造訂單id              catchDateRan.jsp+addorder.jsp 
 
     #需求#
-    1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料 // 前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
+  O 1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料 // 前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
   O 2. 檢查數量是否超過存貨 // 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
   O 3. 目前可顯示但無法更改數字  
     4. 付款介面 跳pay 最後跳finish.jsp

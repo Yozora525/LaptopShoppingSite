@@ -44,7 +44,7 @@
         
         if ( y1>0 && y > 0 ){
             con.close();
-            out.println("註冊成功<a href='login.jsp'>按此登入</a>") ;
+            out.println("註冊成功<a href='memInfo.jsp'>按此填寫會員資料</a>") ;
         }
     }
     else
