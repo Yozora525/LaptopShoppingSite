@@ -65,19 +65,22 @@
         out.println(oid+"訂單新增失敗");
     }
 %>
-<%-- 減少庫存  先取庫存再減掉傳來的值 再重設值回去--%>
+<%-- 減少庫存 增加銷售量 先取庫存再減掉傳來的值 再重設值回去--%>
 <%
     int change2=0;
     int y, tquan;
     int stored=0;
+    int sale = 0;
     for(int i = 0 ; i < k ; i++){
-        sql = "SELECT `product_id`,`product_amount` FROM `product_infor` WHERE `product_id`='" + pid[i] + "'";
+        sql = "SELECT `product_id`,`product_amount`,`product_sold` FROM `product_infor` WHERE `product_id`='" + pid[i] + "'";
         ResultSet rsa = con.createStatement().executeQuery(sql);
         rsa.next();
         stored = rsa.getInt("product_amount");
         tquan = Integer.parseInt(quan[i]);
         stored -= tquan;
-        sql = "UPDATE `product_infor` SET `product_amount`='"+stored+"' WHERE `product_id`='"+pid[i]+"'";
+        sale = rsa.getInt("product_sold");
+        sale += tquan;
+        sql = "UPDATE `product_infor` SET `product_amount`='"+stored+"',`product_sold`='"+sale+"' WHERE `product_id`='"+pid[i]+"'";
         con.createStatement().execute(sql);
         y = con.createStatement().executeUpdate(sql);
         if ( y > 0 ){
