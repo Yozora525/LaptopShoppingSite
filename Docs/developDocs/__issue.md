@@ -44,7 +44,7 @@
     1. 刪除欲購買商品           cardelete.jsp                        20220611_daiyun
     2. 更改商品數量             caramount.jsp                        20220611_daiyun
     3. 新增訂單                addorder.jsp 
-    4. 顯示訂單                列於car.jsp                           20220612_daiyun           這他媽到底甚麼垃圾 卡超久
+    4. 顯示訂單                列於car.jsp                           20220612_daiyun           
     5. 製造訂單id              catchDateRan.jsp+addorder.jsp 
 
     #需求#
