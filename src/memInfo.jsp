@@ -230,39 +230,33 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <span>1</span>
-                            </td>
-                            <td>
-                                <span name="">2022-06-05</span>
-                            </td>
-                            <td>
-                                <span name="">MacBook Air</span>
-                            </td>
-                            <td>
-                                <span name="">good</span>
-                            </td>
-                            <td>
-                                <span name="">4.0</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>2</span>
-                            </td>
-                            <td>
-                                <span name="">2022-06-02</span>
-                            </td>
-                            <td>
-                                <span name="">MacBook Air</span>
-                            </td>
-                            <td>
-                                <span name="">goodgoodgood</span>
-                            </td>
-                            <td>
-                                <span name="">5.0</span>
-                            </td>
-                        </tr>
+                        <%
+                        sql = "SELECT * FROM `comment`, `product_infor` WHERE `mem_id`='"+id+"' AND (comment.product_id=product_infor.product_id) ORDER BY `comment_time` ASC ";
+                        ResultSet rs5 = con.createStatement().executeQuery(sql);
+                        int c = 0;
+
+                        while(rs5.next()){
+                            c++;
+                                       
+                            out.println("<tr>");
+                            out.println("<td>");
+                            out.println("<span>"+c+"</span>");
+                            out.println("</td>");
+                            out.println("<td>");
+                            out.println("<span name=''>"+rs5.getString("comment_time")+"</span>");
+                            out.println("</td>");
+                            out.println("<td>");
+                            out.println("<span name=''>"+rs5.getString("product_name")+"</span>");
+                            out.println("</td>");
+                            out.println("<td>");
+                            out.println("<span name=''>"+rs5.getString("mem_comment")+"</span>");
+                            out.println("</td>");
+                            out.println("<td>");
+                            out.println("<span name=''>"+rs5.getInt("star")+"</span>");
+                            out.println("</td>");
+                            out.println("</tr>");
+                        }
+                        %>   
                     </tbody>
                 </table>
             </div>

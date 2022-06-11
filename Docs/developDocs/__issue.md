@@ -66,6 +66,6 @@
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun
     3. 購買紀錄匯入            列於memInfo.jsp                       20220611_diayun  
-    4. 評論紀錄     
+    4. 評論紀錄                列於memInfo.jsp                   ... 20220611_JLC
     #需求#
   O 1. 列出訂單清單後用url連接到訂單詳情
