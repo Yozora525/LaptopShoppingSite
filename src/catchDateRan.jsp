@@ -6,6 +6,7 @@
 <%@ page import="java.io.*,java.util.*"%>
 <%@ page import="javax.servlet.*,java.text.*"%>
 <%@ page import="java.sql.*"%>
+
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8"); 

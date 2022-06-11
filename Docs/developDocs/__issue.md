@@ -26,9 +26,9 @@
     4. 新增進購物車
 
 ## 登入/註冊 ## 20220611_daiyun
-    1. 註冊時製造會員ID         catchDateRan.jsp+reg_mem.jsp        20220528_daiyun
-    2. 新增會員                 reg_mem.jsp                         20220611_daiyun
-    3. 登入確認                 login_mem.jsp                       20220611_daiyun
+    1. 註冊時製造會員ID         catchDateRan.jsp+reg_mem.jsp         20220528_daiyun
+    2. 新增會員                 reg_mem.jsp                          20220611_daiyun
+    3. 登入確認                 login_mem.jsp                        20220611_daiyun
     4. 登出                     logout_mem.jsp                      20220611_daiyun
 
     #需求#
@@ -43,16 +43,18 @@
     1. 匯入欲購買商品           列於car.jsp                          20220604_daiyun 
     1. 刪除欲購買商品           cardelete.jsp                        20220611_daiyun
     2. 更改商品數量             caramount.jsp                        20220611_daiyun
-    3. 新增訂單                addorder.jsp 
+    3. 新增訂單(清單、詳情)     addorder.jsp                          20220612_daiyun
     4. 顯示訂單                列於car.jsp                           20220612_daiyun           
-    5. 製造訂單id              catchDateRan.jsp+addorder.jsp 
+    5. 製造訂單id              catchDateRan.jsp+addorder.jsp         20220612_daiyun   
 
     #需求#
   O 1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料 // 前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
-  O 2. 檢查數量是否超過存貨 // 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
+       > executeUpdate()回傳值不知為何 < 0，因此添加!crs.next()判斷其是否有成功刪除
+  O 2. 檢查數量是否超過存貨 // 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存 
+       > 在一開始的訂單介面限制 -- diayun
   O 3. 目前可顯示但無法更改數字  
-    4. 付款介面 跳pay 最後跳finish.jsp
-    5. 增加訂單時同時減少庫存
+  O 4. 付款介面 跳pay 新增完跳finish.jsp
+    5. 增加訂單時同時減少庫存 還要去掉car裡的商品 到底為甚麼這麼多是在哭喔
 ## 後台 ##  20220611_daiyun
     1. 上下架                  pullsheleve.jsp                      20220611_daiyun
     2. 新增產品                addCommo.jsp+addPro.jsp              20220604_daiyun

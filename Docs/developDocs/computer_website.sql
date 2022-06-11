@@ -28,7 +28,7 @@ INSERT INTO type_list VALUES ("創作設計");
 #5.產品基本資料表
 CREATE TABLE product_infor( 
 	product_id	VARCHAR	(4) UNIQUE NOT NULL,
-	product_name	VARCHAR	(32) NOT NULL,
+	product_name	VARCHAR	(32) UNIQUE NOT NULL,
 	product_price	INTEGER	, #單價
 	product_amount	INTEGER	, #庫存
 	product_status	INTEGER	, #上/下架 1/0
@@ -84,8 +84,6 @@ INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '09135791
 INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30 13:04:55', 'xyyz17rip976da@yahoo.com');
 INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02 19:44:39', 'aqwert2yy@gmail.com');
 
-INSERT INTO mem_infor VALUES ( '313213213','', '', '', '0000-00-00', '0000-00-00 00:00:00', '.32132132');
-select * from mem_infor where mem_id = '313213213';
 #1.登入
 CREATE TABLE login (
 	mem_id	VARCHAR(20) unique NOT NULL,
@@ -102,7 +100,6 @@ INSERT INTO login VALUES ('MEM20220531100430002', 'abbcccddde@yahoo.com', 'happe
 INSERT INTO login VALUES ('MEM20220609222218003', 'ag128442da@gmail.com', 'pi4happy');
 INSERT INTO login VALUES ('MEM20220530130455004', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
 INSERT INTO login VALUES ('MEM20220602194439005', 'aqwert2yy@gmail.com', 'happi111');
-select mem_id from login where mem_id = '313213213';
 
 #4.訂單明細
 CREATE TABLE order_details(
@@ -131,7 +128,7 @@ INSERT INTO order_details VALUES ('order20220615205144324', 'P015', '2022-06-15 
 
 #3.訂單清單
 CREATE TABLE orders(
-	order_id VARCHAR (22)  NOT NULL,
+	order_id VARCHAR (22) UNIQUE NOT NULL,
 	mem_id	VARCHAR	(64)  NOT NULL,
     PRIMARY KEY (order_id),
 	FOREIGN KEY (order_id) REFERENCES order_details(order_id),

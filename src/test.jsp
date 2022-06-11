@@ -7,6 +7,11 @@
 <%@ page import="java.sql.*"%>
 
 <%
+    sql = "INSERT INTO `order_details` VALUES ('oid','pid[i]','credate','addr','tquan')";
+    out.println(sql);
+%>
+<%-- 
+<%
         String cname[] = request.getParameterValues("item-check");
         int ta = 0;
         try {
@@ -55,7 +60,7 @@
         for(int i = 0 ; i < ta ; i++){
             out.println(cname[i]+pid[i]+upri[i]+"<br>");
         }
-%>
+%> --%>
 <%-- 
 <link rel="stylesheet" href="../assets/sass/common.css" />
 <link rel="stylesheet" href="../assets/sass/backstage.css" /> --%>

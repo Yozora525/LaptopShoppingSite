@@ -148,7 +148,7 @@
                             out.println("</div>"); --%>
                     <div class="pay-checkout">
                         <div class="send-addr">
-                            <input type="text" class="" name="addr" placeholder="請輸入宅配地址" />
+                            <input type="text" class="" name="addr" placeholder="請輸入宅配地址" required/>
                         </div>
                         <div class="pay-revenue">
                             <span>總金額：</span>
