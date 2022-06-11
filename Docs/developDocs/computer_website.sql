@@ -42,26 +42,26 @@ CREATE TABLE product_infor(
     PRIMARY KEY (product_id)
 );
 
-INSERT INTO product_infor VALUES ("P001", "ASUS X515", 17900, 200, 1, '', 20000, 15.6, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P002", "ASUS Zenbook 14 Flip OLED", 40900, 200, 1, '', 20200, 14, 'ASUS', 1, '商務');
-INSERT INTO product_infor VALUES ("P003", "ASUS TUF Gaming F15", 33500, 200, 1, '', 20800, 15.6, 'ASUS', 0, '電競');
-INSERT INTO product_infor VALUES ("P004", "ASUS ZenBook 13 OLED", 34900, 200, 1, '', 20010, 13, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P005", "APPLE MacBook Air", 38900, 200, 1, '', 20300, 13.3, 'APPLE', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P006", "APPLE MacBook Pro", 104900, 200, 1, '', 20000, 16, 'APPLE', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P007", "ACER Nitro5", 39500, 200, 1, '', 20070, 15.6, 'ACER', 0, '電競');
-INSERT INTO product_infor VALUES ("P008", "ACER Swift5", 29900, 200, 1, '', 20800, 14, 'ACER', 1, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P009", "ACER Aspire5", 11900, 200, 1, '', 28300, 14, 'ACER', 1, '商務');
-INSERT INTO product_infor VALUES ("P010", "MSI Stealth 15M", 47900, 200, 1, '', 20100, 15.6, 'MSI', 0, '電競');
-INSERT INTO product_infor VALUES ("P011", "MSI Modern14", 23900, 200, 1, '', 20200, 14, 'MSI', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, '', 20000, 15.6, 'MSI', 0, '電競');
-INSERT INTO product_infor VALUES ("P013", "MSI Prestige 14", 30900, 200, 1, '', 20040, 14, 'MSI', 0, '創作設計');
-INSERT INTO product_infor VALUES ("P014", "HP Elite Dragonfly G2", 59900, 200, 1, '', 20700, 13, 'HP', 1, '商務');
-INSERT INTO product_infor VALUES ("P015", "HP 470 G8", 29999, 200, 1, '', 20600, 17.3, 'HP', 0, '商務'); 
-INSERT INTO product_infor VALUES ("P016", "HP 14s", 31900, 200, 1, '', 28000, 14, 'HP', 0, '輕薄便攜');			
-INSERT INTO product_infor VALUES ("P017", "HP OMEN 16", 48900, 200, 1, '', 20600, 16.1, 'HP', 0, '電競'); 			
-INSERT INTO product_infor VALUES ("P018", "ACER TravelMate", 31900, 200, 1, '', 20090, 14, 'ACER', 0, '商務'); 
-INSERT INTO product_infor VALUES ("P019", "ASUS E410", 9488, 200, 1, '', 20900, 14, 'ASUS', 0, '輕薄便攜');
-INSERT INTO product_infor VALUES ("P020", "MSI Summit E16 Flip", 55900, 200, 1, '', 29000, 16, 'MSI', 1, '創作設計');
+INSERT INTO product_infor VALUES ("P001", "ASUS X515", 17900, 200, 1, "*搭載Intel® Core™ i5 處理器</br>*NVIDIA® GeForce® MX330 獨立顯示卡</br>*最高512GB SSD硬碟</br>*83% 螢幕占比 15.6吋FHD螢幕", 20000, 15.6, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P002", "ASUS Zenbook 14 Flip OLED", 40900, 200, 1, "*14 英寸 4K OLED HDR 顯示器</br>*16:10 寬高比</br>*15.9毫米/1.4公斤重</br>*搭載Intel® Core™ i7晶片", 20200, 14, 'ASUS', 1, '商務');
+INSERT INTO product_infor VALUES ("P003", "ASUS TUF Gaming F15", 33500, 200, 1, "*最高 DDR5-4800MHz 的 RAM</br>*90Wh 的電池</br>*80% 螢幕機身比</br>*最高支援 FHD 144Hz", 20800, 15.6, 'ASUS', 0, '電競');
+INSERT INTO product_infor VALUES ("P004", "ASUS ZenBook 13 OLED", 34900, 200, 1, "*搭載AMD Ryzen™ 5000 處理器</br>*512GB M.2 NVMe™ PCIe® 3.0 SSD</br>*13.3 吋, FHD (1920 x 1080) 16:9 窄邊框</br>*通過 PANTONE 認證, 螢幕佔比：88 ％", 20010, 13, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P005", "APPLE MacBook Air", 38900, 200, 1, "*13.3 英寸視網膜顯示螢幕</br>*蘋果M1芯片</br>*高達2TB 的存儲空間</br>*長達18 小時的電池壽命", 20300, 13.3, 'APPLE', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P006", "APPLE MacBook Pro", 104900, 200, 1, "*15.4 吋 (對角線) LED 背光顯示器</br>*亮度 500 尼特</br>*內建 16GB 2400MHz DDR4 記憶體</br>*最長可達 10 小時無線上網時間", 20000, 16, 'APPLE', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P007", "ACER Nitro5", 39500, 200, 1, "*Nvidia RTX3060 顯卡</br>*165Hz/3ms 電競螢幕</br>*Intel® Core™ i7-12700H</br>*搭載NVIDIA® GeForce RTX™ 3060 顯示卡", 20070, 15.6, 'ACER', 0, '電競');
+INSERT INTO product_infor VALUES ("P008", "ACER Swift5", 29900, 200, 1, "*大猩猩®玻璃 的 WQXGA 1觸摸屏顯示器</br>*92.22%的占屏比</br>*12th Gen Intel® Core™</br>*陽極氧化處理以抵抗腐蝕和磨損，表面經久耐用", 20800, 14, 'ACER', 1, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P009", "ACER Aspire5", 11900, 200, 1, "*搭載 intel Core i5處理器</br>*高達83%屏佔比</br>*FHD廣視角14&quot;螢幕</br>*顯示晶片：NVIDIA® GeForce® MX350", 28300, 14, 'ACER', 1, '商務');
+INSERT INTO product_infor VALUES ("P010", "MSI Stealth 15M", 47900, 200, 1, "*搭載12代Intel® Core™ i7處理器</br>*NVIDIA® GeForce® RTX™ 3060獨立顯示卡</br>*15.6吋FHD(1920x1080)</br>*144Hz螢幕更新率", 20100, 15.6, 'MSI', 0, '電競');
+INSERT INTO product_infor VALUES ("P011", "MSI Modern14", 23900, 200, 1, "*搭載AMD Ryzen™ 5000 處理器</br>*超輕1.3kg</br>*薄邊框IPS級面板</br>*AMD Radeon™ 顯卡</br>*", 20200, 14, 'MSI', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, "*搭載AMD Ryzen™ 4000 H 處理器</br>*AMD Radeon™ RX 5000 顯卡</br>*15.6&quot; FHD (1920x1080)</br>*支持 AMD Radeon FreeSync 技術", 20000, 15.6, 'MSI', 0, '電競');
+INSERT INTO product_infor VALUES ("P013", "MSI Prestige 14", 30900, 200, 1, "*搭載第11代 Intel® Core™ i7 處理器</br>*14吋4K超高畫質 (3840x2160)</br>*接近100% sRGB, IPS等級窄邊框面板設計</br>*10 小時電池續航力", 20040, 14, 'MSI', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P014", "HP Elite Dragonfly G2", 59900, 200, 1, "*搭載Intel Core i7-1185G7 處理器</br>*33.8 公分 (13.3 吋) 對角線 FHD </br>*128 GB PCIe Gen 3 x2 NVMe M.2 TLC 固態硬碟 (SSD)</br>*2個 USB 3.2 Gen 1 Type-C 連接埠", 20700, 13, 'HP', 1, '商務');
+INSERT INTO product_infor VALUES ("P015", "HP 470 G8", 29999, 200, 1, "*搭載Intel Core i7-1065G7 處理器</br>*16 GB DDR4-3200 SDRAM (2 x 8 GB)</br>*ntel AX201 Wi-Fi 6 (2x2) 與 Bluetooth 5 複合式介面卡</br>*43.9 公分 (17.3 吋) 對角線", 20600, 17.3, 'HP', 0, '商務'); 
+INSERT INTO product_infor VALUES ("P016", "HP 14s", 31900, 200, 1, "*搭載Intel® Core™ i7-1195G7處理器</br>*Intel® Iris® Xᵉ Graphics(圖形卡)</br>*FHD (1920 x 1080)</br>*1.46公斤", 28000, 14, 'HP', 0, '輕薄便攜');			
+INSERT INTO product_infor VALUES ("P017", "HP OMEN 16", 48900, 200, 1, "搭載AMD Ryzen™ 7 5800H處理器</br>*16 GB DDR4-3200 MHz RAM</br>*NVIDIA® GeForce RTX™ 3070 Laptop GPU顯卡</br>*1 TB PCIe® NVMe™ TLC M.2 固態硬碟", 20600, 16.1, 'HP', 0, '電競'); 			
+INSERT INTO product_infor VALUES ("P018", "ACER TravelMate", 31900, 200, 1, "*搭載 intel Core i7處理器</br>*35.6 cm (14&quot;)螢幕尺寸</br>*8GB記憶體</br>*Bluetooth 5.0", 20090, 14, 'ACER', 0, '商務'); 
+INSERT INTO product_infor VALUES ("P019", "ASUS E410", 9488, 200, 1, "*1.3公斤</br>*最高搭載 Intel 四核心處理器</br>*128GB儲存空間</br>*具備最高 12 小時電池續航力", 20900, 14, 'ASUS', 0, '輕薄便攜');
+INSERT INTO product_infor VALUES ("P020", "MSI Summit E16 Flip", 55900, 200, 1, "*第11代Intel® Core™ i7 處理器</br>*Intel® Iris® Xe 顯示卡</br>*16吋 QHD+ (2560x1600), 16:10黃金比例觸控面板</br>*極致輕巧 2kg", 29000, 16, 'MSI', 1, '創作設計');
 SELECT * FROM product_infor;
 
 
@@ -161,15 +161,15 @@ CREATE TABLE comment(
 
 );
 
-INSERT INTO comment VALUES ('MEM20220601112045001', 'P001', '超級好用，人生用過最好的筆電。', '5', '2022-06-10 10:45:36');
+INSERT INTO comment VALUES ('MEM20220601112045001', 'P001', '超級好用，人生用過最好的筆電。', '5', '2022-05-31 10:45:36');
 INSERT INTO comment VALUES ('MEM20220531100430002', 'P012', '會分享給親朋好友，效能極佳。', '5', '2022-05-31 09:08:23');
-INSERT INTO comment VALUES ('MEM20220530130455004', 'P001', '推薦，但並沒有很符合我的需求。', '4', '2022-05-30 23:15:04');
+INSERT INTO comment VALUES ('MEM20220530130455004', 'P001', '推薦，但並沒有很符合我的需求。', '4', '2022-06-01 23:15:04');
 INSERT INTO comment VALUES ('MEM20220609222218003', 'P006', '期待越高，失望越大。', '2', '2022-06-09 07:12:55');
-INSERT INTO comment VALUES ('MEM20220601112045001', 'P018', '介面清楚、操作容易且非常清楚易懂。', '5', '2022-06-16 11:23:48');
+INSERT INTO comment VALUES ('MEM20220602194439005', 'P018', '介面清楚、操作容易好懂。', '5', '2022-06-17 11:23:48');
 INSERT INTO comment VALUES ('MEM20220530130455004', 'P003', '中規中矩，CP值普普。', '3', '2022-06-13 03:00:01');
 INSERT INTO comment VALUES ('MEM20220602194439005', 'P016', '還不錯，但仍有可進步空間。', '4', '2022-06-11 01:30:23');
-INSERT INTO comment VALUES ('MEM20220601112045001', 'P015', '與想像中效果有些落差。', '2', '2022-05-31 17:59:59');
-INSERT INTO comment VALUES ('MEM20220531100430002', 'P006', '功能極強，非常喜歡。', '5', '2022-06-12 20:55:45');
+INSERT INTO comment VALUES ('MEM20220601112045001', 'P015', '與想像中效果有些落差。', '2', '2022-06-16 17:59:59');
+INSERT INTO comment VALUES ('MEM20220531100430002', 'P006', '功能極強，非常喜歡。', '5', '2022-06-17 20:55:45');
 
 #8.反饋單
 #CREATE TABLE contact(
