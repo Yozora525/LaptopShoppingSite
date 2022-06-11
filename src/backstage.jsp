@@ -5,6 +5,7 @@
     if(session.getAttribute("man_account")==null){
         response.sendRedirect("manage.jsp");
     } 
+    else{
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,7 @@
                         <a  href="index.jsp" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
                     </div>
                     <div class="icon-logout">
-                        <a  href=""><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
+                        <a  href="logout_man.jsp"><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
@@ -109,11 +110,13 @@
                                 out.println("<td><span name='pro-inventory'>"+rs2.getString("product_amount")+"</span></td>");
                                 if( rs2.getString("product_status").equals("1") ){
                                     out.println("<td><span  name='pro-status'>上架</span></td>");
+                                    out.println("<td><button name='switch'>下架</button></td>");
                                 }
                                 else{
                                     out.println("<td><span  name='pro-status'>下架</span></td>");
+                                    out.println("<td><button name='switch'>上架</button></td>");
                                 }
-                                out.println("<td><button name='switch'>下架</button></td>");
+                                
                                 out.println("</tr>");
                                 
                             } 
@@ -207,6 +210,7 @@
                                     out.println("</tr>");
                                     order2++;
                                 } 
+                            }
                         %>        
                         
                         </tbody>

@@ -31,7 +31,14 @@
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.jsp" class="manage">網站管理</a>
+        <%
+                if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                    out.println("<a href='manage.jsp' class='manage'>網站管理</a>");
+                }
+                else{
+                    out.println("<a href='logout_mem.jsp' class='manage'>登出</a>");
+                }
+            %>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
@@ -45,8 +52,16 @@
                     </form>
                 </div>
                 <div class="link-icon">
+                    <%  String lurl;
+                        if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                            lurl = "login.jsp";
+                        }
+                        else{
+                            lurl = "memInfo.jsp";
+                        }
+                    %>
                     <div class="icon-login">
-                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="<%=lurl%>"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
@@ -59,9 +74,10 @@
         </div>
     </header>
     <%
-        if(session.getAttribute("mem_account") == null) {
+        if(session.getAttribute("mem_account") == null || session.getAttribute("mem_account").equals("")) {
            response.sendRedirect("login.jsp");
         }
+        
             String acc = session.getAttribute("mem_account").toString();
             sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
             //sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
@@ -81,7 +97,6 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-            
         </div>
         <div class="info">
             <div id="info-title" class="info-title">
@@ -161,47 +176,26 @@
                             <th>
                                 <span>交易日期</span>
                             </th>
-                            <th>
-                                <span>商品名稱</span>
-                            </th>
-                            <th>
-                                <span>單價</span>
-                            </th>
-                            <th>
-                                <span>數量</span>
-                            </th>
-                            <th>
-                                <span>總額</span>
-                            </th>
                         </tr>
                         
                     </thead>
                     <tbody>
                     <%
-                        int order2 = 1;
-                        String sql1="";
-                        ResultSet rs3;
-
-                        sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
-                        sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
-                        sql1 += "FROM `product_infor`, `order_details` ";
-                        sql1 += "WHERE (order_details.product_id=product_infor.product_id)";
-                        sql1 += " ORDER BY order_details.order_time";
-                        out.println(sql1);
-                        rs3 = con.createStatement().executeQuery(sql1);
-                    
-                        while(rs3.next()){
-                            out.println("<tr>");
-                            out.println("<td><span>"+ order2 +"</span></td>"); 
-                            out.println("<td><span>"+rs3.getString("order_details.order_id") +"</span></td>"); 
-                            out.println("<td><span>"+rs3.getString("order_details.order_time") +"</span></td>");
-                            out.println("<td><span>"+rs3.getString("product_infor.product_name") +"</span></td>");
-                            out.println("<td><span>"+rs3.getInt("product_infor.product_price") +"</span></td>");
-                            out.println("<td><span>"+rs3.getInt("order_details.howmuch")+ "</span></td>");
-                            out.println("<td><span>"+rs3.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
-                            out.println("</tr>");
-                            order2++;
-                        } 
+                        sql = "SELECT * FROM `orders` WHERE `mem_id`='"+id+"'";
+                        ResultSet rs4 = con.createStatement().executeQuery(sql);
+                        int i = 0;
+                        String oid, ot;
+                        while(rs4.next()){
+                            i++;
+                            oid = rs4.getString("order_id");
+                            sql = "SELECT `order_time` FROM `order_details` WHERE `order_id`='"+oid+"'";
+                            ResultSet rs5 = con.createStatement().executeQuery(sql);
+                            rs5.next();
+                            ot = rs5.getString("order_time");
+                            out.println("<tr><td><span>"+i+"</span></td>");
+                            out.println("<td><span name=''><a href='orderdetail.jsp?oid="+oid+"' style='text-decoration: none;color: #000;'>"+oid+"</a></span></td>");
+                            out.println("<td><span name=''>"+ot+"</span></td></tr>");
+                        }
                     %>
                     </tbody>
                 </table>

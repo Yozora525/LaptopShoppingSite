@@ -4,6 +4,12 @@
 <%@ page import="java.io.*,java.util.*"%>
 <%@ page import="javax.servlet.*,java.text.*"%>
 <%@ page import="java.sql.*"%>
+<%
+    if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+        response.sendRedirect("login.jsp");
+    }
+    else{
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,12 +38,20 @@
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.jsp" class="manage">網站管理</a>
+        <%
+                if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                    response.sendRedirect("login.jsp");
+                    out.println("<a href='manage.jsp' class='manage'>網站管理</a>");
+                }
+                else{
+                    out.println("<a href='logout_mem.jsp' class='manage'>登出</a>");
+                }
+            %>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">首頁 | 購物車</a>
+                    <a href="index.jsp">首頁</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="">
@@ -46,8 +60,16 @@
                     </form>
                 </div>
                 <div class="link-icon">
+                    <%  String lurl;
+                        if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                            lurl = "login.jsp";
+                        }
+                        else{
+                            lurl = "memInfo.jsp";
+                        }
+                    %>
                     <div class="icon-login">
-                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="<%=lurl%>"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
@@ -91,9 +113,8 @@
                     <%
                         request.setCharacterEncoding("UTF-8");
                         response.setCharacterEncoding("UTF-8");
-                        if(session.getAttribute("mem_account") == null) {
-                            response.sendRedirect("login.jsp");
-                        }
+                        
+                        
                         String acc = session.getAttribute("mem_account").toString();
                         
                         sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
@@ -138,6 +159,7 @@
                             out.println("</div>");
                             out.println("</div>");
                             
+                        }
                         }
                     %> 
 
