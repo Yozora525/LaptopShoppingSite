@@ -33,7 +33,7 @@
         sql0 = "UPDATE `cart` SET `order_amount`='"+store+"' WHERE `mem_id`='"+ id +"' AND `product_id`='"+pid+"'";
         con.createStatement().execute(sql0);
         int change = con.createStatement().executeUpdate(sql0);
-        if(change>0){
+        if( change > 0 ){
             con.close();
             response.sendRedirect("car.jsp");
         }

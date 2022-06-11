@@ -108,7 +108,7 @@
                         <span class="">操作</span>
                     </div>
                 </div>
-                <form action="" method="POST" id="" class="">
+                <form action="pay.jsp" method="POST" id="" class="">
                     <!-- 購物車內商品 -->
                     <%
                         request.setCharacterEncoding("UTF-8");
@@ -175,7 +175,7 @@
                         %> --%>
                         
                             <span class=""> 總金額:</span>
-                            <span class="" id="car-pay-total" style="color: #0096C7;font-weight: bold;">0</span>
+                            <span class="" name="tprice" id="car-pay-total" style="color: #0096C7;font-weight: bold;">0</span>
                         </div> 
                         <%-- <%if(rs.next()){%><%=rs.getString(6)%><%}%> --%>
                         

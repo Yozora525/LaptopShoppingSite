@@ -68,12 +68,12 @@ SELECT * FROM product_infor;
 #2.會員基本資料表
 CREATE TABLE mem_infor(
 	mem_id	VARCHAR	(20) UNIQUE NOT NULL,
-	mem_name VARCHAR	(16) NOT NULL,
+	mem_name VARCHAR	(16) ,
 	mem_sex	VARCHAR	(2),
 	mem_phone	VARCHAR	(12),
-	mem_birth	DATE,
-	mem_create	DATETIME DEFAULT NOW(),
-	mem_email VARCHAR (512) UNIQUE NOT NULL,
+	mem_birth	DATE NOT NULL DEFAULT '0000-00-00',
+	mem_create	timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	mem_email VARCHAR (512) ,
     
     PRIMARY KEY (mem_id, mem_email)
 );
@@ -84,9 +84,11 @@ INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '09135791
 INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30 13:04:55', 'xyyz17rip976da@yahoo.com');
 INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02 19:44:39', 'aqwert2yy@gmail.com');
 
+INSERT INTO mem_infor VALUES ( '313213213','', '', '', '0000-00-00', '0000-00-00 00:00:00', '.32132132');
+select * from mem_infor where mem_id = '313213213';
 #1.登入
 CREATE TABLE login (
-	mem_id	VARCHAR(64) NOT NULL,
+	mem_id	VARCHAR(20) unique NOT NULL,
 	mem_account	VARCHAR	(512) unique NOT NULL,
 	mem_password VARCHAR (32) NOT NULL,
     
@@ -100,7 +102,7 @@ INSERT INTO login VALUES ('MEM20220531100430002', 'abbcccddde@yahoo.com', 'happe
 INSERT INTO login VALUES ('MEM20220609222218003', 'ag128442da@gmail.com', 'pi4happy');
 INSERT INTO login VALUES ('MEM20220530130455004', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
 INSERT INTO login VALUES ('MEM20220602194439005', 'aqwert2yy@gmail.com', 'happi111');
-
+select mem_id from login where mem_id = '313213213';
 
 #4.訂單明細
 CREATE TABLE order_details(
@@ -143,7 +145,7 @@ INSERT INTO orders VALUES ('order20220611161715101', 'MEM20220530130455004');
 INSERT INTO orders VALUES ('order20220615205144324', 'MEM20220602194439005');
 
 SELECT * FROM orders;
-
+SELECT order_time FROM order_details WHERE order_id='order20220615205144324';
 
 #7.會員評論
 CREATE TABLE comment(
@@ -182,8 +184,8 @@ INSERT INTO comment VALUES ('MEM20220531100430002', 'P006', '功能極強，非�
 #9.購物車
 CREATE TABLE cart(
 	mem_id	VARCHAR	(64)  NOT NULL,
-	product_id	VARCHAR	(4) UNIQUE NOT NULL,
-	order_amount INTEGER,
+	product_id	VARCHAR	(4) NOT NULL,
+	order_amount INTEGER NOT NULL,
 
     PRIMARY KEY (mem_id,product_id),
 	FOREIGN KEY (mem_id) REFERENCES mem_infor(mem_id),
@@ -192,6 +194,9 @@ CREATE TABLE cart(
 );
 
 INSERT INTO cart VALUES ('MEM20220601112045001', 'P011', '5');
+INSERT INTO cart VALUES ('MEM20220601112045001', 'P007', '5');
+INSERT INTO cart VALUES ('MEM20220601112045001', 'P016', '5');
+INSERT INTO cart VALUES ('MEM20220601112045001', 'P005', '5');
 INSERT INTO cart VALUES ('MEM20220531100430002', 'P007', '3');
 INSERT INTO cart VALUES ('MEM20220531100430002', 'P001', '10');
 INSERT INTO cart VALUES ('MEM20220609222218003', 'P016', '4');
@@ -200,6 +205,9 @@ INSERT INTO cart VALUES ('MEM20220609222218003', 'P019', '1');
 INSERT INTO cart VALUES ('MEM20220530130455004', 'P012', '13');
 INSERT INTO cart VALUES ('MEM20220602194439005', 'P015', '6');
 INSERT INTO cart VALUES ('MEM20220602194439005', 'P020', '9');
+INSERT INTO cart VALUES ('MEM20220602194439005', 'P011', '5');
+INSERT INTO cart VALUES ('MEM20220530130455004', 'P011', '5');
+INSERT INTO cart VALUES ('MEM20220609222218003', 'P011', '5');
 
 #10.商品圖片
 CREATE TABLE product_img(
@@ -251,4 +259,3 @@ INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png'
 
 INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png', '../assets/img/pro/MSI/MSI Summit E16 Flip_2.png');
 
-select * from login;
