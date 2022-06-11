@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>購物完成</title>
     <!-- 引入jQuery -->
     <script src="../assets/js/lib/jquery/jquery.min.js"></script>
     <!-- 引入Echarts -->
@@ -21,10 +21,7 @@
     <script src="../assets/js/loading.js"></script>
     <!-- 引入css -->
     <link rel="stylesheet" href="../assets/sass/common.css" />
-    <style>
-        @import url("../assets/sass/finish.css");
-        
-    </style>
+    <link rel="stylesheet" href="../assets/sass/finish.css" />
 </head>
 <body>
     <header>
@@ -58,17 +55,19 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-        <div class="finish">
-            <div class="f-pic">
-                <img width="400px"  src="../assets/img/google-icon/ok.png">
+            <div class="finish">
+                <div class="finish-img">  
+                    <img class="pic" src="../assets/img/icon/check.png" >
+                </div>
+                <div class="finish-word">
+                    <div>
+                        <h2>訂單已成立，感謝您的購買!!!</h2><br>
+                    </div>
+                    <div class="finish-back">
+                        <a href="index.jsp">回首頁</a>
+                    </div>
+                </div>
             </div>
-            <div class="f-word">
-                <h1>訂單已成立，感謝您的購買，我們會盡快為您出貨!!!</h1>
-            </div>
-            <div class="f-back">
-                <a href="../templates/index.html" style="color: black;">回首頁</a>
-            </div>
-        </div>
         </div>
     </main>
     <footer class="footer">

@@ -4,7 +4,6 @@
 ## 資料表 ##
     1. 需新增一張表存管理員的資料 e.g. 帳密... 20220528_daiyun
     
-
 ## 首頁 ##
     1. 列出商品... 202205_JLC
     2. 排行榜用連結... 20220610_JLC
@@ -18,20 +17,42 @@
 ## 產品頁 ##
     1. 產品詳情匯入
     2. 匯入評論區... 20220610_JLC
+    3. 留言板
 
-## 登入/註冊 ##
-    1. 前端會將登入/註冊的資訊利用ajax的方式傳至後端，後端處理完成請利用json格式回傳結果，e.g. {'res':'', 'data':[], 'msg': ''}
+## 登入/註冊 ## 
+    1. 註冊時製造會員ID          catchDateRan.jsp                    20220528_daiyun
+    2. 新增會員                 reg_mem.jsp
+    3. 登入確認                 login_mem.jsp                       20220611_daiyun
+    4. 登出                     logout_mem.jsp                      20220611_daiyun
+
+    #需求#
+  X 1. 前端會將登入/註冊的資訊利用ajax的方式傳至後端，後端處理完成請利用json格式回傳結果，e.g. {'res':'', 'data':[], 'msg': ''}
         * res 回傳 success or fail
         * data 回傳資料，格式請用list(Array)回傳 e.g. 'data':[[1,2,3],[4,5,6]]
         * msg 回傳錯誤訊息，當 res == fail 才會有
-     
-## 購物車 ##
-    1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料，前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端
-    2.檢查數量是否超過存貨 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
-    3.目前可顯示但無法更改數字，可能原因是ajax
-    4.付款介面 跳pay 
-## 後台 ##
-    1. 上下架未處理                                  20220611_daiyun
-    2. 新增產品 商品訂單陳列與篩選                     20220604_daiyun
-## 登入 ##
-    1. 跳到會員中心填資料
+    2. 註冊完跳到會員中心填資料  
+    3. 判斷會員新增的帳密跟id是否重複
+## 購物車 ## 
+    1. 匯入欲購買商品           列於car.jsp                          20220604_daiyun 
+    1. 刪除欲購買商品           cardelete.jsp
+    2. 更改商品數量             caramount.jsp           庫存判斷未做  20220611_daiyun
+    3. 新增訂單                 addorder.jsp 
+    4. 顯示訂單                列於car.jsp
+
+    #需求#
+    1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料，前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
+    2. 檢查數量是否超過存貨 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存
+    3. 目前可顯示但無法更改數字 已解決 
+    4. 付款介面 跳pay 最後跳finish.jsp
+## 後台 ##  20220611_daiyun
+    1. 上下架                  pullsheleve.jsp                      20220611_daiyun
+    2. 新增產品                addCommo.jsp                         20220604_daiyun
+    3. 商品訂單匯入            列於backstage.jsp                     20220604_daiyun
+    4. 訂單篩選                searchresult.jsp                     20220604_daiyun
+    5. 管理員登入              login_man.jsp                        20220611_daiyun
+    6. 管理員登出              logout_man.jsp                       20220611_daiyun
+## 會員中心 ## 記得抓session
+    1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
+    2. 變更密碼                changepwd.jsp                        20220611_daiyun
+    3. 購買紀錄匯入            列於memInfo.jsp                         
+    4. 評論紀錄                                         

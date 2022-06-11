@@ -1,3 +1,7 @@
+<%@ page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<%@ page import ="java.sql.*"%>
+<%@include file = "catchDateRan.jsp" %> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,18 +23,20 @@
         <!-- 引入css -->
         <link rel="stylesheet" href="../assets/sass/common.css" />
         <link rel="stylesheet" href="../assets/sass/member.css" />
+        <link rel="stylesheet" href="../assets/sass/login.css" />
         <!-- 引入自寫js -->
         <script src="../assets/js/loading.js"></script>
+        <script src="../assets/js/member.js"></script>
     </head>
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <a href="manage.html" class="manage">網站管理</a>
+            <a href="manage.jsp" class="manage">網站管理</a>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.html">首頁</a>
+                    <a href="index.jsp">首頁</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="">
@@ -40,18 +46,36 @@
                 </div>
                 <div class="link-icon">
                     <div class="icon-login">
-                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
-                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                        <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
+    <%
+        if(session.getAttribute("mem_account") == null) {
+           response.sendRedirect("login.jsp");
+        }
+            String acc = session.getAttribute("mem_account").toString();
+            sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
+            //sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
+            ResultSet rs = con.createStatement().executeQuery(sql);
+            rs.next();
+            String id = rs.getString("mem_id");
+            
+            
+            sql = "SELECT `mem_name`,`mem_email`,`mem_phone`,`mem_birth` FROM `mem_infor` WHERE `mem_id` ='"+ id +"'";
+            ResultSet rs1 = con.createStatement().executeQuery(sql);
+            rs1.next();
+            //http://localhost:8080/LaptopShoppingSite/src/memInfo.jsp
+    %>
+    
     <main class="main">
         <div class="content">
             <div id="loading" style="display: none;">
@@ -69,22 +93,22 @@
                     <img src="../assets/img/icon/memcenter-mem2.png" />
                 </div>
                 <div class="info-content-container">
-                    <form action="" method="POST">
+                    <form action="changeinfo.jsp" method="POST">
                         <div>
                             <span>姓名</span>
-                            <input type="text" class="" value="" required/>
+                            <% out.println("<input type='text' name='mname' class='' value='"+ rs1.getString("mem_name") +"' required/>");%>
                         </div>
                         <div>
                             <span>電子信箱</span>
-                            <input type="email" class="" value="" required/>
+                            <%out.println("<input type='email' name='memail' class='' value='"+ rs1.getString("mem_email") +"' readonly/>");%>
                         </div>
                         <div>
                             <span>手機號碼</span>
-                            <input type="text" class="" value="" required/>
+                            <%out.println("<input type='text' name='mphone' class='' value='"+ rs1.getString("mem_phone") +"' required/>");%>
                         </div>
                         <div>
                             <span>生日</span>
-                            <input type="date" class="" value="" required/>
+                            <%out.println("<input type='date' name='mbirth' class='' value='"+ rs1.getString("mem_birth") +"' required/>");%>
                         </div>
                         <div>
                             <button class="btn-change" >儲存</button>
@@ -98,21 +122,25 @@
                 <span>變更密碼</span>
             </div>
             <div class="change-pwd-container" id="">
-                <div>
-                    <span>目前密碼</span>
-                    <input type="password" class="" value="" />
-                </div>
-                <div>
-                    <span>新密碼</span>
-                    <input type="password" class="" value="" />
-                </div>
-                <div>
-                    <span>確認新密碼</span>
-                    <input type="password" class="" value="" />
-                </div>
-                <div>
-                    <button class="btn-change" >儲存</button>
-                </div>
+                <form action="changepwd.jsp" method="POST">
+                    <div>
+                        <span>目前密碼</span>
+                        <input type="password" name="prepwd" class="" value="" required/>
+                    </div>
+                    <div>
+                        <span>新密碼</span>
+                        <input type="password" id="pwd" name="newpwd" class="" maxlength="16" value="" />
+                        <label id="pwd-tip" class="tip"></label>
+                    </div>
+                    <div>
+                        <span>確認新密碼</span>
+                        <input type="password" id="check-pwd"  class="" maxlength="16" value="" />
+                        <label id="check-pwd-tip" class="tip"></label>
+                    </div>
+                    <div>
+                        <button class="btn-change" id="change-pwd">儲存</button>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -149,52 +177,32 @@
                         
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <span>  1</span>
-                            </td>
-                            <td>
-                                <span name=""></span>
-                            </td>
-                            <td>
-                                <span name="">2000-05-06</span>
-                            </td>
-                            <td>
-                                <span name="">ASUS X515</span>
-                            </td>
-                            <td>
-                                <span name="">$17900</span>
-                            </td>
-                            <td>
-                                <span name="">1</span>
-                            </td>
-                            <td>
-                                <span name="">$17900</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span>  2</span>
-                            </td>
-                            <td>
-                                <span name=""></span>
-                            </td>
-                            <td>
-                                <span name="">2000-05-15</span>
-                            </td>
-                            <td>
-                                <span name="">ACER Swift5</span>
-                            </td>
-                            <td>
-                                <span name="">$29900</span>
-                            </td>
-                            <td>
-                                <span name="">1</span>
-                            </td>
-                            <td>
-                                <span name="">$29900</span>
-                            </td>
-                        </tr>
+                    <%
+                        int order2 = 1;
+                        String sql1="";
+                        ResultSet rs3;
+
+                        sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
+                        sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
+                        sql1 += "FROM `product_infor`, `order_details` ";
+                        sql1 += "WHERE (order_details.product_id=product_infor.product_id)";
+                        sql1 += " ORDER BY order_details.order_time";
+                        out.println(sql1);
+                        rs3 = con.createStatement().executeQuery(sql1);
+                    
+                        while(rs3.next()){
+                            out.println("<tr>");
+                            out.println("<td><span>"+ order2 +"</span></td>"); 
+                            out.println("<td><span>"+rs3.getString("order_details.order_id") +"</span></td>"); 
+                            out.println("<td><span>"+rs3.getString("order_details.order_time") +"</span></td>");
+                            out.println("<td><span>"+rs3.getString("product_infor.product_name") +"</span></td>");
+                            out.println("<td><span>"+rs3.getInt("product_infor.product_price") +"</span></td>");
+                            out.println("<td><span>"+rs3.getInt("order_details.howmuch")+ "</span></td>");
+                            out.println("<td><span>"+rs3.getInt("order_details.howmuch * product_infor.product_price") +"</span></td>");
+                            out.println("</tr>");
+                            order2++;
+                        } 
+                    %>
                     </tbody>
                 </table>
             </div>

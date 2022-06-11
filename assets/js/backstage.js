@@ -49,7 +49,7 @@ $(function(){
                 // });
 
                 // 虛擬機上路徑可能要改
-                window.location.replace("backstage.jsp?product=" + pro + "&bstatus=" + bstatus);
+                window.location.replace("pullshelve.jsp?product=" + pro + "&bstatus=" + bstatus);
               },
               取消: function() {
               }

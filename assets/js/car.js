@@ -37,7 +37,7 @@ $(function() {
         // });
 
         // 虛擬機上路徑可能要改
-        window.location.replace("car.jsp?product=" + item +"&quan=" + $(this).val() + "&sum=" + sum);
+        window.location.replace("caramount.jsp?product=" + item +"&quan=" + $(this).val() + "&sum=" + sum);
 
         // $.ajax({
         //     url: "/",
@@ -127,7 +127,7 @@ $(function() {
 
 
                 // 虛擬機上路徑可能要改
-                window.location.replace("car.jsp?product=" + item);
+                window.location.replace("cardelete.jsp?product=" + item);
               },
               取消: function() {
               }

@@ -11,7 +11,7 @@ CREATE TABLE manager(
 	PRIMARY KEY (man_id)
 );
 
-INSERT INTO manager VALUES ('M001','serverDG','1094412253');
+INSERT INTO manager VALUES ('M001','serverDG@123','1094412253');
 
 SELECT * FROM  manager;
 

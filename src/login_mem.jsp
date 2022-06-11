@@ -1,54 +1,35 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ page import ="java.sql.*"%>
-<%@include file = "catchDateRan.jsp" %> 
-
+<%@include file = "connectsql.jsp" %> 
 <%
-    request.setCharacterEncoding("UTF-8");
-    try{
-        Class.forName("com.mysql.jdbc.Driver");	  
-        try{
-        	String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-            Connection con = DriverManager.getConnection(url,"root","1234");
+    String lacc = request.getParameter("lacc");
+    String lpwd = request.getParameter("lpwd");
+    ResultSet rs;
+    PreparedStatement ps;
 
-            if(con.isClosed()){
-                out.println("connection fail ");
-            }
-            else{
-                out.println("connection success ");
+   if( lacc !=null && !lacc.equals("") && lpwd != null && !lpwd.equals("")){ 
+    
+        sql = "SELECT `mem_account`,`mem_password` FROM `login` WHERE `mem_account`=? AND `mem_password`=?";
 
+        ps = con.prepareStatement(sql);
 
-                String sql = "USE `computer_shop`";
-                con.createStatement().execute(sql);
+        ps.setString(1, lacc);
+        ps.setString(2, lpwd);
 
-                //抓前端輸入帳號密碼
-                String logacc = request.getParameter("");
-                String logpas = request.getParameter("");
+        rs = ps.executeQuery();
 
-                if( logacc.equals != "" && logpas.equals != "" ){
-                    
-                }
-                //http://localhost:8080/LaptopShoppingSite/src/connectsql.jsp
-                //抓前端輸入帳號密碼
-                String regacc = request.getParameter(""); 
-                String regpas = request.getParameter("");
-
-                String memid = "MEM" + CDATE ; // 處理memid CDate來自catchDataRan.jsp
-
-                sql = "INSERT INTO `login` VALUES (memid, regacc, regpas)";
-                int y = con.createStatement().execute(sql); #執行成功傳回false
-                sql = "INSERT INTO mem_infor VALUES (memid,'', '', '', '', '', regacc)";
-                int y1 = con.createStatement().execute(sql); #執行成功傳回false
-
-            }
+        if(rs.next()){            
+            session.setAttribute("mem_account", lacc);
             con.close();
+            response.sendRedirect("memInfo.jsp") ;
         }
-        catch(SQLException sExec){
-            out.println("sql error "+ sExec.toString());
+        else{
+            con.close();
+            out.println("帳號密碼不符<a href='login.jsp'>重新登入</a>") ;
         }
     }
-    catch(ClassNotFoundException err){
-        out.println("class error "+ err.toString());
-    }
+    else
+	    response.sendRedirect("login.jsp");
 
 %>

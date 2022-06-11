@@ -1,7 +1,9 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@include file = "connectsql.jsp" %> 
-
+<%@ page import="java.io.*,java.util.*"%>
+<%@ page import="javax.servlet.*,java.text.*"%>
+<%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -89,9 +91,20 @@
                     <%
                         request.setCharacterEncoding("UTF-8");
                         response.setCharacterEncoding("UTF-8");
+                        if(session.getAttribute("mem_account") == null) {
+                            response.sendRedirect("login.jsp");
+                        }
+                        String acc = session.getAttribute("mem_account").toString();
+                        
+                        sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
+                        //sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
+                        ResultSet rs1 = con.createStatement().executeQuery(sql);
+                        rs1.next();
+                        String id = rs1.getString("mem_id");
+
                         sql = "SELECT cart.mem_id, product_infor.product_name, cart.product_id , product_infor.product_price , cart.order_amount, product_infor.product_price * cart.order_amount";
                         sql += " FROM `cart`, `product_infor`";
-                        sql += "WHERE (cart.mem_id = 'MEM20220531100430002') AND (cart.product_id = product_infor.product_id)";
+                        sql += "WHERE (cart.mem_id = '"+ id +"') AND (cart.product_id = product_infor.product_id)";
                        // out.println(sql);
                         ResultSet rs = con.createStatement().executeQuery(sql);
 
@@ -102,7 +115,7 @@
                             out.println("<input type='checkbox' name='item-check' />");
                             out.println("</div>");
                             out.println("<div class='item-name'>");
-                            out.println("<input type='text' name='item-name' value='"+ rs.getString("product_infor.product_name") +"' readonly/>");
+                            out.println("<label name='item-name' >"+ rs.getString("product_infor.product_name") +"</label>");
                             out.println("</div>");
                             out.println("</div>");
                             out.println("<div class='car-item-other'>");
