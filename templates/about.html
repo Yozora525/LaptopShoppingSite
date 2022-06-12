@@ -130,5 +130,8 @@
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <span class="copyright">Copyright © 2022 多比店舖 Inc. All Rights Reserved.</span>
+    </footer>
 </body>
 </html>

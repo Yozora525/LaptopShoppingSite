@@ -222,7 +222,7 @@ html, body {
 }
 @media (min-width: 1000px) {
   .main {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
   }
 }
 
@@ -243,12 +243,24 @@ html, body {
 }
 @media (min-width: 0px) {
   .footer {
-    height: 70px;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.95em;
+  }
+  .footer .copyright {
+    color: #fff;
   }
 }
 @media (min-width: 1000px) {
   .footer {
-    height: 100px;
+    height: 50px;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 1em;
+  }
+  .footer .copyright {
+    color: #fff;
   }
 }
 
