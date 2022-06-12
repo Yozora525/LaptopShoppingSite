@@ -131,8 +131,12 @@
                 </div>
                 <div class="pro-btn-container">
                     <div>
-                        <button id=""><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
-                        <button id="">直接購買</button>
+                    <%out.println("<form action='addtocart.jsp' method='get'>");%>
+                        <button type="submit"><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
+                    <%out.println("</form/>");%>
+                    <%out.println("<form action='buynow.jsp' method='get'>");%>   
+                        <button type="submit">直接購買</button>
+                    <%out.println("</form/>");%>
                     </div>
                 </div>
             </div>
