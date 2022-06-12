@@ -180,7 +180,7 @@
             <div class="pro-intro-title" style="text-align:center;">
                 <span>評價</span>
             </div>
-            <form action="" method="get">
+            <%out.println("<form action='comment.jsp' method='get'>");%>
                 <div class="new-eval-star">
                     <span class="eval-star" name="new-eval-star" data-star="1">★</span>
                     <span style="color: #ddd;" name="new-eval-star" data-star="2">★</span>
@@ -188,9 +188,10 @@
                     <span  style="color: #ddd;" name="new-eval-star" data-star="4">★</span>
                     <span  style="color: #ddd;" name="new-eval-star" data-star="5">★</span>
                     <input type="text" value="1"  style="display: none;" name="eval-star" readonly/>
+                    <%out.println("<input type='text' value='"+pname+"'  style='display: none;' name='procID' readonly/>");%>
                 </div>
                 <div class="new-eval-content">
-                    <textarea minlength="10" maxlength="512" required></textarea>
+                    <textarea name="memcomment" minlength="10" maxlength="512" required></textarea>
                 </div>
                 <div class="btn-container">
                     <input type="submit" value="送出評價" />
