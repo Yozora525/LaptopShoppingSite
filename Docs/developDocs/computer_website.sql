@@ -150,7 +150,7 @@ CREATE TABLE comment(
 	product_id	VARCHAR	(4) NOT NULL,
 	mem_comment	TEXT,
 	star	INTEGER,
-	comment_time	DATETIME,
+	comment_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (mem_id,product_id),
    	FOREIGN KEY (mem_id) REFERENCES mem_infor(mem_id),

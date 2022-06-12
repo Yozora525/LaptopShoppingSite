@@ -116,25 +116,30 @@
                     <span style="color: #bbb;">已賣出</span>
                 </div>
                 <div class="pro-price">
-                    <span><%=rs.getInt("product_price")%></span>
+                    <span>$<%=rs.getInt("product_price")%></span>
                 </div>
                 <div class="pro-inventory">
                     <span>存貨：</span>
                     <span id="inventory"><%=rs.getInt("product_amount")%></span>
                 </div>
                 <%}%>
+                <%out.println("<form>");%>
                 <div class="pro-quan">
                     <span>數量：</span>
-                    <button id="minus">-</button>
-                    <input type="text" id="quan" value="1" oninput = "value=value.replace(/[^\d]/g,'')" />
-                    <button id="plus">+</button>
+                    <button id="minus" type="button">-</button>
+                    <input type="text" id="quan" name="quantity" value="1" oninput = "value=value.replace(/[^\d]/g,'')" />
+                    <button id="plus" type="button">+</button> 
                 </div>
+                
                 <div class="pro-btn-container">
-                    <div>
-                        <button id=""><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
-                        <button id="">直接購買</button>
+                    <div> 
+                    <%out.println("<input type='text' value='"+pname+"'  style='display: none;' name='proID' readonly/>");%>
+                        <button type="submit" formaction="addtocart.jsp"><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
+                        <button type="submit" formaction="buynow.jsp">直接購買</button>
+                    <%out.println("</form/>");%>
                     </div>
                 </div>
+                
             </div>
         </div>
          
@@ -180,7 +185,7 @@
             <div class="pro-intro-title" style="text-align:center;">
                 <span>評價</span>
             </div>
-            <form action="" method="get">
+            <%out.println("<form action='comment.jsp' method='get'>");%>
                 <div class="new-eval-star">
                     <span class="eval-star" name="new-eval-star" data-star="1">★</span>
                     <span style="color: #ddd;" name="new-eval-star" data-star="2">★</span>
@@ -188,9 +193,10 @@
                     <span  style="color: #ddd;" name="new-eval-star" data-star="4">★</span>
                     <span  style="color: #ddd;" name="new-eval-star" data-star="5">★</span>
                     <input type="text" value="1"  style="display: none;" name="eval-star" readonly/>
+                    <%out.println("<input type='text' value='"+pname+"'  style='display: none;' name='procID' readonly/>");%>
                 </div>
                 <div class="new-eval-content">
-                    <textarea minlength="10" maxlength="512" required></textarea>
+                    <textarea name="memcomment" minlength="10" maxlength="512" required></textarea>
                 </div>
                 <div class="btn-container">
                     <input type="submit" value="送出評價" />
