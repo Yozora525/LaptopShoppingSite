@@ -251,8 +251,10 @@
 
                 out.println("<div class='product'>");
                     int k=1;
+                    int n=1;
 
                 while(rs.next()){
+                     n++;
                      if (k%6!=0){
                      k++;
 
@@ -286,9 +288,13 @@
                     out.println("</div>");
                     out.println("</div>");
                     k=2;
+                    }
+                    }
+
+                    if(n==1){
+                     out.println("查無相關產品，請重新搜尋"); 
                     }  
                     
-                    }
                      out.println("</div>");                             
             %>
         </div>

@@ -173,13 +173,15 @@
                 String search_bar = request.getParameter("search_bar");
                 ResultSet sr;
 
-                String sqlsr = "SELECT * FROM `product_infor` WHERE (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%') AND (`product_status`=1)";
+                String sqlsr = "SELECT * FROM `product_infor` WHERE (`product_name` LIKE '%" + search_bar + "%') OR (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%') AND (`product_status`=1)";
                 sr = con.createStatement().executeQuery(sqlsr);
 
                 out.println("<div class='product'>");
                     int k=1;
+                    int n=1;
 
                     while(sr.next()){
+                        n++;
                      if (k%6!=0){
                      k++;
                     out.println("<div class='list'>");   
@@ -215,6 +217,11 @@
                     }  
                     
                     }
+
+                    if(n==1){
+                     out.println("查無相關產品，請重新搜尋"); 
+                    }  
+
                      out.println("</div>");                             
             %>
         </div>
