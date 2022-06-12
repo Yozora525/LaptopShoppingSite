@@ -7,7 +7,6 @@
 <%@include file = "catchDateRan.jsp" %>
 
 <%
-
     String racc = request.getParameter("racc"); 
     String rpwd = request.getParameter("rpwd");
 
@@ -38,15 +37,26 @@
             
             y = con.createStatement().executeUpdate(sql);
         }
-        else{
-            out.println("註冊失敗，請再試一次<a href='login.jsp'>回登入介面</a>");
-        }
-        
-        if ( y1>0 && y > 0 ){
-            con.close();
-            out.println("註冊成功<a href='login.jsp'>請登入</a>") ;
+        else{ %>
+            <script src="../assets/js/rfail.js"></script>
+            <%  response.sendRedirect("login.jsp");
+        } 
+        int k=0;
+        if ( y1>0 && y > 0 ){%>
+            <%
+            if(k==0){
+            %>
+                
+        <%      k=1;
+            } 
+            if(k==1){
+                con.close();
+                response.sendRedirect("rlogin_mem.jsp?lacc="+racc+"&lpwd="+rpwd);  
+            }  
         }
     }
-    else
-	    response.sendRedirect("login.jsp");
+    else{
+        response.sendRedirect("login.jsp");
+    }
 %>
+   

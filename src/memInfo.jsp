@@ -108,7 +108,7 @@
                     <img src="../assets/img/icon/memcenter-mem2.png" />
                 </div>
                 <div class="info-content-container">
-                    <form action="changeinfo.jsp" method="POST">
+                    <form action="changeinfo.jsp" method="get">
                         <div>
                             <span>姓名</span>
                             <% out.println("<input type='text' name='mname' class='' value='"+ rs1.getString("mem_name") +"' required/>");%>
@@ -123,7 +123,13 @@
                         </div>
                         <div>
                             <span>生日</span>
-                            <%out.println("<input type='date' name='mbirth' class='' value='"+ rs1.getString("mem_birth") +"' required/>");%>
+                            <%  if(rs1.getString("mem_birth").equals("0000-00-00")){
+                                    out.println("<input type='date' name='mbirth' class='' value='"+ rs1.getString("mem_birth") +"' required/>");
+                                }
+                                else{
+                                    out.println("<input type='date' name='mbirth' class='' value='"+ rs1.getString("mem_birth") +"' disabled='disabled' required/>");
+                                }
+                            %>
                         </div>
                         <div>
                             <button class="btn-change" >儲存</button>

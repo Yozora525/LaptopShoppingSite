@@ -7,8 +7,15 @@
 <%@ page import="java.sql.*"%>
 
 <%
-    sql = "INSERT INTO `order_details` VALUES ('oid','pid[i]','credate','addr','tquan')";
-    out.println(sql);
+    //sql = "INSERT INTO `order_details` VALUES ('oid','pid[i]','credate','addr','tquan')";
+   // out.println(sql);
+     sql = "0908098950";
+     out.println(sql.substring(0,2));
+      String name = request.getParameter("mname");
+    String email = request.getParameter("memail");
+    String phone = request.getParameter("mphone");
+    String birth = request.getParameter("mbirth");
+    out.println(name+email+phone+birth);
 %>
 <%-- 
 <%
