@@ -14,25 +14,18 @@
   width: 100%;
   background-color: #0096C7;
 }
-
 .guide-container .nav-header {
   width: 100%;
 }
-
 @media (min-width: 0px) {
   .guide-container .nav-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: 60px;
   }
   .guide-container .nav-header .home {
     width: 20%;
-    padding-top: 0.5em;
+    padding-top: 1em;
   }
   .guide-container .nav-header .home a {
     text-decoration: none;
@@ -52,13 +45,8 @@
   }
   .guide-container .nav-header .link-icon {
     width: 30%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     text-align: center;
   }
   .guide-container .nav-header .link-icon img {
@@ -78,16 +66,10 @@
     width: 33%;
   }
 }
-
 @media (min-width: 1000px) {
   .guide-container .nav-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: 70px;
   }
   .guide-container .nav-header .home {
@@ -112,13 +94,8 @@
   }
   .guide-container .nav-header .link-icon {
     width: 15%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     text-align: center;
   }
   .guide-container .nav-header .link-icon img {
@@ -127,10 +104,7 @@
   }
   .guide-container .nav-header .link-icon .icon-login {
     padding-top: 3%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 33%;
   }
   .guide-container .nav-header .link-icon .icon-contact {
@@ -147,20 +121,13 @@
   width: 100%;
   background-color: #0096C7;
 }
-
 .backstage-guide-container .backstage-nav-header {
   width: 100%;
 }
-
 @media (min-width: 0px) {
   .backstage-guide-container .backstage-nav-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: 60px;
   }
   .backstage-guide-container .backstage-nav-header .backstage-home {
@@ -176,13 +143,8 @@
   }
   .backstage-guide-container .backstage-nav-header .link-icon {
     width: 18%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     text-align: center;
   }
   .backstage-guide-container .backstage-nav-header .link-icon img {
@@ -202,16 +164,10 @@
     width: 33%;
   }
 }
-
 @media (min-width: 1000px) {
   .backstage-guide-container .backstage-nav-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: 70px;
   }
   .backstage-guide-container .backstage-nav-header .backstage-home {
@@ -227,13 +183,8 @@
   }
   .backstage-guide-container .backstage-nav-header .link-icon {
     width: 15%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     text-align: center;
   }
   .backstage-guide-container .backstage-nav-header .link-icon img {
@@ -242,10 +193,7 @@
   }
   .backstage-guide-container .backstage-nav-header .link-icon .icon-backstage {
     padding-top: 3%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 33%;
   }
   .backstage-guide-container .backstage-nav-header .link-icon .icon-homepage {
@@ -267,13 +215,11 @@ html, body {
 .main {
   min-height: 100%;
 }
-
 @media (min-width: 0px) {
   .main {
     padding-bottom: 70px;
   }
 }
-
 @media (min-width: 1000px) {
   .main {
     padding-bottom: 100px;
@@ -285,7 +231,6 @@ html, body {
     padding-bottom: 70px;
   }
 }
-
 @media (min-width: 1000px) {
   .content {
     padding-bottom: 100px;
@@ -296,13 +241,11 @@ html, body {
   width: 100%;
   background-color: #0077B6;
 }
-
 @media (min-width: 0px) {
   .footer {
     height: 70px;
   }
 }
-
 @media (min-width: 1000px) {
   .footer {
     height: 100px;
@@ -316,12 +259,10 @@ html, body {
     margin-right: 5%;
   }
 }
-
 @media (min-width: 1000px) {
   .content_format {
     margin-top: 3%;
     margin-left: 5%;
     margin-right: 5%;
   }
-}
-/*# sourceMappingURL=common.css.map */
+}/*# sourceMappingURL=common.css.map */
