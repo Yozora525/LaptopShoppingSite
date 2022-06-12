@@ -77,7 +77,7 @@
         if(session.getAttribute("mem_account") == null || session.getAttribute("mem_account").equals("")) {
            response.sendRedirect("login.jsp");
         }
-        
+        else{
             String acc = session.getAttribute("mem_account").toString();
             sql = "SELECT `mem_id` FROM `login` WHERE `mem_account` ='" + acc + "'";
             //sql = "SELECT `mem_id`,`mem_password` FROM `login` WHERE `mem_account` ='adsasddsa@gmail.com'";
@@ -255,6 +255,7 @@
                             out.println("<span name=''>"+rs5.getInt("star")+"</span>");
                             out.println("</td>");
                             out.println("</tr>");
+                        }
                         }
                         %>   
                     </tbody>
