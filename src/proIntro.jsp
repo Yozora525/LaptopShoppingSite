@@ -116,29 +116,30 @@
                     <span style="color: #bbb;">已賣出</span>
                 </div>
                 <div class="pro-price">
-                    <span><%=rs.getInt("product_price")%></span>
+                    <span>$<%=rs.getInt("product_price")%></span>
                 </div>
                 <div class="pro-inventory">
                     <span>存貨：</span>
                     <span id="inventory"><%=rs.getInt("product_amount")%></span>
                 </div>
                 <%}%>
+                <%out.println("<form>");%>
                 <div class="pro-quan">
                     <span>數量：</span>
-                    <button id="minus">-</button>
-                    <input type="text" id="quan" value="1" oninput = "value=value.replace(/[^\d]/g,'')" />
-                    <button id="plus">+</button>
+                    <button id="minus" type="button">-</button>
+                    <input type="text" id="quan" name="quantity" value="1" oninput = "value=value.replace(/[^\d]/g,'')" />
+                    <button id="plus" type="button">+</button> 
                 </div>
+                
                 <div class="pro-btn-container">
-                    <div>
-                    <%out.println("<form action='addtocart.jsp' method='get'>");%>
-                        <button type="submit"><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
-                    <%out.println("</form/>");%>
-                    <%out.println("<form action='buynow.jsp' method='get'>");%>   
-                        <button type="submit">直接購買</button>
+                    <div> 
+                    <%out.println("<input type='text' value='"+pname+"'  style='display: none;' name='proID' readonly/>");%>
+                        <button type="submit" formaction="addtocart.jsp"><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
+                        <button type="submit" formaction="buynow.jsp">直接購買</button>
                     <%out.println("</form/>");%>
                     </div>
                 </div>
+                
             </div>
         </div>
          
