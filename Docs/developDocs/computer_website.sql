@@ -125,7 +125,7 @@ INSERT INTO order_details VALUES ('order20220615205144324', 'P014', '2022-06-15 
 INSERT INTO order_details VALUES ('order20220615205144324', 'P003', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','6');
 
 INSERT INTO order_details VALUES ('order20220615205144324', 'P015', '2022-06-15 20:51:44','106台北市大安區基隆路二段207號','1');
-
+SELECT * FROM order_details;
 #3.訂單清單
 CREATE TABLE orders(
 	order_id VARCHAR (22) UNIQUE NOT NULL,
