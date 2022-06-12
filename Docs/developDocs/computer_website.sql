@@ -68,12 +68,12 @@ SELECT * FROM product_infor;
 #2.會員基本資料表
 CREATE TABLE mem_infor(
 	mem_id	VARCHAR	(20) UNIQUE NOT NULL,
-	mem_name VARCHAR	(16) ,
-	mem_sex	VARCHAR	(2),
-	mem_phone	VARCHAR	(12),
+	mem_name VARCHAR (16) DEFAULT '',
+	mem_sex	VARCHAR	(2) DEFAULT '',
+	mem_phone	VARCHAR	(10) DEFAULT '',
 	mem_birth	DATE NOT NULL DEFAULT '0000-00-00',
 	mem_create	timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-	mem_email VARCHAR (512) ,
+	mem_email VARCHAR (512) DEFAULT '',
     
     PRIMARY KEY (mem_id, mem_email)
 );
@@ -83,6 +83,7 @@ INSERT INTO mem_infor VALUES ('MEM20220531100430002','徐岱揚', 'F', '09246810
 INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09 22:22:18', 'ag128442da@gmail.com');
 INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30 13:04:55', 'xyyz17rip976da@yahoo.com');
 INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02 19:44:39', 'aqwert2yy@gmail.com');
+UPDATE mem_infor SET mem_name = '陳鈞真', mem_email='adsasddsa@gmail.com', mem_phone='0911235813',mem_birth='2000-09-28' WHERE mem_id ='MEM20220601112045001';
 
 #1.登入
 CREATE TABLE login (
@@ -100,6 +101,7 @@ INSERT INTO login VALUES ('MEM20220531100430002', 'abbcccddde@yahoo.com', 'happe
 INSERT INTO login VALUES ('MEM20220609222218003', 'ag128442da@gmail.com', 'pi4happy');
 INSERT INTO login VALUES ('MEM20220530130455004', 'xyyz17rip976da@gmail.com', 'happyhappypi8888');
 INSERT INTO login VALUES ('MEM20220602194439005', 'aqwert2yy@gmail.com', 'happi111');
+#SELECT * FROM login WHERE mem_account = 'fffffffff@gmail.com';
 
 #4.訂單明細
 CREATE TABLE order_details(
