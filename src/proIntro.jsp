@@ -75,7 +75,7 @@
     ResultSet rs = con.createStatement().executeQuery(sqlinfo);
     String sqlp = "SELECT * FROM `product_img` WHERE product_id='" + pname + "'"; 
     ResultSet rs1 = con.createStatement().executeQuery(sqlp);
-    String sqlcomment = "SELECT * FROM `comment` WHERE product_id='" + pname + "'";
+    String sqlcomment = "SELECT * FROM `comment`, `mem_infor` WHERE product_id='" + pname + "' AND (comment.mem_id=mem_infor.mem_id) ORDER BY `comment_time` DESC";
     ResultSet rscomment = con.createStatement().executeQuery(sqlcomment);
 
     %>
@@ -162,7 +162,7 @@
                    while(rscomment.next()){ 
                     out.println("<div class='pro-eval'>");
                     out.println("<div class='eval-user'>");      
-                    out.println("<span>"+rscomment.getString("mem_id")+"</span>");      
+                    out.println("<span>"+rscomment.getString("mem_name")+"</span>");      
                     out.println("</div>");                      
                     out.println("<div class='eval-info'>"); 
 
