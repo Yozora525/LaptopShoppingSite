@@ -70,12 +70,16 @@
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");    
-    String pname = request.getParameter("proID");                                        
-    String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; 
+    String pname = request.getParameter("proID");  
+
+    String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id=?"; 
+    //String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; 
     ResultSet rs = con.createStatement().executeQuery(sqlinfo);
-    String sqlp = "SELECT * FROM `product_img` WHERE product_id='" + pname + "'"; 
+    String sqlp = "SELECT * FROM `product_img` WHERE product_id=?"; 
+    //String sqlp = "SELECT * FROM `product_img` WHERE product_id='" + pname + "'"; 
     ResultSet rs1 = con.createStatement().executeQuery(sqlp);
-    String sqlcomment = "SELECT * FROM `comment`, `mem_infor` WHERE product_id='" + pname + "' AND (comment.mem_id=mem_infor.mem_id) ORDER BY `comment_time` DESC";
+    String sqlcomment = "SELECT * FROM `comment`, `mem_infor` WHERE product_id=? AND (comment.mem_id=mem_infor.mem_id) ORDER BY `comment_time` DESC";
+    //String sqlcomment = "SELECT * FROM `comment`, `mem_infor` WHERE product_id='" + pname + "' AND (comment.mem_id=mem_infor.mem_id) ORDER BY `comment_time` DESC";
     ResultSet rscomment = con.createStatement().executeQuery(sqlcomment);
 
     %>
