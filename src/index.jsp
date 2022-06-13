@@ -179,23 +179,17 @@
                             </div>
                             <div class="filter-item">
                                 <!-- checkBox -->
-                                <div>
-                                    <input type="checkbox" name="type" value="電競" />
-                                    <label>電競</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="type" value="商務" />
-                                    <label>商務</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="type" value="創作設計" />
-                                    <label>創作設計</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="type" value="輕薄便攜" />
-                                    <label>輕薄便攜</label>
-                                </div>
-                                
+                                <%
+                                String sql5 = "SELECT * FROM `type_list`;";
+                                ResultSet rslist = con.createStatement().executeQuery(sql5);
+                            
+                                while(rslist.next()){
+                                out.println("<div>");  
+                                out.println("<input type='checkbox' name='type' value='"+rslist.getString("product_type")+"'>");
+                                out.println("<label>"+rslist.getString("product_type")+"</label>");
+                                out.println("</div>");  
+                                }
+                                %>                            
                             </div>
                         </div>
                         <div class="filter-container">
