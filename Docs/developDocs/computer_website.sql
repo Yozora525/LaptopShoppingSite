@@ -29,17 +29,18 @@ INSERT INTO type_list VALUES ("創作設計");
 CREATE TABLE product_infor( 
 	product_id	VARCHAR	(4) UNIQUE NOT NULL,
 	product_name	VARCHAR	(32) UNIQUE NOT NULL,
-	product_price	INTEGER	, #單價
-	product_amount	INTEGER	, #庫存
-	product_status	INTEGER	, #上/下架 1/0
-	product_discript	TEXT,
-	product_sold	INTEGER	, #銷售量(熱門)
-	product_size	FLOAT,	
-	product_brand	VARCHAR	(64),
-	product_touch	INTEGER	,
-	product_type	VARCHAR	(32),
+	product_price	INTEGER	NOT NULL, #單價
+	product_amount	INTEGER	NOT NULL, #庫存
+	product_status	INTEGER	NOT NULL, #上/下架 1/0
+	product_discript	TEXT NOT NULL,
+	product_sold	INTEGER	NOT NULL, #銷售量(熱門)
+	product_size	FLOAT NOT NULL,	
+	product_brand	VARCHAR	(64) NOT NULL,
+	product_touch	INTEGER	NOT NULL,
+	product_type	VARCHAR	(32) NOT NULL,
 
-    PRIMARY KEY (product_id)
+    PRIMARY KEY (product_id),
+	FOREIGN KEY (product_type) REFERENCES type_list(product_type)
 );
 
 INSERT INTO product_infor VALUES ("P001", "ASUS X515", 17900, 200, 1, "*搭載Intel® Core™ i5 處理器</br>*NVIDIA® GeForce® MX330 獨立顯示卡</br>*最高512GB SSD硬碟</br>*83% 螢幕占比 15.6吋FHD螢幕", 20000, 15.6, 'ASUS', 0, '輕薄便攜');
@@ -68,12 +69,12 @@ SELECT * FROM product_infor;
 #2.會員基本資料表
 CREATE TABLE mem_infor(
 	mem_id	VARCHAR	(20) UNIQUE NOT NULL,
-	mem_name VARCHAR (16) DEFAULT '',
+	mem_name VARCHAR (16) DEFAULT '匿名的使用者',
 	mem_sex	VARCHAR	(2) DEFAULT '',
 	mem_phone	VARCHAR	(10) DEFAULT '',
 	mem_birth	DATE NOT NULL DEFAULT '0000-00-00',
 	mem_create	timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	mem_email VARCHAR (512) DEFAULT '',
+	mem_email VARCHAR (512) UNIQUE NOT NULL DEFAULT '',
     
     PRIMARY KEY (mem_id, mem_email)
 );
@@ -107,9 +108,9 @@ INSERT INTO login VALUES ('MEM20220602194439005', 'aqwert2yy@gmail.com', 'happi1
 CREATE TABLE order_details(
 	order_id	VARCHAR	(22)  NOT NULL, 
 	product_id	VARCHAR	(4)  NOT NULL,
-	order_time	DATETIME,	
-	order_addr	VARCHAR	(64),
-	howmuch	INTEGER	, #商品數量
+	order_time	timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,	
+	order_addr	VARCHAR	(64) NOT NULL,
+	howmuch	INTEGER	NOT NULL, #商品數量
 
     PRIMARY KEY (order_id,product_id),
     FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
@@ -150,8 +151,8 @@ SELECT order_time FROM order_details WHERE order_id='order20220615205144324';
 CREATE TABLE comment(
 	mem_id	VARCHAR	(64) NOT NULL,
 	product_id	VARCHAR	(4) NOT NULL,
-	mem_comment	TEXT,
-	star	INTEGER,
+	mem_comment	TEXT NOT NULL,
+	star	INTEGER NOT NULL,
 	comment_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (mem_id,product_id),
