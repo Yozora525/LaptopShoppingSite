@@ -27,7 +27,30 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
     int addprotouch = Integer.parseInt(saddprotouch);
     int store = Integer.parseInt(sstore);
     int price = Integer.parseInt(sprice);
+    int ctype=0;
+    PreparedStatement ps;
+    if( type.equals("其他") ){
+        String type1 = request.getParameter("type1");
+        if( type1!=null && !type1.equals("") ){
+            
+            
 
+            type = type1;
+            sql = "INSERT INTO `type_list` VALUES (?)" ;
+            ps = con.prepareStatement(sql);
+            ps.setString(1, type1);
+            ctype = ps.executeUpdate();
+        }
+        else{
+        %>
+            <script src="../assets/js/notnull.js"></script>
+        <%
+        }
+    }
+    else{
+        type = type;
+    }
+if(ctype>0){
     sql = "SELECT COUNT(*) FROM `product_infor`";
     ResultSet rs = con.createStatement().executeQuery( sql );
     rs.next();
@@ -57,7 +80,7 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
     //int change = con.createStatement().executeUpdate(sql);
 
     sql = "SELECT `product_name` FROM `product_infor` WHERE `product_name`=?";
-    PreparedStatement ps = con.prepareStatement(sql);
+    ps = con.prepareStatement(sql);
     ps.setString(1, name);  
     rs = ps.executeQuery();
     if( rs.next() ){%>
@@ -66,12 +89,13 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
     else{
         sql = "INSERT INTO `product_infor` VALUES ('" + id + "'," ;
         sql += " ?,'" + price + "','" +  store + "','" + "1', ? ,'" + "0','" + size + "'," ;
-        sql += "?,'"  + addprotouch + "','"  + price + "')" ;
+        sql += "?,'"  + addprotouch + "',?)" ;
         //out.println(sql);
         ps = con.prepareStatement(sql);
         ps.setString(1, name);
         ps.setString(2, discript);
         ps.setString(3, brand);
+        ps.setString(4, type);
         //rs = ps.executeQuery();
         int change = ps.executeUpdate();
 
@@ -84,7 +108,13 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
             <%
             con.close();
         }
+        else{
+            %>
+            <script src="../assets/js/dupname.js"></script>
+            <%
+        }
     }
+}//ctype    
 }
 else{%>
     <script src="../assets/js/notnull.js"></script>
