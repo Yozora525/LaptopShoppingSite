@@ -83,7 +83,6 @@ INSERT INTO mem_infor VALUES ('MEM20220531100430002','徐岱揚', 'F', '09246810
 INSERT INTO mem_infor VALUES ('MEM20220609222218003','吳季貞', 'F', '0913579111', '2001-12-25', '2022-06-09 22:22:18', 'ag128442da@gmail.com');
 INSERT INTO mem_infor VALUES ('MEM20220530130455004','張貞量', 'M', '0987654321', '2002-03-05', '2022-05-30 13:04:55', 'xyyz17rip976da@yahoo.com');
 INSERT INTO mem_infor VALUES ('MEM20220602194439005','李德芸', 'F', '0912345678', '2001-04-02', '2022-06-02 19:44:39', 'aqwert2yy@gmail.com');
-UPDATE mem_infor SET mem_name = '陳鈞真', mem_email='adsasddsa@gmail.com', mem_phone='0911235813',mem_birth='2000-09-28' WHERE mem_id ='MEM20220601112045001';
 
 #1.登入
 CREATE TABLE login (

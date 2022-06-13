@@ -80,10 +80,10 @@
   O 4. 手機號碼檢查是否為09開頭 是否為10碼 -- daiyun0613
 ## prevent sql injection ##
   O 1. 後台新增商品                      -- daiyun0613
-    2. 會員基本資料修改                  -- daiyun0613
-    3. 會員中心變更密碼                   -- daiyun0613
-    4. 會員中心購買紀錄 GET傳值           -- daiyun0613
-    5. pay.jsp配送地址                   -- daiyun0613
+  O 2. 會員基本資料修改                   -- daiyun0613
+  O 3. 會員中心變更密碼                   -- daiyun0613
+  O 4. 會員中心購買紀錄GET傳值            -- daiyun0613
+  O 5. pay.jsp配送地址                   -- daiyun0613
     6. 導覽列搜尋
     7. 篩選商品
     8. 留言板

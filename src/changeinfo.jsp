@@ -12,7 +12,7 @@
     String birth = request.getParameter("mbirth");
     int lang=phone.length();
     //
-    if( !phone.substring(0,2).equals("09") || lang != 10 || name.length() > 16){%>
+    if( !phone.substring(0,2).equals("09") || lang != 10 || name.length() > 16 || name.equals("") || name==null){%>
         <script src="../assets/js/changefail.js"></script>
     <%}
     else{

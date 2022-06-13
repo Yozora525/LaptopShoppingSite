@@ -26,7 +26,13 @@
         }
         else{
             con.close();
-            out.println("帳號密碼不符<a href='login.jsp'>重新登入</a>") ;
+             %>
+            <script type="text/javascript">
+                alert("帳號密碼不符，請重新登入");
+                history.back();
+            </script>                 
+            <%
+            //out.println("帳號密碼不符<a href='login.jsp'>重新登入</a>") ;
         }
     }
     else

@@ -74,7 +74,12 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
         ps.setString(3, brand);
         //rs = ps.executeQuery();
         int change = ps.executeUpdate();
-            if ( change > 0 ) {%>
+
+        sql= "INSERT INTO `product_img` VALUES ('"+id+"', '../assets/img/pro/messageImage.jpeg', '../assets/img/pro/messageImage.jpeg')";
+        
+        int change2 = con.createStatement().executeUpdate(sql);
+
+        if ( change > 0 && change2>0 ) {%>
             <script src="../assets/js/addsuccess.js"></script>
             <%
             con.close();
