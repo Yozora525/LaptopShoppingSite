@@ -26,8 +26,11 @@
             memid = "MEM" + CDate ;
         }
 
-        sql= "SELECT `mem_account` FROM `login` WHERE `mem_account`='"+racc+"'";
-        ResultSet rsp = con.createStatement().executeQuery(sql);
+        sql= "SELECT `mem_account` FROM `login` WHERE `mem_account`=?";
+        PreparedStatement ps= con.prepareStatement(sql);
+        ps.setString(1, racc);
+        ResultSet rsp = ps.executeQuery();
+        
         int y=0,y1=0;
         if( !rsp.next() ){
             sql = "INSERT INTO `mem_infor` VALUES ( '"+ memid + "','', '', '', '0000-00-00', '"+credate+"', '"+racc+"')";
@@ -56,7 +59,12 @@
         }
     }
     else{
-        response.sendRedirect("login.jsp");
+        %>
+            <script type="text/javascript">
+                alert("填寫項不可為空");
+                history.back();
+            </script>                 
+        <%
     }
 %>
    

@@ -53,7 +53,7 @@
             <div id="loading" style="display: none;">
                 <img src="../assets/img/loading.gif">
             </div>
-        <form action="addCommo.jsp" method="get">
+        <form action="addCommo.jsp" method="POST">
             <div class="add-pro-container">
                 <table class="add-pro-table">
                     <tr>

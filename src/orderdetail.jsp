@@ -115,10 +115,12 @@
                         sql1 = "SELECT order_details.order_id,product_infor.product_name, order_details.product_id, order_details.order_time, ";
                         sql1 += "product_infor.product_price, order_details.howmuch, order_details.howmuch * product_infor.product_price ";
                         sql1 += "FROM `product_infor`, `order_details` ";
-                        sql1 += "WHERE (order_details.product_id=product_infor.product_id) AND (`order_id`='"+oid+"')";
+                        sql1 += "WHERE (order_details.product_id=product_infor.product_id) AND (`order_id`=?)";
                         sql1 += " ORDER BY order_details.order_time";
                         //out.println(sql1);
-                        rs3 = con.createStatement().executeQuery(sql1);
+                        PreparedStatement ps = con.prepareStatement(sql1);
+                        ps.setString(1,oid);
+                        rs3 = ps.executeQuery();
                     
                         while(rs3.next()){
                             out.println("<tr>");

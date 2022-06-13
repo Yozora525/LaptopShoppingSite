@@ -65,15 +65,26 @@
     5. 管理員登入              login_man.jsp                        20220611_daiyun
     6. 管理員登出              logout_man.jsp                       20220611_daiyun
     #需求#
-  O 1. 更改上下架按鈕名稱 -- diayun0611
-  O 2. addPro.jsp修正不可為空 -- diayun0613
+  O 1. 更改上下架按鈕名稱 -- daiyun0611
+  O 2. addPro.jsp修正不可為空 -- daiyun0613
+  O 3. 檢查新增商品名稱不可重複 -- daiyun0613
 ## 會員中心 ## 20220611_daiyun 0613bug修正
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun
     3. 購買紀錄匯入            列於memInfo.jsp                       20220611_diayun  
     4. 評論紀錄                列於memInfo.jsp                   ... 20220611_JLC
     #需求#
-  O 1. 列出訂單清單後用url連接到訂單詳情 -- diayun0612
-  O 2. 信箱已註冊顯示此信箱已註冊 跳回登入 -- diayun0613
-  O 3. 生日僅可輸入一次                   -- diayun0613
-  O 4. 手機號碼檢查是否為09開頭 是否為10碼 -- diayun0613
+  O 1. 列出訂單清單後用url連接到訂單詳情 -- daiyun0612
+  O 2. 信箱已註冊顯示此信箱已註冊 跳回登入 -- daiyun0613
+  O 3. 生日僅可輸入一次                   -- daiyun0613
+  O 4. 手機號碼檢查是否為09開頭 是否為10碼 -- daiyun0613
+## prevent sql injection ##
+  O 1. 後台新增商品                      -- daiyun0613
+    2. 會員基本資料修改                  -- daiyun0613
+    3. 會員中心變更密碼                   -- daiyun0613
+    4. 會員中心購買紀錄 GET傳值           -- daiyun0613
+    5. pay.jsp配送地址                   -- daiyun0613
+    6. 導覽列搜尋
+    7. 篩選商品
+    8. 留言板
+  O 9. 登入註冊                          -- daiyun0613

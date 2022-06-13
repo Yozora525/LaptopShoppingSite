@@ -7,13 +7,18 @@
     if( session.getAttribute("mem_account") != null) {
 
         String acc = session.getAttribute("mem_account").toString();
-        sql = "SELECT `mem_id`,`mem_account`,`mem_password` FROM `login` WHERE `mem_account` ='"+acc+"' AND `mem_password`='"+ppwd+"'";
-        ResultSet rs = con.createStatement().executeQuery(sql);
+        sql = "SELECT `mem_id`,`mem_account`,`mem_password` FROM `login` WHERE `mem_account` ='"+acc+"' AND `mem_password`=?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, ppwd);
+        ResultSet rs = ps.executeQuery();
         rs.next();
         String id = rs.getString("mem_id");
         if( !id.equals("") && id != null ){
-            sql = "UPDATE `login` SET `mem_password` = '" + npwd +"' WHERE `mem_id` ='"+ id+"'";
-            int change = con.createStatement().executeUpdate(sql);
+            sql = "UPDATE `login` SET `mem_password` = ? WHERE `mem_id` ='"+ id+"'";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, npwd);
+            int change = ps.executeUpdate();
+            //int change = con.createStatement().executeUpdate(sql);
             if(change>0){
                 con.close();
                 response.sendRedirect("memInfo.jsp");

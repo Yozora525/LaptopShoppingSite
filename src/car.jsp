@@ -107,7 +107,7 @@
                         <span class="">操作</span>
                     </div>
                 </div>
-                <form action="pay.jsp" method="get" id="" class="">
+                <form action="pay.jsp" method="POST" id="" class="">
                     <!-- 購物車內商品 -->
                     <%
                         request.setCharacterEncoding("UTF-8");

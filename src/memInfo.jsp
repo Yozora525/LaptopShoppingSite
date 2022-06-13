@@ -108,7 +108,7 @@
                     <img src="../assets/img/icon/memcenter-mem2.png" />
                 </div>
                 <div class="info-content-container">
-                    <form action="changeinfo.jsp" method="get">
+                    <form action="changeinfo.jsp" method="POST">
                         <div>
                             <span>姓名</span>
                             <% out.println("<input type='text' name='mname' class='' value='"+ rs1.getString("mem_name") +"' required/>");%>
@@ -194,8 +194,10 @@
                         while(rs4.next()){
                             i++;
                             oid = rs4.getString("order_id");
-                            sql = "SELECT `order_time` FROM `order_details` WHERE `order_id`='"+oid+"'";
-                            ResultSet rs5 = con.createStatement().executeQuery(sql);
+                            sql = "SELECT `order_time` FROM `order_details` WHERE `order_id`=?";
+                            PreparedStatement ps = con.prepareStatement(sql);
+                            ps.setString(1,oid);
+                            ResultSet rs5 =ps.executeQuery();
                             rs5.next();
                             ot = rs5.getString("order_time");
                             out.println("<tr><td><span>"+i+"</span></td>");

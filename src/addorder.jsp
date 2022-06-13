@@ -43,8 +43,11 @@
         pid[i] = rsid.getString("product_id");
 
         int tquan = Integer.parseInt(quan[i]);
-        sql = "INSERT INTO `order_details` VALUES ('"+oid+"','"+pid[i]+"','"+credate+"','"+addr+"','"+tquan+"')";
-        change = con.createStatement().executeUpdate(sql);
+        sql = "INSERT INTO `order_details` VALUES ('"+oid+"','"+pid[i]+"','"+credate+"',?,'"+tquan+"')";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1,addr);
+        change = ps.executeUpdate();
+        //change = con.createStatement().executeUpdate(sql);
         if( !(change>0) ){
             out.println(oid+"訂單詳情新增失敗");
         }

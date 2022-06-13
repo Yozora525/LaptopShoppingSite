@@ -51,22 +51,40 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
 
     String id = "P" + idn;
     
+    //sql = "INSERT INTO `product_infor` VALUES ('" + id + "'," ;
+    //sql += "'" + name + "','" + price + "','" +  store + "','" + "1','" + discript + "','" + "0','" + size + "'," ;
+    //sql += "'" + brand + "','"  + addprotouch + "','"  + price + "')" ;
+    //int change = con.createStatement().executeUpdate(sql);
+
+    sql = "SELECT `product_name` FROM `product_infor` WHERE `product_name`=?";
+    PreparedStatement ps = con.prepareStatement(sql);
+    ps.setString(1, name);  
+    rs = ps.executeQuery();
+    if( rs.next() ){%>
+        <script src="../assets/js/dupname.js"></script>
+    <%}
+    else{
         sql = "INSERT INTO `product_infor` VALUES ('" + id + "'," ;
-        sql += "'" + name + "','" + price + "','" +  store + "','" + "1','" + discript + "','" + "0','" + size + "'," ;
-        sql += "'" + brand + "','"  + addprotouch + "','"  + price + "')" ;
+        sql += " ?,'" + price + "','" +  store + "','" + "1', ? ,'" + "0','" + size + "'," ;
+        sql += "?,'"  + addprotouch + "','"  + price + "')" ;
         //out.println(sql);
-        int change = con.createStatement().executeUpdate(sql);
-         if ( change > 0 ) {%>
+        ps = con.prepareStatement(sql);
+        ps.setString(1, name);
+        ps.setString(2, discript);
+        ps.setString(3, brand);
+        //rs = ps.executeQuery();
+        int change = ps.executeUpdate();
+            if ( change > 0 ) {%>
             <script src="../assets/js/addsuccess.js"></script>
             <%
             con.close();
         }
-
     }
-    else{%>
-        <script src="../assets/js/notnull.js"></script>
-        <%
-    }
+}
+else{%>
+    <script src="../assets/js/notnull.js"></script>
+    <%
+}
    
         
 %>
