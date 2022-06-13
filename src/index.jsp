@@ -271,8 +271,18 @@
         </div>
     </main>
     <footer class="footer">
-            <span class="copyright">&copy;</span>
-
+        <%
+        Integer Counts = (Integer)application.getAttribute("hitCounter");
+            if( Counts ==null || Counts == 0 ){
+                Counts = 1;
+            }
+            else{ 
+            if (session.isNew())
+                Counts++;  
+            }                
+            application.setAttribute("hitCounter", Counts);
+        %>
+        <span class="copyright">訪客人數：<%= Counts %> <br/> Copyright © 2022 多比店舖 Inc. All Rights Reserved.</span>
     </footer>
 </body>
 </html>
