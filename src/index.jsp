@@ -93,7 +93,7 @@
                             request.setCharacterEncoding("UTF-8");
                             response.setCharacterEncoding("UTF-8");    
 
-                            String sqlrank = "SELECT * FROM `product_infor` WHERE `product_status`=1 ORDER BY `product_sold` DESC";
+                            String sqlrank = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_status`=1) AND (product_img.product_id=product_infor.product_id) ORDER BY `product_sold` DESC";
                             ResultSet rsr = con.createStatement().executeQuery(sqlrank);
 
                             int R=1;   
@@ -220,19 +220,19 @@
              
              
             <%
-                    String sql2 = "SELECT * FROM `product_infor` WHERE `product_status`=1";
+                    String sql2 = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_status`=1) AND (product_img.product_id=product_infor.product_id);";
                     ResultSet rs = con.createStatement().executeQuery(sql2);
                     out.println("<div class='product'>");
-                    int k=1;
-                                
+                    int k=1;  
+                    
                     while(rs.next()){
-                                       
+                        
                     if (k%6!=0){
                      k++;
                       
                     out.println("<div class='list'>");  
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='"+rs.getString("img_link")+"'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
@@ -248,7 +248,7 @@
                     out.println("<div class='product'>");
                     out.println("<div class='list'>"); 
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='"+rs.getString("img_link")+"'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
