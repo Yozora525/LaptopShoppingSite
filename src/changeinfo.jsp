@@ -11,8 +11,8 @@
     String phone = request.getParameter("mphone");
     String birth = request.getParameter("mbirth");
     int lang=phone.length();
-    //!phone.substring(0,2).equals("09") ||
-    if( lang != 10 ){%>
+    //
+    if( !phone.substring(0,2).equals("09") ||lang != 10 ){%>
         <script src="../assets/js/changefail.js"></script>
     <%}
     else{
@@ -32,7 +32,12 @@
             
             int change = con.createStatement().executeUpdate(sql);
             if(change>0){
-                con.close();
+                con.close();%>
+                <script>
+                    alert("更新成功");
+                    location.href="../../src/memInfo.jsp";  
+                </script>
+                <%
                 response.sendRedirect("memInfo.jsp");
             }
         }

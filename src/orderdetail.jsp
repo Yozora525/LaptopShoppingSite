@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>交易明細</title>
         <!-- 引入jQuery -->
         <script src="../assets/js/lib/jquery/jquery.min.js"></script>
         <!-- 引入Echarts -->
@@ -28,25 +28,24 @@
         <link rel="stylesheet" href="../assets/sass/backstage.css" />
 </head>
 <body>
- <header>
+    <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <!-- 判斷是否登入，有登入「登出」要顯示，否則顯示網站管理 -->
-            <%
+        <%
                 if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
                     out.println("<a href='manage.jsp' class='manage'>網站管理</a>");
                 }
                 else{
-                    out.println("<a href='logout.jsp' class='manage'>登出</a>");
+                    out.println("<a href='logout_mem.jsp' class='manage'>登出</a>");
                 }
             %>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">首頁</a>
+                    <a href="index.jsp">多比店舖</a>
                 </div>
                 <div class="key-word-search">
-                    <form method="GET" action="">
+                    <form method="GET" action="filter_search.jsp">
                         <input type="search" name="" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
@@ -64,7 +63,7 @@
                         <a  href="<%=lurl%>"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
-                        <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
+                        <a  href="about.jsp"><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
                         <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
@@ -72,13 +71,13 @@
                 </div>
             </nav>
         </div>
-</header>
+    </header>
     <div style="height: 50px;"></div>
-    <div class="trans-data-container">
+    <div class="trans-data-container"><a href="memInfo.jsp">回上頁</a>
         <div class="trans-table-title" id="trans-table-title">
             <%
                 String oid = request.getParameter("oid");
-                out.println("<span> "+oid+" 交易明細</span>");
+                out.println("<span>交易明細</span>");
             %>
         </div>
         <div id="trans-table">

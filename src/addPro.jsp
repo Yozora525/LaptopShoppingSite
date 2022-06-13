@@ -42,7 +42,7 @@
                         <a  href="index.jsp" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
                     </div>
                     <div class="icon-logout">
-                        <a  href=""><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
+                        <a  href="logout_man.jsp"><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>

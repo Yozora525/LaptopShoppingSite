@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>交易紀錄篩選</title>
     
         <!-- 引入jQuery -->
         <script src="../assets/js/lib/jquery/jquery.min.js"></script>
@@ -26,20 +26,44 @@
 </head>
 <body>
     <header>
-        <div class="backstage-guide-container">
-            <nav class="backstage-nav-header">
-                <div class="backstage-home">
-                    <a href="backstage.jsp">後台管理</a>
+        <div style="text-align:right;background-color: #0096C7;">
+        <%
+                if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                    out.println("<a href='manage.jsp' class='manage'>網站管理</a>");
+                }
+                else{
+                    out.println("<a href='logout_mem.jsp' class='manage'>登出</a>");
+                }
+            %>
+        </div>
+        <div class="guide-container">
+            <nav class="nav-header">
+                <div class="home" style="border:3px solid #ccc;">
+                    <a href="index.jsp">多比店舖</a>
+                </div>
+                <div class="key-word-search">
+                    <form method="GET" action="filter_search.jsp">
+                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
+                    </form>
                 </div>
                 <div class="link-icon">
-                    <div class="icon-backstage">
-                        <a  href="backstage.jsp"><img src="../assets/img/google-icon/ic_home_white_36dp.png"></a>
+                    <%  String lurl;
+                        if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                            lurl = "login.jsp";
+                        }
+                        else{
+                            lurl = "memInfo.jsp";
+                        }
+                    %>
+                    <div class="icon-login">
+                        <a  href="<%=lurl%>"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
-                    <div class="icon-homepage">
-                        <a  href="index.jsp" target="_blank"><img src="../assets/img/google-icon/ic_flip_to_front_white_36dp.png"></a>
+                    <div class="icon-contact">
+                        <a  href="about.jsp"><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
-                    <div class="icon-logout">
-                        <a  href="logout_man.jsp"><img src="../assets/img/google-icon/ic_exit_to_app_white_36dp.png"></a>
+                    <div class="icon-car">
+                        <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>

@@ -49,13 +49,12 @@
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">首頁</a>
+                    <a href="index.jsp">多比店舖</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="filter_search.jsp">
-                        <input type="search" name="search_bar" placeholder="請輸入關鍵字">
-                        <button style="background-color:transparent;border:0px">
-                        <img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
+                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
                 </div>
                 <div class="link-icon">
@@ -71,7 +70,7 @@
                         <a  href="<%=lurl%>"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
-                        <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
+                        <a  href="about.jsp"><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
                         <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
