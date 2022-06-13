@@ -72,7 +72,7 @@ CREATE TABLE mem_infor(
 	mem_sex	VARCHAR	(2) DEFAULT '',
 	mem_phone	VARCHAR	(10) DEFAULT '',
 	mem_birth	DATE NOT NULL DEFAULT '0000-00-00',
-	mem_create	timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	mem_create	timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	mem_email VARCHAR (512) DEFAULT '',
     
     PRIMARY KEY (mem_id, mem_email)
