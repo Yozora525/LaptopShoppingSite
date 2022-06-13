@@ -6,9 +6,9 @@
 
 ## 所有頁面 ##
     1. 判斷登入和會員 / 管理與登出 之按鈕顯示                           20220611_daiyun
-    2. 套用在所有版面                                                 20220611_daiyun(header完成)
-    3. 把所有標籤是.html的改成.jsp                                     20220611_daiyun
-    4. footer記得改
+    2. 套用在所有版面                                                 20220613_daiyun(header完成)
+    3. 把所有標籤是.html的改成.jsp                                     20220613_daiyun
+    4. footer記得改 把有顯示頁面的丟到tempelate 然後我們就要開始改超連結了q
 ## 首頁 ##
     1. 列出商品... 202205_JLC
     2. 排行榜用連結... 20220610_JLC
@@ -51,12 +51,12 @@
 
     #需求#
   O 1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料 // 前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
-       > executeUpdate()回傳值不知為何 < 0，因此添加!crs.next()判斷其是否有成功刪除
+       => executeUpdate()回傳值不知為何 < 0，因此添加!crs.next()判斷其是否有成功刪除
   O 2. 檢查數量是否超過存貨 // 更改數量ajax接 丟進資料庫前要先判斷 購買數量>存貨 res = fail msg 購買數量超過庫存 
-       > 在一開始的訂單介面限制 -- diayun
+       => 在一開始的訂單介面限制
   O 3. 目前可顯示但無法更改數字  
-  O 4. 付款介面 跳pay 新增完跳finish.jsp
-  O 5. 增加訂單時同時減少庫存 還要去掉car裡的商品 到底為甚麼這麼多是在哭喔
+  O 4. 付款介面 跳pay 新增完跳finish.jsp 
+  O 5. 增加訂單時同時減少庫存 還要去掉car裡的商品 
 ## 後台 ##  20220611_daiyun
     1. 上下架                  pullsheleve.jsp                      20220611_daiyun
     2. 新增產品                addCommo.jsp+addPro.jsp              20220604_daiyun
@@ -65,14 +65,15 @@
     5. 管理員登入              login_man.jsp                        20220611_daiyun
     6. 管理員登出              logout_man.jsp                       20220611_daiyun
     #需求#
-  O 1. 更改上下架按鈕名稱
-## 會員中心 ## 20220611_daiyun
+  O 1. 更改上下架按鈕名稱 -- diayun0611
+  O 2. addPro.jsp修正不可為空 -- diayun0613
+## 會員中心 ## 20220611_daiyun 0613bug修正
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun
     3. 購買紀錄匯入            列於memInfo.jsp                       20220611_diayun  
     4. 評論紀錄                列於memInfo.jsp                   ... 20220611_JLC
     #需求#
-  O 1. 列出訂單清單後用url連接到訂單詳情
-  O 2. 信箱已註冊顯示此信箱已註冊 跳回登入
-  O 3. 生日僅可輸入一次
-  O 4. 手機號碼檢查是否為09開頭
+  O 1. 列出訂單清單後用url連接到訂單詳情 -- diayun0612
+  O 2. 信箱已註冊顯示此信箱已註冊 跳回登入 -- diayun0613
+  O 3. 生日僅可輸入一次                   -- diayun0613
+  O 4. 手機號碼檢查是否為09開頭 是否為10碼 -- diayun0613
