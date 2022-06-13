@@ -103,9 +103,11 @@
                                     while(rs.next()){
                                         out.println("<option value='"+rs.getString("product_type")+"'> "+ rs.getString("product_type")+"</option>");
                                     }
-                                    
                                 %>
-                            </select>
+                                <option value='其他'>其他</option>;
+                            </select><br>
+                            <input type="text" id="add-pro-type" placeholder="請輸入欲新增之類別" name="type1"   />
+
                         </td>
                     </tr>
                     <tr>
