@@ -45,7 +45,7 @@
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="filter_search.jsp">
-                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
                 </div>
@@ -181,11 +181,14 @@
                 
 		        String brand[]= request.getParameterValues("brand");
                 String allbs="";
+
                 String type[]= request.getParameterValues("type");
                 String allts="";
+
                 String size[]= request.getParameterValues("size");
                 String allss="";
                 String allssi="";
+
                 String maxprice = request.getParameter("maxrange");
                 String miniprice = request.getParameter("minirange");
                 
@@ -255,7 +258,7 @@
 
                 ResultSet rs;
 
-                String sqlb = "SELECT * FROM `product_infor` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
+                String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
                 rs = con.createStatement().executeQuery(sqlb);
 
                 out.println("<div class='product'>");
@@ -269,7 +272,7 @@
 
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='"+rs.getString("img_link")+"'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
@@ -285,7 +288,7 @@
                     out.println("<div class='product'>");
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+rs.getString("product_brand")+"/"+rs.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+rs.getString("product_id")+"'><img class='listimg' src='"+rs.getString("img_link")+"'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");

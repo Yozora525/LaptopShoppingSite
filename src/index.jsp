@@ -53,7 +53,7 @@
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="filter_search.jsp">
-                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
                 </div>
@@ -103,7 +103,7 @@
                             out.println("<div class='slick-hot-container'>");
                             out.println("<div class='hot-rank'>");
                             out.println("<img src='../assets/img/icon/hot-large.png' />");
-                            out.println("<a href='proIntro.jsp?proID="+rsr.getString("product_id")+"'><img width='100%'' src='../assets/img/pro/"+rsr.getString("product_brand")+"/"+rsr.getString("product_name")+"_1.png' /></a>");
+                            out.println("<a href='proIntro.jsp?proID="+rsr.getString("product_id")+"'><img width='100%'' src='"+rsr.getString("img_link")+"'></a>");
                             out.println("</div>");
                             out.println("</div>");
                             }
@@ -189,7 +189,8 @@
                                 out.println("<label>"+rslist.getString("product_type")+"</label>");
                                 out.println("</div>");  
                                 }
-                                %>                            
+                                %>
+                            
                             </div>
                         </div>
                         <div class="filter-container">

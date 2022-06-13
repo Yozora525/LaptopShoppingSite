@@ -45,7 +45,7 @@
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="filter_search.jsp">
-                        <input type="search" name="" placeholder="請輸入關鍵字">
+                        <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
                 </div>
@@ -178,10 +178,10 @@
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");    
 
-                String search_bar = request.getParameter("search_bar");
+                String search_bar = request.getParameter("searchbar");
                 ResultSet sr;
 
-                String sqlsr = "SELECT * FROM `product_infor` WHERE (`product_name` LIKE '%" + search_bar + "%') OR (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%') AND (`product_status`=1)";
+                String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` LIKE '%" + search_bar + "%') OR (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%')) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
                 sr = con.createStatement().executeQuery(sqlsr);
 
                 out.println("<div class='product'>");
@@ -194,7 +194,7 @@
                      k++;
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg'  src='"+sr.getString("img_link")+"'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
@@ -210,7 +210,7 @@
                     out.println("<div class='product'>");
                     out.println("<div class='list'>");   
                     out.println("<div class='pro-img'>");
-                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg' src='../assets/img/pro/"+sr.getString("product_brand")+"/"+sr.getString("product_name")+"_1.png'></a>");
+                    out.println("<a href='proIntro.jsp?proID="+sr.getString("product_id")+"'><img class='listimg'  src='"+sr.getString("img_link")+"'></a>");
                     out.println("</div>");  
                     out.println("<div class='pro-content'>");
                     out.println("<div class='protext'>");
