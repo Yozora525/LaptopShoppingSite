@@ -1,0 +1,96 @@
+@mixin small {
+    @media (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1000px){
+        @content;
+    }
+}
+
+.about{
+    @include small{
+        display: block;
+        margin-top: -8%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    @include large{
+        display: block;
+        height: 80%;
+        margin-top: -6%;
+        
+    }
+}
+
+.about-list{
+    @include small{
+        display: block;
+        background-color:white;
+        margin: 10%;
+        border-radius: 1cm;
+        padding: 5%;
+    }
+    @include large{
+        display: flex;
+        margin: 3%;
+        background-color:white;
+        padding: 0%;
+    }
+}
+
+.about-list-img{
+    @include small{
+        width: 100%;
+        
+    }
+    @include large{
+        border-radius: 1cm;
+        padding-left: 10%;
+        width: 20%;
+        margin: 3% 0%;
+        
+    }
+}
+
+.about-list-word{
+    @include small{
+
+    }
+    @include large{
+        display: block;   
+        margin-top: 3%; 
+        margin-right: 10%; 
+        font-size: 1.5em; 
+        padding-left: 15%; 
+    }
+}
+
+.pic{
+    @include small{
+        border-radius: 1cm;
+        
+    }
+    @include large{
+        border-radius: 10px;
+        
+    }
+}
+
+.pict{
+    @include small{
+        border-radius: 1cm;
+        padding-top: 0%;
+        width: 100%;     
+    }
+    @include large{
+        border-radius: 1cm; 
+        width: 250%;
+        padding-left: -5%;
+        
+            
+    }
+}
+
