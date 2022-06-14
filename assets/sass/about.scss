@@ -50,7 +50,7 @@
         border-radius: 1cm;
         padding-left: 10%;
         width: 20%;
-        margin: 3% 0%;
+        margin: 3% 2%;
         
     }
 }
@@ -62,9 +62,33 @@
     @include large{
         display: block;   
         margin-top: 3%; 
-        margin-right: 10%; 
+        margin-right: 5%; 
         font-size: 1.5em; 
         padding-left: 15%; 
+    }
+}
+.about-list-word1{
+    @include small{
+
+    }
+    @include large{
+        display: block;   
+        margin-top: 3%; 
+        margin-right: 5%; 
+        font-size: 1.5em; 
+        padding-left: 18%; 
+    }
+}
+.about-list-word2{
+    @include small{
+
+    }
+    @include large{
+        display: block;   
+        margin-top: 3%; 
+        margin-right: 5%; 
+        font-size: 1.5em; 
+        padding-left: 20%; 
     }
 }
 
@@ -88,6 +112,50 @@
     @include large{
         border-radius: 1cm; 
         width: 250%;
+        padding-left: -5%;
+        
+            
+    }
+}
+
+.pict1{
+    @include small{
+        border-radius: 1cm;
+        padding-top: 0%;
+        width: 100%;     
+    }
+    @include large{
+        border-radius: 1cm; 
+        width: 340%;
+        padding-left: -5%;
+        
+            
+    }
+}
+.pict2{
+    @include small{
+        border-radius: 1cm;
+        padding-top: 0%;
+        width: 100%;     
+    }
+    @include large{
+        border-radius: 1cm; 
+        width: 450%;
+        
+        padding-left: -5%;
+        
+            
+    }
+}
+.pict3{
+    @include small{
+        border-radius: 1cm;
+        padding-top: 0%;
+        width: 100%;     
+    }
+    @include large{
+        border-radius: 1cm; 
+        width: 400%;
         padding-left: -5%;
         
             

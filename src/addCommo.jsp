@@ -29,17 +29,24 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
     int price = Integer.parseInt(sprice);
     int ctype=0;
     PreparedStatement ps;
+    ResultSet rs;
     if( type.equals("其他") ){
         String type1 = request.getParameter("type1");
         if( type1!=null && !type1.equals("") ){
-            
-            
-
-            type = type1;
-            sql = "INSERT INTO `type_list` VALUES (?)" ;
+            sql =  "SELECT * FROM `type_list` WHERE `product_type` = ?" ;
             ps = con.prepareStatement(sql);
             ps.setString(1, type1);
-            ctype = ps.executeUpdate();
+            rs = ps.executeQuery();
+            if( !rs.next() ){
+                type = type1;
+                sql = "INSERT INTO `type_list` VALUES (?)" ;
+                ps = con.prepareStatement(sql);
+                ps.setString(1, type1);
+                ctype = ps.executeUpdate();
+            }
+            else{%>
+                <script src="../assets/js/dupname.js"></script>
+            <%}
         }
         else{
         %>
@@ -48,11 +55,16 @@ if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=
         }
     }
     else{
-        type = type;
+        %>
+            <script type="text/javascript">
+                alert("僅有選擇其他才可新增新類別");
+                history.back();
+            </script> 
+        <%
     }
 if(ctype>0){
     sql = "SELECT COUNT(*) FROM `product_infor`";
-    ResultSet rs = con.createStatement().executeQuery( sql );
+    rs = con.createStatement().executeQuery( sql );
     rs.next();
     int total = rs.getInt( 1 )+1;
     //out.println( total );

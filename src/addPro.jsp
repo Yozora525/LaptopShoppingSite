@@ -106,7 +106,7 @@
                                 %>
                                 <option value='其他'>其他</option>;
                             </select><br>
-                            <input type="text" id="add-pro-type" placeholder="請輸入欲新增之類別" name="type1"   />
+                            <input type="text" id="add-pro-type" placeholder="選擇其他再輸入欲新增類別" name="type1"   />
 
                         </td>
                     </tr>
