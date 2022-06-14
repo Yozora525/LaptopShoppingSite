@@ -176,6 +176,7 @@
                 <!-- 產品列表 -->
                 <div class="product-list">
             <%
+                try{
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");    
                 
@@ -192,8 +193,8 @@
                 String maxprice = request.getParameter("maxrange");
                 String miniprice = request.getParameter("minirange");
                 
-
-                if (brand == null || brand.length == 0) { 
+                
+                     if (brand == null || brand.length == 0) { 
                         allbs="|";
                 }else{
                     for(int i = 0; i < brand.length; i++){
@@ -204,7 +205,7 @@
                         }                        
                     }
                 }
-
+                
                 if (type == null || type.length == 0) { 
                         allts="|";
                 }else{
@@ -215,37 +216,36 @@
                            allts+=type[i];
                         }                        
                     }
-                }
+                } 
 
-                           
-                
+
                 if (size == null || size.length == 0){
-                    allss+="BETWEEN '13' AND '30'";
+                    allss="BETWEEN 13 AND 30";
                 }else {
                     for(int i=0;i<size.length;i++)
                            allssi+=size[i];
 
                  if (size != null && size.length == 1){
                     if (allssi.contains("A")){
-                        allss+="BETWEEN '13' AND '15'"; 
+                        allss="BETWEEN 13 AND 15"; 
                     }else if (allssi.contains("B")){
-                        allss+="BETWEEN '15' AND '17'"; 
+                        allss="BETWEEN 15 AND 17"; 
                     }else if (allssi.contains("C")){
-                        allss+="BETWEEN '17' AND '30'"; 
+                        allss="BETWEEN 17 AND 30"; 
                     }
                 }else if (size != null && size.length == 2){
                     if (allssi.contains("AB")){
-                        allss+="BETWEEN '13' AND '17'"; 
+                        allss="BETWEEN 13 AND 17"; 
                     }else if (allssi.contains("BC")){
-                        allss+="BETWEEN '15' AND '30'"; 
+                        allss="BETWEEN 15 AND 30"; 
                     }else if (allssi.contains("AC")){
-                        allss+="NOT BETWEEN '15' AND '17'"; 
+                        allss="NOT BETWEEN 15 AND 17"; 
                     }            
                 }else if (size != null && size.length == 3)
-                     allss+="BETWEEN '17' AND '30'";
+                     allss="BETWEEN 13 AND 30";
                 }
-              
-                
+
+                try{           
                 if(miniprice == null || miniprice.equals(""))
                     miniprice = "0";
                 if(maxprice == null || maxprice.equals(""))
@@ -255,12 +255,26 @@
                     maxprice = miniprice;
                     miniprice = lessmax;
                 }
+                }catch(Exception e){ %>
+
+                    <script type="text/javascript">
+                        alert("操作錯誤，系統將返回前頁");
+                        history.back();
+                    </script>
+                <% }   
 
                 ResultSet rs;
 
-                String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '?') AND (`product_type` RLIKE '?') AND (`product_size` ?) AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '?' AND '?')";
-                //String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
-                rs = con.createStatement().executeQuery(sqlb);
+                String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE ?) AND (`product_type` RLIKE ?) AND (`product_size`"+allss+") AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN ? AND ?)";
+                //String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
+                PreparedStatement psf = con.prepareStatement(sqlb);
+                //sr = con.createStatement().executeQuery(sqlsr);
+                
+                psf.setString(1,allbs);
+                psf.setString(2,allts);
+                psf.setString(3,miniprice);
+                psf.setString(4,maxprice);
+                rs = psf.executeQuery();
 
                 out.println("<div class='product'>");
                     int k=1;
@@ -308,8 +322,15 @@
                      out.println("查無相關產品，請重新搜尋"); 
                     }  
                     
-                     out.println("</div>");                             
-            %>
+                     out.println("</div>");
+                     }catch (SQLException sExec){                            
+                    %>
+
+                    <script type="text/javascript">
+                        alert("操作錯誤，系統將返回前頁");
+                        history.back();
+                    </script>
+                <% }   %>
         </div>
     </main>
     <footer class="footer">

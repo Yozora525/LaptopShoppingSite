@@ -176,16 +176,25 @@
                 <div class="product-list">
             <%
                 request.setCharacterEncoding("UTF-8");
-                response.setCharacterEncoding("UTF-8");    
-
-                String search_bar = request.getParameter("searchbar");
+                response.setCharacterEncoding("UTF-8");   
+                String sbar= request.getParameter("searchbar");
                 ResultSet sr;
-
-                String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` LIKE '%?%') OR (`product_brand` LIKE '%?%') OR (`product_type` LIKE '%?%') OR (`product_size` LIKE '%?%') OR (`product_discript` LIKE '%?%')) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
+                
+                try{ 
+                String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` RLIKE ?) OR (`product_brand` RLIKE ?) OR (`product_type` RLIKE ?) OR (`product_size` RLIKE ?) OR (`product_discript` RLIKE ?)) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
                 //String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` LIKE '%" + search_bar + "%') OR (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%')) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
-                sr = con.createStatement().executeQuery(sqlsr);
+                PreparedStatement psr = con.prepareStatement(sqlsr);
+                //sr = con.createStatement().executeQuery(sqlsr);
+                
+                psr.setString(1,sbar);
+                psr.setString(2,sbar);
+                psr.setString(3,sbar);
+                psr.setString(4,sbar);
+                psr.setString(5,sbar);
+                sr = psr.executeQuery();
 
                 out.println("<div class='product'>");
+                
                     int k=1;
                     int n=1;
 
@@ -231,10 +240,19 @@
                      out.println("查無相關產品，請重新搜尋"); 
                     }  
 
-                     out.println("</div>");                             
+                     out.println("</div>"); 
+                    }catch (SQLException sExec){                            
             %>
+            <script type="text/javascript">
+                alert("操作錯誤，系統將返回前頁");
+                history.back();
+            </script>
+           <% } %>
         </div>
     </main>
+   
+
+            
     <footer class="footer">
             <span class="copyright">&copy;</span>
 

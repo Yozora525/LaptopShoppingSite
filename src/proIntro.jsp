@@ -70,18 +70,32 @@
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");    
-    String pname = request.getParameter("proID");  
+     
 
     String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id=?"; 
     //String sqlinfo = "SELECT * FROM `product_infor` WHERE product_id='" + pname + "'"; 
-    ResultSet rs = con.createStatement().executeQuery(sqlinfo);
+    PreparedStatement ps = con.prepareStatement(sqlinfo);
+    //ResultSet rs = con.createStatement().executeQuery(sqlinfo);
+    ps.setString(1,request.getParameter("proID"));
+    ResultSet rs = ps.executeQuery();
+
     String sqlp = "SELECT * FROM `product_img` WHERE product_id=?"; 
     //String sqlp = "SELECT * FROM `product_img` WHERE product_id='" + pname + "'"; 
-    ResultSet rs1 = con.createStatement().executeQuery(sqlp);
+    PreparedStatement psp = con.prepareStatement(sqlp);
+    //ResultSet rs1 = con.createStatement().executeQuery(sqlp);
+    psp.setString(1,request.getParameter("proID"));
+    ResultSet rs1 = psp.executeQuery();
+
     String sqlcomment = "SELECT * FROM `comment`, `mem_infor` WHERE product_id=? AND (comment.mem_id=mem_infor.mem_id) ORDER BY `comment_time` DESC";
     //String sqlcomment = "SELECT * FROM `comment`, `mem_infor` WHERE product_id='" + pname + "' AND (comment.mem_id=mem_infor.mem_id) ORDER BY `comment_time` DESC";
-    ResultSet rscomment = con.createStatement().executeQuery(sqlcomment);
+    PreparedStatement psc = con.prepareStatement(sqlcomment);
+    //ResultSet rscomment = con.createStatement().executeQuery(sqlcomment);
+    psc.setString(1,request.getParameter("proID"));
+    ResultSet rscomment = psc.executeQuery();
 
+    try{ 
+
+    
     %>
 
     <main class="main">
@@ -137,7 +151,7 @@
                 
                 <div class="pro-btn-container">
                     <div> 
-                    <%out.println("<input type='text' value='"+pname+"'  style='display: none;' name='proID' readonly/>");%>
+                    <%out.println("<input type='text' value='"+request.getParameter("proID")+"'  style='display: none;' name='proID' readonly/>");%>
                         <button type="submit" formaction="addtocart.jsp"><img src="../assets/img/google-icon/ic_add_shopping_cart_white_18dp.png" />加到購物車</button>
                         <button type="submit" formaction="buynow.jsp">直接購買</button>
                     <%out.println("</form/>");%>
@@ -197,7 +211,7 @@
                     <span  style="color: #ddd;" name="new-eval-star" data-star="4">★</span>
                     <span  style="color: #ddd;" name="new-eval-star" data-star="5">★</span>
                     <input type="text" value="1"  style="display: none;" name="eval-star" readonly/>
-                    <%out.println("<input type='text' value='"+pname+"'  style='display: none;' name='procID' readonly/>");%>
+                    <%out.println("<input type='text' value='"+request.getParameter("proID")+"'  style='display: none;' name='procID' readonly/>");%>
                 </div>
                 <div class="new-eval-content">
                     <textarea name="memcomment" minlength="10" maxlength="512" required></textarea>
@@ -208,6 +222,14 @@
             </form>
         </div>
     </main>
+    <% }catch (SQLException sExec){ %>
+
+            <script type="text/javascript">
+                alert("操作錯誤，系統將返回前頁");
+                history.back();
+            </script>
+
+    <% }    %>
     <footer class="footer">
         <span class="copyright">&copy;</span>
     </footer>

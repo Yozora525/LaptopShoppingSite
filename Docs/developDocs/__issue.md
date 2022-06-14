@@ -84,10 +84,10 @@
   O 3. 會員中心變更密碼                   -- daiyun0613
   O 4. 會員中心購買紀錄GET傳值            -- daiyun0613
   O 5. pay.jsp配送地址                   -- daiyun0613
-    6. 導覽列搜尋 (searchresult.jsp)
-    7. 篩選商品 (filter.jsp)
+    6. 導覽列搜尋 (searchresult.jsp)   ... 20220614_JLC
+    7. 篩選商品 (filter.jsp)           ... 20220614_JLC
     8. 留言板 (comment.jsp)
   O 9. 登入註冊                          -- daiyun0613
-    10.傳值GET到產品頁面(proIntro.jsp)
+    10.傳值GET到產品頁面(proIntro.jsp) ... 20220614_JLC
     11.加入購物車GET傳值(addtocart).jsp)
     12.直接結帳GET傳值(buynow.jsp)
