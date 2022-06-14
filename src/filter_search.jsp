@@ -80,7 +80,7 @@
             <div class="product-group">
                 <!-- 篩選 -->          
                 <div class="product-filter">
-                    <form action="filter.jsp" method="GET" name="selectForm">
+                    <form action="filter.jsp" method="POST" name="selectForm">
                     <div id="filter-slide" class="" style="text-align:center;">
                         <span class="">篩選</span>
                     </div>
