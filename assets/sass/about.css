@@ -47,7 +47,7 @@
     border-radius: 1cm;
     padding-left: 10%;
     width: 20%;
-    margin: 3% 0%;
+    margin: 3% 2%;
   }
 }
 
@@ -55,9 +55,29 @@
   .about-list-word {
     display: block;
     margin-top: 3%;
-    margin-right: 10%;
+    margin-right: 5%;
     font-size: 1.5em;
     padding-left: 15%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .about-list-word1 {
+    display: block;
+    margin-top: 3%;
+    margin-right: 5%;
+    font-size: 1.5em;
+    padding-left: 18%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .about-list-word2 {
+    display: block;
+    margin-top: 3%;
+    margin-right: 5%;
+    font-size: 1.5em;
+    padding-left: 20%;
   }
 }
 
@@ -85,6 +105,54 @@
   .pict {
     border-radius: 1cm;
     width: 250%;
+    padding-left: -5%;
+  }
+}
+
+@media (min-width: 0px) {
+  .pict1 {
+    border-radius: 1cm;
+    padding-top: 0%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .pict1 {
+    border-radius: 1cm;
+    width: 340%;
+    padding-left: -5%;
+  }
+}
+
+@media (min-width: 0px) {
+  .pict2 {
+    border-radius: 1cm;
+    padding-top: 0%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .pict2 {
+    border-radius: 1cm;
+    width: 450%;
+    padding-left: -5%;
+  }
+}
+
+@media (min-width: 0px) {
+  .pict3 {
+    border-radius: 1cm;
+    padding-top: 0%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .pict3 {
+    border-radius: 1cm;
+    width: 400%;
     padding-left: -5%;
   }
 }
