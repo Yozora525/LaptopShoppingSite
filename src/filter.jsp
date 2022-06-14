@@ -194,7 +194,7 @@
                 String miniprice = request.getParameter("minirange");
                 
                 
-                     if (brand == null || brand.length == 0) { 
+                if (brand == null || brand.length == 0) { 
                         allbs="|";
                 }else{
                     for(int i = 0; i < brand.length; i++){
@@ -205,6 +205,7 @@
                         }                        
                     }
                 }
+                
                 
                 if (type == null || type.length == 0) { 
                         allts="|";
@@ -221,7 +222,7 @@
 
                 if (size == null || size.length == 0){
                     allss="BETWEEN 13 AND 30";
-                }else {
+                }else{
                     for(int i=0;i<size.length;i++)
                            allssi+=size[i];
 
@@ -232,7 +233,12 @@
                         allss="BETWEEN 15 AND 17"; 
                     }else if (allssi.contains("C")){
                         allss="BETWEEN 17 AND 30"; 
-                    }
+                    }else{ %>
+                    <script type="text/javascript">
+                        alert("操作錯誤，系統將返回前頁");
+                        history.back();
+                    </script>
+                <% }
                 }else if (size != null && size.length == 2){
                     if (allssi.contains("AB")){
                         allss="BETWEEN 13 AND 17"; 
@@ -240,10 +246,24 @@
                         allss="BETWEEN 15 AND 30"; 
                     }else if (allssi.contains("AC")){
                         allss="NOT BETWEEN 15 AND 17"; 
+                    }else{ %>
+                    <script type="text/javascript">
+                        alert("操作錯誤，系統將返回前頁");
+                        history.back();
+                    </script>
+                <% 
                     }            
-                }else if (size != null && size.length == 3)
+                }else if (size != null && size.length == 3){
                      allss="BETWEEN 13 AND 30";
+                }else{%>
+                    <script type="text/javascript">
+                        alert("操作錯誤，系統將返回前頁");
+                        history.back();
+                    </script>
+                <%    
                 }
+                }
+
 
                 try{           
                 if(miniprice == null || miniprice.equals(""))
@@ -255,12 +275,13 @@
                     maxprice = miniprice;
                     miniprice = lessmax;
                 }
-                }catch(Exception e){ %>
+                } catch(NumberFormatException ex){%>
 
                     <script type="text/javascript">
-                        alert("操作錯誤，系統將返回前頁");
+                         alert("操作錯誤，系統將返回前頁");
                         history.back();
                     </script>
+
                 <% }   
 
                 ResultSet rs;
