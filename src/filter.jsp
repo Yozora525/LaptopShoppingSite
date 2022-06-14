@@ -258,7 +258,8 @@
 
                 ResultSet rs;
 
-                String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
+                String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '?') AND (`product_type` RLIKE '?') AND (`product_size` ?) AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '?' AND '?')";
+                //String sqlb = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_brand` RLIKE '" + allbs + "') AND (`product_type` RLIKE '" + allts + "') AND (`product_size` " + allss + ") AND (`product_status`=1) AND (product_img.product_id=product_infor.product_id) AND (`product_price` BETWEEN '"+ miniprice + "' AND '" + maxprice + "')";
                 rs = con.createStatement().executeQuery(sqlb);
 
                 out.println("<div class='product'>");

@@ -181,7 +181,8 @@
                 String search_bar = request.getParameter("searchbar");
                 ResultSet sr;
 
-                String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` LIKE '%" + search_bar + "%') OR (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%')) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
+                String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` LIKE '%?%') OR (`product_brand` LIKE '%?%') OR (`product_type` LIKE '%?%') OR (`product_size` LIKE '%?%') OR (`product_discript` LIKE '%?%')) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
+                //String sqlsr = "SELECT * FROM `product_infor`,`product_img` WHERE ((`product_name` LIKE '%" + search_bar + "%') OR (`product_brand` LIKE '%" + search_bar + "%') OR (`product_type` LIKE '%" + search_bar + "%') OR (`product_size` LIKE '%" + search_bar + "%') OR (`product_discript` LIKE '%" + search_bar + "%')) AND (product_img.product_id=product_infor.product_id) AND (`product_status`=1) ";
                 sr = con.createStatement().executeQuery(sqlsr);
 
                 out.println("<div class='product'>");
