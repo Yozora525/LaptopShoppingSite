@@ -16,7 +16,7 @@
     String[] quan = request.getParameterValues("item-quan");
     String[] tupri = request.getParameterValues("item-revenue");
     int k = name.length;
-    String addr = request.getParameter("adder");
+    String addr = request.getParameter("addr");
 
     sql= "SELECT `order_id` FROM `orders` WHERE `order_id`='"+oid+"'";
     ResultSet rsi = con.createStatement().executeQuery(sql);
