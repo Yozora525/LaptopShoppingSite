@@ -17,6 +17,20 @@
     String birth = request.getParameter("mbirth");
     out.println(name+email+phone+birth);
 %>
+<%-- <div class="pay-revenue">
+                        <%
+                        int oprice = tprice;
+                        if(amount>2){
+                            out.println("<span style='width: 100px;color:red;'>任選兩件9折</span>");
+                            tprice*=0.9;
+                        }%></div>
+                        <div class="pay-revenue"><%
+                        out.println("<span>共 "+amount+" 件商品</span>");
+                        %> </div> --%>
+                        <%-- <div class="pay-revenue">
+                        <%
+                            out.println("<span>原價："+oprice+"</span>");
+                        %> </div> --%>
 <%-- 
 <%
         String cname[] = request.getParameterValues("item-check");
