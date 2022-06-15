@@ -85,7 +85,7 @@
   O 4. 會員中心購買紀錄GET傳值            -- daiyun0613
   O 5. pay.jsp配送地址                   -- daiyun0613
     6. 導覽列搜尋 (searchresult.jsp)   ... 20220614_JLC
-    7. 篩選商品 (filter.jsp)           ... 20220614_JLC (brand/type疑似未好)
+    7. 篩選商品 (filter.jsp)           ... 20220614_JLC 
     8. 留言板 (comment.jsp)           ... 20220614_JLC
   O 9. 登入註冊                          -- daiyun0613
     10.傳值GET到產品頁面(proIntro.jsp) ... 20220614_JLC
