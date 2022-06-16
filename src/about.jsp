@@ -43,9 +43,9 @@
                 <div class="home">
                     <a href="index.jsp">多比店舖</a>
                 </div>
-                <div class="key-word-search">
-                    <form method="GET" action="">
-                        <input type="search" name="" placeholder="請輸入關鍵字">
+               <div class="key-word-search">
+                    <form method="POST" action="filter_search.jsp">
+                        <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
                 </div>

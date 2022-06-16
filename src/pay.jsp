@@ -37,8 +37,8 @@
         </div>
         <div class="guide-container">
             <nav class="nav-header">
-                <div class="home" style="border:3px solid #ccc;">
-                    <a href="index.jsp">多比店舖 | 結帳</a>
+                <div class="home">
+                    <a href="index.jsp">多比店舖</a>
                 </div>
             </nav>
         </div>
@@ -167,8 +167,7 @@
         </div>
     </main>
     <footer class="footer">
-        <span class="copyright">&copy;</span>
-
+        <span class="copyright">Copyright © 2022 多比店舖 Inc. All Rights Reserved.</span>
     </footer>
 </body>
 </html>
