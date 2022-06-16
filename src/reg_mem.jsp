@@ -33,7 +33,7 @@
         
         int y=0,y1=0;
         if( !rsp.next() ){
-            sql = "INSERT INTO `mem_infor` VALUES ( '"+ memid + "','', '', '', '0000-00-00', '"+credate+"', '"+racc+"')";
+            sql = "INSERT INTO `mem_infor` VALUES ( '"+ memid + "','匿名的使用者', '', '', '0000-00-00', '"+credate+"', '"+racc+"')";
             
             y1 = con.createStatement().executeUpdate(sql);
             sql = "INSERT INTO `login` VALUES('"+memid+"', '"+racc+"', '"+rpwd+"')";
