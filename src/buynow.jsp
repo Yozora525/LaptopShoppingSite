@@ -40,7 +40,7 @@
                                         
                     int c=0;
                     if( !rscart.next() ){
-                        String sqln = "INSERT INTO `cart` VALUES ( ? , ? , ?)";
+                        String sqln = "INSERT INTO `cart` VALUES ( ? , ? , ?, '"+ credate +"')";
                         //String sqln = "INSERT INTO `cart` VALUES ( '"+ id + "','"+ productid + "', '"+ quantity + "')";   
                         //c = con.createStatement().executeUpdate(sqln);
                         PreparedStatement psincart = con.prepareStatement(sqln);
@@ -51,7 +51,7 @@
                         c = psincart.executeUpdate();
                     }
                     else{
-                        String sqlu = "UPDATE `cart` SET `order_amount`= `order_amount`+? WHERE (`mem_id`=?) AND (`product_id`=?)";
+                        String sqlu = "UPDATE `cart` SET `order_amount`= `order_amount`+?, `add_Date`='"+ credate +"' WHERE (`mem_id`=?) AND (`product_id`=?)";
                         //String sqlu = "UPDATE `cart` SET `order_amount`= `order_amount`+"+ quantity + " WHERE (`mem_id`='"+id+"') AND (`product_id`='"+ productid + "')";
                         //c = con.createStatement().executeUpdate(sqlu);
                         PreparedStatement pstocart = con.prepareStatement(sqlu);

@@ -5,7 +5,7 @@ USE computer_shop;
 
 #11. 管理員帳密表
 CREATE TABLE manager(
-	man_id  VARCHAR (64) UNIQUE NOT NULL,
+	man_id  VARCHAR (4) UNIQUE NOT NULL,
     man_account VARCHAR (512)  NOT NULL,
 	man_password VARCHAR(32)  NOT NULL,
 	PRIMARY KEY (man_id)
