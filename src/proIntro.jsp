@@ -35,11 +35,11 @@
         </div>
         <div class="guide-container">
             <nav class="nav-header">
-                <div class="home" style="border:3px solid #ccc;">
+                <div class="home">
                     <a href="index.jsp">多比店舖</a>
                 </div>
-                <div class="key-word-search">
-                    <form method="GET" action="filter_search.jsp">
+               <div class="key-word-search">
+                    <form method="POST" action="filter_search.jsp">
                         <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
@@ -231,7 +231,7 @@
 
     <% }    %>
     <footer class="footer">
-        <span class="copyright">&copy;</span>
+        <span class="copyright">Copyright © 2022 多比店舖 Inc. All Rights Reserved.</span>
     </footer>
 </body>
 </html>
