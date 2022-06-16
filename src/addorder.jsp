@@ -20,6 +20,15 @@
     String addr = request.getParameter("addr");
     String pay = request.getParameter("pay-revenue");
 
+    if((addr.length()>64)){
+        %>
+            <script type="text/javascript">
+                alert("地址輸入過長，請控制在64個字內");
+                history.back();
+            </script>                 
+        <%
+    }
+
     sql= "SELECT `order_id` FROM `orders` WHERE `order_id`='"+oid+"'";
     ResultSet rsi = con.createStatement().executeQuery(sql);
     while(rsi.next()){

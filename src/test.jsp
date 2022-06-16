@@ -7,9 +7,20 @@
 <%@ page import="java.sql.*"%>
 
 <%
-
-    String pay = request.getParameter("pay-revenue");
-    out.println(pay);
+    String k = "2008-07-10";
+    SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd");  
+    
+    out.println(d1);
+   // boolean a =d1.before(time);
+   // out.println(""+time+d1+a);
+    SimpleDateFormat sdf =   new SimpleDateFormat( "yyyy-MM-dd" ); 
+    java.util.Date d = sdf.parse(k ); 
+    java.sql.Date d1 = new java.sql.Date(d.getTime()); 
+    java.util.Date date = new java.util.Date();
+    java.sql.Date now1 = new java.sql.Date(date.getTime()); 
+    out.println(now1);
+    boolean a =d1.before(now1);  
+    out.println(a);
 %>
 <%-- 
 <%
