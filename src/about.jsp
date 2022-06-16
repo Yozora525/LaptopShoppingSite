@@ -36,12 +36,12 @@
         <div style="text-align:right;background-color: #0096C7;">
             <!-- 判斷是否登入，有登入「登出」要顯示，否則顯示網站管理 -->
             <a href="" class="manage">登出</a>
-            <a href="manage.html" class="manage">網站管理</a>
+            <a href="manage.jsp" class="manage">網站管理</a>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home">
-                    <a href="index.html">多比店舖</a>
+                    <a href="index.jsp">多比店舖</a>
                 </div>
                 <div class="key-word-search">
                     <form method="GET" action="">
@@ -51,13 +51,13 @@
                 </div>
                 <div class="link-icon">
                     <div class="icon-login">
-                        <a  href="login.html"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
                         <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
-                        <a  href="car.html"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
+                        <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
                     </div>
                 </div>
             </nav>

@@ -42,7 +42,7 @@
         }
         else{ %>
             <script src="../assets/js/rfail.js"></script>
-            <%  response.sendRedirect("login.jsp");
+            <%  //response.sendRedirect("login.jsp");
         } 
         int k=0;
         if ( y1>0 && y > 0 ){%>
