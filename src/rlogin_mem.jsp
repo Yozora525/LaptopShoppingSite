@@ -23,16 +23,20 @@
         if(rs.next()){            
             session.setAttribute("mem_account", lacc);
             con.close();
-            response.sendRedirect("memInfo.jsp") ;
+            %>
+            <script>
+                alert("註冊成功，請填寫會員資料");
+                location.href="../src/memInfo.jsp";
+            </script>
+        <%
         }
         else{
             con.close();
             out.println("帳號密碼不符<a href='login.jsp'>重新登入</a>") ;
         }
     }
-    else{%>
-        <script>alert("註冊成功，請填寫會員資料");</script>
-    <%
-	    response.sendRedirect("login.jsp");}
+    else{
+	    response.sendRedirect("login.jsp");
+    }
 
 %>
