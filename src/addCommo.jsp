@@ -22,7 +22,8 @@
     String type1 = request.getParameter("type1"); 
 if ( name!=null && !name.equals("") && brand!=null && !brand.equals("") &&type!=null && !type.equals("") 
          &&ssize!=null && !ssize.equals("") &&saddprotouch!=null && !saddprotouch.equals("") &&sstore!=null && !sstore.equals("") 
-         &&sprice!=null && !sprice.equals("") && discript!=null && !discript.equals("")){
+         &&sprice!=null && !sprice.equals("") && discript!=null && !discript.equals("") || !(brand.length()>64) || 
+         !(name.length()>32) || !(type.length()>32)){
 
     float size = Float.valueOf(ssize).floatValue();
     int addprotouch = Integer.parseInt(saddprotouch);

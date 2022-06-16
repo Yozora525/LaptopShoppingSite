@@ -141,20 +141,22 @@
                         <%
                         int oprice = tprice;
                         if(amount>=2){
-                            out.println("<span style='width: 80px;color:red;font-size:12px;'>任選兩件購物車9折</span>");
+                            out.println("<input name='discount' value='任選兩件購物車9折'style='color:red;font-size:12px;font-weight: bold; border:none; width:120px;' readonly/> ");
+                            //<span style='width: 80px;color:red;font-size:12px;'>任選兩件購物車9折</span>
                             tprice*=0.9;
                         }%></div>
                         <div class="pay-revenue"><%
                         out.println("<span style='width: 80px;font-size:12px;'>共 "+amount+" 件商品</span>");
                         %> </div> 
                          <div class="pay-revenue">
-                        <%
-                            out.println("<span style='border:none; width:80px;font-size:12px;'>原價："+oprice+"</span>");
-                        %> </div> 
+                         <span style="font-size:12px;">原價：</span>
+                        <span style='border:none; width:80px;font-size:12px;'>
+                           <input class='' name='oprice' value='<%=oprice%>'style='color: #0096C7;font-weight: bold; border:none; width:70px;' readonly/> 
+                         </span></div> 
                         <div class="pay-revenue">
                             <span style="font-size:12px;">實際金額：</span>
                             <span name="pay-revenue" style="color: #0096C7;font-weight: bold;font-size:12px;">
-                            <input class='' name="pay-revenue" value='<%=tprice%>'style="color: #0096C7;font-weight: bold; border:none; width:80px" readonly/></span>
+                            <input class='' name="pay-revenue" value='<%=tprice%>'style="color: #0096C7;font-weight: bold; border:none; width:70px" readonly/></span>
                         </div>
                         <div class="pay-btn-container">
                             <button id="btn-checkout">結帳</button>

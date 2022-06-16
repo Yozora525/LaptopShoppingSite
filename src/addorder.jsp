@@ -19,7 +19,10 @@
     int k = name.length;
     String addr = request.getParameter("addr");
     String pay = request.getParameter("pay-revenue");
+    String soprice = request.getParameter("oprice");
+    String sdiscount = request.getParameter("discount");
 
+    
     if((addr.length()>64)){
         %>
             <script type="text/javascript">
@@ -73,7 +76,8 @@
     rs1.next();
     String id = rs1.getString("mem_id");
     int tprice = Integer.parseInt(pay);
-    sql = "INSERT INTO `orders` VALUES ('"+oid+"', '"+id+"','"+tprice+"')";
+    int oprice = Integer.parseInt(soprice);
+    sql = "INSERT INTO `orders` VALUES ('"+oid+"', '"+id+"','"+tprice+"','"+oprice+"','"+sdiscount+"')";
     change1 = con.createStatement().executeUpdate(sql);
     if( !(change1>0) ){
         out.println(oid+"訂單新增失敗");
