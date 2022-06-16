@@ -47,7 +47,8 @@
     2. 更改商品數量             caramount.jsp                        20220611_daiyun
     3. 新增訂單(清單、詳情)     addorder.jsp                          20220612_daiyun
     4. 顯示訂單                列於car.jsp                           20220612_daiyun           
-    5. 製造訂單id              catchDateRan.jsp+addorder.jsp         20220612_daiyun   
+    5. 製造訂單id              catchDateRan.jsp+addorder.jsp         20220612_daiyun 
+    6. 購物車停留30天           列於car.jsp                           20220616_daiyun 
 
     #需求#
   O 1. 刪除購物車內容功能，當使用者點選刪除時，刪除資料表的資料 // 前端會用ajax傳商品名稱過去，記得刪除後要回傳結果至前端 
