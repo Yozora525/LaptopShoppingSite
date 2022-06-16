@@ -261,3 +261,12 @@ INSERT INTO product_img VALUES ('P019', '../assets/img/pro/ASUS/ASUS E410_1.png'
 
 INSERT INTO product_img VALUES ('P020', '../assets/img/pro/MSI/MSI Summit E16 Flip_1.png', '../assets/img/pro/MSI/MSI Summit E16 Flip_2.png');
 
+CREATE TABLE marquee (
+	no_m INT NOT NULL,
+    content TEXT NOT NULL,
+	PRIMARY KEY(no_m)
+);
+INSERT INTO marquee VALUES(1,'全館任選兩件即享購物優惠9折');
+INSERT INTO marquee VALUES(2,'開學換新機，多比懂你心');
+INSERT INTO marquee VALUES(3,'比哈利波特更好的是多比');
+INSERT INTO marquee VALUES(4,'你值得最好的，熱銷冠軍--MSI Summit E16 Flip正在等您帶回家');
