@@ -140,8 +140,8 @@
                         <div class="pay-revenue">
                         <%
                         int oprice = tprice;
-                        if(amount>2){
-                            out.println("<span style='width: 80px;color:red;font-size:12px;'>任選兩件9折</span>");
+                        if(amount>=2){
+                            out.println("<span style='width: 80px;color:red;font-size:12px;'>任選兩件購物車9折</span>");
                             tprice*=0.9;
                         }%></div>
                         <div class="pay-revenue"><%
