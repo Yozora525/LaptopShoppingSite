@@ -186,7 +186,7 @@ CREATE TABLE cart(
 	mem_id	VARCHAR	(64)  NOT NULL,
 	product_id	VARCHAR	(4) NOT NULL,
 	order_amount INTEGER NOT NULL,
-	add_Date DATETIME NOT NULL,
+	add_Date  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (mem_id,product_id),
 	FOREIGN KEY (mem_id) REFERENCES mem_infor(mem_id),
 	FOREIGN KEY (product_id) REFERENCES product_infor(product_id)
