@@ -126,33 +126,35 @@
                                 out.println("</div>"); 
                                 out.println("</div>"); 
                                 tprice+=upri[i]*rs.getInt("order_amount");
-                             
-                        }       
+                             quan[i]=rs.getInt("order_amount");
+                        }  
+                        int amount = 0;    
+                        for(int i = 0; i < ta ; i++){
+                            amount+=quan[i];
+                        } 
                     %>
-   <%-- out.println("<div class='pay-item'>");
-                            out.println("<div class='pay-item'>");
-                                out.println("<div class='item-info-name'>");       
-                                    out.println("<input class='' name='item-name' value='"+cname[i]+"' readonly/>");     
-                                out.println("</div>");    
-                                out.println("<div class='item-info'>");   
-                                    out.println("<input class='' name='item-price' value='"+o+"' readonly/>");       
-                                out.println("</div>");    
-                                out.println(" <div class='item-info'>"); 
-                                    out.println("<input class='' name='item-quan' value='"+q+"' readonly/>");            
-                                out.println("</div>");  
-                                out.println("<div class='item-info'>");      
-                                    out.println(" <input class=''name='item-revenue' value='"+c+"' readonly/>");                            
-                                out.println("</div>"); 
-                            out.println("</div>"); 
-                          
-                            out.println("</div>"); --%>
                     <div class="pay-checkout">
-                        <div class="send-addr">
-                            <input type="text" class="" name="addr" placeholder="請輸入宅配地址" required/>
+                        <div class="send-addr" style='width: 50%;' >
+                            <input style='width: 50%;' type="text" class="" name="addr" placeholder="請輸入宅配地址" required/>
                         </div>
                         <div class="pay-revenue">
-                            <span>總金額：</span>
-                            <span name="pay-revenue" style="color: #0096C7;font-weight: bold;"><%=tprice%></span>
+                        <%
+                        int oprice = tprice;
+                        if(amount>2){
+                            out.println("<span style='width: 80px;color:red;font-size:12px;'>任選兩件9折</span>");
+                            tprice*=0.9;
+                        }%></div>
+                        <div class="pay-revenue"><%
+                        out.println("<span style='width: 80px;font-size:12px;'>共 "+amount+" 件商品</span>");
+                        %> </div> 
+                         <div class="pay-revenue">
+                        <%
+                            out.println("<span style='border:none; width:80px;font-size:12px;'>原價："+oprice+"</span>");
+                        %> </div> 
+                        <div class="pay-revenue">
+                            <span style="font-size:12px;">實際金額：</span>
+                            <span name="pay-revenue" style="color: #0096C7;font-weight: bold;font-size:12px;">
+                            <input class='' name="pay-revenue" value='<%=tprice%>'style="color: #0096C7;font-weight: bold; border:none; width:80px" readonly/></span>
                         </div>
                         <div class="pay-btn-container">
                             <button id="btn-checkout">結帳</button>

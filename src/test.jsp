@@ -7,6 +7,12 @@
 <%@ page import="java.sql.*"%>
 
 <%
+
+    String pay = request.getParameter("pay-revenue");
+    out.println(pay);
+%>
+<%-- 
+<%
     //sql = "INSERT INTO `order_details` VALUES ('oid','pid[i]','credate','addr','tquan')";
    // out.println(sql);
      sql = "0908098950";
@@ -16,7 +22,7 @@
     String phone = request.getParameter("mphone");
     String birth = request.getParameter("mbirth");
     out.println(name+email+phone+birth);
-%>
+%> --%>
 <%-- <div class="pay-revenue">
                         <%
                         int oprice = tprice;

@@ -6,6 +6,7 @@
         response.sendRedirect("login.jsp");
     }
     else{
+        
 %>
 <%-- 製作流水號 --%>
 <%
@@ -17,6 +18,7 @@
     String[] tupri = request.getParameterValues("item-revenue");
     int k = name.length;
     String addr = request.getParameter("addr");
+    String pay = request.getParameter("pay-revenue");
 
     sql= "SELECT `order_id` FROM `orders` WHERE `order_id`='"+oid+"'";
     ResultSet rsi = con.createStatement().executeQuery(sql);
@@ -61,8 +63,8 @@
     ResultSet rs1 = con.createStatement().executeQuery(sql);
     rs1.next();
     String id = rs1.getString("mem_id");
-
-    sql = "INSERT INTO `orders` VALUES ('"+oid+"', '"+id+"')";
+    int tprice = Integer.parseInt(pay);
+    sql = "INSERT INTO `orders` VALUES ('"+oid+"', '"+id+"','"+tprice+"')";
     change1 = con.createStatement().executeUpdate(sql);
     if( !(change1>0) ){
         out.println(oid+"訂單新增失敗");
