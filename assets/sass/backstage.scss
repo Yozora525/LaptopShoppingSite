@@ -13,7 +13,17 @@
 
 .btn-add-pro-container{
     @include small{
-
+        margin: 2% 5% 3% 5%;
+        text-align:right;
+        button{
+            width: 25%;
+            height: 30px;
+            font-size: 1em;
+            background-color: #0096C7;
+            color: #fff;
+            border: 0;
+           
+        }       
     }
 
     @include large{
@@ -35,8 +45,23 @@
 // 新增商品
 .add-pro-container{
     @include small{
-
+        margin: 5% 5%;
+        .add-pro-table{
+            td{
+                padding-top: 5%;
+            }
+            button{
+                width: 30%;
+                height: 30px;
+                font-size: 1em;
+                background-color: #0096C7;
+                color: #fff;
+                border: 0;
+            }
+        }
     }
+
+
 
     @include large{
         border: 1px solid #000;
@@ -72,8 +97,49 @@
 
 // 產品列表
 .pro-container{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 16px;
     @include small{
+        
+        .pro-table-title{
+            width: 100%;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }  
+        .pro-table{
+            margin-top: 5%;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid black; 
+            border-collapse: collapse;
 
+            th{
+                text-align: center;
+                font-size: 16px;
+                
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+            td{
+                text-align: center;
+                font-size: 10px;
+                background-color: #fff;
+                border: 1px solid black; 
+                border-collapse: collapse;
+                padding-left: 0%;
+            }
+
+            button{
+                width: 50%;
+                background-color: #0096C7;
+                color: #fff;
+                border: 0px;
+            }
+        }      
     }
 
     @include large{
@@ -86,20 +152,30 @@
             border-radius: 10px;
             background-color: #0096c7;
             color: #fff;
+            
         }
 
         .pro-table{
+            margin-top: 1%;
             width: 100%;
             background-color: #fff;
             border: 1px solid black; 
             border-collapse: collapse;
 
-            th,td{
-                
+            th{
                 text-align: center;
                 font-size: 16px;
+                
                 border: 1px solid black; 
                 border-collapse: collapse;
+            }
+            td{
+                text-align: center;
+                font-size: 10px;
+                background-color: #fff;
+                border: 1px solid black; 
+                border-collapse: collapse;
+                padding-left: 0%;
             }
 
             button{
@@ -109,15 +185,40 @@
                 border: 0px;
             }
         }
-
-
     }
 }
 
 // 交易資料
 .trans-data-container{
     @include small{
+        margin-left: 5%;
+        margin-right: 5%;
+        .trans-filter{
+            margin-top: 5%;
+        }
+        .trans-table-title{
+            margin-top: 5%;
+            width: 100%;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #0096c7;
+            color: #fff;
+        }
+        .trans-table{
+            margin-top:5%;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid black; 
+            border-collapse: collapse;
 
+            th,td{
+                text-align: center;
+                font-size: 16px;
+                border: 1px solid black; 
+                border-collapse: collapse;
+            }
+        }       
     }
 
     @include large{
@@ -126,7 +227,7 @@
         font-size: 16px;
 
         .trans-filter{
-            margin-top: 0.5%;
+            margin-top: 1%;
         }
 
         .trans-table-title{

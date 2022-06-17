@@ -1,3 +1,18 @@
+@media (min-width: 0px) {
+  .btn-add-pro-container {
+    margin: 2% 5% 3% 5%;
+    text-align: right;
+  }
+  .btn-add-pro-container button {
+    width: 25%;
+    height: 30px;
+    font-size: 1em;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0;
+  }
+}
+
 @media (min-width: 1000px) {
   .btn-add-pro-container {
     margin: 2% 5% 3% 5%;
@@ -5,6 +20,23 @@
   }
   .btn-add-pro-container button {
     width: 10%;
+    height: 30px;
+    font-size: 1em;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0;
+  }
+}
+
+@media (min-width: 0px) {
+  .add-pro-container {
+    margin: 5% 5%;
+  }
+  .add-pro-container .add-pro-table td {
+    padding-top: 5%;
+  }
+  .add-pro-container .add-pro-table button {
+    width: 30%;
     height: 30px;
     font-size: 1em;
     background-color: #0096C7;
@@ -41,6 +73,50 @@
   }
 }
 
+.pro-container {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
+}
+
+@media (min-width: 0px) {
+  .pro-container .pro-table-title {
+    width: 100%;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #0096c7;
+    color: #fff;
+  }
+  .pro-container .pro-table {
+    margin-top: 5%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .pro-container .pro-table th {
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .pro-container .pro-table td {
+    text-align: center;
+    font-size: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 0%;
+  }
+  .pro-container .pro-table button {
+    width: 50%;
+    background-color: #0096C7;
+    color: #fff;
+    border: 0px;
+  }
+}
+
 @media (min-width: 1000px) {
   .pro-container {
     margin: 2% 5% 3% 5%;
@@ -54,22 +130,63 @@
     color: #fff;
   }
   .pro-container .pro-table {
+    margin-top: 1%;
     width: 100%;
     background-color: #fff;
     border: 1px solid black;
     border-collapse: collapse;
   }
-  .pro-container .pro-table th, .pro-container .pro-table td {
+  .pro-container .pro-table th {
     text-align: center;
     font-size: 16px;
     border: 1px solid black;
     border-collapse: collapse;
+  }
+  .pro-container .pro-table td {
+    text-align: center;
+    font-size: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 0%;
   }
   .pro-container .pro-table button {
     width: 50%;
     background-color: #0096C7;
     color: #fff;
     border: 0px;
+  }
+}
+
+@media (min-width: 0px) {
+  .trans-data-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .trans-data-container .trans-filter {
+    margin-top: 5%;
+  }
+  .trans-data-container .trans-table-title {
+    margin-top: 5%;
+    width: 100%;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #0096c7;
+    color: #fff;
+  }
+  .trans-data-container .trans-table {
+    margin-top: 5%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .trans-data-container .trans-table th, .trans-data-container .trans-table td {
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+    border-collapse: collapse;
   }
 }
 
@@ -80,7 +197,7 @@
     font-size: 16px;
   }
   .trans-data-container .trans-filter {
-    margin-top: 0.5%;
+    margin-top: 1%;
   }
   .trans-data-container .trans-table-title {
     width: 100%;
