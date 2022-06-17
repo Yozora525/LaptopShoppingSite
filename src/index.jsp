@@ -64,7 +64,7 @@
                     ResultSet mlist = con.createStatement().executeQuery(sqlm);
 
                     while(mlist.next()){
-                        out.println("<marquee width='90%' direction='left' height='40%' scrollamount='10'>"); 
+                        out.println("<marquee style='color:white' width='90%' direction='left' height='40%' scrollamount='10'>"); 
                         out.println(mlist.getString("content"));
                         out.println("</marquee> ");                          
                     }
