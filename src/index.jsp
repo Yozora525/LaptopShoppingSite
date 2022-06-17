@@ -56,6 +56,20 @@
                         <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
+
+                   <% 
+                   Random rand = new Random();
+                    int randomNum = rand.nextInt(10) + 1; 
+                    String sqlm = "SELECT * FROM `marquee` WHERE `no_m`="+randomNum+";";
+                    ResultSet mlist = con.createStatement().executeQuery(sqlm);
+
+                    while(mlist.next()){
+                        out.println("<marquee width='90%' direction='left' height='40%' scrollamount='10'>"); 
+                        out.println(mlist.getString("content"));
+                        out.println("</marquee> ");                          
+                    }
+                    %>                  
+                    
                 </div>
                 <div class="link-icon">
                     <%  String lurl;

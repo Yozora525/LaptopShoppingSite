@@ -53,7 +53,7 @@ INSERT INTO product_infor VALUES ("P007", "ACER Nitro5", 39500, 200, 1, "*Nvidia
 INSERT INTO product_infor VALUES ("P008", "ACER Swift5", 29900, 200, 1, "*大猩猩®玻璃 的 WQXGA 1觸摸屏顯示器</br>*92.22%的占屏比</br>*12th Gen Intel® Core™</br>*陽極氧化處理以抵抗腐蝕和磨損，表面經久耐用", 20800, 14, 'ACER', 1, '輕薄便攜');
 INSERT INTO product_infor VALUES ("P009", "ACER Aspire5", 11900, 200, 1, "*搭載 intel Core i5處理器</br>*高達83%屏佔比</br>*FHD廣視角14&quot;螢幕</br>*顯示晶片：NVIDIA® GeForce® MX350", 28300, 14, 'ACER', 1, '商務');
 INSERT INTO product_infor VALUES ("P010", "MSI Stealth 15M", 47900, 200, 1, "*搭載12代Intel® Core™ i7處理器</br>*NVIDIA® GeForce® RTX™ 3060獨立顯示卡</br>*15.6吋FHD(1920x1080)</br>*144Hz螢幕更新率", 20100, 15.6, 'MSI', 0, '電競');
-INSERT INTO product_infor VALUES ("P011", "MSI Modern14", 23900, 200, 1, "*搭載AMD Ryzen™ 5000 處理器</br>*超輕1.3kg</br>*薄邊框IPS級面板</br>*AMD Radeon™ 顯卡</br>*", 20200, 14, 'MSI', 0, '創作設計');
+INSERT INTO product_infor VALUES ("P011", "MSI Modern14", 23900, 200, 1, "*搭載AMD Ryzen™ 5000 處理器</br>*超輕1.3kg</br>*薄邊框IPS級面板</br>*AMD Radeon™ 顯卡", 20200, 14, 'MSI', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P012", "MSI Alpha 15", 34900, 200, 1, "*搭載AMD Ryzen™ 4000 H 處理器</br>*AMD Radeon™ RX 5000 顯卡</br>*15.6&quot; FHD (1920x1080)</br>*支持 AMD Radeon FreeSync 技術", 20000, 15.6, 'MSI', 0, '電競');
 INSERT INTO product_infor VALUES ("P013", "MSI Prestige 14", 30900, 200, 1, "*搭載第11代 Intel® Core™ i7 處理器</br>*14吋4K超高畫質 (3840x2160)</br>*接近100% sRGB, IPS等級窄邊框面板設計</br>*10 小時電池續航力", 20040, 14, 'MSI', 0, '創作設計');
 INSERT INTO product_infor VALUES ("P014", "HP Elite Dragonfly G2", 59900, 200, 1, "*搭載Intel Core i7-1185G7 處理器</br>*33.8 公分 (13.3 吋) 對角線 FHD </br>*128 GB PCIe Gen 3 x2 NVMe M.2 TLC 固態硬碟 (SSD)</br>*2個 USB 3.2 Gen 1 Type-C 連接埠", 20700, 13, 'HP', 1, '商務');
@@ -266,7 +266,13 @@ CREATE TABLE marquee (
     content TEXT NOT NULL,
 	PRIMARY KEY(no_m)
 );
-INSERT INTO marquee VALUES(1,'全館任選兩件即享購物優惠9折');
-INSERT INTO marquee VALUES(2,'開學換新機，多比懂你心');
-INSERT INTO marquee VALUES(3,'比哈利波特更好的是多比');
+INSERT INTO marquee VALUES(1,'全館任選兩件即享購物優惠9折！');
+INSERT INTO marquee VALUES(2,'開學換新機，多比懂你心！');
+INSERT INTO marquee VALUES(3,'比哈利波特更好的是多比店鋪');
 INSERT INTO marquee VALUES(4,'你值得最好的，熱銷冠軍--MSI Summit E16 Flip正在等您帶回家');
+INSERT INTO marquee VALUES(5,'話題先鋒——APPLE MacBook Pro現貨供應中！');
+INSERT INTO marquee VALUES(6,'筆電款式精挑細選，讓多比店鋪成為你的購物小精靈！');
+INSERT INTO marquee VALUES(7,'麻瓜也能會JAVA，多款高效能筆電供您參考！');
+INSERT INTO marquee VALUES(8,'專為電競打造，ACER Nitro5炫炮登場');
+INSERT INTO marquee VALUES(9,'不用魔法也能輕如鴻毛！1.46公斤HP 14s打破辦公常規！');
+INSERT INTO marquee VALUES(10,'筆電與它們的產地保證原廠正版，保固給滿滿！');
