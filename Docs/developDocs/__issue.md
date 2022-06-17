@@ -74,12 +74,13 @@
     2. 變更密碼                changepwd.jsp                        20220611_daiyun
     3. 購買紀錄匯入            列於memInfo.jsp                       20220611_daiyun 
     4. 評論紀錄                列於memInfo.jsp                   ... 20220611_JLC
-    5. 訂單退貨               cardelete.jsp                          20220617_daiyun
+    5. 訂單退貨               deleteorder.jsp                       20220617_daiyun
     #需求#
   O 1. 列出訂單清單後用url連接到訂單詳情 -- daiyun0612
   O 2. 信箱已註冊顯示此信箱已註冊 跳回登入 -- daiyun0613
   O 3. 生日僅可輸入一次                   -- daiyun0613
   O 4. 手機號碼檢查是否為09開頭 是否為10碼 -- daiyun0613
+    5. 訂單退貨把庫存加回去
 ## prevent sql injection ##
   O 1. 後台新增商品                      -- daiyun0613
   O 2. 會員基本資料修改                   -- daiyun0613
