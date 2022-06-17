@@ -182,6 +182,9 @@
                             <th>
                                 <span>交易日期</span>
                             </th>
+                            <th>
+                                <span>退貨</span>
+                            </th>
                         </tr>
                         
                     </thead>
@@ -202,7 +205,9 @@
                             ot = rs5.getString("order_time");
                             out.println("<tr><td><span>"+i+"</span></td>");
                             out.println("<td><span name=''><a href='orderdetail.jsp?oid="+oid+"' style='text-decoration: none;color: #000;'>"+oid+"</a></span></td>");
-                            out.println("<td><span name=''>"+ot+"</span></td></tr>");
+                            out.println("<td><span name=''>"+ot+"</span></td>");
+                            //按鈕改在下面這行的out.println
+                            out.println("<td><span name=''><a href='deleteorder.jsp?"+oid+"'>退貨</a></span></td></tr>");
                         }
                     %>
                     </tbody>
