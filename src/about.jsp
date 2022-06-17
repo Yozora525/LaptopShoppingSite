@@ -34,27 +34,54 @@
 <body>
     <header>
         <div style="text-align:right;background-color: #0096C7;">
-            <!-- 判斷是否登入，有登入「登出」要顯示，否則顯示網站管理 -->
-            <a href="" class="manage">登出</a>
-            <a href="manage.jsp" class="manage">網站管理</a>
+        <%
+                if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                    out.println("<a href='manage.jsp' class='manage'>網站管理</a>");
+                }
+                else{
+                    out.println("<a href='logout_mem.jsp' class='manage'>登出</a>");
+                }
+            %>
         </div>
         <div class="guide-container">
             <nav class="nav-header">
                 <div class="home">
                     <a href="index.jsp">多比店舖</a>
                 </div>
-               <div class="key-word-search">
+                <div class="key-word-search">
                     <form method="POST" action="filter_search.jsp">
                         <input type="search" name="searchbar" placeholder="請輸入關鍵字">
                         <button style="background-color:transparent;border:0px"><img src="../assets/img/google-icon/ic_search_white_18dp.png"></button>
                     </form>
+
+                   <% 
+                   Random rand = new Random();
+                    int randomNum = rand.nextInt(10) + 1; 
+                    String sqlm = "SELECT * FROM `marquee` WHERE `no_m`="+randomNum+";";
+                    ResultSet mlist = con.createStatement().executeQuery(sqlm);
+
+                    while(mlist.next()){
+                        out.println("<marquee width='90%' direction='left' height='40%' scrollamount='10'>"); 
+                        out.println(mlist.getString("content"));
+                        out.println("</marquee> ");                          
+                    }
+                    %>                  
+                    
                 </div>
                 <div class="link-icon">
+                    <%  String lurl;
+                        if(session.getAttribute("mem_account")==null||session.getAttribute("mem_account").equals("")){
+                            lurl = "login.jsp";
+                        }
+                        else{
+                            lurl = "memInfo.jsp";
+                        }
+                    %>
                     <div class="icon-login">
-                        <a  href="login.jsp"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
+                        <a  href="<%=lurl%>"><img src="../assets/img/google-icon/ic_account_circle_white_36dp.png"></a>
                     </div>
                     <div class="icon-contact">
-                        <a  href=""><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
+                        <a  href="about.jsp"><img src="../assets/img/google-icon/ic_group_white_36dp.png"></a>
                     </div>
                     <div class="icon-car">
                         <a  href="car.jsp"><img src="../assets/img/google-icon/ic_shopping_cart_white_36dp.png"></a>
