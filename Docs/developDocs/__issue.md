@@ -72,8 +72,9 @@
 ## 會員中心 ## 20220611_daiyun 0613bug修正
     1. 更改個人資料            changeinfo.jsp                       20220611_daiyun
     2. 變更密碼                changepwd.jsp                        20220611_daiyun
-    3. 購買紀錄匯入            列於memInfo.jsp                       20220611_diayun  
+    3. 購買紀錄匯入            列於memInfo.jsp                       20220611_daiyun 
     4. 評論紀錄                列於memInfo.jsp                   ... 20220611_JLC
+    5. 訂單退貨               cardelete.jsp                          20220617_daiyun
     #需求#
   O 1. 列出訂單清單後用url連接到訂單詳情 -- daiyun0612
   O 2. 信箱已註冊顯示此信箱已註冊 跳回登入 -- daiyun0613
