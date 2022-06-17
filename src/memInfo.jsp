@@ -207,9 +207,10 @@
                             out.println("<td><span name=''><a href='orderdetail.jsp?oid="+oid+"' style='text-decoration: none;color: #000;'>"+oid+"</a></span></td>");
                             out.println("<td><span name=''>"+ot+"</span></td>");
                             //按鈕改在下面這行的out.println
-                            out.println("<td><span name=''><a href='deleteorder.jsp?oid="+oid+"'>退貨</a></span></td></tr>");
+                            out.println("<td><span name=''><a style='color:black' href='deleteorder.jsp?oid="+oid+"'>退貨</a></span></td></tr>");
                         }
                     %>
+
                     </tbody>
                 </table>
             </div>

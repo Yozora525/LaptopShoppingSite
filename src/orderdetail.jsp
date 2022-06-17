@@ -74,7 +74,7 @@
     </header>
     <main class="main">
     <div style="height: 50px;"></div>
-    <div class="trans-data-container"><a href="memInfo.jsp">回上頁</a>
+    <div class="trans-data-container"><a style="color:black;" href="memInfo.jsp">回上頁</a>
         <div class="trans-table-title" id="trans-table-title">
             <%
                 String oid = request.getParameter("oid");
