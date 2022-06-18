@@ -2,7 +2,7 @@
 <%@page pageEncoding="UTF-8"%>
 <%@include file = "connectsql.jsp" %> 
 <% 
-    if(session.getAttribute("man_account")==null){
+    if(session.getAttribute("man_account")==null||session.getAttribute("man_account").equals("")){
         response.sendRedirect("manage.jsp");
     } 
     else{
