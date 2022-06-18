@@ -110,13 +110,16 @@
                             String sqlrank = "SELECT * FROM `product_infor`,`product_img` WHERE (`product_status`=1) AND (product_img.product_id=product_infor.product_id) ORDER BY `product_sold` DESC";
                             ResultSet rsr = con.createStatement().executeQuery(sqlrank);
 
-                            int R=1;   
+                            int R=1; 
+                            int P=0;  
+        
 
                             while(rsr.next() && R<9){
                             R++;
+                            P++;
                             out.println("<div class='slick-hot-container'>");
                             out.println("<div class='hot-rank'>");
-                            out.println("<img src='../assets/img/icon/hot-large.png' />");
+                            out.println("<img src='../assets/img/icon/"+P+".png' />");
                             out.println("<a href='proIntro.jsp?proID="+rsr.getString("product_id")+"'><img width='100%'' src='"+rsr.getString("img_link")+"'></a>");
                             out.println("</div>");
                             out.println("</div>");
