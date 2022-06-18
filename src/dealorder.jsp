@@ -53,39 +53,39 @@
         <div id="trans-table">
             <table class="trans-table">
                  <thead>
-                                <tr>
-                                    <th>
-                                        <span>#</span>
-                                    </th>
-                                    <th>
-                                        <span>訂單編號</span>
-                                    </th>
-                                    <th>
-                                        <span>交易金額</span>
-                                    </th>
-                                    <th>
-                                        <span>確認退貨</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody><%
-                                ResultSet rs5;
-                                sql = "SELECT * FROM `orders`";
-                                rs5 = con.createStatement().executeQuery(sql);
-                                int order3=0;
-                                while(rs5.next()){
-                                    if(rs5.getInt("rstatus")==1){
-                                        out.println("<tr>");
-                                        out.println("<td><span>"+ order3 +"</span></td>"); 
-                                        out.println("<td><span>"+ rs5.getString("order_id") +"</span></td>");
-                                        out.println("<td><span>"+ rs5.getInt("tprice")  +"</span></td>"); 
-                                        out.println("<td><span><a style='color:black' href='deleteorder.jsp?oid="+rs5.getString("order_id")+"'>確認退貨</a></span></td>");  
-                                        out.println("</tr>");
-                                        order3++;
-                                    }
-                                }
-                            %>
-                            </tbody>
+                    <tr>
+                        <th>
+                            <span>#</span>
+                        </th>
+                        <th>
+                            <span>訂單編號</span>
+                        </th>
+                        <th>
+                            <span>交易金額</span>
+                        </th>
+                        <th>
+                            <span>確認退貨</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody><%
+                    ResultSet rs5;
+                    sql = "SELECT * FROM `orders`";
+                    rs5 = con.createStatement().executeQuery(sql);
+                    int order3=0;
+                    while(rs5.next()){
+                        if(rs5.getInt("rstatus")==1){
+                            out.println("<tr>");
+                            out.println("<td><span>"+ order3 +"</span></td>"); 
+                            out.println("<td><span>"+ rs5.getString("order_id") +"</span></td>");
+                            out.println("<td><span>"+ rs5.getInt("tprice")  +"</span></td>"); 
+                            out.println("<td><span><a style='color:black' href='deleteorder.jsp?oid="+rs5.getString("order_id")+"'>確認退貨</a></span></td>");  
+                            out.println("</tr>");
+                            order3++;
+                        }
+                    }
+                %>
+                </tbody>
             </table>
         </div>
     </div>
