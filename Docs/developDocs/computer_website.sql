@@ -135,7 +135,7 @@ CREATE TABLE orders(
     tprice INT NOT NULL,
     oprice INT NOT NULL,
 	discount VARCHAR(10),
-    rstatus INT,
+    rstatus INT NOT NULL,
     PRIMARY KEY (order_id),
 	FOREIGN KEY (order_id) REFERENCES order_details(order_id),
     FOREIGN KEY (mem_id) REFERENCES mem_infor(mem_id)
