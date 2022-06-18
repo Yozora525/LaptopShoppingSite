@@ -27,20 +27,11 @@
 
         if(d1>0&&d>0){
             con.close();
-            %>
-            <script type="text/javascript">
-                alert("訂單刪除成功");
-                location.href="../src/deleteorder.jsp";
-            </script>
-            <%
+            response.sendRedirect("dealorder.jsp");
+           
         }
         else{
-            %>
-            <script type="text/javascript">
-                alert("訂單刪除失敗");
-                location.href="../src/deleteorder.jsp";
-            </script>
-            <%
+            response.sendRedirect("dealorder.jsp");
         }
     }
     else{
