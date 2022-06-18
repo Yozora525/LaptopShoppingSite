@@ -207,7 +207,18 @@
                             out.println("<td><span name=''><a href='orderdetail.jsp?oid="+oid+"' style='text-decoration: none;color: #000;'>"+oid+"</a></span></td>");
                             out.println("<td><span name=''>"+ot+"</span></td>");
                             //按鈕改在下面這行的out.println
-                            out.println("<td><span name=''><a style='color:black' href='deleteorder.jsp?oid="+oid+"'>退貨</a></span></td></tr>");
+                            
+                            sql = "SELECT `rstatus` FROM `orders` WHERE `order_id`=?";
+                            ps = con.prepareStatement(sql);
+                            ps.setString(1,oid);
+                            ResultSet rs6 =ps.executeQuery();
+                            rs6.next();
+                            if(rs6.getInt("rstatus")==0){
+                                out.println("<td><span name=''><a style='color:black' href='returngood.jsp?oid="+oid+"'>退貨</a></span></td></tr>");
+                            }
+                            else{
+                                 out.println("<td><span name=''><a style='color:black' href='returngood.jsp?oid="+oid+"'>取消退貨</a></span></td></tr>");
+                            }
                         }
                     %>
 

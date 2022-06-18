@@ -77,7 +77,7 @@
     String id = rs1.getString("mem_id");
     int tprice = Integer.parseInt(pay);
     int oprice = Integer.parseInt(soprice);
-    sql = "INSERT INTO `orders` VALUES ('"+oid+"', '"+id+"','"+tprice+"','"+oprice+"','"+sdiscount+"')";
+    sql = "INSERT INTO `orders` VALUES ('"+oid+"', '"+id+"','"+tprice+"','"+oprice+"','"+sdiscount+"',0)";
     change1 = con.createStatement().executeUpdate(sql);
     if( !(change1>0) ){
         out.println(oid+"訂單新增失敗");

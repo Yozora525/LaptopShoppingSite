@@ -61,6 +61,7 @@
 
             <div class="btn-add-pro-container">
                 <a href="addPro.jsp"><button>新增商品</button></a>
+                <a href="dealorder.jsp"><button>處理退貨</button></a>
             </div>
 
             <div class="pro-container">
@@ -124,6 +125,7 @@
                         </tbody>
                     </table>
                 </div>
+                
             </div>
             
             <div class="trans-data-container">
@@ -217,7 +219,9 @@
                     </table>
                 </div>
             </div>
-        </div>
+
+           
+        </div>    
     </main>
     <footer class="footer">
         <span class="copyright">Copyright © 2022 多比店舖 Inc. All Rights Reserved.</span>

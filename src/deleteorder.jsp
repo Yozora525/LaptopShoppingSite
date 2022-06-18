@@ -8,7 +8,7 @@
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
     String oid = request.getParameter("oid");
-    if(session.getAttribute("mem_account")!=null||!session.getAttribute("mem_account").equals("")){
+    if(session.getAttribute("man_account")!=null||!session.getAttribute("man_account").equals("")){
 
         PreparedStatement ps;
         
@@ -29,7 +29,7 @@
             %>
             <script type="text/javascript">
                 alert("訂單刪除成功");
-                location.href="../src/memInfo.jsp";
+                location.href="../src/backstage.jsp";
             </script>
             <%
         }
@@ -37,7 +37,7 @@
             %>
             <script type="text/javascript">
                 alert("訂單刪除失敗");
-                location.href="../src/memInfo.jsp";
+                location.href="../src/backstage.jsp";
             </script>
             <%
         }
