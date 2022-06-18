@@ -1,6 +1,13 @@
 <%@ page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@include file = "connectsql.jsp" %> 
+<% 
+    if(session.getAttribute("man_account")==null){
+        response.sendRedirect("manage.jsp");
+    } 
+    else{
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +75,8 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody><%
+                <tbody>
+                <%
                     ResultSet rs5;
                     sql = "SELECT * FROM `orders`";
                     rs5 = con.createStatement().executeQuery(sql);
@@ -84,6 +92,7 @@
                             order3++;
                         }
                     }
+                }   
                 %>
                 </tbody>
             </table>
