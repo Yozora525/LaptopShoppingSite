@@ -13,11 +13,14 @@
     ps.setString(1,oid);
     ResultSet rs5 =ps.executeQuery();
     rs5.next();
+    int i = 0;
     if(rs5.getInt("rstatus")==0){
         sql = "UPDATE `orders` SET `rstatus`=1 WHERE `order_id` =?";
+        i = 0;
     }
     else{
         sql = "UPDATE `orders` SET `rstatus`=0 WHERE `order_id` =?";
+        i = 1;
     }
    
 
@@ -26,11 +29,21 @@
     int change = ps.executeUpdate();
     if(change>0){
         con.close();
+        if(i==0){
         %>
         <script>
             alert("退貨請求已送出");
             location.href="../src/memInfo.jsp";  
         </script>
         <%
+        }
+        else if(i==1){
+        %>
+        <script>
+            alert("退貨請求已取消");
+            location.href="../src/memInfo.jsp";  
+        </script>
+        <%
+        }
     }
 %>
